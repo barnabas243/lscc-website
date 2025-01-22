@@ -13,10 +13,10 @@
         "php": "^8.2",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
+        "spatie/browsershot": "^5.0",
+        "spatie/image": "^3.8",
         "statamic/cms": "^5.0",
-        "studio1902/statamic-peak": "^20.4",
         "studio1902/statamic-peak-browser-appearance": "^3.4",
-        "studio1902/statamic-peak-commands": "^8.0",
         "studio1902/statamic-peak-seo": "^8.0",
         "studio1902/statamic-peak-tools": "^6.0"
     },

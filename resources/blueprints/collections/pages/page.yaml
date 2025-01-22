@@ -4,22 +4,13 @@ tabs:
     display: Main
     sections:
       -
-        display: General
+        display: 'Page builder'
         fields:
           -
             handle: title
             field:
               type: text
               required: true
-              input_type: text
-              localizable: true
-              listable: true
-              display: Title
-              validate:
-                - required
-      -
-        display: 'Page builder'
-        fields:
           -
             import: page_builder
   seo:
@@ -66,11 +57,9 @@ tabs:
             field:
               type: slug
               localizable: true
-              generate: true
-              listable: hidden
-              display: Slug
               validate:
                 - required
+              display: Slug
           -
             handle: parent
             field:
@@ -81,8 +70,3 @@ tabs:
               listable: false
               localizable: true
               display: Parent
-              instructions_position: above
-              visibility: visible
-              mode: default
-              create: true
-              hide_display: false

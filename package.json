@@ -15,7 +15,8 @@
         "@alpinejs/morph": "^3.14.8",
         "@alpinejs/persist": "^3.14.8",
         "alpinejs": "^3.14.8",
-        "laravel-precognition-alpine": "^0.6.0"
+        "laravel-precognition-alpine": "^0.6.0",
+        "puppeteer": "^24.1.0"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.10",

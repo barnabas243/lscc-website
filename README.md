@@ -18,9 +18,9 @@ Dump your .env values here with sensitive data removed.
 
 ```env
 Dump your .env values here with sensitive data removed. The following is a production example that uses full static caching:
-APP_NAME="Statamic Peak"
+APP_NAME="lscc-website"
 APP_ENV=production
-APP_KEY=
+APP_KEY="base64:/6LM19Zww28HsmyUSV44kYNc0M6xFmIT+t3CVlYku4o="
 APP_DEBUG=false
 APP_TIMEZONE="UTC"
 APP_URL=
@@ -97,7 +97,7 @@ STATAMIC_GIT_ENABLED=true
 STATAMIC_GIT_PUSH=true
 STATAMIC_GIT_DISPATCH_DELAY=5
 
-#IMAGE_MANIPULATION_DRIVER=imagick
+IMAGE_MANIPULATION_DRIVER=imagick
 
 #STATAMIC_CUSTOM_CMS_NAME=
 #STATAMIC_CUSTOM_LOGO_NAV_URL=
