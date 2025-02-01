@@ -19,11 +19,28 @@ page_builder:
           -
             type: text
             text: 'We believe that everyone has something unique to offer. We offer a variety of ministries and programs designed to help you grow in your faith and explore new possibilities.'
+  -
+    id: m6m8t3nf
+    cards:
+      -
+        id: m6m8tfuz
+        title: 'Ministry Involvement'
+        type: card
+        enabled: true
+      -
+        id: m6m8u1ez
+        title: 'Water Baptism'
+        type: card
+        enabled: true
+    background_color: '#ffffff'
+    align_content: left
+    type: cards
+    enabled: true
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738416059
+updated_at: 1738417420
 ---
