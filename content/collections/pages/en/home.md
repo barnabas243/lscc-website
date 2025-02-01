@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738415085
+updated_at: 1738423994
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -155,10 +155,10 @@ page_builder:
       -
         id: m6lullkb
         label: 'Plan A Visit'
-        link_type: entry
-        target_blank: false
-        entry: home
+        link_type: url
+        target_blank: true
         button_type: button
+        url: 'https://docs.google.com/forms/d/e/1FAIpQLScbjmLUace7VqXthXmd4SZp0krPraQ5Hg0cwR5R0lyOuIZe2A/formResponse?pli=1'
   -
     id: m6adz9gv
     cards:
