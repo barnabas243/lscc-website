@@ -4,5 +4,5 @@ disable_address_detection: false
 display_standalone: false
 use_theme_color: false
 use_favicons: true
-svg: lscc_white.svg
+svg: lscc.svg
 background: '#ffffff'
