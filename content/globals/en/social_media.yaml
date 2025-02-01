@@ -1,1 +1,19 @@
-{  }
+social_media:
+  -
+    id: m6mb3nlv
+    handle: livingstreams.christianchurch.9
+    prefix: 'https://www.facebook.com/'
+    type: facebook
+    enabled: true
+  -
+    id: m6mb70t6
+    handle: barnabas243
+    prefix: 'https://www.github.com/'
+    type: github
+    enabled: false
+  -
+    id: m6mb76fe
+    handle: '@livingstreamslive5270'
+    prefix: 'https://www.youtube.com/'
+    type: youtube
+    enabled: true
