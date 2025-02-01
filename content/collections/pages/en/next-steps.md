@@ -27,14 +27,20 @@ page_builder:
         title: 'Ministry Involvement'
         type: card
         enabled: true
+        button:
+          -
+            id: m6m91ja1
+            label: 'FIll Out'
+            link_type: url
+            target_blank: false
+            url: 'https://docs.google.com/forms/d/e/1FAIpQLScm4JvQNrT3lwXHMDYtNvNmcbfz7wVEHdXC20z_0GJh8cC0SQ/formResponse'
+            button_type: button
       -
         id: m6m8u1ez
         title: 'Water Baptism'
         type: card
         enabled: true
         content: "Water baptism is a significant Christian sacrament that symbolizes a person's faith in Jesus Christ and marks the beginning of their spiritual journey. Through the act of being immersed in or sprinkled with water, baptism represents the cleansing of sins and the renewal of life in Christ. It is a public declaration of faith and a vital step in the process of becoming a committed member of the Christian community."
-        button:
-          - {  }
     background_color: '#ffffff'
     align_content: left
     type: cards
@@ -45,5 +51,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738417697
+updated_at: 1738417817
 ---
