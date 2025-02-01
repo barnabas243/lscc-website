@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738423994
+updated_at: 1738424042
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -19,7 +19,7 @@ page_builder:
       Our church is dedicated to creating a space that encourages spiritual growth and connection.
     hero_image: a-peak.jpg
     primary_button_text: 'Plan A Visit'
-    primary_button_url: /
+    primary_button_url: 'https://docs.google.com/forms/d/e/1FAIpQLScbjmLUace7VqXthXmd4SZp0krPraQ5Hg0cwR5R0lyOuIZe2A/formResponse?pli=1'
     secondary_button_text: 'Get Involved'
     secondary_button_url: /next-steps
     type: hero
