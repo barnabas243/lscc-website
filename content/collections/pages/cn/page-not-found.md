@@ -27,5 +27,5 @@ page_builder:
     enabled: true
     background_color: '#ffffff'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738418831
+updated_at: 1738418856
 ---
