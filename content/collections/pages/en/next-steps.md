@@ -39,12 +39,16 @@ page_builder:
           Get involved in church ministry and make a lasting impact by using your unique gifts to serve others. 
 
           register below to get started!
+        background_color: '#000000'
+        text_color: '#ffffff'
       -
         id: m6m8u1ez
         title: 'Water Baptism'
         type: card
         enabled: true
         content: "Water baptism is a significant Christian sacrament that symbolizes a person's faith in Jesus Christ and marks the beginning of their spiritual journey. Through the act of being immersed in or sprinkled with water, baptism represents the cleansing of sins and the renewal of life in Christ. It is a public declaration of faith and a vital step in the process of becoming a committed member of the Christian community."
+        background_color: '#000000'
+        text_color: '#ffffff'
     background_color: '#ffffff'
     align_content: left
     type: cards
@@ -55,5 +59,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738423392
+updated_at: 1738423469
 ---
