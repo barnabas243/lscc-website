@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738424396
+updated_at: 1738424472
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -38,7 +38,7 @@ page_builder:
         link_type: entry
         target_blank: false
         entry: 1bad468d-a97d-498d-aa3c-747b0251e740
-        button_type: button
+        button_type: inline
   -
     id: m6afwl9k
     cards:
