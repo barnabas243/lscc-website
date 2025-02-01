@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738422751
+updated_at: 1738422803
 page_builder:
   -
     id: m69hfxa9
@@ -59,5 +59,18 @@ page_builder:
             text: "We are committed to living out the values of the gospel of Jesus Christ. Our mission is to love God, love others, and share the good news of Jesus Christ.\_"
     background_color: '#ffffff'
     type: article
+    enabled: true
+  -
+    id: m6mc1krh
+    cards:
+      -
+        id: m6mc1n5h
+        title: 'Our Values'
+        content: 'We are committed to living out the values of the gospel of Jesus Christ. Our mission is to love God, love others, and share the good news of Jesus Christ.'
+        type: card
+        enabled: true
+    background_color: '#ffffff'
+    align_content: left
+    type: cards
     enabled: true
 ---
