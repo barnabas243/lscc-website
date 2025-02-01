@@ -55,29 +55,7 @@ fields:
                     container: images
                     localizable: false
                 -
-                  handle: primary_button_text
-                  field:
-                    type: text
-                    display: 'Primary Button Text'
-                    localizable: false
-                -
-                  handle: primary_button_url
-                  field:
-                    type: text
-                    display: 'Primary Button URL'
-                    localizable: false
-                -
-                  handle: secondary_button_text
-                  field:
-                    type: text
-                    display: 'Secondary Button Text'
-                    localizable: false
-                -
-                  handle: secondary_button_url
-                  field:
-                    type: text
-                    display: 'Secondary Button URL'
-                    localizable: false
+                  import: buttons
             video:
               display: Video
               icon: media-webcam-video
