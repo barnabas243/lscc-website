@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738422673
+updated_at: 1738422751
 page_builder:
   -
     id: m69hfxa9
@@ -37,4 +37,27 @@ page_builder:
           -
             type: text
             text: 'We are a welcoming and open church that encourages people to come and share in the love of Jesus. Come join our community and grow in your faith alongside others who have the same beliefs and values.'
+  -
+    id: m6mc08m5
+    article:
+      -
+        type: heading
+        attrs:
+          textAlign: center
+          level: 2
+        content:
+          -
+            type: text
+            text: 'Our Values'
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+        content:
+          -
+            type: text
+            text: "We are committed to living out the values of the gospel of Jesus Christ. Our mission is to love God, love others, and share the good news of Jesus Christ.\_"
+    background_color: '#ffffff'
+    type: article
+    enabled: true
 ---
