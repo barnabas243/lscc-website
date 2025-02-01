@@ -1,13 +1,21 @@
-{{#
-    @name Logo
-    @desc The logo component with a `width` attribute.
-#}}
+{{# @name Logo @desc The logo component with a `width` attribute. #}}
 
 <!-- /components/_logo.antlers.html -->
-<a
-    aria-label="Logo {{ config:app:name }}"
-    href="{{ site:url }}"
->
-    <img src="/visuals/statamic-peak-logo.svg" class="select-none {{ class }}" width="{{ width }}" alt="{{ config:app:name }}"/>
+<a aria-label="Logo {{ config:app:name }}" href="{{ site:url }}">
+    {{if is_footer }}
+    <img
+        src="/visuals/lscc_white.svg"
+        class="select-none {{ class }}"
+        width="{{ width }}"
+        alt="{{ config:app:name }}"
+    />
+    {{ else }}
+    <img
+        src="/visuals/lscc.svg"
+        class="select-none {{ class }}"
+        width="{{ width }}"
+        alt="{{ config:app:name }}"
+    />
+    {{ /if }}
 </a>
 <!-- End: /components/_logo.antlers.html -->

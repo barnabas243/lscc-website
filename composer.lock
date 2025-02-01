@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a7db407b20405b7aa1f3bd304e9af081",
+    "content-hash": "babc3bd8d9aa0bac5a74675eb561095f",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -586,6 +586,68 @@
                 }
             ],
             "time": "2024-10-09T13:47:03+00:00"
+        },
+        {
+            "name": "edalzell/forma",
+            "version": "v3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/edalzell/statamic-forma.git",
+                "reference": "420c46bbc2f067be748f9556149e8a5448b1d3ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/edalzell/statamic-forma/zipball/420c46bbc2f067be748f9556149e8a5448b1d3ce",
+                "reference": "420c46bbc2f067be748f9556149e8a5448b1d3ce",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^10.0 || ^11.0",
+                "php": "^8.0",
+                "statamic/cms": "^4.0 || ^5.0",
+                "stillat/proteus": "^4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3.1",
+                "nunomaduro/collision": "^7.0 || ^8.0",
+                "orchestra/testbench": "^8.0 || ^9.0",
+                "phpunit/phpunit": "^10.0 || ^11.0"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Edalzell\\Forma\\ServiceProvider"
+                    ]
+                },
+                "statamic": {
+                    "name": "Forma",
+                    "description": "Create addon config page in the CP"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Edalzell\\Forma\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "mit"
+            ],
+            "authors": [
+                {
+                    "name": "Erin Dalzell",
+                    "email": "erin@silentz.co",
+                    "homepage": "https://silentz.co",
+                    "role": "Founder"
+                }
+            ],
+            "description": "Give control panel access to your addon's config",
+            "support": {
+                "issues": "https://github.com/edalzell/statamic-forma/issues",
+                "source": "https://github.com/edalzell/statamic-forma/tree/v3.0.1"
+            },
+            "time": "2024-05-28T19:44:23+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -4139,6 +4201,55 @@
             "time": "2023-11-06T16:46:48+00:00"
         },
         {
+            "name": "rlanvin/php-rrule",
+            "version": "v2.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rlanvin/php-rrule.git",
+                "reference": "cb5c6f44f2208144968f7f16b3461bc4566995c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rlanvin/php-rrule/zipball/cb5c6f44f2208144968f7f16b3461bc4566995c9",
+                "reference": "cb5c6f44f2208144968f7f16b3461bc4566995c9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "@stable",
+                "phpunit/phpunit": "^5.7|^6.5|^8.0"
+            },
+            "suggest": {
+                "ext-intl": "Intl extension is needed for humanReadable()"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RRule\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Lightweight and fast recurrence rules for PHP (RFC 5545)",
+            "homepage": "https://github.com/rlanvin/php-rrule",
+            "keywords": [
+                "date",
+                "ical",
+                "recurrence",
+                "recurring",
+                "rrule"
+            ],
+            "support": {
+                "issues": "https://github.com/rlanvin/php-rrule/issues",
+                "source": "https://github.com/rlanvin/php-rrule/tree/v2.5.1"
+            },
+            "time": "2024-06-23T07:45:45+00:00"
+        },
+        {
             "name": "scrivo/highlight.php",
             "version": "v9.18.1.10",
             "source": {
@@ -4410,6 +4521,141 @@
             "time": "2024-12-30T12:56:36+00:00"
         },
         {
+            "name": "spatie/calendar-links",
+            "version": "1.11.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/calendar-links.git",
+                "reference": "bf4645d6a2d8eb32248a5b0b7da7976a13e5e2b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/calendar-links/zipball/bf4645d6a2d8eb32248a5b0b7da7976a13e5e2b5",
+                "reference": "bf4645d6a2d8eb32248a5b0b7da7976a13e5e2b5",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.49",
+                "phpunit/phpunit": "^10.5",
+                "spatie/phpunit-snapshot-assertions": "^5.1",
+                "vimeo/psalm": "^5.22"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\CalendarLinks\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Generate add to calendar links for Google, iCal and other calendar systems",
+            "homepage": "https://github.com/spatie/calendar-links",
+            "keywords": [
+                "calendar-links",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/calendar-links/issues",
+                "source": "https://github.com/spatie/calendar-links/tree/1.11.1"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2025-01-16T16:49:47+00:00"
+        },
+        {
+            "name": "spatie/enum",
+            "version": "3.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/enum.git",
+                "reference": "f1a0f464ba909491a53e60a955ce84ad7cd93a2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/enum/zipball/f1a0f464ba909491a53e60a955ce84ad7cd93a2c",
+                "reference": "f1a0f464ba909491a53e60a955ce84ad7cd93a2c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "fakerphp/faker": "^1.9.1",
+                "larapack/dd": "^1.1",
+                "phpunit/phpunit": "^9.0",
+                "vimeo/psalm": "^4.3"
+            },
+            "suggest": {
+                "fakerphp/faker": "To use the enum faker provider",
+                "phpunit/phpunit": "To use the enum assertions"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Enum\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brent Roose",
+                    "email": "brent@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Tom Witkowski",
+                    "email": "dev@gummibeer.de",
+                    "homepage": "https://gummibeer.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP Enums",
+            "homepage": "https://github.com/spatie/enum",
+            "keywords": [
+                "enum",
+                "enumerable",
+                "spatie"
+            ],
+            "support": {
+                "docs": "https://docs.spatie.be/enum",
+                "issues": "https://github.com/spatie/enum/issues",
+                "source": "https://github.com/spatie/enum"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-04-22T08:51:55+00:00"
+        },
+        {
             "name": "spatie/error-solutions",
             "version": "1.1.2",
             "source": {
@@ -4551,6 +4797,66 @@
                 }
             ],
             "time": "2024-12-02T14:30:06+00:00"
+        },
+        {
+            "name": "spatie/icalendar-generator",
+            "version": "2.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/icalendar-generator.git",
+                "reference": "9df8161a6b771d232890826011356734e46ed57c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/icalendar-generator/zipball/9df8161a6b771d232890826011356734e46ed57c",
+                "reference": "9df8161a6b771d232890826011356734e46ed57c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": "^8.1",
+                "spatie/enum": "^3.11"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "larapack/dd": "^1.1",
+                "nesbot/carbon": "^3.5",
+                "pestphp/pest": "^2.34",
+                "spatie/pest-plugin-snapshots": "^2.1",
+                "vimeo/psalm": "^5.24"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\IcalendarGenerator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ruben Van Assche",
+                    "email": "ruben@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Build calendars in the iCalendar format",
+            "homepage": "https://github.com/spatie/icalendar-generator",
+            "keywords": [
+                "calendar",
+                "iCalendar",
+                "ical",
+                "ics",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/icalendar-generator/issues",
+                "source": "https://github.com/spatie/icalendar-generator/tree/2.9.0"
+            },
+            "time": "2024-12-02T08:41:57+00:00"
         },
         {
             "name": "spatie/ignition",
@@ -4891,16 +5197,16 @@
         },
         {
             "name": "statamic/cms",
-            "version": "v5.45.1",
+            "version": "v5.46.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/statamic/cms.git",
-                "reference": "8a2ad86a7b7ad8a76c37db3ee3ff71ecbad45627"
+                "reference": "7a144d5c11f2b1aa1ec15ccccd7abf5bdb754210"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/statamic/cms/zipball/8a2ad86a7b7ad8a76c37db3ee3ff71ecbad45627",
-                "reference": "8a2ad86a7b7ad8a76c37db3ee3ff71ecbad45627",
+                "url": "https://api.github.com/repos/statamic/cms/zipball/7a144d5c11f2b1aa1ec15ccccd7abf5bdb754210",
+                "reference": "7a144d5c11f2b1aa1ec15ccccd7abf5bdb754210",
                 "shasum": ""
             },
             "require": {
@@ -4985,7 +5291,7 @@
             ],
             "support": {
                 "issues": "https://github.com/statamic/cms/issues",
-                "source": "https://github.com/statamic/cms/tree/v5.45.1"
+                "source": "https://github.com/statamic/cms/tree/v5.46.0"
             },
             "funding": [
                 {
@@ -4993,7 +5299,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-07T20:17:24+00:00"
+            "time": "2025-01-22T19:19:52+00:00"
         },
         {
             "name": "statamic/stringy",
@@ -5118,6 +5424,65 @@
             "time": "2024-11-27T20:25:52+00:00"
         },
         {
+            "name": "stillat/proteus",
+            "version": "v4.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Stillat/proteus.git",
+                "reference": "96f449098c19925d70411b8074b4dfd20ee396ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Stillat/proteus/zipball/96f449098c19925d70411b8074b4dfd20ee396ac",
+                "reference": "96f449098c19925d70411b8074b4dfd20ee396ac",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^10.0 || ^11.0",
+                "nikic/php-parser": "^5"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.6",
+                "orchestra/testbench": "^8.0 || ^9.0",
+                "phpunit/phpunit": "^10 || ^11.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Stillat\\Proteus\\WriterServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Stillat\\Proteus\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Koster",
+                    "email": "john@stillat.com"
+                }
+            ],
+            "description": "Provides utilities for parsing and updating Laravel-style PHP configuration files.",
+            "support": {
+                "issues": "https://github.com/Stillat/proteus/issues",
+                "source": "https://github.com/Stillat/proteus/tree/v4.0.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/JohnathonKoster",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-05-18T17:38:02+00:00"
+        },
+        {
             "name": "studio1902/statamic-peak-browser-appearance",
             "version": "v3.6.0",
             "source": {
@@ -5213,16 +5578,16 @@
         },
         {
             "name": "studio1902/statamic-peak-tools",
-            "version": "v6.6.0",
+            "version": "v6.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/studio1902/statamic-peak-tools.git",
-                "reference": "9800369ea69ef8512e4d4a1e2aab5d13150fb9e0"
+                "reference": "4d0678a0d094df7a50a891d991aa3ab218d8b02e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/studio1902/statamic-peak-tools/zipball/9800369ea69ef8512e4d4a1e2aab5d13150fb9e0",
-                "reference": "9800369ea69ef8512e4d4a1e2aab5d13150fb9e0",
+                "url": "https://api.github.com/repos/studio1902/statamic-peak-tools/zipball/4d0678a0d094df7a50a891d991aa3ab218d8b02e",
+                "reference": "4d0678a0d094df7a50a891d991aa3ab218d8b02e",
                 "shasum": ""
             },
             "require": {
@@ -5248,7 +5613,7 @@
             "notification-url": "https://packagist.org/downloads/",
             "support": {
                 "issues": "https://github.com/studio1902/statamic-peak-tools/issues",
-                "source": "https://github.com/studio1902/statamic-peak-tools/tree/v6.6.0"
+                "source": "https://github.com/studio1902/statamic-peak-tools/tree/v6.7.1"
             },
             "funding": [
                 {
@@ -5256,7 +5621,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-06T09:05:28+00:00"
+            "time": "2025-01-21T10:59:52+00:00"
         },
         {
             "name": "symfony/console",
@@ -7835,6 +8200,75 @@
             "time": "2024-12-21T16:25:41+00:00"
         },
         {
+            "name": "transformstudios/events",
+            "version": "v5.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/transformstudios/statamic-events.git",
+                "reference": "4f47ed013757cfc3140d26f63434f3b3cbe3a83d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/transformstudios/statamic-events/zipball/4f47ed013757cfc3140d26f63434f3b3cbe3a83d",
+                "reference": "4f47ed013757cfc3140d26f63434f3b3cbe3a83d",
+                "shasum": ""
+            },
+            "require": {
+                "edalzell/forma": "^2.0 || ^3.0",
+                "laravel/framework": "^9.6 || ^10.11 || ^11.0",
+                "php": "^8.2",
+                "rlanvin/php-rrule": "^2.3.1",
+                "spatie/calendar-links": "^1.0",
+                "spatie/icalendar-generator": "^2.3.3",
+                "statamic/cms": "^4.5 || ^5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3.1",
+                "nunomaduro/collision": "^6.0 || ^7.0 || ^8.0",
+                "orchestra/testbench": "^7.0 || ^8.0 || ^9.0",
+                "phpunit/phpunit": "^9.0 || ^10.0 || ^11.0",
+                "spatie/laravel-ray": "^1.35",
+                "spatie/test-time": "^1.2"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "TransformStudios\\Events\\ServiceProvider"
+                    ]
+                },
+                "statamic": {
+                    "name": "Events",
+                    "description": "Statamic addon to create & manage events"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "TransformStudios\\Events\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Erin Dalzell",
+                    "email": "erin@transformstudios.com",
+                    "homepage": "https://transformstudios.com"
+                }
+            ],
+            "description": "Statamic addon to create & manage events",
+            "support": {
+                "issues": "https://github.com/transformstudios/statamic-events/issues",
+                "source": "https://github.com/transformstudios/statamic-events/tree/v5.5.0"
+            },
+            "time": "2025-01-29T23:41:06+00:00"
+        },
+        {
             "name": "ueberdosis/tiptap-php",
             "version": "1.4.0",
             "source": {
@@ -8239,6 +8673,56 @@
                 "source": "https://github.com/wilderborn/partyline/tree/1.0.2"
             },
             "time": "2022-12-14T18:38:34+00:00"
+        },
+        {
+            "name": "xndbogdan/statamic-bard-text-color",
+            "version": "v5.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xndbogdan/statamic-bard-text-color.git",
+                "reference": "bb329dffd16734ba9ff85ea9bb6e9b39b7089710"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xndbogdan/statamic-bard-text-color/zipball/bb329dffd16734ba9ff85ea9bb6e9b39b7089710",
+                "reference": "bb329dffd16734ba9ff85ea9bb6e9b39b7089710",
+                "shasum": ""
+            },
+            "require": {
+                "statamic/cms": "^5.0"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "XndBogdan\\BardTextColor\\ServiceProvider"
+                    ]
+                },
+                "statamic": {
+                    "name": "Statamic Bard Text Color",
+                    "description": "Text Color plugin for statamic bard"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "XndBogdan\\BardTextColor\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Statamic Bard Text Color",
+            "keywords": [
+                "bard",
+                "statamic",
+                "text-color"
+            ],
+            "support": {
+                "issues": "https://github.com/xndbogdan/statamic-bard-text-color/issues",
+                "source": "https://github.com/xndbogdan/statamic-bard-text-color/tree/v5.1.1"
+            },
+            "time": "2024-06-20T14:37:31+00:00"
         }
     ],
     "packages-dev": [

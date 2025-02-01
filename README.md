@@ -8,19 +8,13 @@
 
 ## Environment file contents
 
-### Development
-
-```env
-Dump your .env values here with sensitive data removed.
-```
-
 ### Production
 
 ```env
 Dump your .env values here with sensitive data removed. The following is a production example that uses full static caching:
-APP_NAME="lscc-website"
+APP_NAME="Statamic Peak"
 APP_ENV=production
-APP_KEY="base64:/6LM19Zww28HsmyUSV44kYNc0M6xFmIT+t3CVlYku4o="
+APP_KEY=
 APP_DEBUG=false
 APP_TIMEZONE="UTC"
 APP_URL=
@@ -97,7 +91,7 @@ STATAMIC_GIT_ENABLED=true
 STATAMIC_GIT_PUSH=true
 STATAMIC_GIT_DISPATCH_DELAY=5
 
-IMAGE_MANIPULATION_DRIVER=imagick
+#IMAGE_MANIPULATION_DRIVER=imagick
 
 #STATAMIC_CUSTOM_CMS_NAME=
 #STATAMIC_CUSTOM_LOGO_NAV_URL=
@@ -107,23 +101,7 @@ STATAMIC_CUSTOM_LOGO_OUTSIDE_URL="/visuals/client-logo.svg"
 #STATAMIC_CUSTOM_CSS_URL=
 ```
 
-## NGINX config
 
-Add the following to your NGINX config __inside the server block__ enable static resource caching:
-```
-expires $expires;
-```
-
-And this __outside the server block__:
-```
-map $sent_http_content_type $expires {
-    default    off;
-    text/css    max;
-    ~image/    max;
-    application/javascript    max;
-    application/octet-stream    max;
-}
-```
 
 ## Deploy script Ploi
 
@@ -153,34 +131,4 @@ npm run build
 {SITE_PHP} artisan statamic:static:warm --queue
 
 echo "🚀 Application deployed!"
-```
-
-## Deploy script Forge
-
-```bash
-if [[ $FORGE_QUICK_DEPLOY == 1 ]]; then
-    if [[ $FORGE_DEPLOY_MESSAGE =~ "[BOT]" ]]; then
-        echo "Automatically committed on production. Nothing to deploy."
-        exit 0
-    fi
-fi
-
-cd $FORGE_SITE_PATH
-git pull origin $FORGE_SITE_BRANCH
-$FORGE_COMPOSER install --no-interaction --prefer-dist --optimize-autoloader --no-dev
-
-npm ci
-npm run build
-
-( flock -w 10 9 || exit 1
-    echo 'Restarting FPM...'; sudo -S service $FORGE_PHP_FPM reload ) 9>/tmp/fpmlock
-
-$FORGE_PHP artisan cache:clear
-$FORGE_PHP artisan config:cache
-$FORGE_PHP artisan route:cache
-$FORGE_PHP artisan statamic:stache:warm
-$FORGE_PHP artisan queue:restart
-$FORGE_PHP artisan statamic:search:update --all
-$FORGE_PHP artisan statamic:static:clear
-$FORGE_PHP artisan statamic:static:warm --queue
 ```

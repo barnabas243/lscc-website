@@ -1,0 +1,19 @@
+{{#
+    @name Language picker
+    @desc A language picker when you use multisite.
+#}}
+
+<!-- /navigation/_language_picker.antlers.html -->
+
+<div class="flex h-[0%] divide-x bg-white shadow-md">
+    {{ locales current_first="false" }}
+        <a
+            class="{{ is_current ?= 'bg-blue-600 text-white' }} px-3 py-2 uppercase transition-colors duration-200 hover:bg-blue-700 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white"
+            href="{{ url }}"
+        >
+            {{ locale:handle }}
+        </a>
+    {{ /locales }}
+</div>
+
+<!-- End: /navigation/_language_picker.antlers.html -->

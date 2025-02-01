@@ -1,0 +1,11 @@
+{
+    "plugins": ["prettier-plugin-antlers", "prettier-plugin-tailwindcss"],
+    "overrides": [
+        {
+            "files": ["*.antlers.html"],
+            "options": {
+                "parser": "antlers"
+            }
+        }
+    ]
+}

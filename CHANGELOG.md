@@ -1,5 +1,21 @@
 # Changelog
 
+## v20.6.0 (2025-01-23)
+
+### What's improved
+- Use Tailwind v4 production build. df078308 by @robdekort
+- Refresh on *.md changes. 2d78470a by @robdekort
+
+## v20.5.1 (2025-01-21)
+
+### What's improved
+- Recompile frontend assets. f8f01d25 by @robdekort
+
+## v20.5.0 (2025-01-21)
+
+### What's changed
+- Refactor to support multiple skip (to content) links coming from the Tools addon. #416 by @andjsch
+
 ## v20.4.1 (2025-01-16)
 
 ### What's changed

@@ -1,15 +1,18 @@
 {{#
     @name Article
-    @desc The article page builder block. It extends the prose typography partial.
+    @desc The article page builder block. It extends the prose
+          typography partial.
     @set page.page_builder.article
 #}}
 
 <!-- /page_builder/_article.antlers.html -->
 {{ partial:page_builder/block }}
-    {{ partial:typography/prose as="article" class="contents stack-8" }}
-        {{ article }}
-            {{ partial src="components/{type}" }}
-        {{ /article }}
+    {{ partial:typography/prose as="article" class="contents" }}
+        <section class="span-content mx-auto justify-center p-12 md:p-20">
+            {{ article }}
+                {{ partial src="components/{type}" class='justify-center items-center text-xl px-7 py-5' }}
+            {{ /article }}
+        </section>
     {{ /partial:typography/prose }}
 {{ /partial:page_builder/block }}
 <!-- End: /page_builder/_article.antlers.html -->

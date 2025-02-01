@@ -3,9 +3,10 @@
 return [
 
     // // Sunday service schedule
-    // 'Sunday : Combined 10:30am' => 'Sunday : Combined 10:30am',
-    // 'Other Sundays : Youth 10:30am | Chinese 2:30pm' => 'Other Sundays : Youth 10:30am | Chinese 2:30pm',
-    // 'No matter the situation, you can always feel free to reach out, even if it’s just to say hi.' => 'No matter the situation, you can always feel free to reach out, even if it’s just to say hi.',
+    // 'Sunday : Combined 10:30am' => '每月第一个主日：联合崇拜 10:30am',
+    // 'Other Sundays : Youth 10:30am | Chinese 2:30pm' => '其他主日：青少年崇拜 10:30am | 中文崇拜 2:30pm',
+    // 'No matter the situation, you can always feel free to reach out, even if it’s just to say hi.' => '无论情况如何，您都可以随时联系我们，即使只是打个招呼。',
+
 
     // Contact form
     'form_error' => 'There are problems with your form input:',
@@ -51,7 +52,7 @@ return [
 
     // Footer
     'on' => 'on',
-    'follow_us_on' => 'Follow us on',
+    'follow_us_on' => '关注我们在',
 
     // Navigation
     'close' => 'Close',

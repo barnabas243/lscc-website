@@ -1,0 +1,38 @@
+{{#
+    @name Image and Text @desc A flexible image and text layout block with
+ options for alternating image placement using Tailwind CSS.
+#}}
+
+<!-- /page_builder/_image_and_text.antlers.html -->
+{{ partial:page_builder/block }}
+    <div class="span-content mx-auto grid h-auto gap-y-8 md:grid-cols-12">
+        <!-- Image -->
+        <figure
+            class="{{ image_position == false ? 'order-first' : 'md:order-last' }} relative md:col-span-6"
+        >
+            <!-- Image -->
+            <img
+                src="{{ image }}"
+                class="h-full max-h-screen w-full object-cover"
+                alt="{{ image:alt }}"
+            />
+        </figure>
+
+        <!-- Text -->
+        <article
+            class="{{ image_position == false ? 'order-last' : 'md:order-first' }} items-center align-middle md:col-span-6"
+        >
+            <div
+                class="mb-4 flex h-full flex-col justify-center p-10 text-wrap lg:px-30"
+            >
+                {{ block:lead_text ?= { partial:typography/p :content="block:lead_text" class="font-mono text-sm" } }}
+                {{ block:title ?= { partial:typography/h2 :content="block:title" class=" md:text-5xl" } }}
+                {{ partial:typography/prose class="text-xl mt-5" }}
+                    {{ block:text }}
+                {{ /partial:typography/prose }}
+                {{ partial:components/buttons class="mt-5" }}
+            </div>
+        </article>
+    </div>
+{{ /partial:page_builder/block }}
+<!-- End: /page_builder/_image_and_text.antlers.html -->

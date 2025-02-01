@@ -1,0 +1,64 @@
+{{# @name Calendar @desc The calendar page builder block with Tailwind CSS. @set
+page.page_builder.calendar #}}
+
+<!-- /page_builder/_calendar.antlers.html -->
+{{ partial:page_builder/block }}
+<section class="max-w-3xl content mx-auto px-4 py-5">
+    {{ events:between collection="events" to="Dec 31 2030"
+    :year="get.year" :month="get.month"  paginate="5" }} 
+    <div class="flex items-center justify-center py-4">
+            {{ partial:statamic-peak-tools::components/pagination class="md:col-span-12" }}
+            {{# {{ paginate }}
+            
+            {{ if prev_page }}
+                <a href="{{ prev_page }}" class="text-indigo-600 hover:text-indigo-800 font-semibold flex items-center space-x-2">
+                    <i class="fas fa-chevron-left"></i>
+                    <span>Previous</span>
+                </a>
+            {{ /if }}
+    
+            <span class="text-sm text-gray-600">
+                Page {{ current_page }} of {{ total_pages }} ({{ total_items }} events)
+            </span>
+    
+            {{ if next_page }}
+                <a href="{{ next_page }}" class="text-indigo-600 hover:text-indigo-800 font-semibold flex items-center space-x-2">
+                    <span>Next</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            {{ /if }}
+    
+            {{ /paginate }} #}}
+        </div>
+    </div>
+    {{ results }}
+        <div class="flex items-center border bg-white border-indigo-800 group hover:border-black">
+            <div class="bg-indigo-800 group-hover:bg-black text-white w-14 text-center py-2 mr-8">
+                <div class="text-xs tracking-wide uppercase text-indigo-200 leading-none">
+                    {{ end format="M" }}
+                </div>
+                <div class="text-4xl leading-none">{{ end format="j" }}</div>
+            </div>
+            <div class="flex flex-col">
+                <h3 class="text-lg m-0 group-hover:text-black">{{ title }}</h3>
+                <span class="text-sm text-gray-500 mt-1">
+                    {{ start format="g:i" }}{{ start format="A" }} -
+                    {{ end format="g:i" }}{{ end format="A" }}
+                </span>
+            </div>
+        </div>
+        
+        <!-- This is the content that will appear when the <details> is expanded -->
+        <div class="flex flex-col mt-4">
+            <p>{{ description }}</p>
+            <!-- Example for additional content -->
+        </div>
+    </details>
+
+    {{ /results }}
+
+    {{ /events:between }}
+</section>
+
+{{ /partial:page_builder/block }}
+<!-- End: /page_builder/_calendar.antlers.html -->
