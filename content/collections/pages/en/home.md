@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738424209
+updated_at: 1738424396
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -31,6 +31,13 @@ page_builder:
         link_type: url
         target_blank: true
         url: 'https://docs.google.com/forms/d/e/1FAIpQLScbjmLUace7VqXthXmd4SZp0krPraQ5Hg0cwR5R0lyOuIZe2A/formResponse?pli=1'
+        button_type: button
+      -
+        id: m6mczt0f
+        label: 'Get Involved'
+        link_type: entry
+        target_blank: false
+        entry: 1bad468d-a97d-498d-aa3c-747b0251e740
         button_type: button
   -
     id: m6afwl9k
