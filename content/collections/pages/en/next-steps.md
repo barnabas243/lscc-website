@@ -35,6 +35,10 @@ page_builder:
             target_blank: false
             url: 'https://docs.google.com/forms/d/e/1FAIpQLScm4JvQNrT3lwXHMDYtNvNmcbfz7wVEHdXC20z_0GJh8cC0SQ/formResponse'
             button_type: button
+        content: |-
+          Get involved in church ministry and make a lasting impact by using your unique gifts to serve others. 
+
+          register below to get started!
       -
         id: m6m8u1ez
         title: 'Water Baptism'
@@ -51,5 +55,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738417817
+updated_at: 1738423392
 ---
