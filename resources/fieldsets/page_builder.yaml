@@ -30,6 +30,90 @@ fields:
               fields:
                 -
                   import: cards
+            hero:
+              display: Hero
+              icon: media-image-picture-gallery
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: false
+                -
+                  handle: hero_image
+                  field:
+                    type: assets
+                    display: 'Hero Image'
+                    max_files: 1
+                    container: images
+                    localizable: false
+                -
+                  handle: primary_button_text
+                  field:
+                    type: text
+                    display: 'Primary Button Text'
+                    localizable: false
+                -
+                  handle: primary_button_url
+                  field:
+                    type: text
+                    display: 'Primary Button URL'
+                    localizable: false
+                -
+                  handle: secondary_button_text
+                  field:
+                    type: text
+                    display: 'Secondary Button Text'
+                    localizable: false
+                -
+                  handle: secondary_button_url
+                  field:
+                    type: text
+                    display: 'Secondary Button URL'
+                    localizable: false
+            video:
+              display: Video
+              icon: media-webcam-video
+              fields:
+                -
+                  import: video
+                -
+                  handle: header
+                  field:
+                    type: text
+                    display: Header
+                    localizable: false
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: description
+                    localizable: false
+                -
+                  handle: background_color
+                  field:
+                    swatches:
+                      - '#ffffff'
+                      - '#000000'
+                    type: color
+                    display: 'Background Color'
+                    localizable: false
+                -
+                  handle: text_color
+                  field:
+                    swatches:
+                      - '#ffffff'
+                      - '#000000'
+                    type: color
+                    display: 'text color'
+                    localizable: false
         text:
           display: Text
           instructions: 'Text based blocks.'
@@ -42,3 +126,8 @@ fields:
               fields:
                 -
                   import: article
+            image_and_text:
+              display: 'Image & Text'
+              fields:
+                -
+                  import: image_and_text

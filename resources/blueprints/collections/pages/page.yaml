@@ -4,13 +4,21 @@ tabs:
     display: Main
     sections:
       -
-        display: 'Page builder'
+        display: General
         fields:
           -
             handle: title
             field:
               type: text
               required: true
+              localizable: true
+              listable: true
+              display: Title
+              validate:
+                - required
+      -
+        display: 'Page builder'
+        fields:
           -
             import: page_builder
   seo:

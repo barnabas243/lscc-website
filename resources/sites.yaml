@@ -1,4 +1,8 @@
-default:
-  name: '{{ config:app:name }}'
+en:
+  name: LSCC
   url: /
   locale: en_US
+cn:
+  name: 活盛基督教会
+  url: /cn/
+  locale: zh_SG

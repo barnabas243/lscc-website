@@ -7,3 +7,5 @@ nav:
         'content::assets::images': '@inherit'
         'content::assets::files': '@inherit'
         'content::assets::social_images': '@inherit'
+locale: en
+favorites: {  }

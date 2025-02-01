@@ -14,21 +14,25 @@ fields:
         - quote
         - removeformat
         - anchor
-      save_html: false
-      toolbar_mode: fixed
-      link_noopener: false
-      link_noreferrer: false
-      target_blank: false
+        - horizontalrule
+        - alignleft
+        - aligncenter
+        - alignright
+        - alignjustify
+        - color
+        - underline
+        - strikethrough
       reading_time: true
-      fullscreen: true
-      allow_source: true
       type: bard
       localizable: true
-      listable: hidden
       display: Article
       replicator_preview: false
       validate:
         - required
+      container: files
+      always_save: false
+      remove_empty_nodes: trim
+      smart_typography: true
       sets:
         interactive:
           display: Interactive
@@ -80,16 +84,11 @@ fields:
               fields:
                 -
                   import: video
-      container: files
-      enable_input_rules: true
-      enable_paste_rules: true
-      instructions_position: above
-      visibility: visible
-      always_save: false
-      previews: true
-      antlers: false
-      remove_empty_nodes: trim
-      collapse: false
-      smart_typography: true
-      inline: false
-      hide_display: false
+  -
+    handle: background_color
+    field:
+      type: color
+      display: 'Background Color'
+      instructions: 'Select the background color for this article.'
+      default: '#ffffff'
+      localizable: false

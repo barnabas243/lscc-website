@@ -4,10 +4,12 @@ blueprint: page
 title: 'Page not found'
 page_builder:
   -
+    id: PMhz8Z80
     article:
       -
         type: heading
         attrs:
+          textAlign: left
           level: 1
         content:
           -
@@ -15,17 +17,20 @@ page_builder:
             text: '404 Page not found'
       -
         type: paragraph
+        attrs:
+          textAlign: left
         content:
           -
             type: text
             text: 'The page you requested is not available (anymore).'
     type: article
     enabled: true
+    background_color: '#ffffff'
 seo_noindex: true
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
-updated_by: 66c6ff90-a9a2-42ba-a4e1-c0872e344786
-updated_at: 1646921434
+updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
+updated_at: 1737711771
 ---

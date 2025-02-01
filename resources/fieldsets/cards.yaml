@@ -25,6 +25,14 @@ fields:
               display: Card
               fields:
                 -
+                  handle: image
+                  field: image.image
+                -
+                  handle: lead_text
+                  field:
+                    type: text
+                    display: 'Lead Text'
+                -
                   handle: title
                   field:
                     type: text
@@ -32,13 +40,52 @@ fields:
                     validate: required
                     display: Title
                 -
-                  handle: text
+                  handle: content
                   field: common.text_plain
                   config:
-                    display: Text
+                    display: content
                 -
                   handle: button
                   field: buttons.buttons
                   config:
                     display: Button
                     max_rows: 1
+                -
+                  handle: background_color
+                  field:
+                    swatches:
+                      - '#000000'
+                    type: color
+                    display: 'Background Color'
+                -
+                  handle: text_color
+                  field:
+                    type: color
+                    display: 'Text color'
+  -
+    handle: background_color
+    field:
+      swatches:
+        - '#000000'
+        - '#ffffff'
+      default: '#ffffff'
+      type: color
+      display: 'Background Color'
+      localizable: false
+  -
+    handle: align_content
+    field:
+      options:
+        -
+          key: left
+          value: 'Left align'
+        -
+          key: middle
+          value: 'middle align'
+        -
+          key: right
+          value: 'right align'
+      default: left
+      type: button_group
+      display: 'Align Content'
+      localizable: false
