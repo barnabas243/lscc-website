@@ -19,19 +19,10 @@ fields:
       localizable: false
       fields:
         -
-          handle: video_url
-          field:
-            type: file
-            display: 'Video URL'
-            accept:
-              - video/mp4
-              - video/webm
-              - video/ogg
+          import: video
         -
           handle: text
           field:
-            type: bard
-            display: 'Text Content'
             buttons:
               - h2
               - h3
@@ -53,6 +44,16 @@ fields:
               - alignright
               - alignjustify
               - color
-            smart_typography: true
-            reading_time: true
             remove_empty_nodes: false
+            type: bard
+            display: Text
+            localizable: false
+            sets:
+              buttons:
+                display: buttons
+                sets:
+                  new_set:
+                    display: 'New Set'
+                    fields:
+                      -
+                        import: buttons
