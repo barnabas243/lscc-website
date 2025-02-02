@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738506843
+updated_at: 1738506994
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -322,7 +322,7 @@ page_builder:
           values:
             type: video
             size: md
-            video_url: 'https://www.youtube.com/watch?v=8LAHI0Btoqg'
+            video_url: 'https://www.youtube.com/watch?v=5PzwIhO1WVc'
     background_color: '#000000'
     type: article
     enabled: true
