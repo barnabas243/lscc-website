@@ -9,3 +9,4 @@ preferences:
     -
       name: 'Pages ‹ Collections'
       url: collections/pages
+  start_page: collections/pages
