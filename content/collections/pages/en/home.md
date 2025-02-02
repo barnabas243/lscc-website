@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738495702
+updated_at: 1738495912
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -273,5 +273,51 @@ page_builder:
     description: 'Watch the video below to see the impact of our latest mission trip. Discover how we’re reaching people, sharing Christ’s love, and how you can get involved in our mission efforts.'
     background_color: '#000000'
     type: video
+    enabled: true
+  -
+    id: m6njj1kw
+    article:
+      -
+        type: heading
+        attrs:
+          textAlign: center
+          level: 3
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: bold
+            text: 'Join Us on a Mission'
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: bold
+            text: 'Be a part of the journey as we serve and spread hope.'
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+        content:
+          -
+            type: text
+            text: 'Watch the video below to see the impact of our latest mission trip. Discover how we’re reaching people, sharing Christ’s love, and how you can get involved in our mission efforts.'
+      -
+        type: set
+        attrs:
+          id: m6njkcyg
+          values:
+            type: video
+            size: md
+            video_url: 'https://www.youtube.com/watch?v=Cjre0MqSZAs&list=RDCjre0MqSZAs&start_radio=1'
+            caption: 'NAUL(나얼) _ Memory Of The Wind(바람기억) guitar version cover by Vinai T'
+    background_color: '#000000'
+    type: article
     enabled: true
 ---
