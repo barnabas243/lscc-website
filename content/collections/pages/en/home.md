@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738496671
+updated_at: 1738496858
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -314,12 +314,11 @@ page_builder:
       -
         type: set
         attrs:
-          id: m6njkcyg
+          id: m6nk22fx
           values:
             type: video
             size: md
             video_url: 'https://www.youtube.com/watch?v=Cjre0MqSZAs&list=RDCjre0MqSZAs&start_radio=1'
-            caption: 'NAUL(나얼) _ Memory Of The Wind(바람기억) guitar version cover by Vinai T'
     background_color: '#000000'
     type: article
     enabled: true
