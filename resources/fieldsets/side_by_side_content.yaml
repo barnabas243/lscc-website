@@ -19,7 +19,10 @@ fields:
       localizable: false
       fields:
         -
-          import: video
+          handle: video_url
+          field: video.video_url
+          config:
+            width: 50
         -
           handle: text
           field:
@@ -48,6 +51,7 @@ fields:
             type: bard
             display: Text
             localizable: false
+            width: 50
             sets:
               buttons:
                 display: buttons
