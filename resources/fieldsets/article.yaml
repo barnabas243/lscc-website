@@ -84,8 +84,8 @@ fields:
               fields:
                 -
                   import: video
-            video_and_content_side_by_side:
-              display: 'Video and Content side by side'
+            video_with_text:
+              display: 'Video with Text'
               icon: layout-two-columns
               fields:
                 -
