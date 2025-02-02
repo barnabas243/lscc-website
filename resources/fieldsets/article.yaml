@@ -89,45 +89,7 @@ fields:
               icon: layout-two-columns
               fields:
                 -
-                  handle: grid_field
-                  field:
-                    type: grid
-                    display: 'Grid Field'
-                    localizable: false
-                    fields:
-                      -
-                        handle: video_url
-                        field: video.video_url
-                      -
-                        handle: text
-                        field:
-                          buttons:
-                            - h2
-                            - h3
-                            - bold
-                            - italic
-                            - unorderedlist
-                            - orderedlist
-                            - removeformat
-                            - quote
-                            - anchor
-                            - image
-                            - table
-                            - underline
-                            - strikethrough
-                            - small
-                            - horizontalrule
-                            - alignleft
-                            - aligncenter
-                            - alignright
-                            - alignjustify
-                            - color
-                          smart_typography: true
-                          reading_time: true
-                          remove_empty_nodes: false
-                          type: bard
-                          display: Text
-                          localizable: false
+                  import: side_by_side_content
   -
     handle: background_color
     field:
