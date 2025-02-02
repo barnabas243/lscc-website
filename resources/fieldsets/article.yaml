@@ -84,12 +84,6 @@ fields:
               fields:
                 -
                   import: video
-            side_by_side_content:
-              display: 'Side By Side Content'
-              icon: layout-two-columns
-              fields:
-                -
-                  import: side_by_side_content
   -
     handle: background_color
     field:
