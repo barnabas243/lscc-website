@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738504564
+updated_at: 1738504663
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -302,29 +302,27 @@ page_builder:
         type: paragraph
         attrs:
           textAlign: center
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: textColor
+                attrs:
+                  color: '#fff'
+            text: 'Watch the video below to see the impact of our latest mission trip. Discover how we’re reaching people, sharing Christ’s love, and how you can get involved in our mission efforts.'
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
       -
         type: set
         attrs:
-          id: m6nopipy
+          id: m6nk22fx
           values:
-            type: video_and_content_side_by_side
-            grid_field:
-              -
-                id: m6nopjhc
-                video_url: 'https://www.youtube.com/watch?v=Cjre0MqSZAs&list=RDCjre0MqSZAs&start_radio=1'
-                text:
-                  -
-                    type: paragraph
-                    attrs:
-                      textAlign: left
-                    content:
-                      -
-                        type: text
-                        text: 'Watch the video below to see the impact of our latest mission trip. Discover how we’re reaching people, sharing Christ’s love, and how you can get involved in our mission efforts.'
-                  -
-                    type: paragraph
-                    attrs:
-                      textAlign: left
+            type: video
+            size: md
+            video_url: 'https://www.youtube.com/watch?v=Cjre0MqSZAs&list=RDCjre0MqSZAs&start_radio=1'
     background_color: '#000000'
     type: article
     enabled: true
