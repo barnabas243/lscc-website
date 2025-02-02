@@ -4,8 +4,9 @@ noindex_production: false
 title_separator: '|'
 site_name: 'Living Streams Christian Church'
 hreflang_auto: false
-json_ld_type: none
-breadcrumbs: false
+json_ld_type: organization
+organization_name: 'Living Streams Christian Church'
+breadcrumbs: true
 use_social_image_generation: false
 use_sitemap: true
 sitemap_collections:
