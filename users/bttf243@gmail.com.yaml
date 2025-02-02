@@ -5,3 +5,7 @@ preferences:
   collections:
     pages:
       after_save: continue_editing
+  favorites:
+    -
+      name: 'Pages ‹ Collections'
+      url: collections/pages
