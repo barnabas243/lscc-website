@@ -2,12 +2,57 @@ title: side_by_side_content
 fields:
   -
     handle: side_by_side_video_and_text
-    field:
-      type: grid
-      display: side_by_side_video_and_text
-      localizable: false
-      fields:
-        -
-          import: video
-        -
-          import: article
+    icon: layout-two-columns
+    fields:
+      - handle: layout
+        field:
+          type: select
+          display: 'Layout'
+          options:
+            left: 'Video on Left, Text on Right'
+            right: 'Video on Right, Text on Left'
+          default: left
+          instructions: 'Choose the layout direction for video and text.'
+      
+      - handle: grid_field
+        field:
+          type: grid
+          display: 'Grid Field'
+          localizable: false
+          fields:
+            - handle: video_url
+              field:
+                type: file
+                display: 'Video URL'
+                accept:
+                  - video/mp4
+                  - video/webm
+                  - video/ogg
+            - handle: text
+              field:
+                type: bard
+                display: 'Text Content'
+                buttons:
+                  - h2
+                  - h3
+                  - bold
+                  - italic
+                  - unorderedlist
+                  - orderedlist
+                  - removeformat
+                  - quote
+                  - anchor
+                  - image
+                  - table
+                  - underline
+                  - strikethrough
+                  - small
+                  - horizontalrule
+                  - alignleft
+                  - aligncenter
+                  - alignright
+                  - alignjustify
+                  - color
+                smart_typography: true
+                reading_time: true
+                remove_empty_nodes: false
