@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738506306
+updated_at: 1738506597
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -347,7 +347,7 @@ page_builder:
                           -
                             type: textColor
                             attrs:
-                              color: '#fff'
+                              color: '#f8fafc'
                         text: 'Watch the video below to see the impact of our latest mission trip. Discover how we’re reaching people, sharing Christ’s love, and how you can get involved in our mission efforts.'
     background_color: '#000000'
     type: article
