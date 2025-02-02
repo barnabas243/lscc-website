@@ -6,7 +6,7 @@ site_name: 'Living Streams Christian Church'
 hreflang_auto: true
 json_ld_type: organization
 organization_name: 'Living Streams Christian Church'
-breadcrumbs: true
+breadcrumbs: false
 use_social_image_generation: false
 use_sitemap: true
 sitemap_collections:
