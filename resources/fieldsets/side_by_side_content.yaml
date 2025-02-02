@@ -1,2 +1,13 @@
 title: side_by_side_content
-fields: {  }
+fields:
+  -
+    handle: side_by_side_video_and_text
+    field:
+      type: grid
+      display: side_by_side_video_and_text
+      localizable: false
+      fields:
+        -
+          import: video
+        -
+          import: article
