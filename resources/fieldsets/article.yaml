@@ -46,12 +46,11 @@ fields:
               fields:
                 -
                   import: buttons
-            iframe:
-              display: IFrame
-              icon: programming-script-code-brackets
+            cards:
+              display: Cards
               fields:
                 -
-                  import: google_map_embed
+                  import: cards
         text:
           display: Text
           instructions: 'Text based sets.'
@@ -90,12 +89,6 @@ fields:
               fields:
                 -
                   import: video
-            video_with_text:
-              display: 'Video with Text'
-              icon: layout-two-columns
-              fields:
-                -
-                  import: side_by_side_content
   -
     handle: background_color
     field:
