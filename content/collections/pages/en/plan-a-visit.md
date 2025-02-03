@@ -81,7 +81,17 @@ page_builder:
             type: text
             text: 'Google Maps'
       -
-        type: horizontalRule
+        type: paragraph
+        attrs:
+          textAlign: center
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
       -
         type: set
         attrs:
@@ -99,5 +109,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738582922
+updated_at: 1738582958
 ---
