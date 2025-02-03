@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738577624
+updated_at: 1738578300
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -28,10 +28,10 @@ page_builder:
       -
         id: m6mcvh9r
         label: 'Plan A Visit'
-        link_type: url
+        link_type: entry
         target_blank: true
-        url: 'https://docs.google.com/forms/d/e/1FAIpQLScbjmLUace7VqXthXmd4SZp0krPraQ5Hg0cwR5R0lyOuIZe2A/formResponse?pli=1'
         button_type: button
+        entry: 6508ee95-c3b3-4635-9125-2c985271df30
       -
         id: m6mczt0f
         label: 'Get Involved'
@@ -167,10 +167,10 @@ page_builder:
       -
         id: m6lullkb
         label: 'Plan A Visit'
-        link_type: url
+        link_type: entry
         target_blank: true
         button_type: button
-        url: 'https://docs.google.com/forms/d/e/1FAIpQLScbjmLUace7VqXthXmd4SZp0krPraQ5Hg0cwR5R0lyOuIZe2A/formResponse?pli=1'
+        entry: 6508ee95-c3b3-4635-9125-2c985271df30
     lead_text: "You're Invited!"
   -
     id: m6adz9gv
