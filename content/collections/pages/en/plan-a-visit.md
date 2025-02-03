@@ -49,9 +49,9 @@ page_builder:
         enabled: true
         lead_text: 'Youth Service'
         content: |-
-          Every Sunday (Except 1st Sunday), 10:30 AM
+          Every Sunday (Except 1st Sunday)
 
-           56 Boundary Road, 549977
+          56 Boundary Road, 549977
       -
         id: m6ox7vm7
         title: 2.30pm
@@ -80,5 +80,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738582753
+updated_at: 1738582789
 ---
