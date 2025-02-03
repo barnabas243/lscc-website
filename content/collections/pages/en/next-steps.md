@@ -41,6 +41,7 @@ page_builder:
           register below to get started!
         background_color: '#000000'
         text_color: '#ffffff'
+        image: whatsapp-image-2025-01-24-at-14.40.28_3612e76c.jpg
       -
         id: m6m8u1ez
         title: 'Water Baptism'
@@ -60,5 +61,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738423820
+updated_at: 1738588340
 ---
