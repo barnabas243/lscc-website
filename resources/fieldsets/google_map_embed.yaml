@@ -7,3 +7,4 @@ fields:
       display: IFrame
       instructions: 'insert google map embed iframe'
       localizable: false
+      html: '<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1tbrhR46NGiw3zvI7ptqqG0vwJntnbPw&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>'
