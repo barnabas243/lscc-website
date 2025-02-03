@@ -93,6 +93,7 @@ page_builder:
         background_color: '#000000'
         type: card
         enabled: true
+        text_color: white
     background_color: '#ffffff'
     align_content: left
     type: cards
@@ -103,5 +104,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738589154
+updated_at: 1738589212
 ---
