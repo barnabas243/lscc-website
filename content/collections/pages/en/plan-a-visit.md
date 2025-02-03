@@ -54,13 +54,15 @@ page_builder:
            56 Boundary Road, 549977
       -
         id: m6ox7vm7
-        title: 2.30pm
+        title: '2.30pm @ Bethany Presbyterian Church'
         type: card
         enabled: true
         lead_text: 'Combined/Chinese Service'
         content: |-
           Combined: 1st Sunday of the Month
           Chinese:     Other Sundays
+
+          364A Upper Paya Lebar Rd, Singapore 534965
     background_color: '#ffffff'
     align_content: left
     type: cards
@@ -71,5 +73,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738579830
+updated_at: 1738579897
 ---
