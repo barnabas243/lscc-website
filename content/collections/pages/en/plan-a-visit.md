@@ -48,12 +48,19 @@ page_builder:
         type: card
         enabled: true
         lead_text: 'Youth Service'
+        content: |-
+          Every Sunday (Except 1st Sunday), 10:30 AM
+
+           56 Boundary Road, 549977
       -
         id: m6ox7vm7
         title: 2.30pm
         type: card
         enabled: true
         lead_text: 'Combined/Chinese Service'
+        content: |-
+          Combined: 1st Sunday of the Month
+          Chinese:     Other Sundays
     background_color: '#ffffff'
     align_content: left
     type: cards
@@ -64,5 +71,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738579390
+updated_at: 1738579830
 ---
