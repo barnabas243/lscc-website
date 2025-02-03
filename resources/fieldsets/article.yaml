@@ -52,6 +52,11 @@ fields:
               fields:
                 -
                   import: google_map_embed
+            cards:
+              display: Cards
+              fields:
+                -
+                  import: cards
         text:
           display: Text
           instructions: 'Text based sets.'
