@@ -20,4 +20,6 @@ use_matomo: false
 use_plausible: false
 use_cloudflare_web_analytics: false
 tracker_type: none
-use_consent_banner: false
+use_consent_banner: true
+embeds: false
+display_style: left
