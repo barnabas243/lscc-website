@@ -44,14 +44,16 @@ page_builder:
     cards:
       -
         id: m6ox68f9
-        title: 'Youth Service'
+        title: 10.30am
         type: card
         enabled: true
+        lead_text: 'Youth Service'
       -
         id: m6ox7vm7
-        title: 'Combined/Chinese Service'
+        title: 2.30pm
         type: card
         enabled: true
+        lead_text: 'Combined/Chinese Service'
     background_color: '#ffffff'
     align_content: left
     type: cards
@@ -62,5 +64,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738579304
+updated_at: 1738579390
 ---
