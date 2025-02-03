@@ -1,9 +1,11 @@
 {{# @name Footer @desc The site's footer rendered on each page. #}}
 <!-- /layout/_footer.antlers.html -->
-<footer class="mt-auto w-full bg-black text-white">
+<footer class="mt-auto w-full border-t border-white/8 bg-black text-white">
     <div class="span-content grid grid-cols-12">
         <!-- Column 1: Logo and Contact Info -->
-        <div class="col-span-12 px-12 py-20 md:col-span-6 md:py-40 md:pe-20">
+        <div
+            class="col-span-12 px-12 py-10 md:col-span-6 md:py-20 md:py-40 md:pe-20"
+        >
             <!-- Logo and Site Name -->
             {{ partial:components/logo class="w-50" is_footer="true" }}
             <!-- Meeting Information -->
@@ -28,6 +30,27 @@
                     No matter the situation, you can always feel free to reach
                     out, even if it’s just to say hi 👋
                 </p>
+                <!-- Follow Us On -->
+                <div class="mt-5 flex items-center gap-x-3 md:order-none">
+                    <span class="text-lg font-semibold">
+                        {{ trans:strings.follow_us_on }}
+                    </span>
+                    <!-- Text for Follow Us on -->
+                    {{ if social_media:social_media }}
+                        {{ social_media:social_media }}
+                            <a
+                                href="{{ prefix }}{{ handle }}"
+                                rel="noopener{{ type == 'mastodon' ?= ' me' }}"
+                                aria-label="{{ config:app:name }} {{ trans:strings.on }} {{ type | title }}"
+                                target="_blank"
+                                class="flex h-6 w-6 items-center justify-center transition-colors duration-300 hover:text-gray-400 md:h-8 md:w-8"
+                            >
+                                <!-- Social media icons with larger size -->
+                                {{ svg :src="type" class="w-8 h-8 md:w-6 md:h-6 overflow-visible fill-current" alt="" aria-hidden="true" }}
+                            </a>
+                        {{ /social_media:social_media }}
+                    {{ /if }}
+                </div>
                 <p class="mt-6">
                     <a
                         href="mailto:livingstreams56@gmail.com"
@@ -60,9 +83,11 @@
 
         <!-- Column 2: Navigation -->
         <div
-            class="col-span-12 flex flex-col gap-4 py-20 font-bold md:col-span-5 md:flex-row md:py-40"
+            class="col-span-12 flex flex-col py-10 font-bold md:col-span-5 md:flex-row md:py-20 md:py-40"
         >
-            <div class="grid grid-cols-2 gap-4 px-12">
+            <div
+                class="grid grid-cols-1 gap-8 px-12 md:justify-center lg:grid-cols-2 lg:text-center"
+            >
                 {{ nav:main max_depth="2" include_home="true" select="title|url" }}
                     {{ unless no_results }}
                         <a
@@ -74,35 +99,18 @@
                         </a>
                     {{ /unless }}
                 {{ /nav:main }}
-                <div class="order-last flex items-center gap-x-3 md:order-none">
-                    <span class="text-lg font-semibold">
-                        {{ trans:strings.follow_us_on }}
-                    </span>
-                    <!-- Text for Follow Us on -->
-                    {{ if social_media:social_media }}
-                        {{ social_media:social_media }}
-                            <a
-                                href="{{ prefix }}{{ handle }}"
-                                rel="noopener{{ type == 'mastodon' ?= ' me' }}"
-                                aria-label="{{ config:app:name }} {{ trans:strings.on }} {{ type | title }}"
-                                target="_blank"
-                                class="flex h-6 w-6 items-center justify-center transition-colors duration-300 hover:text-gray-400 md:h-8 md:w-8"
-                            >
-                                <!-- Social media icons with larger size -->
-                                {{ svg :src="type" class="w-8 h-8 md:w-6 md:h-6 overflow-visible fill-current" alt="" aria-hidden="true" }}
-                            </a>
-                        {{ /social_media:social_media }}
-                    {{ /if }}
-                </div>
             </div>
         </div>
     </div>
-    <div class="text-md border-t border-white/8 p-5">
-        &copy; {{ configuration:copyright_since }}
-        {{ unless (now | format('Y')) == configuration:copyright_since }}
-            - {{ now | format('Y') }}
-        {{ /unless }}
-        {{ configuration:copyright_name ?? config:app:name }}
-    </div>
+
+    {{#
+        <div class="text-md border-t border-white/8 p-5">
+            &copy; {{ configuration:copyright_since }}
+            {{ unless (now | format('Y')) == configuration:copyright_since }}
+                - {{ now | format('Y') }}
+            {{ /unless }}
+            {{ configuration:copyright_name ?? config:app:name }}
+        </div>
+    #}}
 </footer>
 <!-- End: /layout/_footer.antlers.html -->

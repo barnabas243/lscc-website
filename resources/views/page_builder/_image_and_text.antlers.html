@@ -8,7 +8,7 @@
     <div class="span-content mx-auto grid h-auto gap-y-8 md:grid-cols-12">
         <!-- Image -->
         <figure
-            class="{{ image_position == false ? 'order-first' : 'md:order-last' }} relative md:col-span-6"
+            class="{{ image_position == 'left' ? 'order-first' : 'md:order-last' }} relative md:col-span-6"
         >
             <!-- Image -->
             <img
@@ -20,10 +20,10 @@
 
         <!-- Text -->
         <article
-            class="{{ image_position == false ? 'order-last' : 'md:order-first' }} items-center align-middle md:col-span-6"
+            class="{{ image_position == left ? 'order-last' : 'md:order-first' }} items-center align-middle md:col-span-6"
         >
             <div
-                class="mb-4 flex h-full flex-col justify-center p-10 text-wrap lg:px-30"
+                class="mb-4 flex h-full flex-col justify-center p-10 text-wrap md:pt-30 lg:justify-center lg:px-30"
             >
                 {{ block:lead_text ?= { partial:typography/p :content="block:lead_text" class="font-mono text-sm" } }}
                 {{ block:title ?= { partial:typography/h2 :content="block:title" class=" md:text-5xl" } }}

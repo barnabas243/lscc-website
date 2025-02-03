@@ -1,0 +1,24 @@
+{{#
+    @name Video
+    @desc The video component. A sizeable YouTube or Vimeo video rendered in a responsive container with an optional caption.
+    @set page.article.video
+#}}
+
+<!-- /components/_video.antlers.html -->
+
+<div
+    class="flex h-[88vh] w-full flex-col items-center justify-center md:h-[66vh]"
+>
+    <iframe
+        class="h-full w-full p-3 md:p-10"
+        src="{{ video_url | embed_url }}"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+    ></iframe>
+</div>
+
+{{ slot:append }}
+    {{ partial:typography/caption }}
+{{ /slot:append }}
+<!-- End: /components/_video.antlers.html -->
