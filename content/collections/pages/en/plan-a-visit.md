@@ -23,16 +23,21 @@ page_builder:
           -
             type: text
             text: 'Wherever you’re at in life, we want to join you on the journey to life’s greatest potential in Christ'
-      -
-        type: set
-        attrs:
-          id: m6ox07vx
-          values:
-            type: video
-            size: md
-            video_url: 'https://www.google.com/maps/d/u/0/embed?mid=1tbrhR46NGiw3zvI7ptqqG0vwJntnbPw&ehbc=2E312F&noprof=1'
     background_color: '#ffffff'
     type: article
+    enabled: true
+  -
+    id: m6ox62cd
+    title: 'Service Locations'
+    cards:
+      -
+        id: m6ox68f9
+        title: 'Youth Service'
+        type: card
+        enabled: true
+    background_color: '#ffffff'
+    align_content: left
+    type: cards
     enabled: true
 seo_noindex: false
 seo_nofollow: false
@@ -40,5 +45,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738578943
+updated_at: 1738579234
 ---
