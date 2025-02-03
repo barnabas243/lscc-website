@@ -70,60 +70,16 @@ page_builder:
     type: cards
     enabled: true
   -
-    id: m6ozcg39
-    article:
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
-        content:
-          -
-            type: text
-            text: 'Click the '
-          -
-            type: text
-            marks:
-              -
-                type: bold
-            text: 'Panel Icon on the top left'
-          -
-            type: text
-            text: ' of the map to '
-          -
-            type: text
-            marks:
-              -
-                type: bold
-            text: 'open or close'
-          -
-            type: text
-            text: ' the locations panel for easy navigation. '
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
-      -
-        type: set
-        attrs:
-          id: m6ozcpou
-          values:
-            type: video
-            size: md
-            video_url: 'https://www.google.com/maps/d/u/0/embed?mid=1tbrhR46NGiw3zvI7ptqqG0vwJntnbPw&ehbc=2E312F&noprof=1'
-    background_color: '#ffffff'
-    type: article
-    enabled: true
-  -
     id: m6p1q740
     size: md
     video_url: 'https://www.google.com/maps/d/u/0/embed?mid=1tbrhR46NGiw3zvI7ptqqG0vwJntnbPw&ehbc=2E312F&noprof=1'
     type: video
-    enabled: false
+    enabled: true
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738586927
+updated_at: 1738587016
 ---
