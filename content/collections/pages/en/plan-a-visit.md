@@ -24,6 +24,24 @@ page_builder:
             type: text
             text: 'Wherever you’re at in life, we want to join you on the journey to life’s greatest potential in Christ'
       -
+        type: set
+        attrs:
+          id: m6p48ji9
+          values:
+            type: buttons
+            buttons:
+              -
+                id: m6p48k0q
+                label: 'Let Us Know You'
+                link_type: url
+                target_blank: true
+                url: 'https://docs.google.com/forms/d/e/1FAIpQLScbjmLUace7VqXthXmd4SZp0krPraQ5Hg0cwR5R0lyOuIZe2A/formResponse?pli=1'
+                button_type: button
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+      -
         type: heading
         attrs:
           textAlign: center
@@ -104,5 +122,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738590399
+updated_at: 1738591100
 ---
