@@ -21,6 +21,5 @@ use_plausible: false
 use_cloudflare_web_analytics: false
 tracker_type: none
 use_consent_banner: true
-embeds: true
-hide_by_default: true
+embeds: false
 display_style: left
