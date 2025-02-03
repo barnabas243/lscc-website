@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738506994
+updated_at: 1738575400
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -143,9 +143,6 @@ page_builder:
     id: m6acdjnb
     type: image_and_text
     enabled: true
-    lead_text: |-
-      1st Sunday: Combined 10:30am
-      Other Sundays: Youth 10:30am | Chinese 2:30pm
     header: 'Plan Your Visit'
     content: 'Join us in person! We’d love to host you. Find service times, directions, and everything else you need to know when visiting us for the first time by clicking the button below.'
     button:
@@ -165,7 +162,102 @@ page_builder:
         content:
           -
             type: text
-            text: 'Join us in person! We’d love to host you. Find service times, directions, and everything else you need to know when visiting us for the first time by clicking the button below.'
+            text: 'Whether you’re visiting for the first time or coming back, we can’t wait to have you with us!'
+      -
+        type: paragraph
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: bold
+            text: 'Service Times:'
+      -
+        type: bulletList
+        content:
+          -
+            type: listItem
+            content:
+              -
+                type: paragraph
+                content:
+                  -
+                    type: text
+                    marks:
+                      -
+                        type: bold
+                    text: '1st Sunday of the Month'
+                  -
+                    type: text
+                    text: ': Combined Service at '
+                  -
+                    type: text
+                    marks:
+                      -
+                        type: bold
+                    text: '10:30 AM'
+          -
+            type: listItem
+            content:
+              -
+                type: paragraph
+                content:
+                  -
+                    type: text
+                    marks:
+                      -
+                        type: bold
+                    text: 'Other Sundays'
+                  -
+                    type: text
+                    text: ':'
+              -
+                type: bulletList
+                content:
+                  -
+                    type: listItem
+                    content:
+                      -
+                        type: paragraph
+                        content:
+                          -
+                            type: text
+                            marks:
+                              -
+                                type: bold
+                            text: 'Youth Service'
+                          -
+                            type: text
+                            text: ' at '
+                          -
+                            type: text
+                            marks:
+                              -
+                                type: bold
+                            text: '10:30 AM'
+                  -
+                    type: listItem
+                    content:
+                      -
+                        type: paragraph
+                        content:
+                          -
+                            type: text
+                            marks:
+                              -
+                                type: bold
+                            text: 'Chinese Service'
+                          -
+                            type: text
+                            text: ' at '
+                          -
+                            type: text
+                            marks:
+                              -
+                                type: bold
+                            text: '2:30 PM'
     buttons:
       -
         id: m6lullkb
