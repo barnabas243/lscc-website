@@ -43,16 +43,6 @@ page_builder:
     id: m6p08akw
     cards:
       -
-        id: m6p08bz4
-        lead_text: 'Youth Service'
-        title: 10.30am
-        content: |-
-          Every Sunday (Except 1st Sunday)
-
-          56 Boundary Road, 549977
-        type: card
-        enabled: true
-      -
         id: m6p08d6g
         lead_text: 'Combined | Chinese Service'
         title: 2.30pm
@@ -64,6 +54,16 @@ page_builder:
           364A Upper Paya Lebar Rd, Singapore 534965
         background_color: '#000000'
         text_color: white
+        type: card
+        enabled: true
+      -
+        id: m6p08bz4
+        lead_text: 'Youth Service'
+        title: 10.30am
+        content: |-
+          Every Sunday (Except 1st Sunday)
+
+          56 Boundary Road, 549977
         type: card
         enabled: true
     background_color: '#ffffff'
@@ -132,5 +132,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738584397
+updated_at: 1738584437
 ---
