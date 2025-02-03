@@ -79,11 +79,36 @@ page_builder:
         content:
           -
             type: text
-            text: 'Google Maps'
+            marks:
+              -
+                type: bold
+            text: 'Interactive Map – Explore Locations'
       -
         type: paragraph
         attrs:
           textAlign: center
+        content:
+          -
+            type: text
+            text: 'Use the map below to explore key locations. Click the '
+          -
+            type: text
+            marks:
+              -
+                type: bold
+            text: 'button on the top left'
+          -
+            type: text
+            text: ' of the map to '
+          -
+            type: text
+            marks:
+              -
+                type: bold
+            text: 'open or close'
+          -
+            type: text
+            text: ' the locations panel for easy navigation. You can zoom in, pan around, and select a location for more details.'
       -
         type: paragraph
         attrs:
@@ -109,5 +134,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738582958
+updated_at: 1738583062
 ---
