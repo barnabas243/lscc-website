@@ -68,6 +68,7 @@ page_builder:
         type: card
         enabled: true
         background_color: '#ccffcd'
+        text_color: '#03490f'
     background_color: '#ffffff'
     align_content: left
     type: cards
@@ -134,5 +135,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738585926
+updated_at: 1738585989
 ---
