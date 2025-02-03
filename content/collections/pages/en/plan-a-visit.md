@@ -26,9 +26,11 @@ page_builder:
       -
         type: set
         attrs:
-          id: m6oww0rb
+          id: m6ox07vx
           values:
-            type: iframe
+            type: video
+            size: md
+            video_url: 'https://www.google.com/maps/d/u/0/embed?mid=1tbrhR46NGiw3zvI7ptqqG0vwJntnbPw&ehbc=2E312F&noprof=1'
     background_color: '#ffffff'
     type: article
     enabled: true
@@ -38,5 +40,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738578737
+updated_at: 1738578943
 ---
