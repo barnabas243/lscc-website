@@ -69,10 +69,31 @@ page_builder:
     type: cards
     enabled: true
   -
-    id: m6oyh3q3
-    size: md
-    video_url: 'https://www.google.com/maps/d/u/0/embed?mid=1tbrhR46NGiw3zvI7ptqqG0vwJntnbPw&ehbc=2E312F&noprof=1'
-    type: video
+    id: m6ozcg39
+    article:
+      -
+        type: heading
+        attrs:
+          textAlign: center
+          level: 3
+        content:
+          -
+            type: text
+            text: 'Google Maps'
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+      -
+        type: set
+        attrs:
+          id: m6ozcpou
+          values:
+            type: video
+            size: md
+            video_url: 'https://www.google.com/maps/d/u/0/embed?mid=1tbrhR46NGiw3zvI7ptqqG0vwJntnbPw&ehbc=2E312F&noprof=1'
+    background_color: '#ffffff'
+    type: article
     enabled: true
 seo_noindex: false
 seo_nofollow: false
@@ -80,5 +101,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738582789
+updated_at: 1738582882
 ---
