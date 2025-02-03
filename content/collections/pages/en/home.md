@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738575400
+updated_at: 1738575560
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -173,91 +173,35 @@ page_builder:
             marks:
               -
                 type: bold
-            text: 'Service Times:'
+            text: '1st Sunday of the Month'
+          -
+            type: text
+            text: ': Combined Service at '
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: '10:30 AM @ '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'Bethany Presbyterian Church, 364A Upper Paya Lebar Rd, Singapore 534965'
+                  rel: noopener
+                  target: null
+                  title: null
+              -
+                type: italic
+            text: 'Bethany Presbytarian Church Lvl1'
       -
-        type: bulletList
+        type: paragraph
         content:
           -
-            type: listItem
-            content:
-              -
-                type: paragraph
-                content:
-                  -
-                    type: text
-                    marks:
-                      -
-                        type: bold
-                    text: '1st Sunday of the Month'
-                  -
-                    type: text
-                    text: ': Combined Service at '
-                  -
-                    type: text
-                    marks:
-                      -
-                        type: bold
-                    text: '10:30 AM'
-          -
-            type: listItem
-            content:
-              -
-                type: paragraph
-                content:
-                  -
-                    type: text
-                    marks:
-                      -
-                        type: bold
-                    text: 'Other Sundays'
-                  -
-                    type: text
-                    text: ':'
-              -
-                type: bulletList
-                content:
-                  -
-                    type: listItem
-                    content:
-                      -
-                        type: paragraph
-                        content:
-                          -
-                            type: text
-                            marks:
-                              -
-                                type: bold
-                            text: 'Youth Service'
-                          -
-                            type: text
-                            text: ' at '
-                          -
-                            type: text
-                            marks:
-                              -
-                                type: bold
-                            text: '10:30 AM'
-                  -
-                    type: listItem
-                    content:
-                      -
-                        type: paragraph
-                        content:
-                          -
-                            type: text
-                            marks:
-                              -
-                                type: bold
-                            text: 'Chinese Service'
-                          -
-                            type: text
-                            text: ' at '
-                          -
-                            type: text
-                            marks:
-                              -
-                                type: bold
-                            text: '2:30 PM'
+            type: text
+            text: 'Other Sundays: Youth 10:30am | Chinese 2:30pm'
     buttons:
       -
         id: m6lullkb
