@@ -77,25 +77,13 @@ page_builder:
     id: m6ozcg39
     article:
       -
-        type: heading
-        attrs:
-          textAlign: center
-          level: 2
-        content:
-          -
-            type: text
-            marks:
-              -
-                type: bold
-            text: 'Interactive Map – Explore Locations'
-      -
         type: paragraph
         attrs:
           textAlign: center
         content:
           -
             type: text
-            text: 'Use the map below to explore key locations. Click the '
+            text: 'Click the '
           -
             type: text
             marks:
@@ -135,5 +123,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738586059
+updated_at: 1738586105
 ---
