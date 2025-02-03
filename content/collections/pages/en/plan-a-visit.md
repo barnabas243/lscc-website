@@ -67,7 +67,7 @@ page_builder:
           56 Boundary Road, 549977
         type: card
         enabled: true
-        background_color: '#ccffcd'
+        background_color: '#ebffeb'
         text_color: '#03490f'
     background_color: '#ffffff'
     align_content: left
@@ -135,5 +135,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738585989
+updated_at: 1738586025
 ---
