@@ -74,7 +74,7 @@ page_builder:
     align_content: left
     type: cards
     enabled: true
-    title: 'Service Locations'
+    title: Services
   -
     id: m6p1q740
     size: md
@@ -110,5 +110,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738592345
+updated_at: 1738592437
 ---
