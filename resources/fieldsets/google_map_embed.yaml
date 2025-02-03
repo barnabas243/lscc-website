@@ -1,2 +1,9 @@
 title: 'Google map embed'
-fields: {  }
+fields:
+  -
+    handle: iframe
+    field:
+      type: html
+      display: IFrame
+      instructions: 'insert google map embed iframe'
+      localizable: false
