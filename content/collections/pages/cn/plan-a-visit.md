@@ -72,6 +72,29 @@ page_builder:
     video_url: 'https://www.google.com/maps/d/u/0/embed?mid=1tbrhR46NGiw3zvI7ptqqG0vwJntnbPw&ehbc=2E312F&noprof=1'
     type: video
     enabled: true
+  -
+    id: m6p3bfil
+    cards:
+      -
+        id: m6p3bgod
+        lead_text: 'Looking for our upcoming events?'
+        title: 'Join Us for Our Upcoming Events!'
+        content: 'Take a look at our calendar to find all the upcoming services, events, and activities—we’d love for you to be a part of them!'
+        button:
+          -
+            id: m6p3bqn1
+            label: 'Our Calendar'
+            link_type: entry
+            target_blank: false
+            entry: 2b5787c1-8d85-448f-9421-bc38a3138956
+            button_type: button
+        text_color: '#ffffff'
+        type: card
+        enabled: true
+    background_color: '#000000'
+    align_content: left
+    type: cards
+    enabled: true
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738581356
+updated_at: 1738589563
 ---
