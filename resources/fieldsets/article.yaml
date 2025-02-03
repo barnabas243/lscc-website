@@ -46,6 +46,12 @@ fields:
               fields:
                 -
                   import: buttons
+            iframe:
+              display: IFrame
+              icon: programming-script-code-brackets
+              fields:
+                -
+                  import: google_map_embed
         text:
           display: Text
           instructions: 'Text based sets.'
