@@ -6,18 +6,21 @@ site_name: 'Living Streams Christian Church'
 hreflang_auto: true
 json_ld_type: organization
 organization_name: 'Living Streams Christian Church'
-breadcrumbs: false
+breadcrumbs: true
 use_social_image_generation: false
 use_sitemap: true
 sitemap_collections:
   - pages
 trackers_local: false
 trackers_staging: false
-trackers_production: false
+trackers_production: true
 use_google_site_verification: false
 use_fathom: false
 use_matomo: false
 use_plausible: false
 use_cloudflare_web_analytics: false
 tracker_type: none
-use_consent_banner: false
+use_consent_banner: true
+embeds: true
+hide_by_default: true
+display_style: left
