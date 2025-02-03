@@ -81,7 +81,7 @@ page_builder:
       -
         id: m6p2w8s1
         lead_text: 'Looking for our upcoming events?'
-        title: 'Join Us for Our Upcoming Events!'
+        title: 'Come Visit Us!'
         content: 'Take a look at our calendar to find all the upcoming services, events, and activities—we’d love for you to be a part of them!'
         button:
           -
@@ -104,5 +104,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738589597
+updated_at: 1738590399
 ---
