@@ -74,6 +74,7 @@ page_builder:
     size: md
     type: video
     enabled: true
+    video_url: 'https://www.google.com/maps/d/u/0/embed?mid=1tbrhR46NGiw3zvI7ptqqG0vwJntnbPw&ehbc=2E312F&noprof=1'
   -
     id: m6p2w7eg
     cards:
@@ -103,5 +104,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738589486
+updated_at: 1738589597
 ---
