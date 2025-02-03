@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738591675
+updated_at: 1738591883
 page_builder:
   -
     id: m6b693tx
@@ -52,11 +52,11 @@ page_builder:
       -
         type: set
         attrs:
-          id: m6p4civi
+          id: m6p4ppz4
           values:
             type: image
             image: whatsapp-image-2025-02-02-at-07.01.19_98d5d23b-(1).jpg
-            size: md
+            size: xl
     background_color: '#ffffff'
     type: article
     enabled: true
