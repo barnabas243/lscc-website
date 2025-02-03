@@ -24,6 +24,15 @@ page_builder:
             type: text
             text: 'Wherever you’re at in life, we want to join you on the journey to life’s greatest potential in Christ'
       -
+        type: set
+        attrs:
+          id: m6owixqu
+          values:
+            type: pull_quote
+            size: md
+            quote: 'THIS IS JUST A LOREM IPSUM TEST'
+            author: ME
+      -
         type: paragraph
         attrs:
           textAlign: center
@@ -54,5 +63,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738578085
+updated_at: 1738578136
 ---
