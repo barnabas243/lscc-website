@@ -37,19 +37,6 @@ page_builder:
                 target_blank: true
                 url: 'https://docs.google.com/forms/d/e/1FAIpQLScbjmLUace7VqXthXmd4SZp0krPraQ5Hg0cwR5R0lyOuIZe2A/formResponse?pli=1'
                 button_type: button
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
-      -
-        type: heading
-        attrs:
-          textAlign: center
-          level: 2
-        content:
-          -
-            type: text
-            text: 'Service Locations'
     background_color: '#ffffff'
     type: article
     enabled: true
@@ -87,6 +74,7 @@ page_builder:
     align_content: left
     type: cards
     enabled: true
+    title: 'Service Locations'
   -
     id: m6p1q740
     size: md
@@ -122,5 +110,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738591100
+updated_at: 1738592345
 ---
