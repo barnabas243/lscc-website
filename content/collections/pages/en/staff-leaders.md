@@ -55,7 +55,6 @@ page_builder:
           id: m6p4civi
           values:
             type: image
-            image: whatsapp-image-2025-02-02-at-07.01.19_98d5d23b.jpg
             size: md
     background_color: '#ffffff'
     type: article
