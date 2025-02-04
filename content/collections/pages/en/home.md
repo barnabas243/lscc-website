@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738656358
+updated_at: 1738656427
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -210,6 +210,7 @@ page_builder:
         enabled: true
         background_color: '#000000'
         text_color: '#ffffff'
+        image: 54488043-d244-470d-8ed1-388387af05b7.jpg
     type: cards
     enabled: true
     background_color: '#ffffff'
