@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738688830
+updated_at: 1738688964
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -338,6 +338,5 @@ page_builder:
     background_color: '#000000'
     type: article
     enabled: true
-seo_title: 'Living Streams Christian Church | Encounter God & Share the Gospel'
 seo_description: 'Living Streams Christian Church welcomes you to a faith-filled community where we encounter God, deepen our faith, and share His Word with others'
 ---
