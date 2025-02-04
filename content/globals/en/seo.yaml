@@ -1,6 +1,6 @@
 noindex_local: false
 noindex_staging: true
-noindex_production: true
+noindex_production: false
 title_separator: '|'
 site_name: 'Living Streams Christian Church'
 hreflang_auto: true
