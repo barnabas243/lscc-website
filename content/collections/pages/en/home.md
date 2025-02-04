@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738663349
+updated_at: 1738663424
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -95,7 +95,7 @@ page_builder:
                 type: textColor
                 attrs:
                   color: inherit
-            text: 'At Life Abundant Church, we believe that true growth in faith comes from worshipping and learning together. Our church is dedicated to creating a space that encourages spiritual growth and connection.'
+            text: 'At Life Abundant Church, we believe that true growth in faith comes from worshipping and learning together. our church is dedicated to creating a space that encourages spiritual growth and connection.'
       -
         type: paragraph
         attrs:
@@ -108,7 +108,20 @@ page_builder:
                 type: textColor
                 attrs:
                   color: inherit
-            text: 'We offer opportunities to engage with scripture, to learn about Jesus and to worship Him with others. Our church is open to people of all ages and backgrounds.'
+            text: 'We offer opportunities to engage with scripture, to learn about Jesus and to worship Him with others.'
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: textColor
+                attrs:
+                  color: inherit
+            text: 'Our church is open to people of all ages and backgrounds.'
       -
         type: paragraph
         attrs:
