@@ -5,9 +5,8 @@ tree:
     entry: 72196d4e-88d2-4a6e-a466-39df9fd27c31
   -
     entry: a11ba4cb-b361-4199-b466-aa4faf506bfd
-    children:
-      -
-        entry: eed0f05c-0ae1-4085-ad80-a2f01fb5f2a5
+  -
+    entry: eed0f05c-0ae1-4085-ad80-a2f01fb5f2a5
   -
     entry: 059d4d8d-fc60-49f8-8823-7da10549e84e
   -
