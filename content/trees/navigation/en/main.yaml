@@ -5,9 +5,10 @@ tree:
   -
     id: ba8621af-dc4d-400b-9870-a45dfd69cd27
     entry: a11ba4cb-b361-4199-b466-aa4faf506bfd
-  -
-    id: 2b143d13-4182-4eca-9cba-cfa27a153313
-    entry: eed0f05c-0ae1-4085-ad80-a2f01fb5f2a5
+    children:
+      -
+        id: 2b143d13-4182-4eca-9cba-cfa27a153313
+        entry: eed0f05c-0ae1-4085-ad80-a2f01fb5f2a5
   -
     id: 3fc8a3bf-93a4-4d5a-9284-ff19c81ab126
     entry: 72196d4e-88d2-4a6e-a466-39df9fd27c31
