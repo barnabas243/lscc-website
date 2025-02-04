@@ -1,4 +1,4 @@
-noindex_local: false
+noindex_local: true
 noindex_staging: true
 noindex_production: false
 title_separator: '|'
