@@ -210,7 +210,7 @@ page_builder:
         enabled: true
         background_color: '#000000'
         text_color: '#ffffff'
-        image: 54488043-d244-470d-8ed1-388387af05b7.jpg
+        image: outing.jpg
     type: cards
     enabled: true
     background_color: '#ffffff'
