@@ -195,7 +195,6 @@ page_builder:
         text_color: '#ffffff'
       -
         id: m6ae09ax
-        image: 54488043-d244-470d-8ed1-388387af05b7.jpg
         lead_text: 'OUR CALENDAR'
         title: 'See What’s Happening'
         content: "Check out this month's events to find out what's happening and how you can be involved. Explore the full list of upcoming ministries and services."
