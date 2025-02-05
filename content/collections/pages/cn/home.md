@@ -62,7 +62,7 @@ page_builder:
         entry: home
         button_type: button
     image_position: left
-    image: plan-a-visit.jpg
+    image: group-of-people.jpg
     title: 规划访问
     text:
       -
