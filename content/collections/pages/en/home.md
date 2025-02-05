@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738578337
+updated_at: 1738737286
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -39,6 +39,10 @@ page_builder:
         target_blank: false
         entry: 1bad468d-a97d-498d-aa3c-747b0251e740
         button_type: inline
+    overlay: true
+    overlay_from: '#000000CC'
+    overlay_via: '#00000099'
+    overlay_to: '#00000055'
   -
     id: m6afwl9k
     cards:
