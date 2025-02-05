@@ -58,7 +58,7 @@ page_builder:
     type: image_and_text
     enabled: true
     image_col_span: 7
-    text_col_span: 5
+    text_col_span: 4
     buttons:
       -
         id: m6rtqnuk
@@ -101,5 +101,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738755995
+updated_at: 1738756033
 ---
