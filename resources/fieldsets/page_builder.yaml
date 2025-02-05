@@ -57,11 +57,36 @@ fields:
                 -
                   import: buttons
                 -
-                  handle: overlay_true
+                  handle: overlay
                   field:
                     default: true
                     type: toggle
-                    display: 'Overlay True'
+                    display: overlay
+                    localizable: false
+                -
+                  handle: overlay_from
+                  field:
+                    swatches:
+                      - '#000000CC'
+                      - '#ffffff00'
+                    type: color
+                    display: overlay_from
+                    localizable: false
+                -
+                  handle: overlay_via
+                  field:
+                    swatches:
+                      - '#00000099'
+                    type: color
+                    display: overlay_via
+                    localizable: false
+                -
+                  handle: overlay_to
+                  field:
+                    swatches:
+                      - '#00000055'
+                    type: color
+                    display: overlay_to
                     localizable: false
             video:
               display: Video
