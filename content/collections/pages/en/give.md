@@ -16,14 +16,6 @@ page_builder:
     overlay_to: black/20
   -
     id: m6rhozuk
-    title: 'Why Give?'
-    text:
-      -
-        type: paragraph
-        content:
-          -
-            type: text
-            text: 'We see giving as another way we can our worship God, by generously and joyfully giving toward the ministry and mission he has called us to together.'
     image: whatsapp-image-2025-02-04-at-20.14.48_24015f6e.jpg
     image_position: right
     type: image_and_text
@@ -31,6 +23,23 @@ page_builder:
   -
     id: m6rk17ol
     article:
+      -
+        type: heading
+        attrs:
+          textAlign: center
+          level: 2
+        content:
+          -
+            type: text
+            text: 'Why Give?'
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+        content:
+          -
+            type: text
+            text: 'We see giving as another way we can our worship God, by generously and joyfully giving toward the ministry and mission he has called us to together.'
       -
         type: set
         attrs:
@@ -87,5 +96,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738747977
+updated_at: 1738748024
 ---
