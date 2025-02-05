@@ -62,7 +62,7 @@ page_builder:
     buttons:
       -
         id: m6rtqnuk
-        label: 'Copy QR'
+        label: 'download PayNow QR'
         link_type: asset
         target_blank: false
         asset: lscc_paynow_qr.png
@@ -73,7 +73,7 @@ page_builder:
         content:
           -
             type: text
-            text: 'Please follow the instructions on how to give'
+            text: 'Your generosity helps us continue our ministry and outreach efforts. Thank you for partnering with us!'
   -
     id: m6rsyjqp
     cards:
@@ -94,11 +94,12 @@ page_builder:
     align_content: left
     type: cards
     enabled: true
+    background_color: '#ffffff'
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738758601
+updated_at: 1738758809
 ---
