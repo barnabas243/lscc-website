@@ -60,6 +60,21 @@ page_builder:
     enabled: true
     image_col_span: '9'
     text_col_span: '3'
+    text:
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Uen: S90SS0084L'
+    buttons:
+      -
+        id: m6rtqnuk
+        label: 'copy qr code'
+        link_type: asset
+        target_blank: false
+        asset: lscc_paynow_qr.png
+        button_type: button
   -
     id: m6rsyjqp
     cards:
@@ -87,5 +102,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738754756
+updated_at: 1738755080
 ---
