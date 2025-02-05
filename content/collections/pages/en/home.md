@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738748758
+updated_at: 1738756572
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -143,6 +143,7 @@ page_builder:
     type: article
     enabled: false
     background_color: '#ffffff'
+    top_padding: 30
   -
     id: m6acdjnb
     type: image_and_text
@@ -176,6 +177,8 @@ page_builder:
         button_type: button
         entry: 6508ee95-c3b3-4635-9125-2c985271df30
     lead_text: "You're Invited!"
+    image_col_span: 6
+    text_col_span: 6
   -
     id: m6adz9gv
     cards:
@@ -252,6 +255,8 @@ page_builder:
         target_blank: false
         entry: 1bad468d-a97d-498d-aa3c-747b0251e740
         button_type: button
+    image_col_span: 6
+    text_col_span: 6
   -
     id: m6b72y1e
     cards:
@@ -323,9 +328,10 @@ page_builder:
           id: m6nk22fx
           values:
             type: video
-            size: md
+            size: xl
             video_url: 'https://www.youtube.com/watch?v=5PzwIhO1WVc'
     background_color: '#000000'
     type: article
     enabled: true
+    top_padding: 30
 ---
