@@ -1,7 +1,7 @@
 ---
 id: 3092b469-35cc-4af9-93b7-2fb27909e8d5
 origin: home
-title: '生命里遇见神 起来传扬福音'
+title: 首页
 page_builder:
   -
     id: m6ac6lel
@@ -170,5 +170,5 @@ page_builder:
     enabled: true
     align_content: left
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738689005
+updated_at: 1738413671
 ---
