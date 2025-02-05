@@ -65,8 +65,8 @@ page_builder:
     image_position: right
     type: image_and_text
     enabled: true
-    image_col_span: '8'
-    text_col_span: '4'
+    image_col_span: '10'
+    text_col_span: '2'
   -
     id: m6rsyjqp
     cards:
@@ -94,5 +94,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738754595
+updated_at: 1738754635
 ---
