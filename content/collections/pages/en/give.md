@@ -73,7 +73,7 @@ page_builder:
         content:
           -
             type: text
-            text: sssssssssssssssssssssssssss
+            text: 'Please follow the instructions on how to give'
   -
     id: m6rsyjqp
     cards:
@@ -101,5 +101,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738755541
+updated_at: 1738755677
 ---
