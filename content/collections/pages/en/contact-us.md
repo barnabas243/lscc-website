@@ -15,18 +15,27 @@ page_builder:
           -
             type: text
             text: 'Contact Us'
-      -
-        type: set
-        attrs:
-          id: m6rwrp57
-          values:
-            type: table
-            size: md
-            first_row_headers: false
-            first_column_headers: false
     background_color: '#ffffff'
     top_padding: 30
     type: article
+    enabled: true
+  -
+    id: m6ryuq3q
+    title: 'Get in touch with us'
+    text: |-
+      info@lscc.org.sg
+
+      +65 84077262
+
+      56/56A Boundary Road Singapore 549977
+
+      Office Hours
+
+      Tue to Fri: 9:00am - 5:00pm
+
+      Sat: 9:00am - 1:00pm
+    form: contact
+    type: form
     enabled: true
 seo_noindex: false
 seo_nofollow: false
@@ -34,5 +43,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738759937
+updated_at: 1738763486
 ---
