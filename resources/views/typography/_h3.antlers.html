@@ -8,5 +8,9 @@
 #}}
 
 <!-- /typography/_h3.antlers.html -->
-<{{ as or 'h3' }} class="font-bold leading-tight {{ color or 'text-neutral' }} {{ class }}">{{ content | nl2br }}</{{ as or 'h3' }}>
+<{{ as or 'h3' }}
+    class="{{ color or 'text-neutral' }} {{ class }} leading-tight font-bold"
+>
+    {{ content | nl2br }}
+</{{ as or 'h3' }}>
 <!-- End: /typography/_h3.antlers.html -->

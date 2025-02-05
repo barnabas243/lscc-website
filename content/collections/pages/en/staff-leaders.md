@@ -1,14 +1,14 @@
 ---
 id: eed0f05c-0ae1-4085-ad80-a2f01fb5f2a5
 blueprint: page
-title: 'Staff & Leaders'
+title: Leadership
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1737747993
+updated_at: 1738694516
 page_builder:
   -
     id: m6b693tx
@@ -17,7 +17,7 @@ page_builder:
         type: heading
         attrs:
           textAlign: center
-          level: 3
+          level: 1
         content:
           -
             type: text
@@ -29,18 +29,10 @@ page_builder:
         type: paragraph
         attrs:
           textAlign: center
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
         content:
           -
             type: text
-            text: 'Our dedicated team of pastors and church staff are here to provide spiritual guidance and support,'
+            text: 'Our dedicated team of church staff and pastor are here to provide spiritual guidance and support,'
       -
         type: paragraph
         attrs:
@@ -49,6 +41,14 @@ page_builder:
           -
             type: text
             text: ' as well as resources to help you on your faith journey.'
+      -
+        type: set
+        attrs:
+          id: m6p4ppz4
+          values:
+            type: image
+            image: whatsapp-image-2025-02-02-at-07.01.19_98d5d23b-(1).jpg
+            size: xl
     background_color: '#ffffff'
     type: article
     enabled: true

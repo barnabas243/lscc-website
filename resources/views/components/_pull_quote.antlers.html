@@ -6,22 +6,21 @@
 
 <!-- /components/_pull_quote.antlers.html -->
 <figure
-    class="
-        not-prose
-        {{ switch(
-            (size == 'md') => 'span-md',
-            (size == 'lg') => 'span-lg',
-            (size == 'xl') => 'span-xl',
-            () => 'span-md'
-        )}}
-    "
+    class="not-prose {{ switch(
+    (size == 'md') => 'span-md',
+    (size == 'lg') => 'span-lg',
+    (size == 'xl') => 'span-xl',
+    () => 'span-md') }}"
 >
-    <blockquote class="p-0 m-0 text-3xl font-bold leading-snug text-neutral">
-        <span class="text-primary">&OpenCurlyDoubleQuote;</span>{{ quote | widont | nl2br }}<span class="text-primary">&CloseCurlyDoubleQuote;</span>
+    <blockquote class="text-neutral m-0 p-0 text-3xl leading-snug font-bold">
+        <span class="text-primary">&OpenCurlyDoubleQuote;</span>
+        {{ quote | widont | nl2br }}
+        <span class="text-primary">&CloseCurlyDoubleQuote;</span>
     </blockquote>
     {{ if author }}
-        <figcaption class="block mt-4 font-bold text-neutral">
-            <span class="text-primary">- </span>{{ author }}
+        <figcaption class="text-neutral mt-4 block font-bold">
+            <span class="text-primary">-</span>
+            {{ author }}
         </figcaption>
     {{ /if }}
 </figure>

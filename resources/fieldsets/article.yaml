@@ -46,6 +46,11 @@ fields:
               fields:
                 -
                   import: buttons
+            cards:
+              display: Cards
+              fields:
+                -
+                  import: cards
         text:
           display: Text
           instructions: 'Text based sets.'
@@ -91,4 +96,11 @@ fields:
       display: 'Background Color'
       instructions: 'Select the background color for this article.'
       default: '#ffffff'
+      localizable: false
+  -
+    handle: top_padding
+    field:
+      default: '30'
+      type: integer
+      display: 'Top Padding'
       localizable: false

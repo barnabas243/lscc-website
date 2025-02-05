@@ -56,6 +56,36 @@ fields:
                     localizable: false
                 -
                   import: buttons
+                -
+                  handle: overlay
+                  field:
+                    default: true
+                    type: toggle
+                    display: overlay
+                    localizable: false
+                -
+                  handle: overlay_from
+                  field:
+                    default: black/100
+                    type: text
+                    display: overlay_from
+                    localizable: false
+                    width: 33
+                -
+                  handle: overlay_via
+                  field:
+                    type: text
+                    display: overlay_via
+                    localizable: false
+                    width: 33
+                -
+                  handle: overlay_to
+                  field:
+                    default: black/50
+                    type: text
+                    display: overlay_to
+                    localizable: false
+                    width: 33
             video:
               display: Video
               icon: media-webcam-video

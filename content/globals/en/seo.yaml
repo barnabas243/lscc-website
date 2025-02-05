@@ -2,19 +2,22 @@ noindex_local: false
 noindex_staging: false
 noindex_production: false
 title_separator: '|'
-hreflang_auto: true
-json_ld_type: none
-breadcrumbs: false
-use_social_image_generation: true
-social_images_collections:
-  - events
-use_no_sandbox_for_social_image_generation: false
+
+site_name: 'Living Streams Christian Church'
+hreflang_auto: false
+json_ld_type: organization
+organization_name: 'Living Streams Christian Church'
+organization_logo: lscc.svg_20250204_213415_0000.png
+breadcrumbs: true
+use_social_image_generation: false
+og_image: lscc.svg_20250204_213524_0000.png
 use_sitemap: true
 sitemap_collections:
   - pages
-trackers_local: false
-trackers_staging: false
-trackers_production: false
+trackers_local: true
+trackers_staging: true
+trackers_production: true
+
 use_google_site_verification: false
 use_fathom: false
 use_matomo: false
@@ -22,3 +25,4 @@ use_plausible: false
 use_cloudflare_web_analytics: false
 tracker_type: none
 use_consent_banner: false
+

@@ -5,18 +5,15 @@ fields:
     field:
       type: textarea
       display: lead_text
+      localizable: false
   -
     handle: title
     field:
-      input_type: text
-      antlers: false
       display: Title
       type: text
-      icon: text
-      listable: hidden
-      instructions_position: above
-      visibility: visible
       always_save: false
+      width: 50
+      localizable: false
   -
     handle: text
     field: common.text_basic
@@ -31,6 +28,7 @@ fields:
       display: Text
       validate:
         - required
+      width: 50
   -
     import: buttons
   -
@@ -49,12 +47,30 @@ fields:
       default: right
       display: 'Image position'
       type: button_group
-      icon: button_group
       replicator_preview: false
       width: 50
-      listable: hidden
-      instructions_position: above
-      visibility: visible
       always_save: false
       validate:
         - required
+      localizable: false
+  -
+    handle: image_col_span
+    field:
+      default: '6'
+      type: integer
+      display: 'Image Col Span'
+      localizable: false
+      width: 50
+      validate:
+        - required
+        - 'max:10'
+        - 'min:6'
+        - null
+  -
+    handle: text_col_span
+    field:
+      default: '6'
+      type: integer
+      display: 'Text Col Span'
+      localizable: false
+      width: 50

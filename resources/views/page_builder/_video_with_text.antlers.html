@@ -1,0 +1,33 @@
+{{#
+    @name Video and Text @desc A flexible video and text layout block with
+    options for alternating video placement using Tailwind CSS.
+#}}
+
+<!-- /page_builder/_video_and_text.antlers.html -->
+{{ partial:page_builder/block }}
+    <div class="span-content mx-auto grid h-auto gap-y-8 md:grid-cols-12">
+        <!-- Video Section -->
+        <div
+            class="{{ video_with_text.layout == 'right' ? 'md:order-last' : 'md:order-first' }} relative md:col-span-6"
+        >
+            <!-- Video Embed -->
+            {{ partial:components/_video video_url="video_with_text.grid_field.0.video_url" }}
+        </div>
+
+        <!-- Text Section -->
+        <div
+            class="{{ video_with_text.layout == 'right' ? 'md:order-first' : 'md:order-last' }} items-center align-middle md:col-span-6"
+        >
+            <div
+                class="mb-4 flex h-full flex-col justify-center p-10 text-wrap lg:px-30"
+            >
+                {{ block:title ?= { partial:typography/h2 :content="block:title" class="md:text-5xl" } }}
+                {{ partial:typography/prose class="text-xl mt-5" }}
+                    {{ video_with_text.grid_field.0.text }}
+                {{ /partial:typography/prose }}
+                {{ partial:components/buttons class="mt-5" }}
+            </div>
+        </div>
+    </div>
+{{ /partial:page_builder/block }}
+<!-- End: /page_builder/_video_and_text.antlers.html -->

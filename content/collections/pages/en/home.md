@@ -1,14 +1,15 @@
 ---
 id: home
 blueprint: page
-title: Home
+title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738424472
+updated_at: 1738758553
+
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
-sitemap_priority: 0.5
+sitemap_priority: '1'
 page_builder:
   -
     id: m6ac6lel
@@ -28,10 +29,10 @@ page_builder:
       -
         id: m6mcvh9r
         label: 'Plan A Visit'
-        link_type: url
-        target_blank: true
-        url: 'https://docs.google.com/forms/d/e/1FAIpQLScbjmLUace7VqXthXmd4SZp0krPraQ5Hg0cwR5R0lyOuIZe2A/formResponse?pli=1'
+        link_type: entry
+        target_blank: false
         button_type: button
+        entry: 6508ee95-c3b3-4635-9125-2c985271df30
       -
         id: m6mczt0f
         label: 'Get Involved'
@@ -39,6 +40,10 @@ page_builder:
         target_blank: false
         entry: 1bad468d-a97d-498d-aa3c-747b0251e740
         button_type: inline
+    overlay: true
+    overlay_from: black/100
+    overlay_to: black/50
+    gradient_direction: b
   -
     id: m6afwl9k
     cards:
@@ -95,7 +100,7 @@ page_builder:
                 type: textColor
                 attrs:
                   color: inherit
-            text: 'At Life Abundant Church, we believe that true growth in faith comes from worshipping and learning together. Our church is dedicated to creating a space that encourages spiritual growth and connection.'
+            text: 'At Life Abundant Church, we believe that true growth in faith comes from worshipping and learning together. our church is dedicated to creating a space that encourages spiritual growth and connection.'
       -
         type: paragraph
         attrs:
@@ -108,7 +113,20 @@ page_builder:
                 type: textColor
                 attrs:
                   color: inherit
-            text: 'We offer opportunities to engage with scripture, to learn about Jesus and to worship Him with others. Our church is open to people of all ages and backgrounds.'
+            text: 'We offer opportunities to engage with scripture, to learn about Jesus and to worship Him with others.'
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: textColor
+                attrs:
+                  color: inherit
+            text: 'Our church is open to people of all ages and backgrounds.'
       -
         type: paragraph
         attrs:
@@ -139,13 +157,11 @@ page_builder:
     type: article
     enabled: false
     background_color: '#ffffff'
+    top_padding: 30
   -
     id: m6acdjnb
     type: image_and_text
     enabled: true
-    lead_text: |-
-      1st Sunday: Combined 10:30am
-      Other Sundays: Youth 10:30am | Chinese 2:30pm
     header: 'Plan Your Visit'
     content: 'Join us in person! We’d love to host you. Find service times, directions, and everything else you need to know when visiting us for the first time by clicking the button below.'
     button:
@@ -165,15 +181,18 @@ page_builder:
         content:
           -
             type: text
-            text: 'Join us in person! We’d love to host you. Find service times, directions, and everything else you need to know when visiting us for the first time by clicking the button below.'
+            text: 'Whether you’re visiting for the first time or coming back, we can’t wait to have you with us!'
     buttons:
       -
         id: m6lullkb
         label: 'Plan A Visit'
-        link_type: url
-        target_blank: true
+        link_type: entry
+        target_blank: false
         button_type: button
-        url: 'https://docs.google.com/forms/d/e/1FAIpQLScbjmLUace7VqXthXmd4SZp0krPraQ5Hg0cwR5R0lyOuIZe2A/formResponse?pli=1'
+        entry: 6508ee95-c3b3-4635-9125-2c985271df30
+    lead_text: "You're Invited!"
+    image_col_span: 6
+    text_col_span: 6
   -
     id: m6adz9gv
     cards:
@@ -197,7 +216,7 @@ page_builder:
         text_color: '#ffffff'
       -
         id: m6ae09ax
-        image: whatsapp-image-2025-01-24-at-14.40.28_3612e76c.jpg
+        image: outing.jpg
         lead_text: 'OUR CALENDAR'
         title: 'See What’s Happening'
         content: "Check out this month's events to find out what's happening and how you can be involved. Explore the full list of upcoming ministries and services."
@@ -213,6 +232,7 @@ page_builder:
         enabled: true
         background_color: '#000000'
         text_color: '#ffffff'
+        image: outing.jpg
     type: cards
     enabled: true
     background_color: '#ffffff'
@@ -250,18 +270,96 @@ page_builder:
         target_blank: false
         entry: 1bad468d-a97d-498d-aa3c-747b0251e740
         button_type: button
+    image_col_span: 6
+    text_col_span: 6
   -
     id: m6b72y1e
     cards:
       -
         id: m6b731ei
-        title: 'Join the Conversation'
+        title: 'Join Us on a Mission'
         content: 'Click here to hear the latest sermon, lecture, or event from our church services. Follow along by taking your own notes and join the dialogue that we’re having about Jesus.'
         type: card
         enabled: true
         text_color: '#ffffff'
     background_color: '#000000'
     type: cards
-    enabled: true
+    enabled: false
     align_content: left
+  -
+    id: m6njj1kw
+    article:
+      -
+        type: heading
+        attrs:
+          textAlign: center
+          level: 2
+          level: 2
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: bold
+              -
+                type: textColor
+                attrs:
+                  color: '#fff'
+            text: 'Join Us on a Mission'
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: bold
+              -
+                type: textColor
+                attrs:
+                  color: '#fff'
+            text: 'Be a part of the journey as we serve and spread hope.'
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+<<<<<<< HEAD
+=======
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: textColor
+                attrs:
+                  color: '#000'
+            text: 'Watch the video below to see the impact of our latest mission trip. Discover how we’re reaching people, sharing Christ’s love, and how you can get involved in our mission efforts.'
+>>>>>>> f8b72fc247915d580196a895f3811035813c4df5
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+      -
+        type: set
+        attrs:
+          id: m6nk22fx
+          enabled: false
+          values:
+            type: video
+<<<<<<< HEAD
+            size: xl
+=======
+            size: lg
+>>>>>>> f8b72fc247915d580196a895f3811035813c4df5
+            video_url: 'https://www.youtube.com/watch?v=5PzwIhO1WVc'
+    background_color: '#000000'
+    type: article
+    enabled: true
+<<<<<<< HEAD
+    top_padding: 20
+=======
+seo_description: 'Living Streams Christian Church welcomes you to a faith-filled community where we encounter God, deepen our faith, and share His Word with others'
+>>>>>>> f8b72fc247915d580196a895f3811035813c4df5
 ---
