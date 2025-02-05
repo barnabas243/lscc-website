@@ -20,7 +20,7 @@ page_builder:
     image_position: false
     type: image_and_text
     enabled: true
-    image: boy-smiling.webp
+    image: whatsapp-image-2025-01-24-at-14.06.17_60939dda.webp
     title: 'About Us'
     text:
       -
