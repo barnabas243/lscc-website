@@ -4,12 +4,11 @@ blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
 updated_at: 1738758553
-
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
-sitemap_priority: '1'
+sitemap_priority: 0.5
 page_builder:
   -
     id: m6ac6lel
@@ -100,7 +99,7 @@ page_builder:
                 type: textColor
                 attrs:
                   color: inherit
-            text: 'At Life Abundant Church, we believe that true growth in faith comes from worshipping and learning together. our church is dedicated to creating a space that encourages spiritual growth and connection.'
+            text: 'At Life Abundant Church, we believe that true growth in faith comes from worshipping and learning together. Our church is dedicated to creating a space that encourages spiritual growth and connection.'
       -
         type: paragraph
         attrs:
@@ -113,20 +112,7 @@ page_builder:
                 type: textColor
                 attrs:
                   color: inherit
-            text: 'We offer opportunities to engage with scripture, to learn about Jesus and to worship Him with others.'
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
-        content:
-          -
-            type: text
-            marks:
-              -
-                type: textColor
-                attrs:
-                  color: inherit
-            text: 'Our church is open to people of all ages and backgrounds.'
+            text: 'We offer opportunities to engage with scripture, to learn about Jesus and to worship Him with others. Our church is open to people of all ages and backgrounds.'
       -
         type: paragraph
         attrs:
@@ -232,7 +218,6 @@ page_builder:
         enabled: true
         background_color: '#000000'
         text_color: '#ffffff'
-        image: outing.jpg
     type: cards
     enabled: true
     background_color: '#ffffff'
@@ -294,7 +279,6 @@ page_builder:
         attrs:
           textAlign: center
           level: 2
-          level: 2
         content:
           -
             type: text
@@ -325,18 +309,6 @@ page_builder:
         type: paragraph
         attrs:
           textAlign: center
-<<<<<<< HEAD
-=======
-        content:
-          -
-            type: text
-            marks:
-              -
-                type: textColor
-                attrs:
-                  color: '#000'
-            text: 'Watch the video below to see the impact of our latest mission trip. Discover how we’re reaching people, sharing Christ’s love, and how you can get involved in our mission efforts.'
->>>>>>> f8b72fc247915d580196a895f3811035813c4df5
       -
         type: paragraph
         attrs:
@@ -348,18 +320,10 @@ page_builder:
           enabled: false
           values:
             type: video
-<<<<<<< HEAD
             size: xl
-=======
-            size: lg
->>>>>>> f8b72fc247915d580196a895f3811035813c4df5
             video_url: 'https://www.youtube.com/watch?v=5PzwIhO1WVc'
     background_color: '#000000'
     type: article
     enabled: true
-<<<<<<< HEAD
     top_padding: 20
-=======
-seo_description: 'Living Streams Christian Church welcomes you to a faith-filled community where we encounter God, deepen our faith, and share His Word with others'
->>>>>>> f8b72fc247915d580196a895f3811035813c4df5
 ---
