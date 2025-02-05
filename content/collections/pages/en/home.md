@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738756572
+updated_at: 1738758458
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -309,15 +309,6 @@ page_builder:
         type: paragraph
         attrs:
           textAlign: center
-        content:
-          -
-            type: text
-            marks:
-              -
-                type: textColor
-                attrs:
-                  color: '#fff'
-            text: 'Watch the video below to see the impact of our latest mission trip. Discover how we’re reaching people, sharing Christ’s love, and how you can get involved in our mission efforts.'
       -
         type: paragraph
         attrs:
@@ -326,6 +317,7 @@ page_builder:
         type: set
         attrs:
           id: m6nk22fx
+          enabled: false
           values:
             type: video
             size: xl
