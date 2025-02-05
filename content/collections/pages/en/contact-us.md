@@ -30,10 +30,9 @@ page_builder:
        📍  56/56A Boundary Road Singapore 549977
 
 
-      Office Hours
-
-      Tue to Fri: 9:00am - 5:00pm
-                 Sat: 9:00am - 1:00pm
+      Office Hours:
+      🔸 Tue to Fri: 9:00am - 5:00pm
+      🔸 Sat: 9:00am - 1:00pm
     form: contact
     type: form
     enabled: true
@@ -43,5 +42,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738764159
+updated_at: 1738764270
 ---
