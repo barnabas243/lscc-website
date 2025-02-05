@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738762403
+updated_at: 1738762472
 page_builder:
   -
     id: m69hfxa9
@@ -46,8 +46,8 @@ page_builder:
         id: m6ry09yg
         title: 'Our Mission'
         content: 'Our mission is to encounter God in every aspect of life, to experience His transformative power, and to arise as a community of believers, empowered by the Holy Spirit, to boldly share the gospel with those around us and beyond.'
-        background_color: '#FF5722'
-        text_color: '#ffffff'
+        background_color: '#FF6F61'
+        text_color: '#F8F8F8'
         type: card
         enabled: true
       -
@@ -57,14 +57,14 @@ page_builder:
         type: card
         enabled: true
         background_color: '#006D6D'
-        text_color: '#ffffff'
+        text_color: '#F2C94C'
       -
         id: m6rxz6mm
         title: 'Our Beliefs'
         type: card
         enabled: true
         background_color: '#920286'
-        text_color: '#ffffff'
+        text_color: '#F8F8F8'
     background_color: '#000000'
     align_content: left
     type: cards
