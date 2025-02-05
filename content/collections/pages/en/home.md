@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738746096
+updated_at: 1738747263
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -42,6 +42,7 @@ page_builder:
     overlay: true
     overlay_from: black/100
     overlay_to: black/50
+    gradient_direction: b
   -
     id: m6afwl9k
     cards:
