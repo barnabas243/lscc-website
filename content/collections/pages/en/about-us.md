@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738761872
+updated_at: 1738761975
 page_builder:
   -
     id: m69hfxa9
@@ -49,6 +49,11 @@ page_builder:
         type: card
         enabled: true
         background_color: '#ffffff'
+      -
+        id: m6rxz6mm
+        title: 'Our Beliefs'
+        type: card
+        enabled: true
     background_color: '#000000'
     align_content: left
     type: cards
