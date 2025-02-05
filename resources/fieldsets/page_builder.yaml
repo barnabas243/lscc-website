@@ -71,6 +71,7 @@ fields:
                     display: overlay_from
                     localizable: false
                     width: 33
+                    prepend: from-
                 -
                   handle: overlay_via
                   field:
@@ -78,6 +79,7 @@ fields:
                     display: overlay_via
                     localizable: false
                     width: 33
+                    prepend: via-
                 -
                   handle: overlay_to
                   field:
@@ -86,6 +88,7 @@ fields:
                     display: overlay_to
                     localizable: false
                     width: 33
+                    prepend: to-
             video:
               display: Video
               icon: media-webcam-video
