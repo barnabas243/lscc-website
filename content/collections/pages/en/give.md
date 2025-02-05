@@ -32,6 +32,22 @@ page_builder:
     id: m6rk17ol
     article:
       -
+        type: set
+        attrs:
+          id: m6rpnc7c
+          values:
+            type: image
+            image: whatsapp-image-2025-02-04-at-20.14.48_24015f6e.jpg
+            size: lg
+      -
+        type: paragraph
+        attrs:
+          textAlign: left
+      -
+        type: paragraph
+        attrs:
+          textAlign: left
+      -
         type: heading
         attrs:
           textAlign: center
@@ -71,5 +87,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738747659
+updated_at: 1738747977
 ---
