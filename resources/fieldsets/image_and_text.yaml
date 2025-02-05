@@ -56,39 +56,21 @@ fields:
   -
     handle: image_col_span
     field:
-      options:
-        - '1'
-        - '2'
-        - '3'
-        - '4'
-        - '5'
-        - '6'
-        - '7'
-        - '8'
-        - '9'
-        - '10'
       default: '6'
-      type: width
-      display: image_col_span
+      type: integer
+      display: 'Image Col Span'
       localizable: false
       width: 50
+      validate:
+        - required
+        - 'max:10'
+        - 'min:6'
+        - null
   -
     handle: text_col_span
     field:
-      options:
-        - '1'
-        - '2'
-        - '3'
-        - '4'
-        - '5'
-        - '6'
-        - '7'
-        - '8'
-        - '9'
-        - '10'
       default: '6'
-      type: width
-      display: text_col_span
+      type: integer
+      display: 'Text Col Span'
       localizable: false
       width: 50
-      always_save: false
