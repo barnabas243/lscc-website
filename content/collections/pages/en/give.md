@@ -11,6 +11,9 @@ page_builder:
     overlay_true: false
     title: '2 Corinthians 9:7'
     description: 'Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.'
+    overlay: true
+    overlay_from: '#000000CC'
+    overlay_via: '#00000099'
   -
     id: m6rhozuk
     title: 'Why Give?'
@@ -58,5 +61,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738735834
+updated_at: 1738737232
 ---
