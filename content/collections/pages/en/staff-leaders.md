@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738591883
+updated_at: 1738694516
 page_builder:
   -
     id: m6b693tx
@@ -17,7 +17,7 @@ page_builder:
         type: heading
         attrs:
           textAlign: center
-          level: 3
+          level: 1
         content:
           -
             type: text
@@ -29,18 +29,10 @@ page_builder:
         type: paragraph
         attrs:
           textAlign: center
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
         content:
           -
             type: text
-            text: 'Our dedicated team of pastors and church staff are here to provide spiritual guidance and support,'
+            text: 'Our dedicated team of church staff and pastor are here to provide spiritual guidance and support,'
       -
         type: paragraph
         attrs:
