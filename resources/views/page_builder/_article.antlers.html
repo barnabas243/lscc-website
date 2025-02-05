@@ -6,14 +6,13 @@
 #}}
 
 <!-- /page_builder/_article.antlers.html -->
-{{ partial:page_builder/block }}
+{{ partial:page_builder/block background_color="{{ block:background_color}}" }}
     {{ partial:typography/prose as="article" class="contents" }}
         <section
-            class="span-content mx-auto justify-center px-5 pt-30 pb-10 md:px-20 md:pt-40"
-            style="background-color: {{ block:background_color ?: '#FFFFFF' }}"
+            class="fluid-grid span-content pt-{{ block:top_padding }} mx-auto justify-center px-5 pb-10 md:px-20"
         >
             {{ article }}
-                {{ partial src="components/{type}" class='justify-center items-center text-xl px-7 py-5' }}
+                {{ partial src="components/{type}" class='justify-center items-center px-7 py-5' type="{type}" }}
             {{ /article }}
         </section>
     {{ /partial:typography/prose }}

@@ -28,7 +28,7 @@
                 {{ /if }}
                 <div
                     class="{{ (total_results === 1)
- ? 'items-center text-center md:p-40':'md:px-20' }} flex h-full w-full flex-col px-6 py-20 shadow-lg"
+ ? 'items-center text-left md:text-center md:p-40' : (total_results > 2 ? 'md:px-12' : 'md:px-20') }} flex h-full w-full flex-col px-6 py-20"
                     style="
                         background-color: {{ background_color }};
                         color: {{ text_color }};
@@ -37,7 +37,7 @@
                     {{ partial:typography/p class="font-mono mb-2 text-md" :content="lead_text" :color="text_color" }}
                     {{ partial:typography/h2 class="mb-4 text-4xl md:text-5xl" :content="title" :color="text_color" }}
                     {{ if content }}
-                        {{ partial:typography/p class="text-xl lg:w-3/4" :content="content" :color="text_color" }}
+                        {{ partial:typography/p class="text-xl " :content="content" :color="text_color" }}
                     {{ /if }}
                     {{ button }}
                         {{ partial:components/button class=" text-xl md:w-95 justify-center mt-4" }}

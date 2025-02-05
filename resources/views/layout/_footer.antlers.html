@@ -8,34 +8,27 @@
         >
             <!-- Logo and Site Name -->
             {{ partial:components/logo class="w-50" is_footer="true" }}
+            <!-- UEN -->
+            {{ partial:typography/p class="pt-4" content="UEN: S90SS0084L" color="#FFFFFF" }}
             <!-- Meeting Information -->
-            <p class="mt-6 font-mono">
-                <strong>Sunday</strong>
-                :
-                <i>Combined</i>
-                10:30am
-            </p>
-            <p class="mt-1 font-mono">
-                <strong>Other Sundays</strong>
-                :
-                <i>Youth</i>
-                10:30am |
-                <i>Chinese</i>
-                2:30pm
-            </p>
-
+            {{ partial:typography/p class="pt-6 font-mono" content="1st Sunday: Combined 10:30am" color="#FFFFFF" }}
+            {{ partial:typography/p class="pt-1 font-mono" content="Other Sundays: Youth 10:30am | Chinese 2:30pm" color="#FFFFFF" }}
             <!-- Contact Info -->
-            <div class="mt-8 text-sm text-xl">
-                <p class="mb-4">
-                    No matter the situation, you can always feel free to reach
-                    out, even if it’s just to say hi 👋
-                </p>
+            <div class="mt-8">
+                {{ partial:typography/p class="mb-8 text-lg" content="No matter the situation, you can always feel free to reach out, even if it’s just to say hi 👋" color="#FFFFFF" }}
+                {{ partial:typography/p content="<a href='mailto:livingstreams56@gmail.com' class='text-white underline hover:text-gray-400'>info@lscc.org.sg</a>" color="#FFFFFF" }}
+                {{ partial:typography/p content="<a href='tel:+6584077262' class='text-white underline hover:text-gray-400'>+65 84077262</a>" color="#FFFFFF" }}
+                {{ partial:typography/p content="<a href='https://maps.app.goo.gl/UP3zKkkXrDyR6mFu8' target='_blank' class='text-white underline hover:text-gray-400'>56/56A Boundary Road Singapore 549977</a>" color="#FFFFFF" }}
+                <!-- Office Hours -->
+                <div class="mt-8">
+                    {{ partial:typography/p class="font-semibold" content="Office Hours" color="#FFFFFF" }}
+                    {{ partial:typography/p class="font-mono " content="Tue to Fri: 9:00am - 5:00pm" color="#FFFFFF" }}
+                    {{ partial:typography/p class="font-mono last:mb-6" content="Sat: 9:00am - 1:00pm" color="#FFFFFF" }}
+                </div>
+
                 <!-- Follow Us On -->
-                <div class="mt-5 flex items-center gap-x-3 md:order-none">
-                    <span class="text-lg font-semibold">
-                        {{ trans:strings.follow_us_on }}
-                    </span>
-                    <!-- Text for Follow Us on -->
+                <div class="flex items-center gap-x-3 pt-8 md:order-none">
+                    {{ partial:typography/p class="first:mb-0 text-lg font-semibold" content="{{ trans:strings.follow_us_on }}" color="#FFFFFF" }}
                     {{ if social_media:social_media }}
                         {{ social_media:social_media }}
                             <a
@@ -45,39 +38,14 @@
                                 target="_blank"
                                 class="flex h-6 w-6 items-center justify-center transition-colors duration-300 hover:text-gray-400 md:h-8 md:w-8"
                             >
-                                <!-- Social media icons with larger size -->
                                 {{ svg :src="type" class="w-8 h-8 md:w-6 md:h-6 overflow-visible fill-current" alt="" aria-hidden="true" }}
                             </a>
                         {{ /social_media:social_media }}
                     {{ /if }}
                 </div>
-                <p class="mt-6">
-                    <a
-                        href="mailto:livingstreams56@gmail.com"
-                        class="text-white underline hover:text-gray-400"
-                    >
-                        livingstreams56@gmail.com
-                    </a>
-                </p>
-                <p class="mt-6">
-                    <a
-                        href="tel:+6584077262"
-                        class="text-white underline hover:text-gray-400"
-                    >
-                        +65 84077262
-                    </a>
-                </p>
-                <p class="mt-6">
-                    <a
-                        href="https://maps.app.goo.gl/UP3zKkkXrDyR6mFu8"
-                        target="_blank"
-                        class="text-white underline hover:text-gray-400"
-                    >
-                        56/56A Boundary Road Singapore 549977
-                    </a>
-                </p>
             </div>
         </div>
+
         <!-- Vertical Divider -->
         <div class="hidden border-l border-white/8 md:block"></div>
 
@@ -88,29 +56,33 @@
             <div
                 class="grid grid-cols-1 gap-8 px-12 md:justify-center lg:grid-cols-2 lg:text-center"
             >
-                {{ nav:main max_depth="2" include_home="true" select="title|url" }}
+                {{ nav:main max_depth="2" include_home="true" select="title|url|children" }}
                     {{ unless no_results }}
-                        <a
-                            href="{{ url }}"
-                            class="text-xl text-white hover:text-gray-400"
-                            {{ is_current ?= 'aria-current="page"' }}
-                        >
-                            {{ title }}
-                        </a>
+                        {{ if children }}
+                            <!-- If there are child links, loop through them -->
+                            {{ children }}
+                                <a
+                                    href="{{ url }}"
+                                    class="text-xl text-white hover:text-gray-400"
+                                    {{ is_current ?= 'aria-current="page"' }}
+                                >
+                                    {{ title }}
+                                </a>
+                            {{ /children }}
+                        {{ else }}
+                            <!-- If there are no children, show the parent -->
+                            <a
+                                href="{{ url }}"
+                                class="text-xl text-white hover:text-gray-400"
+                                {{ is_current ?= 'aria-current="page"' }}
+                            >
+                                {{ title }}
+                            </a>
+                        {{ /if }}
                     {{ /unless }}
                 {{ /nav:main }}
             </div>
         </div>
     </div>
-
-    {{#
-        <div class="text-md border-t border-white/8 p-5">
-            &copy; {{ configuration:copyright_since }}
-            {{ unless (now | format('Y')) == configuration:copyright_since }}
-                - {{ now | format('Y') }}
-            {{ /unless }}
-            {{ configuration:copyright_name ?? config:app:name }}
-        </div>
-    #}}
 </footer>
 <!-- End: /layout/_footer.antlers.html -->
