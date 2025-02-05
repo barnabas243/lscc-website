@@ -5,6 +5,7 @@ title: Give
 page_builder:
   -
     id: m6rhk2kd
+    hero_image: 2_cor_9_7.svg
     type: hero
     enabled: true
     overlay_true: false
@@ -18,6 +19,7 @@ page_builder:
           -
             type: text
             text: 'We see giving as another way we can our worship God, by generously and joyfully giving toward the ministry and mission he has called us to together.'
+    image: 2_cor_9_7.svg
     image_position: right
     type: image_and_text
     enabled: false
@@ -54,5 +56,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738735611
+updated_at: 1738735691
 ---
