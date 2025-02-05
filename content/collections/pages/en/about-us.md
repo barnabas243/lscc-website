@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738762546
+updated_at: 1738762874
 page_builder:
   -
     id: m69hfxa9
@@ -65,6 +65,24 @@ page_builder:
         enabled: true
         background_color: '#920286'
         text_color: '#F8F8F8'
+        content: |-
+          God
+          We believe in one eternal God who exists as the Father, Son (Jesus Christ), and Holy Spirit, the Creator of all things.
+
+          Jesus Christ
+          We believe Jesus is the Son of God, who lived, died for our sins, and rose again. Through Him, we have salvation and eternal life.
+
+          The Bible
+          We believe the Bible is the inspired Word of God, our guide for faith and practice.
+
+          Salvation
+          We believe salvation is a gift from God, received by grace through faith in Jesus Christ.
+
+          The Church
+          We believe the Church is the body of believers, called to worship God, serve others, and spread the Gospel.
+
+          Christ's Return
+          We believe in the second coming of Jesus Christ, where He will return to judge and establish His eternal Kingdom.
     background_color: '#000000'
     align_content: left
     type: cards
