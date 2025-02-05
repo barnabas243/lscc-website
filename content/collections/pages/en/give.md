@@ -42,50 +42,36 @@ page_builder:
             type: image
             image: whatsapp-image-2025-02-04-at-20.14.48_24015f6e.jpg
             size: xl
-      -
-        type: paragraph
-        attrs:
-          textAlign: left
-      -
-        type: heading
-        attrs:
-          textAlign: center
-          level: 2
-        content:
-          -
-            type: text
-            text: 'Looking for More Ways to Give?'
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
-        content:
-          -
-            type: text
-            text: 'Want to make a greater impact? Whether you’re interested in recurring giving, special offerings, or other ways to support our ministry, we’d love to connect with you. '
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
-        content:
-          -
-            type: text
-            text: 'Let’s explore how you can further bless our church and community.'
-      -
-        type: set
-        attrs:
-          id: m6rk7d5p
-          values:
-            type: buttons
     background_color: '#ffffff'
     type: article
     enabled: true
     top_padding: 10
+  -
+    id: m6rsyjqp
+    cards:
+      -
+        id: m6rsylnl
+        title: 'Looking for More Ways to Give?'
+        content: 'Want to make a greater impact? Whether you’re interested in recurring giving, special offerings, or other ways to support our ministry, we’d love to connect with you.   Let’s explore how you can further bless our church and community.'
+        button:
+          -
+            id: m6rsyrre
+            label: 'Contact Us'
+            link_type: entry
+            target_blank: false
+            entry: 999a4b13-877d-4f53-9c3e-488d45c68ecd
+            button_type: button
+        type: card
+        enabled: true
+    background_color: '#ffffff'
+    align_content: left
+    type: cards
+    enabled: true
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738753486
+updated_at: 1738753551
 ---
