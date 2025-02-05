@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738773625
+updated_at: 1738780226
 page_builder:
   -
     id: m69hfxa9
@@ -20,8 +20,8 @@ page_builder:
     image_position: false
     type: image_and_text
     enabled: true
-    image: whatsapp-image-2025-01-24-at-14.06.17_60939dda.webp
-    title: 'About Us'
+    image: boy-smiling.webp
+    title: 'Who We Are'
     text:
       -
         type: paragraph
