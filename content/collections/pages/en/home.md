@@ -223,7 +223,7 @@ page_builder:
     align_content: left
   -
     id: m6ae5dps
-    image: whatsapp-image-2025-01-24-at-14.04.09_448eec8a.jpg
+    image: alpha-course-gathering.jpg
     lead_text: 'Get Involved'
     header: 'Next Steps'
     content: 'Explore the life of our church including our vibrant ministries, upcoming events, and service opportunities.'
