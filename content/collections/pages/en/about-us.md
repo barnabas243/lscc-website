@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738762950
+updated_at: 1738763006
 page_builder:
   -
     id: m69hfxa9
@@ -53,7 +53,7 @@ page_builder:
       -
         id: m6mc1n5h
         title: 'Our Values'
-        content: 'We are committed to living out the values of the gospel of Jesus Christ. Our mission is to love God, love others, and share the good news of Jesus Christ.'
+        content: "We are dedicated to embodying the values of the Gospel of Jesus Christ in all areas of life. Our mission is to love God wholeheartedly, love others selflessly, and share the life-transforming message of Jesus with the world. Through these actions, we strive to reflect God's love and bring His hope to those around us."
         type: card
         enabled: true
         background_color: '#006D6D'
