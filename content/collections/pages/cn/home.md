@@ -62,7 +62,7 @@ page_builder:
         entry: home
         button_type: button
     image_position: left
-    image: whatsapp-image-2025-01-24-at-18.00.21_7ac77cc5.jpg
+    image: plan-a-visit.jpg
     title: 规划访问
     text:
       -
