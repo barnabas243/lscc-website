@@ -66,7 +66,7 @@ fields:
                 -
                   handle: overlay_from
                   field:
-                    default: black/80
+                    default: black/100
                     type: text
                     display: overlay_from
                     localizable: false
