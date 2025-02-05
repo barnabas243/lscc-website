@@ -74,7 +74,6 @@ fields:
                 -
                   handle: overlay_via
                   field:
-                    default: black/50
                     type: text
                     display: overlay_via
                     localizable: false
@@ -82,7 +81,7 @@ fields:
                 -
                   handle: overlay_to
                   field:
-                    default: transparent
+                    default: black/50
                     type: text
                     display: overlay_to
                     localizable: false
