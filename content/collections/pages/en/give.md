@@ -4,19 +4,9 @@ blueprint: page
 title: Give
 page_builder:
   -
-    id: m6rh5e1i
-    lead_text: 'Why Give'
-    title: 'we worship God through our giving'
-    text:
-      -
-        type: paragraph
-        content:
-          -
-            type: text
-            text: sss
-    image: 2_cor_9_7-1738733922.webp
-    image_position: left
-    type: image_and_text
+    id: m6rhhl24
+    hero_image: 2_cor_9_7-1738733922.webp
+    type: hero
     enabled: true
   -
     id: m6rhdkmq
@@ -37,5 +27,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738734158
+updated_at: 1738734273
 ---
