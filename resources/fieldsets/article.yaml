@@ -97,3 +97,10 @@ fields:
       instructions: 'Select the background color for this article.'
       default: '#ffffff'
       localizable: false
+  -
+    handle: top_padding
+    field:
+      default: '30'
+      type: integer
+      display: 'Top Padding'
+      localizable: false
