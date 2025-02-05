@@ -19,17 +19,17 @@ page_builder:
     type: image_and_text
     enabled: true
   -
-    id: m6rhbx6h
-    cards:
+    id: m6rhdkmq
+    text:
       -
-        id: m6rhbybd
-        image: whatsapp-image-2025-02-04-at-20.14.48_24015f6e.jpg
-        title: 'Scan the QR Code or Type the UEN'
-        type: card
-        enabled: true
-    background_color: '#ffffff'
-    align_content: left
-    type: cards
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Having '
+    image: whatsapp-image-2025-02-04-at-20.14.48_24015f6e.jpg
+    image_position: right
+    type: image_and_text
     enabled: true
 seo_noindex: false
 seo_nofollow: false
@@ -37,5 +37,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738734025
+updated_at: 1738734158
 ---
