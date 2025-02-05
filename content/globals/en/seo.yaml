@@ -2,6 +2,7 @@ noindex_local: false
 noindex_staging: false
 noindex_production: false
 title_separator: '|'
+
 site_name: 'Living Streams Christian Church'
 hreflang_auto: false
 json_ld_type: organization
@@ -16,12 +17,12 @@ sitemap_collections:
 trackers_local: true
 trackers_staging: true
 trackers_production: true
+
 use_google_site_verification: false
 use_fathom: false
 use_matomo: false
 use_plausible: false
 use_cloudflare_web_analytics: false
 tracker_type: none
-use_consent_banner: true
-embeds: false
-display_style: left
+use_consent_banner: false
+

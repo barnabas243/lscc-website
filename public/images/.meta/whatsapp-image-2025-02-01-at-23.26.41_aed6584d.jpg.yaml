@@ -1,6 +1,8 @@
-data: {  }
+data:
+  alt: 'This is the venue details for the upcoming baptism in 6th april 2025.'
+  exempt_from_alt: false
 size: 226125
-last_modified: 1738423622
+last_modified: 1738427803
 width: 1440
 height: 810
 mime_type: image/jpeg

@@ -1,6 +1,6 @@
-disable_telephone_detection: false
-disable_email_detection: false
-disable_address_detection: false
+disable_telephone_detection: true
+disable_email_detection: true
+disable_address_detection: true
 display_standalone: false
 use_theme_color: false
 use_favicons: true
