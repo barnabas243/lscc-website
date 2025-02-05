@@ -56,6 +56,13 @@ fields:
                     localizable: false
                 -
                   import: buttons
+                -
+                  handle: overlay_true
+                  field:
+                    default: true
+                    type: toggle
+                    display: 'Overlay True'
+                    localizable: false
             video:
               display: Video
               icon: media-webcam-video
