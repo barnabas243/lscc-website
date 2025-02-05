@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738761975
+updated_at: 1738762133
 page_builder:
   -
     id: m69hfxa9
@@ -42,6 +42,11 @@ page_builder:
   -
     id: m6mc1krh
     cards:
+      -
+        id: m6ry09yg
+        title: 'Our Mission'
+        type: card
+        enabled: true
       -
         id: m6mc1n5h
         title: 'Our Values'
