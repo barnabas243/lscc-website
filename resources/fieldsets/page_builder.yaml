@@ -86,6 +86,26 @@ fields:
                     display: overlay_to
                     localizable: false
                     width: 33
+                -
+                  handle: gradient_direction
+                  field:
+                    options:
+                      -
+                        key: t
+                        value: 'Bottom > Top'
+                      -
+                        key: b
+                        value: 'Top > Bottom'
+                      -
+                        key: l
+                        value: 'Right > Left'
+                      -
+                        key: r
+                        value: 'Left > Right'
+                    default: t
+                    type: button_group
+                    display: gradient_direction
+                    localizable: false
             video:
               display: Video
               icon: media-webcam-video
