@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738758553
+updated_at: 1738769332
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -202,7 +202,6 @@ page_builder:
         text_color: '#ffffff'
       -
         id: m6ae09ax
-        image: outing.jpg
         lead_text: 'OUR CALENDAR'
         title: 'See What’s Happening'
         content: "Check out this month's events to find out what's happening and how you can be involved. Explore the full list of upcoming ministries and services."
