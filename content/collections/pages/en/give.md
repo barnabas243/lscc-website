@@ -7,7 +7,7 @@ page_builder:
     id: m6rhk2kd
     hero_image: 2_cor_9_7-1738733922.webp
     type: hero
-    enabled: true
+    enabled: false
   -
     id: m6rhdkmq
     text:
@@ -27,5 +27,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738734384
+updated_at: 1738734487
 ---
