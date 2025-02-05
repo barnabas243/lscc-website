@@ -14,7 +14,7 @@ page_builder:
           -
             type: text
             text: sss
-    image: 2-cor-9-7-500sq-300x300-1738733712.webp
+    image: 2_cor_9_7-1738733922.webp
     image_position: left
     type: image_and_text
     enabled: true
@@ -24,5 +24,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738733810
+updated_at: 1738733948
 ---
