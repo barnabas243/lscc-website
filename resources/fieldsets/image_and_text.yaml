@@ -91,7 +91,4 @@ fields:
       display: text_col_span
       localizable: false
       width: 50
-      validate:
-        - required
-        - 'accepted_if:image_col_span+text_col_span=12'
       always_save: false
