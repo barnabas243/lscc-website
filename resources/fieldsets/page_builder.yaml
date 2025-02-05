@@ -66,28 +66,27 @@ fields:
                 -
                   handle: overlay_from
                   field:
-                    swatches:
-                      - '#000000CC'
-                      - '#ffffff00'
-                    type: color
+                    default: black/80
+                    type: text
                     display: overlay_from
                     localizable: false
+                    width: 33
                 -
                   handle: overlay_via
                   field:
-                    swatches:
-                      - '#00000099'
-                    type: color
+                    default: black/50
+                    type: text
                     display: overlay_via
                     localizable: false
+                    width: 33
                 -
                   handle: overlay_to
                   field:
-                    swatches:
-                      - '#00000055'
-                    type: color
+                    default: transparent
+                    type: text
                     display: overlay_to
                     localizable: false
+                    width: 33
             video:
               display: Video
               icon: media-webcam-video
