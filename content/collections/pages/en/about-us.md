@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738732636
+updated_at: 1738761745
 page_builder:
   -
     id: m69hfxa9
@@ -37,6 +37,8 @@ page_builder:
           -
             type: text
             text: 'We are a welcoming and open church that encourages people to come and share in the love of Jesus. Come join our community and grow in your faith alongside others who have the same beliefs and values.'
+    image_col_span: 6
+    text_col_span: 6
   -
     id: m6mc1krh
     cards:
@@ -46,6 +48,7 @@ page_builder:
         content: 'We are committed to living out the values of the gospel of Jesus Christ. Our mission is to love God, love others, and share the good news of Jesus Christ.'
         type: card
         enabled: true
+        background_color: '#fff5ff'
     background_color: '#ffffff'
     align_content: left
     type: cards
