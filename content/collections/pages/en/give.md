@@ -11,7 +11,9 @@ page_builder:
     overlay_true: false
     title: '2 Corinthians 9:7'
     description: 'Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.'
-    overlay: true
+    overlay: false
+    overlay_from: black/100
+    overlay_to: black/50
   -
     id: m6rhozuk
     title: 'Why Give?'
@@ -22,42 +24,15 @@ page_builder:
           -
             type: text
             text: 'We see giving as another way we can our worship God, by generously and joyfully giving toward the ministry and mission he has called us to together.'
-    image: 2_cor_9_7.svg
-    image_position: right
-    type: image_and_text
-    enabled: false
-  -
-    id: m6rhmpxi
-    article:
-      -
-        type: set
-        attrs:
-          id: m6rhmvb2
-          values:
-            type: image
-            image: whatsapp-image-2025-02-04-at-20.14.48_24015f6e.jpg
-            size: md
-    background_color: '#ffffff'
-    type: article
-    enabled: true
-  -
-    id: m6rhdkmq
-    text:
-      -
-        type: paragraph
-        content:
-          -
-            type: text
-            text: 'Having '
     image: whatsapp-image-2025-02-04-at-20.14.48_24015f6e.jpg
     image_position: right
     type: image_and_text
-    enabled: true
+    enabled: false
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738738393
+updated_at: 1738738451
 ---
