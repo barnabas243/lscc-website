@@ -52,7 +52,7 @@ page_builder:
       -
         id: m6rsylnl
         title: 'Looking for More Ways to Give?'
-        content: 'Want to make a greater impact? Whether you’re interested in recurring giving, special offerings, or other ways to support our ministry, we’d love to connect with you.   Let’s explore how you can further bless our church and community.'
+        content: 'Want to make a greater impact? Whether you’re interested in recurring giving, special offerings, or other ways to support our ministry, we’d love to connect with you.'
         button:
           -
             id: m6rsyrre
@@ -75,5 +75,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738753591
+updated_at: 1738753650
 ---
