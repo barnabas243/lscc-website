@@ -34,7 +34,7 @@
         </div>
         {{ if block:overlay }}
             <div
-                class="{{ if block:overlay_from }}from-{{ block:overlay_from }}{{ /if }} {{ if block:overlay_via }}via-{{ block:overlay_via }}{{ /if }} {{ if block:overlay_to }}to-{{ block:overlay_to }}{{ /if }} absolute inset-0 bg-gradient-to-t"
+                class="{{ if block:overlay_from }}{{ block:overlay_from }}{{ /if }} {{ if block:overlay_via }}{{ block:overlay_via }}{{ /if }} {{ if block:overlay_to }}{{ block:overlay_to }}{{ /if }} absolute inset-0 bg-gradient-to-t"
             ></div>
         {{ /if }}
     </section>
