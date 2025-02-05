@@ -3,7 +3,7 @@ noindex_staging: false
 noindex_production: false
 title_separator: '|'
 site_name: 'Living Streams Christian Church'
-hreflang_auto: false
+hreflang_auto: true
 json_ld_type: organization
 organization_name: 'Living Streams Christian Church'
 organization_logo: lscc.svg_20250204_213415_0000.png
