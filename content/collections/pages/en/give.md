@@ -4,32 +4,19 @@ blueprint: page
 title: Give
 page_builder:
   -
-    id: m6rgrk3o
+    id: m6rh5e1i
+    lead_text: 'Why Give'
     title: 'we worship God through our giving'
-    hero_image: a-peak.jpg
-    type: hero
-    enabled: false
-  -
-    id: m6rgvax6
-    article:
+    text:
       -
-        type: set
-        attrs:
-          id: m6rgvrmr
-          values:
-            type: pull_quote
-            size: md
-            quote: 'Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.'
-            author: '2 Corinthians 9:7'
-      -
-        type: set
-        attrs:
-          id: m6rgy84u
-          values:
-            type: image
-            image: whatsapp-image-2025-02-04-at-20.14.48_24015f6e.jpg
-            size: md
-    type: article
+        type: paragraph
+        content:
+          -
+            type: text
+            text: sss
+    image: 2-cor-9-7-500sq-300x300-1738733712.webp
+    image_position: right
+    type: image_and_text
     enabled: true
 seo_noindex: false
 seo_nofollow: false
@@ -37,5 +24,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738733390
+updated_at: 1738733745
 ---
