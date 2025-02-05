@@ -74,6 +74,7 @@ page_builder:
           -
             type: text
             text: 'Your generosity helps us continue our ministry and outreach efforts. Thank you for partnering with us!'
+    title: 'Give with a cheerful heart!'
   -
     id: m6rsyjqp
     cards:
@@ -101,5 +102,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738758809
+updated_at: 1738758855
 ---
