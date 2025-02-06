@@ -1,7 +1,7 @@
 ---
 id: 3092b469-35cc-4af9-93b7-2fb27909e8d5
 origin: home
-title: 首页
+title: '生命里遇见神 起来传扬福音'
 page_builder:
   -
     id: m6ac6lel
@@ -17,6 +17,9 @@ page_builder:
     secondary_button_url: /next-steps
     type: hero
     enabled: true
+    overlay: true
+    overlay_from: from-black/100
+    overlay_to: to-black/50
   -
     id: m6afwl9k
     cards:
@@ -79,6 +82,8 @@ page_builder:
         target_blank: false
         entry: home
         button_type: button
+    image_col_span: 6
+    text_col_span: 6
   -
     id: m6adz9gv
     cards:
@@ -155,6 +160,8 @@ page_builder:
         target_blank: false
         entry: 1bad468d-a97d-498d-aa3c-747b0251e740
         button_type: button
+    image_col_span: 6
+    text_col_span: 6
   -
     id: m6b72y1e
     cards:
@@ -170,5 +177,5 @@ page_builder:
     enabled: true
     align_content: left
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738413671
+updated_at: 1738836845
 ---
