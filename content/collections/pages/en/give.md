@@ -12,7 +12,7 @@ page_builder:
     title: '2 Corinthians 9:7'
     description: 'Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.'
     overlay: true
-    overlay_from: from-black/80
+    overlay_from: from-black/100
     overlay_to: to-transparent
   -
     id: m6rk17ol
@@ -103,5 +103,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738836739
+updated_at: 1738836753
 ---
