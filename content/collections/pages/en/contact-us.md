@@ -26,5 +26,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738764869
+updated_at: 1739453803
+og_description: 'Contact Living Streams Christian Church for inquiries, support, or more information. Reach us during office hours: Tue-Fri, 9am-5pm, and Sat, 9am-1pm'
 ---
