@@ -15,7 +15,7 @@ page_builder:
             marks:
               -
                 type: bold
-            text: 'See What’s Happening'
+            text: 看看发生了什么
       -
         type: heading
         attrs:
@@ -24,7 +24,7 @@ page_builder:
         content:
           -
             type: text
-            text: 'Explore The Calendar'
+            text: 探索日历
       -
         type: paragraph
         attrs:
@@ -32,37 +32,11 @@ page_builder:
         content:
           -
             type: text
-            text: 'Come and be a part of our '
-          -
-            type: text
-            marks:
-              -
-                type: bold
-            text: 'weekly services'
-          -
-            type: text
-            text: ', '
-          -
-            type: text
-            marks:
-              -
-                type: bold
-            text: 'special events'
-          -
-            type: text
-            text: ', and other '
-          -
-            type: text
-            marks:
-              -
-                type: bold
-            text: 'community efforts'
-          -
-            type: text
-            text: ". Check out what's happening using the calendar below."
+            text: 来参与我们的每周礼拜、特别活动以及其他社区活动。通过下方的日历查看即将发生的事情。
     background_color: '#ffffff'
     type: article
     enabled: true
+    top_padding: 30
   -
     id: m6apuhiz
     recurrence: monthly
@@ -73,6 +47,7 @@ page_builder:
     end_time: '16:00'
     type: events
     enabled: true
+seo_description: 查看活水基督教会的活动和服务安排，了解即将举行的礼拜、事工和特别活动。
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1737739206
+updated_at: 1739453947
 ---
