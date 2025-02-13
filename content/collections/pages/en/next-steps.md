@@ -19,6 +19,8 @@ page_builder:
           -
             type: text
             text: 'We believe that everyone has something unique to offer. We offer a variety of ministries and programs designed to help you grow in your faith and explore new possibilities.'
+    image_col_span: 6
+    text_col_span: 6
   -
     id: m6m8t3nf
     cards:
@@ -61,5 +63,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738648932
+updated_at: 1739453173
+seo_description: 'We believe everyone has something unique to offer. Explore our ministries and programs to grow in faith and discover new possibilities with us.'
 ---
