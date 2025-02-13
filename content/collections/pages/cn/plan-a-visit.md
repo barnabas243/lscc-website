@@ -1,6 +1,7 @@
 ---
 id: f7183441-ed62-4653-af74-c10766987150
 origin: 6508ee95-c3b3-4635-9125-2c985271df30
+title: 计划访问
 page_builder:
   -
     id: m6owetqg
@@ -13,7 +14,7 @@ page_builder:
         content:
           -
             type: text
-            text: 'Join the journey'
+            text: 加入旅程
       -
         type: paragraph
         attrs:
@@ -21,7 +22,7 @@ page_builder:
         content:
           -
             type: text
-            text: 'Wherever you’re at in life, we want to join you on the journey to life’s greatest potential in Christ'
+            text: 无论你在人生的哪个阶段，我们都希望与你一同走向在基督里的最大潜力
       -
         type: paragraph
         attrs:
@@ -34,10 +35,11 @@ page_builder:
         content:
           -
             type: text
-            text: 'Service Locations'
+            text: 主日崇拜地点
     background_color: '#ffffff'
     type: article
     enabled: true
+    top_padding: 30
   -
     id: m6ox62cd
     cards:
@@ -46,9 +48,9 @@ page_builder:
         title: 10.30am
         type: card
         enabled: true
-        lead_text: 'Youth Service'
+        lead_text: 青少年崇拜
         content: |-
-          Every Sunday (Except 1st Sunday), 10:30 AM
+          每个星期天（除第一个星期天外），上午10:30
 
            56 Boundary Road, 549977
       -
@@ -56,10 +58,10 @@ page_builder:
         title: 2.30pm
         type: card
         enabled: true
-        lead_text: 'Combined/Chinese Service'
+        lead_text: '联合/华语 崇拜'
         content: |-
-          Combined: 1st Sunday 
-          Chinese:     Other Sundays
+          联合:  第一个星期天
+          华语:  其他星期天
 
           364A Upper Paya Lebar Rd, Singapore 534965
     background_color: '#ffffff'
@@ -77,13 +79,13 @@ page_builder:
     cards:
       -
         id: m6p3bgod
-        lead_text: 'Looking for our upcoming events?'
-        title: 'Join Us for Our Upcoming Events!'
-        content: 'Take a look at our calendar to find all the upcoming services, events, and activities—we’d love for you to be a part of them!'
+        lead_text: 寻找我们即将举办的活动？
+        title: 加入我们，参加即将举办的活动！
+        content: 查看我们的日历，了解所有即将举办的服务、活动和项目——我们非常希望你能参与其中！
         button:
           -
             id: m6p3bqn1
-            label: 'Our Calendar'
+            label: 我们的日历
             link_type: entry
             target_blank: false
             entry: 2b5787c1-8d85-448f-9421-bc38a3138956
@@ -96,5 +98,5 @@ page_builder:
     type: cards
     enabled: true
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738589563
+updated_at: 1739434456
 ---
