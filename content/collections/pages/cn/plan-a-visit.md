@@ -53,6 +53,8 @@ page_builder:
           每个星期天（除第一个星期天外），上午10:30
 
            56 Boundary Road, 549977
+        background_color: '#03490f'
+        text_color: '#ffffff'
       -
         id: m6ox7vm7
         title: 2.30pm
@@ -64,6 +66,8 @@ page_builder:
           华语:  其他星期天
 
           364A Upper Paya Lebar Rd, Singapore 534965
+        background_color: '#f5fff5'
+        text_color: '#03490f'
     background_color: '#ffffff'
     align_content: left
     type: cards
@@ -98,5 +102,5 @@ page_builder:
     type: cards
     enabled: true
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739434456
+updated_at: 1739469443
 ---
