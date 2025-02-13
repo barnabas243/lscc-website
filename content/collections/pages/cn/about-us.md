@@ -64,6 +64,7 @@ page_builder:
     align_content: left
     type: cards
     enabled: true
+seo_description: '探索活水基督教会的核心价值与精神。了解我们的使命、信仰、社区与奉献，携手同行，在信仰中成长。 欢迎加入我们的家庭。'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738838436
+updated_at: 1739452903
 ---
