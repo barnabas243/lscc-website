@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738691991
+updated_at: 1739453972
 page_builder:
   -
     id: m6apnpjl
@@ -74,6 +74,7 @@ page_builder:
     background_color: '#ffffff'
     type: article
     enabled: true
+    top_padding: 30
   -
     id: m6apuhiz
     recurrence: monthly
@@ -84,5 +85,5 @@ page_builder:
     end_time: '16:00'
     type: events
     enabled: true
-seo_description: "Come and be a part of our weekly services and special events.  Check out what's happening using the calendar below."
+seo_description: 'Stay updated with events and activities at Living Streams Christian Church. Check our calendar for upcoming services, programs, and special events.'
 ---
