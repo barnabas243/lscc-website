@@ -167,8 +167,8 @@ page_builder:
     cards:
       -
         id: m6b731ei
-        title: 加入对话
-        content: 点击这里收听我们教会服务中的最新讲道、讲座或活动。通过做笔记跟随并加入我们关于耶稣的对话。
+        title: 加入我们的使命
+        content: 成为我们旅程的一部分，一起服务并传播希望。
         type: card
         enabled: true
         text_color: '#ffffff'
@@ -177,5 +177,5 @@ page_builder:
     enabled: true
     align_content: left
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738836845
+updated_at: 1739455462
 ---
