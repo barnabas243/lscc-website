@@ -2,11 +2,6 @@
 
 return [
 
-    // // Sunday service schedule
-    // 'Sunday : Combined 10:30am' => 'Sunday : Combined 10:30am',
-    // 'Other Sundays : Youth 10:30am | Chinese 2:30pm' => 'Other Sundays : Youth 10:30am | Chinese 2:30pm',
-    // 'No matter the situation, you can always feel free to reach out, even if it’s just to say hi.' => 'No matter the situation, you can always feel free to reach out, even if it’s just to say hi.',
-
     // Contact form
     'form_error' => 'There are problems with your form input:',
     'form_honeypot' => 'Fax',
@@ -50,8 +45,15 @@ return [
     'consent_more_info' => 'More information',
 
     // Footer
-    'on' => 'on',
+    'uen' => 'UEN: S90SS0084L',
+    'meeting_first_sunday' => '1st Sunday: Combined 2:30pm',
+    'meeting_other_sundays' => 'Other Sundays: Youth 10:30am | Chinese 2:30pm',
+    'contact_message' => 'No matter the situation, you can always feel free to reach out, even if it’s just to say hi 👋',
+    'office_hours' => 'Office Hours',
+    'office_hours_weekdays' => 'Tue to Fri: 9:00am - 5:00pm',
+    'office_hours_saturday' => 'Sat: 9:00am - 1:00pm',
     'follow_us_on' => 'Follow us on',
+    'on' => 'on',
 
     // Navigation
     'close' => 'Close',
