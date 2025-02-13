@@ -1,6 +1,6 @@
 redirects:
   -
     id: m73ken3k
-    url_old: /en/
+    url_old: /en
     external_url: /
     response: 301
