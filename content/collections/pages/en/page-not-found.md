@@ -14,7 +14,10 @@ page_builder:
         content:
           -
             type: text
-            text: '404 Page not found'
+            marks:
+              -
+                type: bold
+            text: '404 – Lost in the Digital Wilderness'
       -
         type: paragraph
         attrs:
@@ -22,7 +25,74 @@ page_builder:
         content:
           -
             type: text
-            text: 'The page you requested is not available (anymore).'
+            marks:
+              -
+                type: italic
+            text: '"Oops! Looks like the page you’re looking for has wandered off or never existed."'
+      -
+        type: paragraph
+        attrs:
+          textAlign: left
+        content:
+          -
+            type: text
+            text: '🔍 '
+          -
+            type: text
+            marks:
+              -
+                type: bold
+            text: 'What now?'
+      -
+        type: bulletList
+        content:
+          -
+            type: listItem
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Double-check the URL for typos.'
+          -
+            type: listItem
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'Head back to '
+                  -
+                    type: text
+                    marks:
+                      -
+                        type: link
+                        attrs:
+                          href: '#'
+                          rel: noopener
+                          target: null
+                          title: null
+                    text: Home
+                  -
+                    type: text
+                    text: ' and start fresh.'
+          -
+            type: listItem
+            content:
+              -
+                type: paragraph
+                attrs:
+                  textAlign: left
+                content:
+                  -
+                    type: text
+                    text: 'If you think this is an error, let us know!'
     type: article
     enabled: true
     background_color: '#ffffff'
@@ -33,6 +103,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739454853
+updated_at: 1739510024
 seo_description: 'Oops! The page you’re looking for cannot be found. Please check the URL or go back to the homepage.'
 ---
