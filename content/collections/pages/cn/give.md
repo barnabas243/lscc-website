@@ -58,7 +58,7 @@ page_builder:
     buttons:
       -
         id: m6rtqnuk
-        label: 'Download PayNow QR'
+        label: 复制二维码
         link_type: asset
         target_blank: false
         asset: lscc_paynow_qr.png
@@ -95,5 +95,5 @@ page_builder:
     background_color: '#ffffff'
 seo_description: 通过慷慨奉献支持活盛基督教会的事工和使命。探索奉献方式，今天就开始产生更大的影响。
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739454650
+updated_at: 1739510631
 ---
