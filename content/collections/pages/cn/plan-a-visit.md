@@ -32,6 +32,24 @@ page_builder:
             type: text
             text: 我们都希望与你一同走向在基督里的最大潜力
       -
+        type: set
+        attrs:
+          id: m74fu0ko
+          values:
+            type: buttons
+            buttons:
+              -
+                id: m74fu16y
+                label: 让我们认识您
+                link_type: url
+                target_blank: false
+                url: 'https://docs.google.com/forms/d/e/1FAIpQLScbjmLUace7VqXthXmd4SZp0krPraQ5Hg0cwR5R0lyOuIZe2A/formResponse?pli=1'
+                button_type: button
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+      -
         type: paragraph
         attrs:
           textAlign: center
@@ -110,5 +128,5 @@ page_builder:
     type: cards
     enabled: true
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739517257
+updated_at: 1739517601
 ---
