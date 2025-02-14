@@ -69,7 +69,16 @@ page_builder:
         content:
           -
             type: text
-            text: 您的慷慨帮助我们持续进行事工和外展工作。感谢您与我们一同合作！
+            text: 您的慷慨帮助我们继续事工和外展工作。扫描或
+          -
+            type: text
+            marks:
+              -
+                type: bold
+            text: 复制二维码
+          -
+            type: text
+            text: '进行 PayNow 转账，感谢您的支持！'
     title: 以喜乐的心奉献！
   -
     id: m6rsyjqp
@@ -95,5 +104,5 @@ page_builder:
     background_color: '#ffffff'
 seo_description: 通过慷慨奉献支持活盛基督教会的事工和使命。探索奉献方式，今天就开始产生更大的影响。
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739510645
+updated_at: 1739510767
 ---
