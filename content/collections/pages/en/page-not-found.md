@@ -17,7 +17,7 @@ page_builder:
             marks:
               -
                 type: bold
-            text: '404 – Lost in the Digital Wilderness'
+            text: '404 – Lost in the Wilderness'
       -
         type: paragraph
         attrs:
@@ -103,6 +103,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739510024
+updated_at: 1739510082
 seo_description: 'Oops! The page you’re looking for cannot be found. Please check the URL or go back to the homepage.'
 ---
