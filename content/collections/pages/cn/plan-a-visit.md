@@ -22,7 +22,15 @@ page_builder:
         content:
           -
             type: text
-            text: 无论你在人生的哪个阶段，我们都希望与你一同走向在基督里的最大潜力
+            text: 无论你在人生的哪个阶段
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+        content:
+          -
+            type: text
+            text: 我们都希望与你一同走向在基督里的最大潜力
       -
         type: paragraph
         attrs:
@@ -102,5 +110,5 @@ page_builder:
     type: cards
     enabled: true
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739469443
+updated_at: 1739517257
 ---
