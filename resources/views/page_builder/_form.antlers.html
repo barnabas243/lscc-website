@@ -78,7 +78,7 @@
 
                         {{# Render various form sections. #}}
                         {{ sections }}
-                            <fieldset class="grid w-full gap-6 md:grid-cols-12">
+                            <fieldset class="grid w-full gap-4 md:grid-cols-12">
                                 {{ if display || instructions }}
                                     <span class="md:col-span-12">
                                         {{ display ?= { partial:typography/h2 class="mb-2 text-lg font-semibold text-gray-800" as="legend" content="{ trans :key="display" }" } }}
@@ -95,7 +95,7 @@
     (width == '50') => 'md:col-span-6',
     (width == '66') => 'md:col-span-8',
     (width == '75') => 'md:col-span-9',
-    () => 'md:col-span-12') }} flex flex-col gap-4"
+    () => 'md:col-span-12') }} flex flex-col gap-2"
                                         >
                                             {{ unless type == 'spacer' }}
                                                 <label
