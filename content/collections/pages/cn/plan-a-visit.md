@@ -127,6 +127,7 @@ page_builder:
     align_content: left
     type: cards
     enabled: true
+seo_description: 计划您的来访，欢迎加入活盛基督教会。参加我们的主日崇拜，体验充满爱的信仰社区。
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739517629
+updated_at: 1739701192
 ---
