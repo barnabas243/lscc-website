@@ -104,7 +104,7 @@ page_builder:
     cards:
       -
         id: m6adzaen
-        image: whatsapp-image-2025-01-24-at-14.57.45_a6c314e3.jpg
+        image: church_staff.jpg
         lead_text: 认识我们的团队
         title: 工作人员与领导层
         content: 我们的牧师和同工致力于提供灵性指导和支持，同时提供帮助您在信仰旅程中成长的资源。
