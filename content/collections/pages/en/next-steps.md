@@ -43,7 +43,7 @@ page_builder:
           register below to get started!
         background_color: '#000000'
         text_color: '#ffffff'
-        image: whatsapp-image-2025-01-24-at-14.40.28_3612e76c.jpg
+        image: church_worship.jpg
       -
         id: m6m8u1ez
         title: 'Water Baptism'

@@ -122,7 +122,7 @@ page_builder:
         text_color: '#ffffff'
       -
         id: m6ae09ax
-        image: whatsapp-image-2025-01-24-at-14.40.28_3612e76c.jpg
+        image: church_worship.jpg
         lead_text: 我们的日程
         title: 查看最新活动
         content: 查看本月的活动，了解正在发生的事情以及您如何参与其中。探索即将到来的事工和崇拜服务的完整列表。
