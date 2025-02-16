@@ -1,6 +1,7 @@
-data: {  }
+data:
+  exempt_from_alt: true
 size: 420364
-last_modified: 1737698765
+last_modified: 1738768583
 width: 2016
 height: 1512
 mime_type: image/jpeg
