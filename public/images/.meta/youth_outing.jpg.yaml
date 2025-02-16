@@ -1,4 +1,5 @@
-data: {  }
+data:
+  exempt_from_alt: true
 size: 213825
 last_modified: 1738768583
 width: 892
