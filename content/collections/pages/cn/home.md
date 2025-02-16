@@ -20,6 +20,21 @@ page_builder:
     overlay: true
     overlay_from: from-black/100
     overlay_to: to-black/50
+    buttons:
+      -
+        id: m77bqh2u
+        label: 欢迎来访
+        link_type: entry
+        target_blank: false
+        entry: f7183441-ed62-4653-af74-c10766987150
+        button_type: button
+      -
+        id: m77br2ot
+        label: 投入服事
+        link_type: entry
+        target_blank: false
+        entry: ebca0eb7-1292-4d59-8bfb-cb51dc211062
+        button_type: button
   -
     id: m6afwl9k
     cards:
@@ -178,5 +193,5 @@ page_builder:
     align_content: left
 seo_description: '欢迎参加联合崇拜（每月第一周日）和华语崇拜（其他周日），时间为下午2:30，地址：364A Upper Paya Lebar Rd。青少年崇拜在56 Boundary Rd，上午10:30。联系我们：84077262。'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739455607
+updated_at: 1739692179
 ---
