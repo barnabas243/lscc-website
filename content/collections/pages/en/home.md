@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1738837202
+updated_at: 1739701583
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -327,4 +327,5 @@ page_builder:
     enabled: true
     top_padding: 20
 seo_description: 'Combined Service (1st Sunday) & Chinese Service (other Sundays) at 2:30 PM, 364A Upper Paya Lebar Rd. Youth at 56 Boundary Rd, 10:30 AM. Contact us at 84077262.'
+seo_title: 'Living Streams Christian Church | Encounter God, Share His Love'
 ---
