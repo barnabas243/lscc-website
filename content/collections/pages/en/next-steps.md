@@ -55,7 +55,7 @@ page_builder:
           Through the act of being immersed in or sprinkled with water, baptism represents the cleansing of sins and the renewal of life in Christ.
 
           It is a public declaration of faith and a vital step in the process of becoming a committed member of the Christian community.
-        image: whatsapp-image-2025-02-01-at-23.26.41_aed6584d.jpg
+        image: water_baptism_details.jpg
         background_color: '#000000'
         text_color: '#ffffff'
     background_color: '#ffffff'

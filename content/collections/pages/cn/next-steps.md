@@ -53,7 +53,7 @@ page_builder:
           水的洗礼是基督教的重要圣礼，象征着一个人对耶稣基督的信仰，并标志着他们灵命旅程的开始。
 
           通过浸水或洒水的仪式，洗礼代表着罪的洁净和在基督里的生命更新。它是信仰的公开宣告，也是成为基督教社区成员的重要一步。
-        image: whatsapp-image-2025-02-01-at-23.26.41_aed6584d.jpg
+        image: water_baptism_details.jpg
         background_color: '#000000'
         text_color: '#ffffff'
     background_color: '#ffffff'
