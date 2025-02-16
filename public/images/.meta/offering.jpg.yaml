@@ -1,6 +1,8 @@
-data: {  }
+data:
+  alt: 'Church offering details for Living Streams Christian Church, highlighting ways to give and support our ministry.'
+  exempt_from_alt: false
 size: 612323
-last_modified: 1738733376
+last_modified: 1738768583
 width: 2880
 height: 1620
 mime_type: image/jpeg
