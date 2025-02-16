@@ -45,7 +45,7 @@ page_builder:
           enabled: false
           values:
             type: image
-            image: whatsapp-image-2025-02-04-at-20.14.48_24015f6e.jpg
+            image: offering.jpg
             size: xl
     background_color: '#ffffff'
     type: article
@@ -53,7 +53,7 @@ page_builder:
     top_padding: 10
   -
     id: m6rt3qjt
-    image: whatsapp-image-2025-02-04-at-20.14.48_24015f6e.jpg
+    image: offering.jpg
     image_position: right
     type: image_and_text
     enabled: true
