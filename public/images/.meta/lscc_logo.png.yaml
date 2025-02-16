@@ -1,6 +1,8 @@
-data: {  }
+data:
+  alt: 'Living Streams Christian Church logo – symbolizing faith, community, and our mission to serve and spread the Gospel.'
+  exempt_from_alt: false
 size: 198255
-last_modified: 1738676090
+last_modified: 1738768583
 width: 1080
 height: 1080
 mime_type: image/png
