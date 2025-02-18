@@ -38,17 +38,7 @@ page_builder:
     type: article
     enabled: true
     top_padding: 30
-  -
-    id: m6apuhiz
-    recurrence: monthly
-    timezone: Asia/Singapore
-    all_day: false
-    start_date: '2025-01-04'
-    start_time: '14:30'
-    end_time: '16:00'
-    type: events
-    enabled: true
 seo_description: 查看活水基督教会的活动和服务安排，了解即将举行的礼拜、事工和特别活动。
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739454012
+updated_at: 1739868004
 ---
