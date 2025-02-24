@@ -1,134 +1,40 @@
-# site.ext
 
-## Installation instructions
+# Living Streams Christian Church Website
 
-1. run `composer install`
-2. run `php please make:user`
-3. run `npm i` && `npm run dev`
+Welcome to the official repository for the **Living Streams Christian Church (Singapore)** website. This project serves as the online presence for our church, providing important information about our community, events, ministries, and resources.
 
-## Environment file contents
+## Table of Contents
 
-### Production
+- [Living Streams Christian Church Website](#living-streams-christian-church-website)
+  - [Table of Contents](#table-of-contents)
+  - [About](#about)
+  - [Features](#features)
+  - [Tech Stack](#tech-stack)
+  - [Contact](#contact)
 
-```env
-Dump your .env values here with sensitive data removed. The following is a production example that uses full static caching:
-APP_NAME="Statamic Peak"
-APP_ENV=production
-APP_KEY=
-APP_DEBUG=false
-APP_TIMEZONE="UTC"
-APP_URL=
+## About
 
-APP_LOCALE=en
-APP_FALLBACK_LOCALE=en
-APP_FAKER_LOCALE=en_US
+This website serves as an online presence for our church, providing visitors and members with easy access to announcements, event schedules, giving and contact information.
 
-APP_MAINTENANCE_DRIVER=file
-APP_MAINTENANCE_STORE=file
+## Features
 
-BCRYPT_ROUNDS=12
+The website includes the following key features:
 
-LOG_CHANNEL=stack
-LOG_STACK=single
-LOG_DEPRECATIONS_CHANNEL=null
-LOG_LEVEL=debug
+- **Home Page**: A warm welcome with an introduction to our church and its mission.
+- **Events Calendar**: View upcoming church events, service times, and important dates.
+- **Ministries & Service Opportunities**: Learn about different ministries and how to serve within the church.
+- **Contact & Location Information**: Easily find our location, contact details, and office hours.
 
-DB_CONNECTION=sqlite
-# DB_HOST=127.0.0.1
-# DB_PORT=3306
-# DB_DATABASE=laravel
-# DB_USERNAME=root
-# DB_PASSWORD=
+## Tech Stack
 
-SESSION_DRIVER=file
-SESSION_LIFETIME=120
-SESSION_ENCRYPT=false
-SESSION_PATH=/
-SESSION_DOMAIN=null
+This project utilizes the following technologies:
 
-BROADCAST_CONNECTION=log
-FILESYSTEM_DISK=local
-QUEUE_CONNECTION=redis
+- **CMS**: [Statamic](https://statamic.com) (A flexible flat-file CMS)
+- **Hosting**: [Ploi.io](https://ploi.io) / [Hetzner](https://www.hetzner.com)
 
-CACHE_STORE=file
-CACHE_PREFIX=
+## Contact
 
-MEMCACHED_HOST=127.0.0.1
+If you have any questions or suggestions, feel free to reach out:
 
-REDIS_CLIENT=phpredis
-REDIS_DATABASE=
-REDIS_HOST=127.0.0.1
-REDIS_PASSWORD=null
-REDIS_PORT=6379
-
-MAIL_MAILER=smtp
-MAIL_HOST=smtp.postmarkapp.com
-MAIL_PORT=587
-MAIL_ENCRYPTION=tls
-MAIL_USERNAME=
-MAIL_PASSWORD=
-MAIL_FROM_ADDRESS=
-MAIL_FROM_NAME="${APP_NAME}"
-
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-AWS_DEFAULT_REGION=us-east-1
-AWS_BUCKET=
-AWS_USE_PATH_STYLE_ENDPOINT=false
-
-VITE_APP_NAME="${APP_NAME}"
-
-STATAMIC_LICENSE_KEY=
-STATAMIC_THEME=business
-STATAMIC_PRO_ENABLED=true
-STATAMIC_STACHE_WATCHER=auto
-STATAMIC_STATIC_CACHING_STRATEGY=full
-STATAMIC_CACHE_TAGS_ENABLED=true
-STATAMIC_REVISIONS_ENABLED=false
-STATAMIC_GRAPHQL_ENABLED=false
-STATAMIC_API_ENABLED=false
-STATAMIC_GIT_ENABLED=true
-STATAMIC_GIT_PUSH=true
-STATAMIC_GIT_DISPATCH_DELAY=5
-
-#IMAGE_MANIPULATION_DRIVER=imagick
-
-#STATAMIC_CUSTOM_CMS_NAME=
-#STATAMIC_CUSTOM_LOGO_NAV_URL=
-#STATAMIC_CUSTOM_DARK_LOGO_URL=
-STATAMIC_CUSTOM_LOGO_OUTSIDE_URL="/visuals/client-logo.svg"
-#STATAMIC_CUSTOM_FAVICON_URL=
-#STATAMIC_CUSTOM_CSS_URL=
-```
-
-
-
-## Deploy script Ploi
-
-```bash
-if [[ {COMMIT_MESSAGE} =~ "[BOT]" ]] && [[ {DEPLOYMENT_SOURCE} == "quick-deploy" ]]; then
-    echo "Automatically committed on production. Nothing to deploy."
-    {DO_NOT_NOTIFY}
-    exit 0
-fi
-
-cd {SITE_DIRECTORY}
-git pull origin {BRANCH}
-{SITE_COMPOSER} install --no-interaction --prefer-dist --optimize-autoloader --no-dev
-
-npm ci
-npm run build
-
-{RELOAD_PHP_FPM}
-
-{SITE_PHP} artisan cache:clear
-{SITE_PHP} artisan config:cache
-{SITE_PHP} artisan route:cache
-{SITE_PHP} artisan statamic:stache:warm
-{SITE_PHP} artisan queue:restart
-{SITE_PHP} artisan statamic:search:update --all
-{SITE_PHP} artisan statamic:static:clear
-{SITE_PHP} artisan statamic:static:warm --queue
-
-echo "🚀 Application deployed!"
-```
+**Repository Issues**: Open an [issue](https://github.com/barnabas243/lscc-website/issues)
+**Email**: <barnabas.tan@lscc.org.sg>
