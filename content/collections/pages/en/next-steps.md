@@ -59,7 +59,7 @@ page_builder:
         background_color: '#000000'
         text_color: '#ffffff'
     background_color: '#ffffff'
-    align_content: left
+    align_content: middle
     type: cards
     enabled: true
 seo_noindex: false
@@ -68,6 +68,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: ec621200-f6c8-4d36-bb1e-e2ed42fe880b
-updated_at: 1741700189
+updated_at: 1741700224
 seo_description: 'We believe everyone has something unique to offer. Explore our ministries and programs to grow in faith and discover new possibilities with us.'
 ---
