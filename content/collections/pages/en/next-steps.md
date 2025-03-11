@@ -48,7 +48,7 @@ page_builder:
         id: m6m8u1ez
         title: 'Water Baptism'
         type: card
-        enabled: true
+        enabled: false
         content: |-
           Water baptism is a significant Christian sacrament that symbolizes a person's faith in Jesus Christ and marks the beginning of their spiritual journey. 
 
@@ -67,7 +67,7 @@ seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
-updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739548712
+updated_by: ec621200-f6c8-4d36-bb1e-e2ed42fe880b
+updated_at: 1741700189
 seo_description: 'We believe everyone has something unique to offer. Explore our ministries and programs to grow in faith and discover new possibilities with us.'
 ---
