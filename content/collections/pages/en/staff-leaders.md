@@ -47,7 +47,7 @@ page_builder:
           id: m6p4ppz4
           values:
             type: image
-            image: whatsapp-image-2025-03-16-at-06.34.29_c027afc0.jpg
+            image: church_leadership.jpg
             size: xl
     background_color: '#ffffff'
     type: article
