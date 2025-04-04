@@ -10,7 +10,7 @@
     "author": "Studio 1902",
     "license": "MIT",
     "dependencies": {
-        "@alpinejs/collapse": "^3.14.8",
+        "@alpinejs/collapse": "^3.14.9",
         "@alpinejs/focus": "^3.14.8",
         "@alpinejs/morph": "^3.14.8",
         "@alpinejs/persist": "^3.14.8",
