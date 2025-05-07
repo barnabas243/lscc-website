@@ -277,7 +277,7 @@
                                         <span class="event-date">
                                             {{ start format="l, j F Y" }}
                                         </span>
-                                        {{ if end && sta format="Y-m-d" format="Y-m-d" }}
+                                        {{ if end && start format="Y-m-d" != end format="Y-m-d" }}
                                             to {{ end format="l, j F Y" }}
                                         {{ /if }}
                                         <br />
@@ -404,4 +404,19 @@
             {{ /events:between }}
         </div>
     </section>
+    <script>
+        // JavaScript to close other open accordions when one is opened
+        const accordions = document.querySelectorAll("details");
+
+        accordions.forEach((accordion) => {
+            accordion.addEventListener("click", function () {
+                // Close all accordions except the current one
+                accordions.forEach((otherAccordion) => {
+                    if (otherAccordion !== accordion) {
+                        otherAccordion.removeAttribute("open");
+                    }
+                });
+            });
+        });
+    </script>
 {{ /partial:page_builder/block }}
