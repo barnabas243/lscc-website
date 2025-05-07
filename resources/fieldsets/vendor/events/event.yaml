@@ -1,0 +1,228 @@
+title: Event
+fields:
+  -
+    handle: recurrence
+    field:
+      type: select
+      options:
+        none: None
+        daily: Daily
+        weekly: Weekly
+        monthly: Monthly
+        every: Every
+        multi_day: Multi-Day
+      width: 33
+      display: Recurrence
+      default: none
+      localizable: false
+  -
+    handle: timezone
+    field:
+      max_items: 1
+      clearable: false
+      searchable: true
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      display: Timezone
+      type: timezones
+      mode: typeahead
+      width: 33
+      localizable: false
+  -
+    handle: all_day
+    field:
+      type: toggle
+      width: 33
+      display: 'All Day?'
+      unless:
+        recurrence: 'equals multi_day'
+      localizable: false
+  -
+    handle: specific_days
+    field:
+      dictionary: month_day_recurrence
+      type: dictionary
+      display: 'Which Day(s)'
+      if:
+        recurrence: 'equals monthly'
+      localizable: false
+  -
+    handle: interval
+    field:
+      type: integer
+      width: 50
+      display: Interval
+      if:
+        recurrence: 'equals every'
+      localizable: false
+  -
+    handle: period
+    field:
+      type: select
+      options:
+        days: Days
+        weeks: Weeks
+        years: Years
+      display: Period
+      width: 50
+      if:
+        recurrence: 'equals every'
+      localizable: false
+  -
+    handle: start_date
+    field:
+      type: date
+      allow_blank: false
+      allow_time: false
+      require_time: false
+      input_format: M/D/YYYY
+      width: 50
+      display: 'Start Date'
+      inline: true
+      full_width: true
+      unless_any:
+        multi_day: 'equals true'
+        recurrence: 'equals multi_day'
+      localizable: false
+  -
+    handle: end_date
+    field:
+      type: date
+      allow_blank: true
+      allow_time: false
+      require_time: false
+      input_format: M/D/YYYY
+      display: 'End Date'
+      width: 50
+      time_required: false
+      full_width: true
+      inline: true
+      if:
+        recurrence: 'contains_any daily, weekly, monthly, every'
+      localizable: false
+  -
+    handle: start_time
+    field:
+      type: time
+      width: 25
+      display: 'Start Time'
+      instructions: 'Input in [24-hour format](https://en.wikipedia.org/wiki/24-hour_clock)'
+      unless_any:
+        multi_day: 'equals true'
+        all_day: 'equals true'
+        recurrence: 'equals multi_day'
+      localizable: false
+  -
+    handle: end_time
+    field:
+      type: time
+      width: 25
+      display: 'End Time'
+      instructions: 'Input in [24-hour format](https://en.wikipedia.org/wiki/24-hour_clock)'
+      unless_any:
+        multi_day: 'equals true'
+        all_day: 'equals true'
+        recurrence: 'equals multi_day'
+      localizable: false
+  -
+    handle: days
+    field:
+      type: grid
+      display: 'Event Days'
+      add_row: 'Add Day'
+      min_rows: 1
+      if_any:
+        multi_day: 'equals true'
+        recurrence: 'equals multi_day'
+      localizable: false
+      fields:
+        -
+          handle: date
+          field:
+            type: date
+            allow_blank: false
+            allow_time: false
+            require_time: false
+            input_format: M/D/YYYY
+            width: 25
+            display: Date
+        -
+          handle: start_time
+          field:
+            type: time
+            width: 25
+            display: 'Start Time'
+            instructions: 'Input in 24-hour format (ie 2:00 PM will be entered as 14:00)'
+            instructions_position: above
+            listable: hidden
+            visibility: visible
+            replicator_preview: true
+            seconds_enabled: false
+            hide_display: false
+            unless:
+              all_day: 'equals true'
+        -
+          handle: end_time
+          field:
+            type: time
+            width: 25
+            display: 'End Time'
+            instructions: 'Input in 24-hour format (ie 2:00 PM will be entered as 14:00)'
+            instructions_position: above
+            listable: hidden
+            visibility: visible
+            replicator_preview: true
+            seconds_enabled: false
+            hide_display: false
+            unless:
+              all_day: 'equals true'
+        -
+          handle: all_day
+          field: 'events::event.all_day'
+          config:
+            width: 25
+  -
+    handle: exclude_dates
+    field:
+      type: grid
+      display: 'Exclude Days'
+      add_row: 'Add Day'
+      if_any:
+        recurrence: 'contains_any monthly, daily, weekly, every'
+      localizable: false
+      fields:
+        -
+          handle: date
+          field:
+            type: date
+            allow_blank: false
+            allow_time: false
+            require_time: false
+            input_format: M/D/YYYY
+            display: Date
+  -
+    handle: speaker
+    field:
+      placeholder: 'eg. Pastor Joy'
+      autocomplete: name
+      type: text
+      display: Speaker
+      localizable: false
+  -
+    handle: location
+    field:
+      input_type: url
+      placeholder: 'google maps link'
+      autocomplete: url
+      type: text
+      display: Location
+      instructions: 'Where is the event held?'
+      localizable: false
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+      instructions: 'Provide a brief description of the event.'
+      localizable: false

@@ -1,64 +1,407 @@
-{{# @name Calendar @desc The calendar page builder block with Tailwind CSS. @set
-page.page_builder.calendar #}}
-
-<!-- /page_builder/_calendar.antlers.html -->
+{{# @name Events List @desc Accordion-style events with simplified date and time formatting, dynamic pagination, and time period display. #}}
 {{ partial:page_builder/block }}
-<section class="max-w-3xl content mx-auto px-4 py-5">
-    {{ events:between collection="events" to="Dec 31 2030"
-    :year="get.year" :month="get.month"  paginate="5" }} 
-    <div class="flex items-center justify-center py-4">
-            {{ partial:statamic-peak-tools::components/pagination class="md:col-span-12" }}
-            {{# {{ paginate }}
-            
-            {{ if prev_page }}
-                <a href="{{ prev_page }}" class="text-indigo-600 hover:text-indigo-800 font-semibold flex items-center space-x-2">
-                    <i class="fas fa-chevron-left"></i>
-                    <span>Previous</span>
-                </a>
-            {{ /if }}
-    
-            <span class="text-sm text-gray-600">
-                Page {{ current_page }} of {{ total_pages }} ({{ total_items }} events)
-            </span>
-    
-            {{ if next_page }}
-                <a href="{{ next_page }}" class="text-indigo-600 hover:text-indigo-800 font-semibold flex items-center space-x-2">
-                    <span>Next</span>
-                    <i class="fas fa-chevron-right"></i>
-                </a>
-            {{ /if }}
-    
-            {{ /paginate }} #}}
-        </div>
-    </div>
-    {{ results }}
-        <div class="flex items-center border bg-white border-indigo-800 group hover:border-black">
-            <div class="bg-indigo-800 group-hover:bg-black text-white w-14 text-center py-2 mr-8">
-                <div class="text-xs tracking-wide uppercase text-indigo-200 leading-none">
-                    {{ end format="M" }}
+    <style>
+        /* Accordion Open Animation */
+        details[open] .accordion-content {
+            max-height: 1000px;
+        }
+
+        .accordion-content {
+            transition: max-height 1s ease-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        /* Scale effect on hover and when open */
+        .event-item summary {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        details:hover {
+            transform: scale(1.02);
+        }
+
+        details[open] {
+            background-color: #f3f4f6;
+        }
+
+        .accordion-summary:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Filter Button Hover */
+        .filter-button:hover {
+            background-color: #4338ca;
+        }
+
+        /* Filter Container Styling */
+        .filter-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        /* Date and Time Formatting */
+        .event-date {
+            font-weight: bold;
+            color: #4b5563;
+        }
+
+        .event-time {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .event-location {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        /* No Events Found Message */
+        .no-events-msg {
+            color: #9ca3af;
+            font-size: 1rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Pagination Container */
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px;
+        }
+
+        .pagination {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .pagination li {
+            list-style: none;
+        }
+
+        /* Pagination Link */
+        .pagination a {
+            background-color: #f3f4f6;
+            color: #4b5563;
+            padding: 8px 16px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition:
+                background-color 0.3s ease,
+                transform 0.2s ease;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Hover Effect on Pagination Links */
+        .pagination a:hover {
+            background-color: #4338ca;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Disabled Pagination Link */
+        .pagination .disabled a {
+            background-color: #e5e7eb;
+            cursor: not-allowed;
+            color: #9ca3af;
+        }
+
+        /* Active Pagination Link (highlighted) */
+        .pagination .active a {
+            background-color: #4338ca;
+            color: white;
+        }
+
+        /* Pagination Information */
+        .pagination .pagination-info {
+            font-size: 0.875rem;
+            color: #6b7280;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        .pagination .page-numbers {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+
+    <section class="mx-auto max-w-3xl px-4 py-10">
+        <h2 class="mb-8 text-center text-3xl font-bold text-gray-800">
+            Upcoming Events
+        </h2>
+        <!-- Filtered Events -->
+        <div id="eventsList">
+            {{ events:between collection="events" from="today" to="Dec 31 9999" paginate="7" }}
+                <!-- Pagination Section (before events) -->
+                <div class="pagination-container">
+                    {{ paginate }}
+                        <ul class="pagination">
+                            {{ if prev_page }}
+                                <li>
+                                    <a
+                                        href="{{ prev_page }}"
+                                        class="prev-page"
+                                    >
+                                        &laquo;
+                                    </a>
+                                </li>
+                            {{ else }}
+                                <li class="disabled">
+                                    <span>&laquo;</span>
+                                </li>
+                            {{ /if }}
+                            <div class="page-numbers">
+                                {{ links:segments }}
+                                    {{ first }}
+                                        {{ if page == current_page }}
+                                            <li class="active">
+                                                <a href="javascript:void(0)">
+                                                    {{ page }}
+                                                </a>
+                                            </li>
+                                        {{ else }}
+                                            <li>
+                                                <a href="{{ url }}">
+                                                    {{ page }}
+                                                </a>
+                                            </li>
+                                        {{ /if }}
+                                    {{ /first }}
+                                    {{ if slider }}
+                                        <li class="disabled">
+                                            <span>...</span>
+                                        </li>
+                                    {{ /if }}
+                                    {{ slider }}
+                                        {{ if page == current_page }}
+                                            <li class="active">
+                                                <a href="javascript:void(0)">
+                                                    {{ page }}
+                                                </a>
+                                            </li>
+                                        {{ else }}
+                                            <li>
+                                                <a href="{{ url }}">
+                                                    {{ page }}
+                                                </a>
+                                            </li>
+                                        {{ /if }}
+                                    {{ /slider }}
+                                    {{ if slider || (!slider && last) }}
+                                        <li class="disabled">
+                                            <span>...</span>
+                                        </li>
+                                    {{ /if }}
+                                    {{ last }}
+                                        {{ if page == current_page }}
+                                            <li class="active">
+                                                <a href="javascript:void(0)">
+                                                    {{ page }}
+                                                </a>
+                                            </li>
+                                        {{ else }}
+                                            <li>
+                                                <a href="{{ url }}">
+                                                    {{ page }}
+                                                </a>
+                                            </li>
+                                        {{ /if }}
+                                    {{ /last }}
+                                {{ /links:segments }}
+                            </div>
+                            {{ if next_page }}
+                                <li>
+                                    <a
+                                        href="{{ next_page }}"
+                                        class="next-page"
+                                    >
+                                        &raquo;
+                                    </a>
+                                </li>
+                            {{ else }}
+                                <li class="disabled">
+                                    <span>&raquo;</span>
+                                </li>
+                            {{ /if }}
+                        </ul>
+                    {{ /paginate }}
                 </div>
-                <div class="text-4xl leading-none">{{ end format="j" }}</div>
-            </div>
-            <div class="flex flex-col">
-                <h3 class="text-lg m-0 group-hover:text-black">{{ title }}</h3>
-                <span class="text-sm text-gray-500 mt-1">
-                    {{ start format="g:i" }}{{ start format="A" }} -
-                    {{ end format="g:i" }}{{ end format="A" }}
-                </span>
-            </div>
+                <!-- No Events Found Message -->
+                {{ if no_results }}
+                    <div id="noEventsMessage" class="no-events-msg">
+                        No events found.
+                    </div>
+                {{ /if }}
+                {{ results }}
+                    <div class="event-item">
+                        <details
+                            data-start="{{ start }}"
+                            data-end="{{ end }}"
+                            class="group border border-gray-200 bg-white shadow-sm transition-all duration-300"
+                        >
+                            <summary
+                                class="accordion-summary flex cursor-pointer items-start gap-4 p-5 transition-colors duration-200 group-hover:bg-gray-50"
+                            >
+                                <!-- Date Badge -->
+                                <div
+                                    class="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-lg bg-indigo-600 text-white"
+                                >
+                                    <span
+                                        class="text-xs tracking-wide uppercase"
+                                    >
+                                        {{ start format="M" }}
+                                    </span>
+                                    <span
+                                        class="text-xl leading-tight font-bold"
+                                    >
+                                        {{ start format="j" }}
+                                    </span>
+                                </div>
+
+                                <!-- Event Info -->
+                                <div class="flex-1">
+                                    <h3
+                                        class="text-lg font-semibold text-gray-800 transition-colors duration-200 group-hover:text-indigo-700"
+                                    >
+                                        {{ title }}
+                                    </h3>
+                                    <p class="mt-1 text-sm text-gray-500">
+                                        <span class="event-date">
+                                            {{ start format="l, j F Y" }}
+                                        </span>
+                                        {{ if end && sta format="Y-m-d" format="Y-m-d" }}
+                                            to {{ end format="l, j F Y" }}
+                                        {{ /if }}
+                                        <br />
+                                        <span class="event-time">
+                                            {{ if all_day }}
+                                                All day event
+                                            {{ else }}
+                                                {{ start format="g:i A" }}
+                                                - {{ end format="g:i A" }}
+                                            {{ /if }}
+                                        </span>
+                                    </p>
+                                </div>
+
+                                <!-- Chevron Icon -->
+                                <div
+                                    class="mt-1 text-gray-400 transition-transform duration-300 group-open:rotate-180"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M19 9l-7 7-7-7"
+                                        />
+                                    </svg>
+                                </div>
+                            </summary>
+
+                            <!-- Collapsible Content -->
+                            <!-- Collapsible Content -->
+                            <div
+                                class="accordion-content bg-white px-5 pt-4 pb-5 text-sm leading-relaxed text-gray-700 shadow-md"
+                            >
+                                <div class="space-y-4">
+                                    <!-- Location -->
+                                    {{ if location }}
+                                        <div
+                                            class="flex items-center space-x-2"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="h-5 w-5 text-indigo-600"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M12 2C8.13 2 5 5.13 5 8c0 1.71.64 3.24 1.71 4.43C6.88 13.57 9 15 12 15s5.12-1.43 5.29-2.57C18.36 11.24 19 9.71 19 8c0-2.87-3.13-6-7-6z"
+                                                />
+                                            </svg>
+                                            <strong class="text-gray-800">
+                                                Location:
+                                            </strong>
+                                            <span class="text-gray-600">
+                                                {{ location }}
+                                            </span>
+                                        </div>
+                                    {{ else }}
+                                        <div class="text-gray-500">
+                                            Location not specified
+                                        </div>
+                                    {{ /if }}
+                                    <!-- Speaker -->
+                                    {{ if speaker }}
+                                        <div
+                                            class="flex items-center space-x-2"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="h-5 w-5 text-indigo-600"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M15 10l4.5-4.5L15 1M19 6l-9 9-4.5-4.5"
+                                                />
+                                            </svg>
+                                            <strong class="text-gray-800">
+                                                Speaker:
+                                            </strong>
+                                            <span class="text-gray-600">
+                                                {{ speaker }}
+                                            </span>
+                                        </div>
+                                    {{ else }}
+                                        <div class="text-gray-500">
+                                            Speaker not specified
+                                        </div>
+                                    {{ /if }}
+                                    <!-- Description -->
+                                    <div>
+                                        <strong class="text-gray-800">
+                                            Description:
+                                        </strong>
+                                        {{ if description }}
+                                            <p class="mt-2 text-gray-600">
+                                                {{ description }}
+                                            </p>
+                                        {{ else }}
+                                            <p class="mt-2 text-gray-400">
+                                                No additional details available.
+                                            </p>
+                                        {{ /if }}
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                {{ /results }}
+            {{ /events:between }}
         </div>
-        
-        <!-- This is the content that will appear when the <details> is expanded -->
-        <div class="flex flex-col mt-4">
-            <p>{{ description }}</p>
-            <!-- Example for additional content -->
-        </div>
-    </details>
-
-    {{ /results }}
-
-    {{ /events:between }}
-</section>
-
+    </section>
 {{ /partial:page_builder/block }}
-<!-- End: /page_builder/_calendar.antlers.html -->
