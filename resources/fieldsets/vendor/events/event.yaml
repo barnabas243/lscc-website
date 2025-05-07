@@ -136,6 +136,7 @@ fields:
       if_any:
         multi_day: 'equals true'
         recurrence: 'equals multi_day'
+      mode: stacked
       fields:
         -
           handle: date
@@ -181,6 +182,7 @@ fields:
             type: text
             display: Speaker
             localizable: false
+            width: 33
         -
           handle: location
           field:
@@ -190,6 +192,7 @@ fields:
             display: Location
             instructions: 'Where is the event held?'
             localizable: false
+            width: 33
         -
           handle: description
           field:
@@ -197,6 +200,7 @@ fields:
             display: Description
             instructions: 'Provide a brief description of the event.'
             localizable: false
+            width: 33
   -
     handle: exclude_dates
     field:
