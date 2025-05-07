@@ -132,10 +132,10 @@ fields:
       display: 'Event Days'
       add_row: 'Add Day'
       min_rows: 1
+      localizable: false
       if_any:
         multi_day: 'equals true'
         recurrence: 'equals multi_day'
-      localizable: false
       fields:
         -
           handle: date
@@ -147,6 +147,7 @@ fields:
             input_format: M/D/YYYY
             width: 25
             display: Date
+            localizable: false
         -
           handle: start_time
           field:
@@ -154,14 +155,9 @@ fields:
             width: 25
             display: 'Start Time'
             instructions: 'Input in 24-hour format (ie 2:00 PM will be entered as 14:00)'
-            instructions_position: above
-            listable: hidden
-            visibility: visible
-            replicator_preview: true
-            seconds_enabled: false
-            hide_display: false
             unless:
               all_day: 'equals true'
+            localizable: false
         -
           handle: end_time
           field:
@@ -169,19 +165,38 @@ fields:
             width: 25
             display: 'End Time'
             instructions: 'Input in 24-hour format (ie 2:00 PM will be entered as 14:00)'
-            instructions_position: above
-            listable: hidden
-            visibility: visible
-            replicator_preview: true
-            seconds_enabled: false
-            hide_display: false
             unless:
               all_day: 'equals true'
+            localizable: false
         -
           handle: all_day
           field: 'events::event.all_day'
           config:
             width: 25
+        -
+          handle: speaker
+          field:
+            placeholder: 'eg. Pastor Joy'
+            autocomplete: name
+            type: text
+            display: Speaker
+            localizable: false
+        -
+          handle: location
+          field:
+            input_type: url
+            placeholder: 'google maps link'
+            type: text
+            display: Location
+            instructions: 'Where is the event held?'
+            localizable: false
+        -
+          handle: description
+          field:
+            type: textarea
+            display: Description
+            instructions: 'Provide a brief description of the event.'
+            localizable: false
   -
     handle: exclude_dates
     field:
@@ -201,28 +216,3 @@ fields:
             require_time: false
             input_format: M/D/YYYY
             display: Date
-  -
-    handle: speaker
-    field:
-      placeholder: 'eg. Pastor Joy'
-      autocomplete: name
-      type: text
-      display: Speaker
-      localizable: false
-  -
-    handle: location
-    field:
-      input_type: url
-      placeholder: 'google maps link'
-      autocomplete: url
-      type: text
-      display: Location
-      instructions: 'Where is the event held?'
-      localizable: false
-  -
-    handle: description
-    field:
-      type: textarea
-      display: Description
-      instructions: 'Provide a brief description of the event.'
-      localizable: false
