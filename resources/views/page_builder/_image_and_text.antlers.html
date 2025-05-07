@@ -5,7 +5,9 @@
 
 <!-- /page_builder/_image_and_text.antlers.html -->
 {{ partial:page_builder/block }}
-    <div class="span-content mx-auto grid h-auto gap-y-8 md:grid-cols-12">
+    <div
+        class="span-content js-image-text-block mx-auto grid h-auto gap-y-8 md:grid-cols-12"
+    >
         <!-- Image -->
         <figure
             class="{{ image_position == 'left' ? 'order-first' : 'md:order-last' }} md:col-span-{{ image_col_span }} relative"

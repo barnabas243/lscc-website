@@ -11,7 +11,7 @@
 <!-- /components/_button.antlers.html -->
 {{ if label }}
     <{{ as or 'a' }}
-        class="{{ switch(
+        class="js-animated-button {{ switch(
     (button_type === 'inline') => 'underline decoration-2 motion-safe:transition',
     (button_type === 'button') => 'max-w-full p-4 rounded-lg leading-none no-underline select-none whitespace-nowrap',
     ) }} {{ switch(
