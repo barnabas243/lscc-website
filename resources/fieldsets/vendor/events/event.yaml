@@ -133,6 +133,7 @@ fields:
       add_row: 'Add Day'
       min_rows: 1
       localizable: false
+      mode: stacked
       if_any:
         multi_day: 'equals true'
         recurrence: 'equals multi_day'
@@ -163,7 +164,7 @@ fields:
             display: Description
             instructions: 'Provide a brief description of the event.'
             localizable: false
-            width: 33
+            width: 50
         -
           handle: date
           field:
@@ -186,6 +187,11 @@ fields:
               all_day: 'equals true'
             localizable: false
         -
+          handle: all_day
+          field: 'events::event.all_day'
+          config:
+            width: 25
+        -
           handle: end_time
           field:
             type: time
@@ -195,11 +201,6 @@ fields:
             unless:
               all_day: 'equals true'
             localizable: false
-        -
-          handle: all_day
-          field: 'events::event.all_day'
-          config:
-            width: 25
   -
     handle: exclude_dates
     field:
