@@ -1,21 +1,32 @@
+# Node & Vite
 /node_modules
+/public/build/
 /public/hot
-/public/storage
-/public/vendor/statamic
-/public/vendor/statamic-peak-tools
-/public/img/
 /public/static/
-/storage/*.key
-/vendor
-.env
-.env.backup
-/.phpunit.cache
-.antlers.json
-Homestead.json
-Homestead.yaml
 npm-debug.log
 yarn-error.log
 
+# Laravel
+/vendor
+/storage/*.key
+/storage/app/public/*
+/public/storage
 /.phpunit.cache
+.env
 
+# Statamic
+/public/vendor/statamic
+/public/vendor/statamic-peak-tools
+/resources/blueprints/*.yaml.bak
+.antlers.json
+
+# System / OS / Editor junk
+.DS_Store
+Thumbs.db
+
+# Homestead
+Homestead.json
+Homestead.yaml
+
+# Misc
 /users
