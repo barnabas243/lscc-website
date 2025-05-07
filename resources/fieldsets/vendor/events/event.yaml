@@ -70,6 +70,14 @@ fields:
         recurrence: 'equals every'
       localizable: false
   -
+    handle: speaker
+    field:
+      autocomplete: name
+      type: text
+      display: Speaker
+      localizable: false
+      width: 50
+  -
     handle: start_date
     field:
       type: date
@@ -100,6 +108,21 @@ fields:
       inline: true
       if:
         recurrence: 'contains_any daily, weekly, monthly, every'
+      localizable: false
+  -
+    handle: location
+    field:
+      input_type: url
+      autocomplete: url
+      type: text
+      display: Location
+      localizable: false
+      width: 50
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
       localizable: false
   -
     handle: start_time
