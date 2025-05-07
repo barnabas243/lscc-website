@@ -139,6 +139,42 @@ fields:
         recurrence: 'equals multi_day'
       fields:
         -
+          handle: date
+          field:
+            type: date
+            allow_blank: false
+            allow_time: false
+            require_time: false
+            input_format: M/D/YYYY
+            width: 25
+            display: Date
+            localizable: false
+        -
+          handle: start_time
+          field:
+            type: time
+            width: 25
+            display: 'Start Time'
+            instructions: 'Input in 24-hour format'
+            unless:
+              all_day: 'equals true'
+            localizable: false
+        -
+          handle: end_time
+          field:
+            type: time
+            width: 25
+            display: 'End Time'
+            instructions: 'Input in 24-hour format'
+            unless:
+              all_day: 'equals true'
+            localizable: false
+        -
+          handle: all_day
+          field: 'events::event.all_day'
+          config:
+            width: 25
+        -
           handle: speaker
           field:
             placeholder: 'eg. Pastor Joy'
@@ -165,42 +201,6 @@ fields:
             instructions: 'Provide a brief description of the event.'
             localizable: false
             width: 50
-        -
-          handle: date
-          field:
-            type: date
-            allow_blank: false
-            allow_time: false
-            require_time: false
-            input_format: M/D/YYYY
-            width: 25
-            display: Date
-            localizable: false
-        -
-          handle: start_time
-          field:
-            type: time
-            width: 25
-            display: 'Start Time'
-            instructions: 'Input in 24-hour format (ie 2:00 PM will be entered as 14:00)'
-            unless:
-              all_day: 'equals true'
-            localizable: false
-        -
-          handle: all_day
-          field: 'events::event.all_day'
-          config:
-            width: 25
-        -
-          handle: end_time
-          field:
-            type: time
-            width: 25
-            display: 'End Time'
-            instructions: 'Input in 24-hour format (ie 2:00 PM will be entered as 14:00)'
-            unless:
-              all_day: 'equals true'
-            localizable: false
   -
     handle: exclude_dates
     field:
