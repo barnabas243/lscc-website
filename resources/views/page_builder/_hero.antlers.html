@@ -14,21 +14,19 @@
                 src="{{ hero_image | url }}"
                 alt="Hero Image"
                 class="js-hero-image image-with-shadow absolute top-0 left-0 h-full w-full object-cover"
-                data-speed="0.9"
             />
         {{ /if }}
         <div
             class="relative z-10 mt-20 flex max-w-3xl flex-col gap-10 px-4 text-center md:flex-row"
-            data-speed="1.1"
         >
             {{ partial:typography/h1 class="js-hero-title text-4xl md:text-7xl text-white md:text-right" :content="title" }}
             <div class="flex flex-col justify-center">
                 {{ if buttons }}
                     {{ partial:typography/p class="js-hero-description font-mono text-lg text-white md:text-left" :content="description" }}
                     <div
-                        class="js-hero-buttons relative mt-8 flex flex-col items-center justify-center transition"
+                        class="js-hero-buttons relative mt-8 flex flex-row items-start justify-center gap-6 transition md:flex-col"
                     >
-                        {{ partial:components/buttons inverted="true" class="justify-center gap-6 items-center md:justify-start" }}
+                        {{ partial:components/buttons inverted="true" class="justify-center gap-6 items-center md:justify-start flex-col" }}
                     </div>
                 {{ else }}
                     {{ partial:typography/p class="js-hero-description font-mono text-2xl text-white md:text-left" :content="description" }}
@@ -37,7 +35,7 @@
         </div>
         {{ if block:overlay }}
             <div
-                class="js-hero-overlay {{ if block:overlay_from }}{{ block:overlay_from }}{{ /if }} {{ if block:overlay_via }}{{ block:overlay_via }}{{ /if }} {{ if block:overlay_to }}{{ block:overlay_to }}{{ /if }} absolute top-0 right-0 bottom-[-1px] left-0 bg-gradient-to-t will-change-transform"
+                class="js-hero-overlay {{ if block:overlay_from }}{{ block:overlay_from }}{{ /if }} {{ if block:overlay_via }}{{ block:overlay_via }}{{ /if }} {{ if block:overlay_to }}{{ block:overlay_to }}{{ /if }} absolute top-0 left-0 bg-gradient-to-t"
             ></div>
         {{ /if }}
     </section>

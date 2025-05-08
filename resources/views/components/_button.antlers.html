@@ -20,7 +20,7 @@
     ) }} {{ switch(
     (button_type === 'inline' && inverted) => 'text-white decoration-white focus:outline-white',
     (button_type === 'button' && inverted) => 'bg-white text-primary focus:outline-white',
-    ) }} {{ class }} inline-flex items-baseline justify-center gap-0.5 px-12 font-bold motion-safe:transition"
+    ) }} {{ class }} inline-flex items-center justify-center gap-0.5 px-12 font-bold motion-safe:transition"
         {{ slot:attributes }}
         {{ !faux ?= { partial:statamic-peak-tools::snippets/button_attributes } }}
     >
