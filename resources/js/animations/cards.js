@@ -31,26 +31,5 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 0.7,
             ease: "power2.out",
         });
-
-        // Hover lift effect — only on desktop
-        if (window.innerWidth >= 768) {
-            card.addEventListener("mouseenter", () => {
-                gsap.to(card, {
-                    y: -8,
-                    boxShadow: "0 12px 24px rgba(0,0,0,0.08)",
-                    duration: 0.3,
-                    ease: "power2.out",
-                });
-            });
-
-            card.addEventListener("mouseleave", () => {
-                gsap.to(card, {
-                    y: 0,
-                    boxShadow: "none",
-                    duration: 0.3,
-                    ease: "power2.out",
-                });
-            });
-        }
     });
 });
