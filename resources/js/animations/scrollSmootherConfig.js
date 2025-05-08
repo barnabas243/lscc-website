@@ -11,10 +11,10 @@ ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
     smooth: 1.5, // smoothing factor (1.2–1.6 feels nice)
-    normalizeScroll: true, // fixes weird edge cases (iOS, hash links)
-    // ignoreMobileResize: true, // disables scroll-jank when resizing
-    effects: true, // allow [data-speed] parallax or fade
-    preventDefault: true, // ensures smoother wheel/touch scroll
+    normalizeScroll: true,
+    ignoreMobileResize: true,
+    effects: true,
+    preventDefault: true,
 });
 
 if (import.meta.env.DEV) {

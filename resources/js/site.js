@@ -23,7 +23,7 @@ if (import.meta.env.DEV) {
     console.log("Alpine.js loaded:", Alpine);
     console.log("GSAP animations loaded.");
 }
-if ("scrollRestoration" in history) {
-    history.scrollRestoration = "manual";
-    window.scrollTo(0, 0); // Optional: always start at top
-}
+// if ("scrollRestoration" in history) {
+//     history.scrollRestoration = "manual";
+//     window.scrollTo(0, 0); // Optional: always start at top
+// }
