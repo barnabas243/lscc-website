@@ -43,3 +43,26 @@
         /* font-family: var(--font-mono); */
     }
 }
+/* * {
+    outline: 1px solid red;
+} */
+.js-hero-title {
+    display: inline-block;
+    color: white; /* fallback color */
+    padding-bottom: 0.25em;
+    overflow-wrap: break-word;
+    text-shadow:
+        0 0 4px rgba(255, 255, 255, 0.3),
+        0 0 8px rgba(255, 215, 0, 0.2);
+}
+
+.hero-word {
+    display: inline-block;
+    white-space: pre;
+    will-change: transform, opacity;
+}
+
+.highlighted-word {
+    color: #facc15; /* Tailwind yellow-400 */
+    font-weight: 600;
+}

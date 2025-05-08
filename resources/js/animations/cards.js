@@ -7,29 +7,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".js-card");
 
     cards.forEach((card, index) => {
-        // Set initial opacity and position
-        gsap.set(card, { opacity: 0, y: 40 });
-
-        // Timeline for fade-in and fade-out with scroll
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: card,
-                start: "top 90%",
-                end: "bottom -20%",
-                scrub: true,
-            },
+        gsap.set(card, {
+            opacity: 0,
+            y: 100,
+            scale: 0.96,
         });
 
-        tl.to(card, {
+        gsap.to(card, {
             opacity: 1,
             y: 0,
-            duration: 0.9,
-            ease: "power2.out",
-        }).to(card, {
-            opacity: 1,
-            y: -20,
-            duration: 0.7,
-            ease: "power2.out",
+            scale: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: card,
+                start: "top 85%",
+                toggleActions: "play none none none", // one-time
+            },
         });
     });
 });
