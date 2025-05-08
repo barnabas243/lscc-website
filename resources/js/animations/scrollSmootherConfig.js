@@ -11,7 +11,7 @@ ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
     smooth: 1.5, // smoothing factor (1.2–1.6 feels nice)
-    normalizeScroll: true,
+    // normalizeScroll: true, //
     ignoreMobileResize: true,
     effects: true,
     preventDefault: true,
