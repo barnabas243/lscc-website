@@ -6,11 +6,11 @@
 <!-- /page_builder/_image_and_text.antlers.html -->
 {{ partial:page_builder/block }}
     <div
-        class="span-content js-image-text-block mx-auto grid h-auto gap-y-8 md:grid-cols-12"
+        class="span-content js-image-text-block mx-auto grid h-auto max-w-full gap-y-8 overflow-hidden md:grid-cols-12"
     >
         <!-- Image -->
         <figure
-            class="{{ image_position == 'left' ? 'order-first' : 'md:order-last' }} md:col-span-{{ image_col_span }} relative"
+            class="{{ image_position == 'left' ? 'order-first' : 'md:order-last' }} md:col-span-{{ image_col_span }} relative max-w-full"
         >
             <!-- Image -->
             <img
