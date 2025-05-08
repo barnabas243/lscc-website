@@ -1,7 +1,6 @@
-
 # Living Streams Christian Church Website
 
-Welcome to the official repository for the **Living Streams Christian Church (Singapore)** website. This project serves as the online presence for our church, providing important information about our community, events, ministries, and resources.
+Welcome to the official repository for the **Living Streams Christian Church (Singapore)** website. This platform is designed to connect our community, share information, and support our ministries. Whether you're a visitor or a member, this website serves as your online resource for all things related to church events, services, and resources.
 
 ## Table of Contents
 
@@ -14,27 +13,27 @@ Welcome to the official repository for the **Living Streams Christian Church (Si
 
 ## About
 
-This website serves as an online presence for our church, providing visitors and members with easy access to announcements, event schedules, giving and contact information.
+The **Living Streams Christian Church** website is an integral part of our church’s digital presence. It is created to provide both visitors and church members with easy access to essential information, including announcements, event schedules, service times, and more. Our goal is to foster connection and keep everyone informed about the activities within our vibrant church community.
 
 ## Features
 
-The website includes the following key features:
+The website includes the following core features:
 
-- **Home Page**: A warm welcome with an introduction to our church and its mission.
-- **Events Calendar**: View upcoming church events, service times, and important dates.
-- **Ministries & Service Opportunities**: Learn about different ministries and how to serve within the church.
-- **Contact & Location Information**: Easily find our location, contact details, and office hours.
+- **Home Page**: A welcoming overview of our church, mission, and core values.
+- **Events Calendar**: A comprehensive calendar of upcoming events, church services, and key dates.
+- **Ministries & Service Opportunities**: Detailed information on the various ministries and how you can contribute through service.
+- **Contact & Location**: A user-friendly section to find our physical location, contact details, and office hours.
 
 ## Tech Stack
 
 This project utilizes the following technologies:
 
-- **CMS**: [Statamic](https://statamic.com) (A flexible flat-file CMS)
-- **Hosting**: [Ploi.io](https://ploi.io) / [Hetzner](https://www.hetzner.com)
+- **CMS**: [Statamic](https://statamic.com) – A flat-file CMS that powers our website's content management, providing flexibility and ease of use.
+- **Hosting**: [Ploi.io](https://ploi.io) – A robust deployment platform, coupled with cloud hosting via [Hetzner](https://www.hetzner.com), ensuring reliability and performance.
 
 ## Contact
 
-If you have any questions or suggestions, feel free to reach out:
+We welcome your feedback, questions, and suggestions. Please don't hesitate to reach out!
 
-**Repository Issues**: Open an [issue](https://github.com/barnabas243/lscc-website/issues)
-**Email**: <barnabas.tan@lscc.org.sg>
+- **Repository Issues**: If you encounter issues or have feature requests, open an [issue](https://github.com/barnabas243/lscc-website/issues).
+- **Email**: [barnabas.tan@lscc.org.sg](mailto:barnabas.tan@lscc.org.sg)
