@@ -129,11 +129,7 @@ fields:
               display: Timeline
               fields:
                 -
-                  handle: title
-                  field:
-                    type: text
-                    display: Title
-                    localizable: false
+                  import: timeline
         text:
           display: Text
           instructions: 'Text based blocks.'
