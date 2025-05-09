@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1746783289
+updated_at: 1746783330
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -219,7 +219,7 @@ page_builder:
             entry: 72196d4e-88d2-4a6e-a466-39df9fd27c31
             button_type: button
         type: card
-        enabled: false
+        enabled: true
         background_color: '#000000'
         text_color: '#ffffff'
         image: youth_outing.jpg
