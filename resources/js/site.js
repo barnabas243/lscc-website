@@ -12,6 +12,7 @@ import "./animations/hero";
 import "./animations/cards";
 import "./animations/buttons";
 import "./animations/imageText";
+import "./animations/timeline"; 
 
 // Initialize AlpineJS globally
 window.Alpine = Alpine;

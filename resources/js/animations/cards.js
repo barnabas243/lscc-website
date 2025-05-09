@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "power3.out",
             scrollTrigger: {
                 trigger: card,
-                start: "top 85%",
+                start: "top 90%",
                 toggleActions: "play none none none", // one-time
             },
         });
