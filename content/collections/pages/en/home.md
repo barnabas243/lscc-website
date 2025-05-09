@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1746767397
+updated_at: 1746783238
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -181,7 +181,7 @@ page_builder:
     text_col_span: 6
   -
     id: magbqzo0
-    title: 'Upcoming Events'
+    title: 'Upcoming Events 2025'
     type: timeline
     enabled: true
   -
