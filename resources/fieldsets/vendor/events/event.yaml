@@ -220,3 +220,20 @@ fields:
             require_time: false
             input_format: M/D/YYYY
             display: Date
+  -
+    handle: location_name
+    field:
+      placeholder: 'eg. 56 Boundary Road'
+      type: text
+      display: 'Location Name'
+      localizable: false
+      width: 50
+  -
+    handle: location_url
+    field:
+      input_type: url
+      placeholder: 'google maps link'
+      type: text
+      display: 'Location URL'
+      localizable: false
+      width: 50
