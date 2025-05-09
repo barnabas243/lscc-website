@@ -125,6 +125,15 @@ fields:
                     type: color
                     display: 'text color'
                     localizable: false
+            timeline:
+              display: Timeline
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                    localizable: false
         text:
           display: Text
           instructions: 'Text based blocks.'
