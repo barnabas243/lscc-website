@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739795823
+updated_at: 1746766651
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -179,6 +179,11 @@ page_builder:
     lead_text: "You're Invited!"
     image_col_span: 6
     text_col_span: 6
+  -
+    id: magbqzo0
+    title: 'Upcoming Events'
+    type: timeline
+    enabled: true
   -
     id: m6adz9gv
     cards:
