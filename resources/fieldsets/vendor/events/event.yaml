@@ -223,7 +223,7 @@ fields:
   -
     handle: location_name
     field:
-      placeholder: 'eg. 56 Boundary Road'
+      placeholder: 'eg. Living Streams Christian Church'
       type: text
       display: 'Location Name'
       localizable: false
