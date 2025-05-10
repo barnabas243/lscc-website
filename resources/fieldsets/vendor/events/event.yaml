@@ -133,7 +133,6 @@ fields:
       add_row: 'Add Day'
       min_rows: 1
       localizable: false
-      mode: stacked
       if_any:
         multi_day: 'equals true'
         recurrence: 'equals multi_day'
@@ -174,33 +173,6 @@ fields:
           field: 'events::event.all_day'
           config:
             width: 25
-        -
-          handle: speaker
-          field:
-            placeholder: 'eg. Pastor Joy'
-            autocomplete: name
-            type: text
-            display: Speaker
-            localizable: false
-            width: 25
-        -
-          handle: location
-          field:
-            input_type: url
-            placeholder: 'google maps link'
-            type: text
-            display: Location
-            instructions: 'Where is the event held?'
-            localizable: false
-            width: 25
-        -
-          handle: description
-          field:
-            type: textarea
-            display: Description
-            instructions: 'Provide a brief description of the event.'
-            localizable: false
-            width: 50
   -
     handle: exclude_dates
     field:
