@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 const elemPosition = elem.getBoundingClientRect().top;
                 const currentScrollTop =
                     window.scrollY || document.documentElement.scrollTop;
-                console.log(`Element position: ${elemPosition}`);
-                console.log(`Current scroll position: ${currentScrollTop}`);
 
                 if (entry.intersectionRatio >= threshold) {
                     elem.classList.add(ANIMATED_CLASS);
@@ -57,9 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
             locationUrl: locationUrl,
         });
     });
-
-    // Console log to inspect grouped data
-    console.log(groupedEvents);
 
     // Render events dynamically based on the grouped data
     Object.keys(groupedEvents).forEach((date) => {
