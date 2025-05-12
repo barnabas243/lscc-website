@@ -209,3 +209,10 @@ fields:
       display: 'Location URL'
       localizable: false
       width: 50
+  -
+    handle: speaker
+    field:
+      type: text
+      display: Speaker
+      localizable: false
+      width: 50
