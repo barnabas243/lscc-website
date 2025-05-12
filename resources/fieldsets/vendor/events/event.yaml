@@ -14,7 +14,7 @@ fields:
       width: 33
       display: Recurrence
       default: none
-      localizable: false
+      localizable: true
   -
     handle: timezone
     field:
@@ -28,7 +28,7 @@ fields:
       type: timezones
       mode: typeahead
       width: 33
-      localizable: false
+      localizable: true
   -
     handle: all_day
     field:
@@ -37,7 +37,7 @@ fields:
       display: 'All Day?'
       unless:
         recurrence: 'equals multi_day'
-      localizable: false
+      localizable: true
   -
     handle: specific_days
     field:
@@ -46,7 +46,7 @@ fields:
       display: 'Which Day(s)'
       if:
         recurrence: 'equals monthly'
-      localizable: false
+      localizable: true
   -
     handle: interval
     field:
@@ -55,7 +55,7 @@ fields:
       display: Interval
       if:
         recurrence: 'equals every'
-      localizable: false
+      localizable: true
   -
     handle: period
     field:
@@ -68,7 +68,7 @@ fields:
       width: 50
       if:
         recurrence: 'equals every'
-      localizable: false
+      localizable: true
   -
     handle: start_date
     field:
@@ -84,7 +84,7 @@ fields:
       unless_any:
         multi_day: 'equals true'
         recurrence: 'equals multi_day'
-      localizable: false
+      localizable: true
   -
     handle: end_date
     field:
@@ -100,7 +100,7 @@ fields:
       inline: true
       if:
         recurrence: 'contains_any daily, weekly, monthly, every'
-      localizable: false
+      localizable: true
   -
     handle: start_time
     field:
@@ -112,7 +112,7 @@ fields:
         multi_day: 'equals true'
         all_day: 'equals true'
         recurrence: 'equals multi_day'
-      localizable: false
+      localizable: true
   -
     handle: end_time
     field:
@@ -124,7 +124,7 @@ fields:
         multi_day: 'equals true'
         all_day: 'equals true'
         recurrence: 'equals multi_day'
-      localizable: false
+      localizable: true
   -
     handle: days
     field:
@@ -132,7 +132,7 @@ fields:
       display: 'Event Days'
       add_row: 'Add Day'
       min_rows: 1
-      localizable: false
+      localizable: true
       if_any:
         multi_day: 'equals true'
         recurrence: 'equals multi_day'
@@ -181,7 +181,7 @@ fields:
       add_row: 'Add Day'
       if_any:
         recurrence: 'contains_any monthly, daily, weekly, every'
-      localizable: false
+      localizable: true
       fields:
         -
           handle: date
@@ -198,7 +198,7 @@ fields:
       placeholder: 'eg. Living Streams Christian Church'
       type: text
       display: 'Location Name'
-      localizable: false
+      localizable: true
       width: 50
   -
     handle: location_url
@@ -207,22 +207,12 @@ fields:
       placeholder: 'google maps link'
       type: text
       display: 'Location URL'
-      localizable: false
+      localizable: true
       width: 50
   -
     handle: speaker
     field:
       type: text
       display: Speaker
-      localizable: false
-      width: 50
-  -
-    handle: image
-    field:
-      max_files: 1
-      container: images
-      folder: /
-      type: assets
-      display: Image
-      localizable: false
+      localizable: true
       width: 50
