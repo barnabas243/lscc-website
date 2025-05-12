@@ -18,7 +18,7 @@
         "statamic/cms": "^5.0",
         "studio1902/statamic-peak-browser-appearance": "^3.4",
         "studio1902/statamic-peak-seo": "^8.0",
-        "studio1902/statamic-peak-tools": "^6.7",
+        "studio1902/statamic-peak-tools": "7.1.0",
         "transformstudios/events": "^5.4",
         "xndbogdan/statamic-bard-text-color": "^5.1"
     },

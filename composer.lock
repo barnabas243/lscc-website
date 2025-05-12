@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "babc3bd8d9aa0bac5a74675eb561095f",
+    "content-hash": "6f64d574b864e1c421a36d8e25af9461",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -5571,16 +5571,16 @@
         },
         {
             "name": "studio1902/statamic-peak-tools",
-            "version": "v6.7.1",
+            "version": "v7.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/studio1902/statamic-peak-tools.git",
-                "reference": "4d0678a0d094df7a50a891d991aa3ab218d8b02e"
+                "reference": "810a6bcc9d86a8264cd1578f4cb19ae800d5b520"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/studio1902/statamic-peak-tools/zipball/4d0678a0d094df7a50a891d991aa3ab218d8b02e",
-                "reference": "4d0678a0d094df7a50a891d991aa3ab218d8b02e",
+                "url": "https://api.github.com/repos/studio1902/statamic-peak-tools/zipball/810a6bcc9d86a8264cd1578f4cb19ae800d5b520",
+                "reference": "810a6bcc9d86a8264cd1578f4cb19ae800d5b520",
                 "shasum": ""
             },
             "require": {
@@ -5606,7 +5606,7 @@
             "notification-url": "https://packagist.org/downloads/",
             "support": {
                 "issues": "https://github.com/studio1902/statamic-peak-tools/issues",
-                "source": "https://github.com/studio1902/statamic-peak-tools/tree/v6.7.1"
+                "source": "https://github.com/studio1902/statamic-peak-tools/tree/v7.1.0"
             },
             "funding": [
                 {
@@ -5614,7 +5614,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-21T10:59:52+00:00"
+            "time": "2025-02-05T09:25:06+00:00"
         },
         {
             "name": "symfony/console",
