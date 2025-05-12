@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // IntersectionObserver for timeline item animation
-    const threshold = 0.5;
+    const threshold = 0.6;
     const ANIMATED_CLASS = "in-view";
 
     const animationObserver = new IntersectionObserver(
@@ -149,21 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 window.scrollY || document.documentElement.scrollTop; // Get current scroll position
 
             let heightPercentage;
-            if (currentScrollTop < lastScrollTop) {
-                heightPercentage =
-                    Math.min(
-                        Math.max(currentDistance / (timelineHeight * 1.3), 0),
-                        1,
-                    ) * 100;
-            } else {
-                heightPercentage =
-                    Math.min(Math.max(currentDistance / timelineHeight, 0), 1) *
-                    100;
-            }
-
-            if (heightPercentage < 3) {
-                heightPercentage = 3;
-            }
+            heightPercentage =
+                Math.min(Math.max(currentDistance / timelineHeight, 0), 1) *
+                100;
 
             // Update the custom property --divider-height to control the height of ::before
             timeline.style.setProperty(
