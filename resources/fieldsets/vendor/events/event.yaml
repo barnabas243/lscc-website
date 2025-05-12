@@ -216,3 +216,13 @@ fields:
       display: Speaker
       localizable: false
       width: 50
+  -
+    handle: image
+    field:
+      max_files: 1
+      container: images
+      folder: /
+      type: assets
+      display: Image
+      localizable: false
+      width: 50
