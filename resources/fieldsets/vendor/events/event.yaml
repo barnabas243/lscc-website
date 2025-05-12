@@ -216,10 +216,3 @@ fields:
       display: Speaker
       localizable: true
       width: 50
-  -
-    handle: image
-    field:
-      container: images
-      type: assets
-      display: Image
-      localizable: false
