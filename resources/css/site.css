@@ -170,7 +170,7 @@
 }
 
 .timeline ol li.in-view .time-wrapper::after {
-    transition-delay: 0.3s;
+    transition-delay: 0.2s;
     transform: scale(1.5);
 }
 
@@ -182,15 +182,15 @@
 }
 
 .timeline ol li.in-view time {
-    transition-delay: 0.5s;
+    transition-delay: 0.2;
 }
 
 .timeline ol li.in-view .details h3 {
-    transition-delay: 0.7s;
+    transition-delay: 0.3s;
 }
 
 .timeline ol li.in-view .details p {
-    transition-delay: 0.8s;
+    transition-delay: 0.4s;
 }
 
 /* MQ STYLES
@@ -214,14 +214,14 @@
     }
 
     .timeline ol li.in-view time {
-        transition-delay: 0.5s;
+        transition-delay: 0.2s;
     }
 
     .timeline ol li.in-view .details h3 {
-        transition-delay: 0.7s;
+        transition-delay: 0.3s;
     }
 
     .timeline ol li.in-view .details p {
-        transition-delay: 0.9s;
+        transition-delay: 0.4s;
     }
 }
