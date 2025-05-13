@@ -14,7 +14,7 @@ page_builder:
         content:
           -
             type: text
-            text: 'Join the journey'
+            text: 'You’re Welcome Here'
       -
         type: paragraph
         attrs:
@@ -22,7 +22,7 @@ page_builder:
         content:
           -
             type: text
-            text: 'Wherever you’re at in life, '
+            text: 'Whether you’re exploring faith or looking for a church family, we’d love to journey with you. Join us for one of our Sunday services!'
       -
         type: paragraph
         attrs:
@@ -30,11 +30,12 @@ page_builder:
         content:
           -
             type: text
-            text: 'we want to join you on the journey to life’s greatest potential in Christ'
+            text: 'there’s a place for you at Living Streams.'
       -
         type: set
         attrs:
           id: m6p48ji9
+          enabled: false
           values:
             type: buttons
             buttons:
@@ -122,7 +123,7 @@ seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
-updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739701145
+updated_by: 59d4e9b0-40db-41c4-ab0c-d926eea156d7
+updated_at: 1747132455
 seo_description: 'Plan your visit to Living Streams Christian Church. Join us for our Sunday services and experience a welcoming community of faith.'
 ---
