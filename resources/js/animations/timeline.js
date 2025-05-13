@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // IntersectionObserver for timeline item animation
-    const threshold = 0.6;
+    const threshold = 0.8;
     const ANIMATED_CLASS = "in-view";
 
     const animationObserver = new IntersectionObserver(
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (entry.intersectionRatio >= threshold) {
                     elem.classList.add(ANIMATED_CLASS);
-                } else if (elemPosition > -100) {
+                } else if (elemPosition > 0) {
                     elem.classList.remove(ANIMATED_CLASS);
                 }
             });
