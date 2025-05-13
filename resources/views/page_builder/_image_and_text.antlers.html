@@ -1,9 +1,8 @@
 {{#
-    @name Image and Text @desc A flexible image and text layout block with
- options for alternating image placement using Tailwind CSS.
+    @name Image and Text
+    @desc A flexible image and text layout block with options for alternating image placement using Tailwind CSS.
 #}}
 
-<!-- /page_builder/_image_and_text.antlers.html -->
 {{ partial:page_builder/block }}
     <div
         class="span-content js-image-text-block mx-auto grid h-auto max-w-full gap-y-8 overflow-hidden md:grid-cols-12"
@@ -12,29 +11,27 @@
         <figure
             class="{{ image_position == 'left' ? 'order-first' : 'md:order-last' }} md:col-span-{{ image_col_span }} relative max-w-full"
         >
-            <!-- Image -->
             <img
                 src="{{ image }}"
-                class="h-full max-h-screen w-full object-cover"
+                class="max-h-[480px] w-full rounded-lg object-cover shadow-md md:max-h-[600px] lg:max-h-[700px]"
                 alt="{{ image:alt }}"
             />
         </figure>
 
         <!-- Text -->
         <article
-            class="{{ image_position == left ? 'order-last' : 'md:order-first' }} md:col-span-{{ text_col_span }} items-center align-middle"
+            class="{{ image_position == 'left' ? 'order-last' : 'md:order-first' }} md:col-span-{{ text_col_span }} flex items-center align-middle"
         >
             <div
-                class="mb-4 flex h-full flex-col items-center justify-center p-10 text-center text-wrap md:items-start md:pt-30 md:text-left lg:px-20"
+                class="mb-4 flex h-full w-full flex-col items-center justify-center px-6 py-10 text-center leading-relaxed md:items-start md:text-left lg:px-20"
             >
-                {{ block:lead_text ?= { partial:typography/p :content="block:lead_text" class="font-mono " } }}
-                {{ block:title ?= { partial:typography/h2 :content="block:title" class="text-4xl md:text-4xl" } }}
-                {{ partial:typography/prose class="text-xl mt-5" }}
+                {{ block:lead_text ?= { partial:typography/p :content="block:lead_text" class="font-mono text-sm text-purple-700 mb-2" } }}
+                {{ block:title ?= { partial:typography/h2 :content="block:title" class="text-4xl font-bold mb-4" } }}
+                {{ partial:typography/prose class="text-xl mt-2 text-neutral-800" }}
                     {{ block:text }}
                 {{ /partial:typography/prose }}
-                {{ partial:components/buttons class="mt-5" }}
+                {{ partial:components/buttons class="mt-8" }}
             </div>
         </article>
     </div>
 {{ /partial:page_builder/block }}
-<!-- End: /page_builder/_image_and_text.antlers.html -->
