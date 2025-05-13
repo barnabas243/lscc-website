@@ -70,11 +70,14 @@ page_builder:
         enabled: true
       -
         id: m6p08bz4
-        lead_text: 'Youth Service'
+        lead_text: 'Y.E.S. - Youth English Service'
         title: 10.30am
         content: |-
           Every Sunday (Except 1st Sunday)
 
+          Language:  English 
+          Who it's for: Youth and young adults
+          Style: contemporary worship, relevant messages and relaxed atmosphere
 
           56 Boundary Road, 549977
         type: card
@@ -124,6 +127,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 59d4e9b0-40db-41c4-ab0c-d926eea156d7
-updated_at: 1747132519
+updated_at: 1747132771
 seo_description: 'Plan your visit to Living Streams Christian Church. Join us for our Sunday services and experience a welcoming community of faith.'
 ---
