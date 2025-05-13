@@ -2,8 +2,8 @@
 id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
-updated_by: 59d4e9b0-40db-41c4-ab0c-d926eea156d7
-updated_at: 1747155369
+updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
+updated_at: 1747154464
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -48,13 +48,13 @@ page_builder:
     cards:
       -
         id: m6afwnag
-        title: 'Find Faith, Community, and Purpose in Jesus'
+        title: 'Live a Life Abundant in Jesus'
         content: |-
-          At Living Streams Christian Church, we believe that faith grows best when we walk together. Whether you're exploring Christianity for the first time or looking for a church to call home, you’re welcome here.
+          At Living Streams Christian Church, we believe that true growth in faith comes from worshipping and learning together. Our church is dedicated to creating a space that encourages spiritual growth and connection.
 
-          We gather to worship, learn from the Bible, and support one another through life’s ups and downs. From youth to seniors, singles to families, we’re a community of everyday people learning to follow Jesus.
+          We offer opportunities to engage with scripture, to learn about Jesus and to worship Him with others. Our church is open to people of all ages and backgrounds.
 
-          Wherever you’re coming from, you’re invited to grow with us — in truth, in love, and in faith.
+          Join us in growing in faith with people who love and obey Jesus.
         button:
           -
             id: m6afwuqx
@@ -65,7 +65,7 @@ page_builder:
             button_type: button
         type: card
         enabled: true
-        background_color: '#F5F3FA'
+        background_color: '#ffffff'
     type: cards
     enabled: true
     background_color: '#000000'
@@ -167,7 +167,7 @@ page_builder:
         content:
           -
             type: text
-            text: 'Whether it’s your first time or you’re returning, we’d love to welcome you. You’ll find friendly faces, helpful directions, and a place to feel at home.'
+            text: 'Whether you’re visiting for the first time or coming back, we can’t wait to have you with us!'
     buttons:
       -
         id: m6lullkb
