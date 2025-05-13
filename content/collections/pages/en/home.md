@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 59d4e9b0-40db-41c4-ab0c-d926eea156d7
-updated_at: 1747154183
+updated_at: 1747154332
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -181,7 +181,7 @@ page_builder:
         target_blank: false
         button_type: button
         entry: 6508ee95-c3b3-4635-9125-2c985271df30
-    lead_text: "You're Invited!"
+    lead_text: 'New here?'
     image_col_span: 6
     text_col_span: 6
   -
