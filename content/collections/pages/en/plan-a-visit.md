@@ -71,7 +71,7 @@ page_builder:
         enabled: true
       -
         id: m6p08bz4
-        lead_text: 'Y.E.S. - Youth English Service'
+        lead_text: 'Youth English Service'
         title: 10.30am
         content: |-
           Every Sunday (Except 1st Sunday)
@@ -175,6 +175,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 59d4e9b0-40db-41c4-ab0c-d926eea156d7
-updated_at: 1747134705
+updated_at: 1747134745
 seo_description: 'Plan your visit to Living Streams Christian Church. Join us for our Sunday services and experience a welcoming community of faith.'
 ---
