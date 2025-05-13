@@ -25,9 +25,9 @@
             <div
                 class="mb-4 flex h-full w-full flex-col items-center justify-center px-6 py-10 text-center leading-relaxed md:items-start md:text-left lg:px-20"
             >
-                {{ block:lead_text ?= { partial:typography/p :content="block:lead_text" class="font-mono text-sm text-purple-700 mb-2" } }}
-                {{ block:title ?= { partial:typography/h2 :content="block:title" class="text-4xl font-bold mb-4" } }}
-                {{ partial:typography/prose class="text-xl mt-2 text-neutral-800" }}
+                {{ block:lead_text ?= { partial:typography/p :content="block:lead_text" class="font-mono text-lg text-purple-700 mb-2 max-w-prose" } }}
+                {{ block:title ?= { partial:typography/h2 :content="block:title" class="text-4xl font-bold mb-4 max-w-prose" } }}
+                {{ partial:typography/prose class="text-xl mt-2 text-neutral-800 max-w-prose" }}
                     {{ block:text }}
                 {{ /partial:typography/prose }}
                 {{ partial:components/buttons class="mt-8" }}
