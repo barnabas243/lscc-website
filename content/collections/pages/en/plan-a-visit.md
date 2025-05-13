@@ -30,6 +30,9 @@ page_builder:
         content:
           -
             type: text
+            marks:
+              -
+                type: italic
             text: 'There’s a place for you at Living Streams Christian Church. '
       -
         type: set
@@ -123,6 +126,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 59d4e9b0-40db-41c4-ab0c-d926eea156d7
-updated_at: 1747133229
+updated_at: 1747133511
 seo_description: 'Plan your visit to Living Streams Christian Church. Join us for our Sunday services and experience a welcoming community of faith.'
 ---
