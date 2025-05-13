@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1747154771
+updated_at: 1747154827
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -168,14 +168,11 @@ page_builder:
           -
             type: text
             text: 'Whether it’s your first time or you’re returning, we’d love to welcome you.'
-      -
-        type: paragraph
-        content:
           -
             type: hardBreak
           -
             type: text
-            text: 'You’ll find friendly faces, helpful directions, and a place to feel at home.'
+            text: '                                                                                      You’ll find friendly faces, helpful directions, and a place to feel at home.'
     buttons:
       -
         id: m6lullkb
