@@ -85,7 +85,7 @@ page_builder:
     align_content: left
     type: cards
     enabled: true
-    title: Services
+    title: 'Choose a Service That Fits You'
   -
     id: m6p1q740
     size: md
@@ -124,6 +124,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 59d4e9b0-40db-41c4-ab0c-d926eea156d7
-updated_at: 1747132455
+updated_at: 1747132519
 seo_description: 'Plan your visit to Living Streams Christian Church. Join us for our Sunday services and experience a welcoming community of faith.'
 ---
