@@ -96,16 +96,16 @@ page_builder:
     cards:
       -
         id: m6p2w8s1
-        lead_text: 'Looking for our upcoming events?'
-        title: 'Come Visit Us!'
+        lead_text: "Looking for what's happening next?"
+        title: 'Explore Our Calendar'
         content: |-
-          Take a look at our calendar to find all the upcoming services, events, and activities
+          Check out our calendar to find all the upcoming services, events, and gatherings 
 
           we’d love for you to be a part of them!
         button:
           -
             id: m6p2wb8h
-            label: 'Our Calendar'
+            label: 'View Calendar'
             link_type: entry
             target_blank: false
             entry: 72196d4e-88d2-4a6e-a466-39df9fd27c31
@@ -123,6 +123,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 59d4e9b0-40db-41c4-ab0c-d926eea156d7
-updated_at: 1747132953
+updated_at: 1747133149
 seo_description: 'Plan your visit to Living Streams Christian Church. Join us for our Sunday services and experience a welcoming community of faith.'
 ---
