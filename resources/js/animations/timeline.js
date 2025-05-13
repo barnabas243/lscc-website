@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Render events dynamically based on the grouped data
     Object.keys(groupedEvents).forEach((date) => {
         const listItem = document.createElement("li");
         listItem.classList.add("timeline-item");
@@ -73,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
         timeWrapper.appendChild(timeElement);
         timeInner.appendChild(timeWrapper);
 
-        // Loop through the events for this date and add them to the details section
         groupedEvents[date].forEach((event) => {
             const detailsWrapper = document.createElement("div");
             detailsWrapper.classList.add(
@@ -89,38 +87,50 @@ document.addEventListener("DOMContentLoaded", () => {
             const eventTitle = document.createElement("h3");
             eventTitle.textContent = event.title;
 
-            const eventDuration = `${event.startTime} - ${event.endTime}`;
             const eventDescription = document.createElement("p");
-            eventDescription.textContent = eventDuration;
+
+            const isAllDay =
+                event.startTime?.trim() === "12:00 AM" &&
+                (event.endTime?.trim() === "11:59 PM" ||
+                    event.endTime?.trim() === "12:00 AM");
+
+            eventDescription.textContent = isAllDay
+                ? "All day"
+                : `${event.startTime} – ${event.endTime}`;
 
             const locationP = document.createElement("p");
-            const locationUrl = document.createElement("a");
-            locationUrl.href = event.locationUrl;
-            locationUrl.target = "_blank";
-            locationUrl.textContent = event.locationName;
-            locationUrl.classList.add(
-                "text-blue-300",
-                "hover:text-blue-700",
-                "underline",
-                "underline-offset-2",
-            );
-            locationUrl.setAttribute("rel", "noopener noreferrer");
+            const locationLabel = event.locationName?.trim();
 
-            locationP.appendChild(locationUrl);
+            // Only create <a> if locationUrl exists and is non-empty
+            if (event.locationUrl?.trim()) {
+                const locationUrl = document.createElement("a");
+                locationUrl.href = event.locationUrl;
+                locationUrl.target = "_blank";
+                locationUrl.rel = "noopener noreferrer";
+                locationUrl.classList.add(
+                    "text-blue-300",
+                    "hover:text-blue-700",
+                    "underline",
+                    "underline-offset-2",
+                );
+                locationUrl.textContent = locationLabel || "View location";
+                locationP.appendChild(locationUrl);
+            } else if (locationLabel) {
+                // Fallback: show location name as plain text
+                locationP.textContent = locationLabel;
+            }
 
             detailsWrapper.appendChild(eventTitle);
             detailsWrapper.appendChild(eventDescription);
-            detailsWrapper.appendChild(locationP);
+            if (locationLabel || event.locationUrl) {
+                detailsWrapper.appendChild(locationP);
+            }
 
             timeInner.appendChild(detailsWrapper);
         });
 
         listItem.appendChild(timeInner);
-
-        // Append the <li> to the timeline container
         timelineContainer.appendChild(listItem);
-
-        // **Observe the newly created listItem for animation**
         animationObserver.observe(listItem);
     });
 
