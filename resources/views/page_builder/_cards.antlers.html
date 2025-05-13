@@ -19,13 +19,14 @@
     (total_results > 2) => 'md:col-span-8 md:col-start-3 lg:col-span-4 lg:col-start-0',
     () => void) }} flex flex-col items-start justify-between"
             >
-                {{ if image }}
+                {{ image }}
                     <img
-                        src="{{ image }}"
+                        src="{{ glide:url width="800" height="auto" quality="100" }}"
                         alt="{{ title }}"
-                        class="h-1/3 w-full object-cover"
+                        class="h-[33vh] w-full object-cover"
+                        loading="lazy"
                     />
-                {{ /if }}
+                {{ /image }}
                 <div
                     class="{{ (total_results === 1)
  ? 'items-center text-left md:text-center md:p-30' : (total_results > 2 ? 'md:px-12' : 'md:px-20') }} flex h-full w-full flex-col px-6 py-20"

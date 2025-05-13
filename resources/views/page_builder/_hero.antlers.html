@@ -9,13 +9,21 @@
         class="span-content relative flex min-h-screen w-full items-center justify-center overflow-hidden"
         id="hero-section"
     >
-        {{ if hero_image }}
+        {{ hero_image }}
             <img
-                src="{{ hero_image | url }}"
+                src="{{ glide:url width='1920' quality='85' format='webp' }}"
+                srcset="
+                    {{ glide:url width='768' quality='85' format='webp' }}   768w,
+                    {{ glide:url width='1024' quality='85' format='webp' }} 1024w,
+                    {{ glide:url width='1440' quality='85' format='webp' }} 1440w,
+                    {{ glide:url width='1920' quality='85' format='webp' }} 1920w
+                "
+                sizes="100vw"
                 alt="Hero Image"
+                loading="eager"
                 class="js-hero-image image-with-shadow absolute top-0 left-0 h-full w-full object-cover"
             />
-        {{ /if }}
+        {{ /hero_image }}
         <div
             class="relative z-10 mt-20 flex max-w-3xl flex-col gap-10 px-4 text-center md:flex-row"
         >

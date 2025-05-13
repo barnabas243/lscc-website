@@ -11,11 +11,21 @@
         <figure
             class="{{ image_position == 'left' ? 'order-first' : 'md:order-last' }} md:col-span-{{ image_col_span }} relative max-w-full"
         >
-            <img
-                src="{{ image }}"
-                class="max-h-[480px] w-full rounded-lg object-cover shadow-md md:max-h-[600px] lg:max-h-[700px]"
-                alt="{{ image:alt }}"
-            />
+            {{ image }}
+                <img
+                    src="{{ glide:url width='1600' quality='85' format='webp' }}"
+                    srcset="
+                        {{ glide:url width='480' quality='85' format='webp' }}   480w,
+                        {{ glide:url width='768' quality='85' format='webp' }}   768w,
+                        {{ glide:url width='1024' quality='85' format='webp' }} 1024w,
+                        {{ glide:url width='1600' quality='85' format='webp' }} 1600w
+                    "
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 800px"
+                    alt="{{ alt }}"
+                    class="max-h-[480px] w-full rounded-lg object-cover shadow-md md:max-h-[600px] lg:max-h-[700px]"
+                    loading="lazy"
+                />
+            {{ /image }}
         </figure>
 
         <!-- Text -->
