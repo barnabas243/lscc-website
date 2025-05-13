@@ -120,12 +120,61 @@ page_builder:
     align_content: middle
     type: cards
     enabled: true
+  -
+    id: mamemd8g
+    article:
+      -
+        type: heading
+        attrs:
+          textAlign: center
+          level: 2
+        content:
+          -
+            type: text
+            text: 'Planning to Visit?'
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: italic
+            text: 'Let us know you’re coming!'
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+        content:
+          -
+            type: text
+            text: 'we’d love to say hello and help you feel at home. It’s optional, but it helps us look out for you.'
+      -
+        type: set
+        attrs:
+          id: mameovv8
+          values:
+            type: buttons
+            buttons:
+              -
+                id: mameox94
+                label: "I'm Planning to Visit"
+                link_type: url
+                target_blank: true
+                url: 'https://docs.google.com/forms/d/e/1FAIpQLScbjmLUace7VqXthXmd4SZp0krPraQ5Hg0cwR5R0lyOuIZe2A/formResponse?pli=1'
+                button_type: button
+    background_color: '#ffffff'
+    top_padding: 30
+    type: article
+    enabled: true
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 59d4e9b0-40db-41c4-ab0c-d926eea156d7
-updated_at: 1747133633
+updated_at: 1747134652
 seo_description: 'Plan your visit to Living Streams Christian Church. Join us for our Sunday services and experience a welcoming community of faith.'
 ---
