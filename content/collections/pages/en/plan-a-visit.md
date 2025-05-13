@@ -55,12 +55,10 @@ page_builder:
     cards:
       -
         id: m6p08d6g
-        lead_text: 'Combined | Chinese Service'
+        lead_text: 'Chinese Service'
         title: 2.30pm
         content: |-
-          Combined: 1st Sunday 
-          Chinese: Other Sundays
-
+          Combined English-Chinese Service on 1st sunday of each month
 
           Bethany Presbyterian Church - Level 1 Grace Auditorium
           364A Upper Paya Lebar Rd, Singapore 534965
@@ -125,6 +123,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 59d4e9b0-40db-41c4-ab0c-d926eea156d7
-updated_at: 1747132855
+updated_at: 1747132953
 seo_description: 'Plan your visit to Living Streams Christian Church. Join us for our Sunday services and experience a welcoming community of faith.'
 ---
