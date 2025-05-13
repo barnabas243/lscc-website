@@ -2,8 +2,8 @@
 id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
-updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1746783330
+updated_by: 59d4e9b0-40db-41c4-ab0c-d926eea156d7
+updated_at: 1747150941
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -66,6 +66,7 @@ page_builder:
         type: card
         enabled: true
         background_color: '#ffffff'
+        image: lscc_logo.png
     type: cards
     enabled: true
     background_color: '#000000'
