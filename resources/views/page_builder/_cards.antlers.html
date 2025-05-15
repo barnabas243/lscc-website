@@ -20,12 +20,48 @@
     () => void) }} flex flex-col items-start justify-between"
             >
                 {{ image }}
-                    <img
-                        src="{{ glide:url width="800" height="auto" quality="100" }}"
-                        alt="{{ title }}"
-                        class="h-[33vh] w-full object-cover"
-                        loading="lazy"
-                    />
+                    <picture>
+                        <!-- WebP: modern & small -->
+                        <source
+                            type="image/webp"
+                            srcset="
+                                {{ glide:url width='480' format='webp' quality='65' }}   480w,
+                                {{ glide:url width='768' format='webp' quality='70' }}   768w,
+                                {{ glide:url width='1024' format='webp' quality='75' }} 1024w,
+                                {{ glide:url width='1280' format='webp' quality='80' }} 1280w,
+                                {{ glide:url width='1600' format='webp' quality='85' }} 1600w,
+                                {{ glide:url width='1920' format='webp' quality='85' }} 1920w,
+                                {{ glide:url width='2560' format='webp' quality='85' }} 2560w
+                            "
+                            sizes="100vw"
+                        />
+
+                        <!-- JPEG fallback for Safari (older) & non-webp -->
+                        <source
+                            type="image/jpeg"
+                            srcset="
+                                {{ glide:url width='480' format='jpg' quality='65' }}   480w,
+                                {{ glide:url width='768' format='jpg' quality='70' }}   768w,
+                                {{ glide:url width='1024' format='jpg' quality='75' }} 1024w,
+                                {{ glide:url width='1280' format='jpg' quality='80' }} 1280w,
+                                {{ glide:url width='1600' format='jpg' quality='85' }} 1600w,
+                                {{ glide:url width='1920' format='jpg' quality='85' }} 1920w,
+                                {{ glide:url width='2560' format='jpg' quality='85' }} 2560w
+                            "
+                            sizes="100vw"
+                        />
+
+                        <!-- Fallback <img> for all browsers -->
+                        <img
+                            src="{{ glide:url width='1920' format='webp' quality='85' }}"
+                            alt="{{ title }}"
+                            width="1920"
+                            height="auto"
+                            class="h-[33vh] w-full object-cover"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </picture>
                 {{ /image }}
                 <div
                     class="{{ (total_results === 1)
