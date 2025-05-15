@@ -151,7 +151,7 @@ function renderTimeline(grouped, container, locale) {
 
             if (event.allDay === true) {
                 timeBadge.innerHTML = `
-          <span class="inline-flex items-center gap-2 rounded bg-indigo-500/20 px-3 py-1 text-sm font-medium text-indigo-200">
+          <span class="inline-flex items-center gap-2 rounded bg-indigo-500/20 px-3 py-1 text-sm font-medium text-indigo-200 shadow-sm">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10m-11 9h12a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v11a2 2 0 002 2z" />
             </svg>
@@ -160,7 +160,7 @@ function renderTimeline(grouped, container, locale) {
         `;
             } else if (event.startTime && event.endTime) {
                 timeBadge.innerHTML = `
-          <span class="inline-flex items-center gap-2 rounded bg-indigo-500/20 px-3 py-1 text-sm font-medium text-slate-200">
+          <span class="inline-flex items-center gap-2 rounded bg-indigo-500/20 px-3 py-1 text-sm font-medium text-slate-200 shadow-sm">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
@@ -169,7 +169,7 @@ function renderTimeline(grouped, container, locale) {
         `;
             } else if (event.startTime) {
                 timeBadge.innerHTML = `
-          <span class="inline-flex items-center gap-2 rounded bg-slate-700/40 px-3 py-1 text-sm font-medium text-slate-200">
+          <span class="inline-flex items-center gap-2 rounded bg-slate-700/40 px-3 py-1 text-sm font-medium text-slate-200 shadow-sm">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
