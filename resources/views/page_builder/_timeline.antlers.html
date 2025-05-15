@@ -10,21 +10,7 @@
     >
         <section class="timeline">
             {{ partial:typography/h2 class="text-5xl md:text-7xl text-white mb-10" :content="title" }}
-            <ol id="timeline-events" data-progress="0">
-                {{ events:upcoming collection="events" limit="7" }}
-                    <div
-                        class="display-none hidden"
-                        data-start-date="{{ start format="j M" }}"
-                        data-end-date="{{ end format="j M" }}"
-                        data-start-time="{{ start format="g:i A" }}"
-                        data-end-time="{{ end format="g:i A" }}"
-                        data-title="{{ title }}"
-                        data-description="{{ description }}"
-                        data-location-name="{{ location_name }}"
-                        data-location-url="{{ location_url }}"
-                    ></div>
-                {{ /events:upcoming }}
-            </ol>
+            <ol id="timeline-events" data-progress="0"></ol>
         </section>
     </section>
 {{ /partial:page_builder/block }}

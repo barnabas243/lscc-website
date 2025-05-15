@@ -1,177 +1,260 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // IntersectionObserver for timeline item animation
+document.addEventListener("DOMContentLoaded", async () => {
+    const locale = getLocale();
+    const timelineContainer = document.getElementById("timeline-events");
+    const timeline = document.querySelector(".timeline ol");
+
+    if (!timeline || !timelineContainer) return;
+
+    try {
+        const groupedEvents = await loadEventsGroupedByDate(locale);
+        renderTimeline(groupedEvents, timelineContainer, locale);
+    } catch (err) {
+        console.error("Error loading or rendering timeline:", err);
+        return;
+    }
+
+    const animationObserver = createAnimationObserver();
+    observeTimelineItems(animationObserver, timelineContainer);
+    setupScrollProgress(timeline);
+});
+
+function getLocale() {
+    console.log("Current URL:", window.location.pathname);
+    return window.location.pathname.startsWith("/cn") ? "cn" : "en";
+}
+
+function isTodayOrFuture(isoDateStr) {
+    const today = new Date().setHours(0, 0, 0, 0);
+    const eventDate = new Date(isoDateStr).setHours(0, 0, 0, 0);
+    return eventDate >= today;
+}
+
+function formatDateToReadable(dateStr, locale) {
+    const sgDate = new Date(dateStr); // Still in UTC
+    return sgDate.toLocaleDateString(locale === "zh_cn" ? "zh-SG" : "en-SG", {
+        day: "numeric",
+        month: "short",
+        timeZone: "Asia/Singapore",
+    });
+}
+
+async function loadEventsGroupedByDate(locale) {
+    const url = new URL(
+        "/api/collections/events/entries",
+        window.location.origin,
+    );
+    url.searchParams.set("site", locale);
+    url.searchParams.set("limit", "5");
+
+    const res = await fetch(url);
+    const { data } = await res.json();
+
+    console.log("Fetched events:", data);
+
+    if (!Array.isArray(data) || data.length === 0) {
+        return {};
+    }
+    if (res.status !== 200) {
+        throw new Error("Failed to fetch events");
+    }
+
+    const filteredData = data.filter((entry) => entry.locale === locale);
+
+    const flattened = filteredData.flatMap((entry) => {
+        const {
+            title,
+            location_name,
+            location_url,
+            days,
+            start_date,
+            start_time,
+            end_time,
+            all_day,
+        } = entry;
+
+        if (Array.isArray(days) && days.length > 0) {
+            return days
+                .filter((d) => isTodayOrFuture(d.date))
+                .map((d) => ({
+                    title,
+                    date: new Date(d.date).toISOString(),
+                    startTime: d.start_time,
+                    endTime: d.end_time,
+                    allDay: d.all_day,
+                    locationName: location_name,
+                    locationUrl: location_url,
+                }));
+        }
+
+        if (!start_date || !isTodayOrFuture(start_date)) return [];
+
+        return [
+            {
+                title,
+                date: new Date(start_date).toISOString(),
+                startTime: start_time,
+                endTime: end_time,
+                allDay: all_day ?? false,
+                locationName: location_name,
+                locationUrl: location_url,
+            },
+        ];
+    });
+
+    flattened.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    const grouped = {};
+    const seen = new Set();
+
+    for (const event of flattened) {
+        const readableDate = formatDateToReadable(event.date, locale);
+
+        if (!grouped[readableDate]) {
+            if (seen.size >= 5) break;
+            seen.add(readableDate);
+            grouped[readableDate] = [];
+        }
+
+        grouped[readableDate].push(event);
+    }
+
+    return grouped;
+}
+
+function renderTimeline(grouped, container, locale) {
+    Object.entries(grouped).forEach(([dateLabel, events]) => {
+        const listItem = document.createElement("li");
+        listItem.classList.add("timeline-item");
+
+        const itemInner = document.createElement("div");
+        itemInner.classList.add("item-inner");
+
+        const timeWrapper = document.createElement("div");
+        timeWrapper.classList.add("time-wrapper");
+
+        const timeEl = document.createElement("time");
+        timeEl.textContent = dateLabel;
+        timeWrapper.appendChild(timeEl);
+        itemInner.appendChild(timeWrapper);
+
+        events.forEach((event) => {
+            const details = document.createElement("div");
+            details.className =
+                "details p-6 rounded-lg shadow-md bg-white/5 backdrop-blur-lg shadow-lg";
+
+            const titleEl = document.createElement("h3");
+            titleEl.className = "text-lg font-semibold text-white mb-2";
+            titleEl.textContent = event.title;
+            details.appendChild(titleEl);
+
+            const timeBadge = document.createElement("div");
+
+            if (event.allDay === true) {
+                timeBadge.innerHTML = `
+          <span class="inline-flex items-center gap-2 rounded bg-indigo-500/20 px-3 py-1 text-sm font-medium text-indigo-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10m-11 9h12a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v11a2 2 0 002 2z" />
+            </svg>
+            Full Day
+          </span>
+        `;
+            } else if (event.startTime && event.endTime) {
+                timeBadge.innerHTML = `
+          <span class="inline-flex items-center gap-2 rounded bg-indigo-500/20 px-3 py-1 text-sm font-medium text-slate-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            ${event.startTime} – ${event.endTime}
+          </span>
+        `;
+            } else if (event.startTime) {
+                timeBadge.innerHTML = `
+          <span class="inline-flex items-center gap-2 rounded bg-slate-700/40 px-3 py-1 text-sm font-medium text-slate-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Starts at ${event.startTime}
+          </span>
+        `;
+            } else {
+                timeBadge.innerHTML = `
+          <span class="inline-flex items-center gap-2 rounded bg-red-500/20 px-3 py-1 text-sm font-medium text-red-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Time Not Set
+          </span>
+        `;
+            }
+
+            details.appendChild(timeBadge);
+
+            if (event.locationName || event.locationUrl) {
+                const locationP = document.createElement("p");
+                locationP.className =
+                    "mt-2 text-sm text-blue-300 hover:text-blue-400";
+
+                if (event.locationUrl?.trim()) {
+                    const a = document.createElement("a");
+                    a.href = event.locationUrl;
+                    a.target = "_blank";
+                    a.rel = "noopener noreferrer";
+                    a.className = "underline underline-offset-2";
+                    a.textContent = event.locationName || "View location";
+                    locationP.appendChild(a);
+                } else if (event.locationName) {
+                    locationP.textContent = event.locationName;
+                }
+
+                details.appendChild(locationP);
+            }
+
+            itemInner.appendChild(details);
+        });
+
+        listItem.appendChild(itemInner);
+        container.appendChild(listItem);
+    });
+}
+
+function createAnimationObserver() {
     const threshold = 0.8;
     const ANIMATED_CLASS = "in-view";
 
-    const animationObserver = new IntersectionObserver(
-        (entries, observer) => {
+    return new IntersectionObserver(
+        (entries) => {
             entries.forEach((entry) => {
                 const elem = entry.target;
-
-                const elemPosition = elem.getBoundingClientRect().top;
-                const currentScrollTop =
-                    window.scrollY || document.documentElement.scrollTop;
+                const top = elem.getBoundingClientRect().top;
 
                 if (entry.intersectionRatio >= threshold) {
                     elem.classList.add(ANIMATED_CLASS);
-                } else if (elemPosition > 0) {
+                } else if (top > 0) {
                     elem.classList.remove(ANIMATED_CLASS);
                 }
             });
         },
         { threshold },
     );
+}
 
-    const timelineContainer = document.getElementById("timeline-events");
+function observeTimelineItems(observer, container) {
+    const items = container.querySelectorAll(".timeline-item");
+    items.forEach((item) => observer.observe(item));
+}
 
-    // Select all event divs inside the #timeline-events container
-    const eventItems = timelineContainer.querySelectorAll("div");
-
-    // Initialize an array to store event data grouped by date
-    const groupedEvents = {};
-
-    // Group the events by date
-    eventItems.forEach((item) => {
-        const eventDate = item.getAttribute("data-start-date");
-        const eventEndDate = item.getAttribute("data-end-date");
-        const eventStartTime = item.getAttribute("data-start-time");
-        const eventEndTime = item.getAttribute("data-end-time");
-        const eventTitle = item.getAttribute("data-title");
-        const eventDescription = item.getAttribute("data-description");
-        const locationName = item.getAttribute("data-location-name");
-        const locationUrl = item.getAttribute("data-location-url");
-
-        if (!groupedEvents[eventDate]) {
-            groupedEvents[eventDate] = [];
-        }
-
-        groupedEvents[eventDate].push({
-            endDate: eventEndDate,
-            startTime: eventStartTime,
-            endTime: eventEndTime,
-            title: eventTitle,
-            description: eventDescription,
-            locationName: locationName,
-            locationUrl: locationUrl,
-        });
-    });
-
-    Object.keys(groupedEvents).forEach((date) => {
-        const listItem = document.createElement("li");
-        listItem.classList.add("timeline-item");
-
-        const timeInner = document.createElement("div");
-        timeInner.classList.add("item-inner");
-
-        const timeWrapper = document.createElement("div");
-        timeWrapper.classList.add("time-wrapper");
-
-        const timeElement = document.createElement("time");
-        timeElement.textContent = date;
-
-        timeWrapper.appendChild(timeElement);
-        timeInner.appendChild(timeWrapper);
-
-        groupedEvents[date].forEach((event) => {
-            const detailsWrapper = document.createElement("div");
-            detailsWrapper.classList.add(
-                "details",
-                "p-6",
-                "rounded-lg",
-                "shadow-xl",
-                "hover:shadow-2xl",
-                "transition-shadow",
-                "duration-600",
-            );
-
-            const eventTitle = document.createElement("h3");
-            eventTitle.textContent = event.title;
-
-            const eventDescription = document.createElement("p");
-
-            const isAllDay =
-                event.startTime?.trim() === "12:00 AM" &&
-                (event.endTime?.trim() === "11:59 PM" ||
-                    event.endTime?.trim() === "12:00 AM");
-
-            eventDescription.textContent = isAllDay
-                ? "All day"
-                : `${event.startTime} – ${event.endTime}`;
-
-            const locationP = document.createElement("p");
-            const locationLabel = event.locationName?.trim();
-
-            // Only create <a> if locationUrl exists and is non-empty
-            if (event.locationUrl?.trim()) {
-                const locationUrl = document.createElement("a");
-                locationUrl.href = event.locationUrl;
-                locationUrl.target = "_blank";
-                locationUrl.rel = "noopener noreferrer";
-                locationUrl.classList.add(
-                    "text-blue-300",
-                    "hover:text-blue-700",
-                    "underline",
-                    "underline-offset-2",
-                );
-                locationUrl.textContent = locationLabel || "View location";
-                locationP.appendChild(locationUrl);
-            } else if (locationLabel) {
-                // Fallback: show location name as plain text
-                locationP.textContent = locationLabel;
-            }
-
-            detailsWrapper.appendChild(eventTitle);
-            detailsWrapper.appendChild(eventDescription);
-            if (locationLabel || event.locationUrl) {
-                detailsWrapper.appendChild(locationP);
-            }
-
-            timeInner.appendChild(detailsWrapper);
-        });
-
-        listItem.appendChild(timeInner);
-        timelineContainer.appendChild(listItem);
-        animationObserver.observe(listItem);
-    });
-
-    const timeline = document.querySelector(".timeline ol"); // The timeline container
-    let reachedMax = false;
-    let lastScrollTop = 0; // Variable to store the last scroll position
-    // Function to calculate and update scroll progress
+function setupScrollProgress(timeline) {
     function updateProgress() {
-        // Use requestAnimationFrame to ensure smooth updates
-
-        if (reachedMax) return; // Prevent further updates if max is reached
-
-        window.requestAnimationFrame(() => {
-            const timelineRect = timeline.getBoundingClientRect(); // Get the position of the timeline relative to the viewport
-            const timelineHeight = timeline.clientHeight; // Height of the timeline element
-            const viewportHeight = window.innerHeight; // Height of the viewport
-
-            const currentDistance = timelineRect.top * -1 + viewportHeight;
-
-            const currentScrollTop =
-                window.scrollY || document.documentElement.scrollTop; // Get current scroll position
-
-            let heightPercentage;
-            heightPercentage =
-                Math.min(Math.max(currentDistance / timelineHeight, 0), 1) *
-                100;
-
-            // Update the custom property --divider-height to control the height of ::before
-            timeline.style.setProperty(
-                "--divider-height",
-                `${heightPercentage}%`,
-            );
-
-            // Update the last scroll position
-            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Ensure we don't get negative values
+        requestAnimationFrame(() => {
+            const rect = timeline.getBoundingClientRect();
+            const height = timeline.clientHeight;
+            const viewport = window.innerHeight;
+            const distance = -rect.top + viewport;
+            const progress = Math.min(Math.max(distance / height, 0), 1) * 100;
+            timeline.style.setProperty("--divider-height", `${progress}%`);
         });
     }
 
-    // Listen for window scroll events to update the progress
-    window.addEventListener("scroll", updateProgress);
-
-    // Call the function once to set the initial progress when the page loads
+    window.addEventListener("scroll", updateProgress, { passive: true });
     updateProgress();
-});
+}
