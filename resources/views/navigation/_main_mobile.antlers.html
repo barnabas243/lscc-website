@@ -1,9 +1,8 @@
 {{#
     @name Main mobile navigation
-    @desc The sites main mobile navigation rendered on each page. It's 2 levels deep by default and uses AlpineJS for interactivity.
+    @desc The site's main mobile navigation rendered on each page. It's 2 levels deep by default and uses AlpineJS for interactivity.
 #}}
 
-<!-- /navigation/_main_mobile.antlers.html -->
 <nav
     x-data="{ mobileNavOpen: false }"
     class="md:hidden"
@@ -12,36 +11,64 @@
     @keyup.escape.stop.prevent="mobileNavOpen = false"
     x-cloak
 >
-    <div
-        class="flex items-center justify-between gap-x-8 bg-transparent px-3 md:px-10"
-    >
+    <div class="flex items-center justify-between gap-x-8 px-3 md:px-10">
         {{ partial:navigation/language_picker }}
+        <!-- Hamburger Toggle -->
         <button
             @click.prevent.stop="mobileNavOpen = !mobileNavOpen"
-            class="bg-primary z-30 flex h-10 w-10 items-center justify-center rounded-sm text-xs font-bold text-white"
+            x-ref="hamburgerButton"
+            class="bg-primary z-30 flex h-10 w-10 items-center justify-center rounded-sm text-white"
+            :class="mobileNavOpen ? 'nav-open' : ''"
             :aria-label="mobileNavOpen ? '{{ trans:strings.nav_close }}' : '{{ trans:strings.nav_open }}'"
             :aria-expanded="mobileNavOpen"
         >
-            <!-- Hamburger icon when mobileNavOpen is false -->
-            <i
-                x-show="!mobileNavOpen"
-                class="fas fa-bars text-lg text-white"
-            ></i>
-
-            <!-- X icon when mobileNavOpen is true -->
-            <i
-                x-show="mobileNavOpen"
-                class="fas fa-times text-lg text-white"
-            ></i>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            >
+                <line x1="4" y1="6" x2="20" y2="6" class="icon-line line-top" />
+                <line
+                    x1="4"
+                    y1="12"
+                    x2="20"
+                    y2="12"
+                    class="icon-line line-middle"
+                />
+                <line
+                    x1="4"
+                    y1="18"
+                    x2="20"
+                    y2="18"
+                    class="icon-line line-bottom"
+                />
+            </svg>
         </button>
 
+        <!-- Mobile Overlay -->
         <div
-            class="fixed inset-0 z-20 flex flex-col items-center justify-center bg-white px-8 pt-8 pb-12"
             x-show="mobileNavOpen"
-            x-transition.origin.bottom.right
+            x-transition:enter="motion-safe:transition motion-safe:ease-out motion-safe:duration-300"
+            x-transition:enter-start="motion-safe:opacity-0 motion-safe:-translate-y-10"
+            x-transition:enter-end="motion-safe:opacity-100 motion-safe:translate-y-0"
+            x-transition:leave="motion-safe:transition motion-safe:ease-in motion-safe:duration-200"
+            x-transition:leave-start="motion-safe:opacity-100 motion-safe:translate-y-0"
+            x-transition:leave-end="motion-safe:opacity-0 motion-safe:-translate-y-10"
+            class="fixed inset-0 z-20 flex flex-col bg-white/90 px-6 pt-24 pb-16 backdrop-blur-sm"
+            @keydown.escape.window="mobileNavOpen = false; $nextTick(() => $refs.hamburgerButton.focus())"
         >
             <ul
-                class="flex flex-col items-center justify-center gap-y-4 overflow-auto"
+                x-show="mobileNavOpen"
+                x-transition:enter="motion-safe:transition motion-safe:ease-out motion-safe:duration-300 motion-safe:delay-100"
+                x-transition:enter-start="motion-safe:opacity-0 motion-safe:translate-y-2"
+                x-transition:enter-end="motion-safe:opacity-100 motion-safe:translate-y-0"
+                x-transition:leave="motion-safe:transition motion-safe:ease-in motion-safe:duration-200"
+                x-transition:leave-start="motion-safe:opacity-100 motion-safe:translate-y-0"
+                x-transition:leave-end="motion-safe:opacity-0 motion-safe:translate-y-2"
+                class="mx-auto flex w-full max-w-md flex-col items-center justify-start gap-y-6 px-4"
             >
                 {{ nav:main max_depth="2" include_home="true" select="title|url" }}
                     {{ unless no_results }}
@@ -49,20 +76,21 @@
                             {{ if children }}
                             x-data="{ subnavOpen: $root.querySelector('[aria-current=page]') ? true : false }"
                             @focusin.window="!$refs.subnav.contains($event.target) && (subnavOpen = false)"
-                        {{ /if }}
-                            class="leading-none"
+                            {{ /if }}
+                            class="w-full text-center"
                         >
                             <a
-                                class="hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }} flex w-full items-center gap-x-1 py-2 text-3xl font-bold"
+                                class="{{ is_current || is_parent ? 'text-primary' : 'text-neutral-900' }} hover:text-primary flex w-full items-center justify-center gap-x-2 text-3xl font-bold transition hover:translate-x-1 motion-safe:duration-300"
                                 {{ if children }}
                                 href="#"
                                 @click.prevent="subnavOpen = !subnavOpen"
                                 @click.outside="subnavOpen = false"
                                 :aria-label="subnavOpen ? '{{ trans:strings.subnav_close }}' : '{{ trans:strings.subnav_open }}'"
                                 :aria-expanded="subnavOpen"
-                            {{ else }}
+                                {{ else }}
                                 href="{{ url }}"
-                            {{ /if }}
+                                @click="mobileNavOpen = false"
+                                {{ /if }}
                                 {{ is_current ?= 'aria-current="page"' }}
                             >
                                 <span>{{ title }}</span>
@@ -71,7 +99,7 @@
                                         :class="{ 'scale-y-[-1]': subnavOpen }"
                                         class="motion-safe:transition-transform"
                                     >
-                                        {{ svg:chevron_down attr:class="w-2 ml-1 overflow-visible stroke-current text-neutral" attr:aria-hidden="true" }}
+                                        {{ svg:chevron_down attr:class="w-2 ml-1 stroke-current text-neutral" attr:aria-hidden="true" }}
                                     </div>
                                 {{ /if }}
                             </a>
@@ -79,14 +107,15 @@
                                 <ul
                                     x-show="subnavOpen"
                                     x-ref="subnav"
-                                    class="flex flex-col items-stretch gap-y-2"
+                                    class="mt-2 flex flex-col items-center gap-y-2 text-xl font-normal"
                                     x-collapse
                                 >
                                     {{ children }}
-                                        <li class="{{ first ?= 'mt-2' }}">
+                                        <li>
                                             <a
-                                                class="hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }} block py-2 font-bold whitespace-nowrap"
+                                                class="{{ is_current || is_parent ? 'text-primary' : 'text-neutral-700' }} hover:text-primary block py-1 transition hover:translate-x-1 motion-safe:duration-300"
                                                 href="{{ url }}"
+                                                @click="mobileNavOpen = false"
                                                 {{ is_current ?= 'aria-current="page"' }}
                                             >
                                                 {{ title }}
@@ -102,4 +131,3 @@
         </div>
     </div>
 </nav>
-<!-- End: /navigation/_main_mobile.antlers.html -->
