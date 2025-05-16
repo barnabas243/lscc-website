@@ -42,7 +42,7 @@ async function loadEventsGroupedByDate(locale) {
         "/api/collections/events/entries",
         window.location.origin,
     );
-    url.searchParams.set("site", locale);
+    url.searchParams.set("locale", locale);
     url.searchParams.set("limit", "5"); // or more depending on your needs
     url.searchParams.set("sort", "-start_date"); // sort to get latest entries first
 
