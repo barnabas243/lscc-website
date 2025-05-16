@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function getLocale() {
-    console.log("Current URL:", window.location.pathname);
     return window.location.pathname.startsWith("/cn") ? "cn" : "en";
 }
 
@@ -44,7 +43,8 @@ async function loadEventsGroupedByDate(locale) {
         window.location.origin,
     );
     url.searchParams.set("site", locale);
-    url.searchParams.set("limit", "5");
+    url.searchParams.set("limit", "5"); // or more depending on your needs
+    url.searchParams.set("sort", "-start_date"); // sort to get latest entries first
 
     const res = await fetch(url);
     const { data } = await res.json();
