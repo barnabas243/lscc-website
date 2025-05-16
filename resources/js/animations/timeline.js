@@ -244,7 +244,7 @@ function renderTimeline(grouped, container, locale) {
         events.forEach((event) => {
             const details = document.createElement("div");
             details.className =
-                "details p-6 rounded-lg shadow-md bg-white/5 backdrop-blur-lg shadow-lg";
+                "details p-6 rounded-lg bg-white/5 backdrop-blur-lg shadow-lg";
 
             const titleEl = document.createElement("h3");
             titleEl.className = "text-lg font-semibold text-white mb-2";
