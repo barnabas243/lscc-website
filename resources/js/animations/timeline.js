@@ -29,12 +29,53 @@ function isTodayOrFuture(isoDateStr) {
 }
 
 function formatDateToReadable(dateStr, locale) {
-    const sgDate = new Date(dateStr); // Still in UTC
+    const sgDate = new Date(dateStr);
     return sgDate.toLocaleDateString(locale === "zh_cn" ? "zh-SG" : "en-SG", {
         day: "numeric",
         month: "short",
         timeZone: "Asia/Singapore",
     });
+}
+
+function formatTimeTo12Hour(timeStr) {
+    if (!timeStr) return null;
+    const [hours, minutes] = timeStr.split(":");
+    const date = new Date();
+    date.setHours(+hours);
+    date.setMinutes(+minutes);
+    return date.toLocaleTimeString("en-SG", {
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+        timeZone: "Asia/Singapore",
+    });
+}
+
+function prependNaturalDateLabel(isoDate, label) {
+    const sgNow = new Date().toLocaleString("en-US", {
+        timeZone: "Asia/Singapore",
+    });
+    const today = new Date(sgNow);
+    today.setHours(0, 0, 0, 0);
+
+    const sgTarget = new Date(
+        new Date(isoDate).toLocaleString("en-US", {
+            timeZone: "Asia/Singapore",
+        }),
+    );
+    sgTarget.setHours(0, 0, 0, 0);
+
+    const diffDays = Math.floor((sgTarget - today) / (1000 * 60 * 60 * 24));
+
+    if (diffDays === 0) return `Today · ${label}`;
+    if (diffDays === 1) return `Tomorrow · ${label}`;
+    if (diffDays < 7 && diffDays > 1) {
+        return `${sgTarget.toLocaleDateString("en-SG", {
+            weekday: "long",
+            timeZone: "Asia/Singapore",
+        })} · ${label}`;
+    }
+    return label;
 }
 
 async function loadEventsGroupedByDate(locale) {
@@ -43,13 +84,11 @@ async function loadEventsGroupedByDate(locale) {
         window.location.origin,
     );
     url.searchParams.set("locale", locale);
-    url.searchParams.set("limit", "5"); // or more depending on your needs
-    url.searchParams.set("sort", "-start_date"); // sort to get latest entries first
+    url.searchParams.set("limit", "10");
+    url.searchParams.set("sort", "-start_date");
 
     const res = await fetch(url);
     const { data } = await res.json();
-
-    console.log("Fetched events:", data);
 
     if (!Array.isArray(data) || data.length === 0) {
         return {};
@@ -60,7 +99,57 @@ async function loadEventsGroupedByDate(locale) {
 
     const filteredData = data.filter((entry) => entry.locale === locale);
 
-    const flattened = filteredData.flatMap((entry) => {
+    function groupConsecutiveDateRanges(days) {
+        const parsedDates = [...days]
+            .map((d) => ({ ...d, parsed: new Date(d.date) }))
+            .sort((a, b) => a.parsed - b.parsed);
+
+        const ranges = [];
+        let currentRange = [parsedDates[0]];
+
+        for (let i = 1; i < parsedDates.length; i++) {
+            const prev = currentRange[currentRange.length - 1].parsed;
+            const curr = parsedDates[i].parsed;
+            const diff = (curr - prev) / (1000 * 60 * 60 * 24);
+
+            if (diff <= 1) {
+                currentRange.push(parsedDates[i]);
+            } else {
+                ranges.push(currentRange);
+                currentRange = [parsedDates[i]];
+            }
+        }
+        ranges.push(currentRange);
+        return ranges;
+    }
+
+    function formatRange(dayObjs, locale) {
+        const start = dayObjs[0].parsed;
+        const end = dayObjs[dayObjs.length - 1].parsed;
+        const opts = {
+            day: "numeric",
+            month: "short",
+            timeZone: "Asia/Singapore",
+        };
+        const startStr = start.toLocaleDateString(
+            locale === "cn" ? "zh-SG" : "en-SG",
+            opts,
+        );
+        const endStr = end.toLocaleDateString(
+            locale === "cn" ? "zh-SG" : "en-SG",
+            opts,
+        );
+
+        if (start.toDateString() === end.toDateString()) return startStr;
+        if (start.getMonth() === end.getMonth()) {
+            return `${start.getDate()} – ${end.getDate()} ${start.toLocaleDateString(locale === "cn" ? "zh-SG" : "en-SG", { month: "short" })}`;
+        }
+        return `${startStr} – ${endStr}`;
+    }
+
+    const flattened = [];
+
+    filteredData.forEach((entry) => {
         const {
             title,
             location_name,
@@ -72,50 +161,57 @@ async function loadEventsGroupedByDate(locale) {
             all_day,
         } = entry;
 
-        if (Array.isArray(days) && days.length > 0) {
-            return days
-                .filter((d) => isTodayOrFuture(d.date))
-                .map((d) => ({
+        const upcomingDays = Array.isArray(days)
+            ? days.filter((d) => isTodayOrFuture(d.date))
+            : [];
+
+        if (upcomingDays.length) {
+            const ranges = groupConsecutiveDateRanges(upcomingDays);
+
+            ranges.forEach((range) => {
+                const formatted = formatRange(range, locale);
+                const humanLabel = prependNaturalDateLabel(
+                    range[0].parsed,
+                    formatted,
+                );
+                flattened.push({
                     title,
-                    date: new Date(d.date).toISOString(),
-                    startTime: d.start_time,
-                    endTime: d.end_time,
-                    allDay: d.all_day,
+                    date: humanLabel,
+                    startTime: range[0].start_time,
+                    endTime: range[0].end_time,
+                    allDay: range[0].all_day ?? false,
                     locationName: location_name,
                     locationUrl: location_url,
-                }));
-        }
-
-        if (!start_date || !isTodayOrFuture(start_date)) return [];
-
-        return [
-            {
+                    sortKey: range[0].parsed.toISOString(),
+                });
+            });
+        } else if (start_date && isTodayOrFuture(start_date)) {
+            const readableDate = formatDateToReadable(start_date, locale);
+            const humanLabel = prependNaturalDateLabel(
+                start_date,
+                readableDate,
+            );
+            flattened.push({
                 title,
-                date: new Date(start_date).toISOString(),
+                date: humanLabel,
                 startTime: start_time,
                 endTime: end_time,
                 allDay: all_day ?? false,
                 locationName: location_name,
                 locationUrl: location_url,
-            },
-        ];
+                sortKey: new Date(start_date).toISOString(),
+            });
+        }
     });
 
-    flattened.sort((a, b) => new Date(a.date) - new Date(b.date));
+    flattened.sort((a, b) => new Date(a.sortKey) - new Date(b.sortKey));
 
     const grouped = {};
-    const seen = new Set();
-
     for (const event of flattened) {
-        const readableDate = formatDateToReadable(event.date, locale);
-
-        if (!grouped[readableDate]) {
-            if (seen.size >= 5) break;
-            seen.add(readableDate);
-            grouped[readableDate] = [];
+        if (!grouped[event.date]) {
+            grouped[event.date] = [];
         }
-
-        grouped[readableDate].push(event);
+        grouped[event.date].push(event);
     }
 
     return grouped;
@@ -133,7 +229,15 @@ function renderTimeline(grouped, container, locale) {
         timeWrapper.classList.add("time-wrapper");
 
         const timeEl = document.createElement("time");
-        timeEl.textContent = dateLabel;
+        const [natural, datePart] = dateLabel.split(" · ");
+        if (datePart) {
+            timeEl.innerHTML = `
+                <span class="inline-block rounded-full bg-sky-300 text-sky-900 text-sm font-semibold tracking-wide uppercase px-2 py-1 mb-1">${natural}</span>
+                <span class="block text-white text-7xl font-bold leading-tight">${datePart}</span>
+            `;
+        } else {
+            timeEl.textContent = dateLabel;
+        }
         timeWrapper.appendChild(timeEl);
         itemInner.appendChild(timeWrapper);
 
@@ -164,7 +268,7 @@ function renderTimeline(grouped, container, locale) {
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            ${event.startTime} – ${event.endTime}
+            ${formatTimeTo12Hour(event.startTime)} – ${formatTimeTo12Hour(event.endTime)}
           </span>
         `;
             } else if (event.startTime) {
@@ -173,7 +277,7 @@ function renderTimeline(grouped, container, locale) {
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            Starts at ${event.startTime}
+            Starts at ${formatTimeTo12Hour(event.startTime)}
           </span>
         `;
             } else {
