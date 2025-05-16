@@ -20,8 +20,8 @@
     () => void) }} flex flex-col items-start justify-between"
             >
                 {{ image }}
-                    <picture>
-                        <!-- WebP: modern & small -->
+                    <picture class="card-image-wrapper">
+                        <!-- WebP sources -->
                         <source
                             type="image/webp"
                             srcset="
@@ -36,7 +36,7 @@
                             sizes="100vw"
                         />
 
-                        <!-- JPEG fallback for Safari (older) & non-webp -->
+                        <!-- JPEG fallback -->
                         <source
                             type="image/jpeg"
                             srcset="
@@ -51,13 +51,11 @@
                             sizes="100vw"
                         />
 
-                        <!-- Fallback <img> for all browsers -->
+                        <!-- Fallback image -->
                         <img
                             src="{{ glide:url width='1920' format='webp' quality='85' }}"
                             alt="{{ title }}"
-                            width="1920"
-                            height="auto"
-                            class="h-[33vh] w-full object-cover"
+                            class="card-image"
                             loading="lazy"
                             decoding="async"
                         />
