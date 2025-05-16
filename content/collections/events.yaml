@@ -2,7 +2,7 @@ title: events
 sites:
   - en
   - cn
-propagate: true
+propagate: false
 template: default
 layout: layout
 revisions: false
@@ -13,7 +13,6 @@ date_behavior:
   past: public
   future: public
 preview_targets:
-  -
-    label: Entry
-    url: '{permalink}'
+  - label: Entry
+    url: "{permalink}"
     refresh: true
