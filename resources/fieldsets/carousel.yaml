@@ -1,2 +1,8 @@
 title: Carousels
-fields: {  }
+fields:
+  -
+    handle: name
+    field:
+      type: text
+      display: name
+      localizable: false
