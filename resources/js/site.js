@@ -12,7 +12,10 @@ import "./animations/hero";
 import "./animations/cards";
 import "./animations/buttons";
 import "./animations/imageText";
-import "./animations/timeline"; 
+import "./animations/timeline";
+
+// Carousel swiper initialization
+import "./animations/carousel";
 
 // Initialize AlpineJS globally
 window.Alpine = Alpine;

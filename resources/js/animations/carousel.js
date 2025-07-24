@@ -1,6 +1,11 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
     const el = document.querySelector(".carousel-block .swiper");
     if (!el) return;
+
+    const [{ default: Swiper }, _] = await Promise.all([
+        import("swiper"),
+        import("swiper/css"), // load styles only when needed
+    ]);
 
     new Swiper(el, {
         grabCursor: true,
@@ -19,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 
-    // Countdown logic
+    // Countdown logic remains unchanged
     const countdowns = document.querySelectorAll(
         ".carousel-block .slide-countdown",
     );

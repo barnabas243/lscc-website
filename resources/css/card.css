@@ -1,0 +1,7 @@
+.card-image-wrapper {
+    @apply aspect-[3/2] w-full overflow-hidden;
+}
+
+.card-image {
+    @apply h-full w-full object-cover;
+}
