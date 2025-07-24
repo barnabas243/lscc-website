@@ -1,0 +1,67 @@
+{{#
+    @name Carousels
+    @desc The Carousels page builder block.
+    @set page.page_builder.carousels
+#}}
+
+{{ partial:page_builder/block }}
+    <section class="carousel-block">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="img-wrapper">
+                        <img
+                            src="https://picsum.photos/id/1011/800/400"
+                            alt="Sunday Celebration"
+                        />
+                        <div class="slide-overlay">
+                            <div
+                                class="slide-countdown"
+                                data-countdown="2025-08-15T09:00:00"
+                            >
+                                Event starts in:
+                                <span class="countdown-timer">Loading...</span>
+                            </div>
+                            <a href="#" class="cta-btn">Register Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="img-wrapper">
+                        <img
+                            src="https://picsum.photos/id/1025/800/400"
+                            alt="Youth Fellowship"
+                        />
+                        <div class="slide-overlay">
+                            <a href="#" class="cta-btn">Join the Fellowship</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="img-wrapper">
+                        <img
+                            src="https://picsum.photos/id/1035/800/400"
+                            alt="Worship Night"
+                        />
+                        <div class="slide-overlay">
+                            <div
+                                class="slide-countdown"
+                                data-countdown="2025-09-10T19:30:00"
+                            >
+                                Starting in:
+                                <span class="countdown-timer">Loading...</span>
+                            </div>
+                            <a href="#" class="cta-btn">Worship With Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+{{ /partial:page_builder/block }}
