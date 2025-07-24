@@ -15,13 +15,11 @@
         "@alpinejs/morph": "^3.14.8",
         "@alpinejs/persist": "^3.14.8",
         "alpinejs": "^3.14.8",
-        "fullcalendar": "^6.1.18",
         "gsap": "^3.13.0",
         "laravel-precognition-alpine": "^0.6.0",
         "prettier-plugin-tailwindcss": "^0.6.11",
         "puppeteer": "^24.1.1",
-        "swiper": "^11.2.10",
-        "@rollup/rollup-linux-x64-gnu": "^4.9.2"
+        "swiper": "^11.2.10"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.10",
