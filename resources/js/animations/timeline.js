@@ -206,10 +206,14 @@ async function loadEventsGroupedByDate(locale) {
 
     flattened.sort((a, b) => new Date(a.sortKey) - new Date(b.sortKey));
 
+    // Group and limit to 10 unique date labels
     const grouped = {};
+    let dateCount = 0;
     for (const event of flattened) {
         if (!grouped[event.date]) {
+            if (dateCount >= 10) break;
             grouped[event.date] = [];
+            dateCount++;
         }
         grouped[event.date].push(event);
     }
