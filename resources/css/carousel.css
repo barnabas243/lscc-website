@@ -1,0 +1,102 @@
+.carousel-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #000000;
+    background-image: radial-gradient(circle, #101010 10%, #000000 100%);
+}
+
+/* Swiper core sizing */
+.carousel-block .swiper {
+    width: 100%;
+    height: 80vh;
+}
+
+.carousel-block .swiper-slide {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 40px;
+    transition:
+        filter 0.3s,
+        transform 0.5s;
+}
+
+/* Image wrapper and scale-in effect */
+.carousel-block .swiper-slide .img-wrapper {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.3);
+    transition: transform 0.5s;
+    position: relative;
+}
+
+.carousel-block .swiper-slide-active .img-wrapper {
+    transform: scale(1);
+}
+
+/* Overlay container */
+.carousel-block .slide-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+/* Image grayscale + blur */
+.carousel-block .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    filter: grayscale(1) blur(2px);
+    transition: filter 0.5s;
+}
+
+.carousel-block .swiper-slide-active img {
+    filter: grayscale(0) blur(0);
+}
+
+/* Countdown text */
+.carousel-block .slide-countdown {
+    font-size: 1rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* CTA Button */
+.carousel-block .slide-action {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.carousel-block .cta-btn {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1.25rem;
+    background-color: #f59e0b;
+    color: white;
+    font-weight: 600;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.carousel-block .cta-btn:hover {
+    background-color: #d97706;
+}
+
+/* Navigation buttons override if needed */
+.carousel-block .swiper-button-prev,
+.carousel-block .swiper-button-next {
+    color: #f59e0b;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
+}
