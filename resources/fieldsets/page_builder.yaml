@@ -130,6 +130,11 @@ fields:
               fields:
                 -
                   import: timeline
+            carousels:
+              display: Carousels
+              fields:
+                -
+                  import: carousel
         text:
           display: Text
           instructions: 'Text based blocks.'
