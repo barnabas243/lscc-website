@@ -21,6 +21,13 @@
         ></script>
 
         {{ vite src="resources/css/site.css|resources/js/site.js" }}
+        {{ if page contains="carousels" }}
+            <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+            />
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        {{ /if }}
         {{ stack:head }}
         {{ partial:statamic-peak-seo::snippets/seo }}
         {{ partial:statamic-peak-browser-appearance::snippets/browser_appearance }}
