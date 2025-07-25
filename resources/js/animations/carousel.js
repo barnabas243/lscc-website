@@ -12,11 +12,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         allowTouchMove: true,
         simulateTouch: true,
         slideToClickedSlide: true,
-        zoom: true,
-        zoom: {
-            maxRatio: 3,
-            toggle: true,
-        },
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
