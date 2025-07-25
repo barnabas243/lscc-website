@@ -13,21 +13,36 @@
             name="keywords"
             content="Living Streams Christian Church, Singapore Christian Church, Christian Worship Singapore, Bible-Based Church Singapore, Youth Ministry Singapore, Christian Fellowship, Church Services Singapore, Christian Events Singapore, Christian Youth Activities, Church Camp Singapore, Faith-Based Community Singapore, Worship Services Singapore, Bible Study Singapore, Christian Outreach Singapore, Youth Fellowship Singapore, Bible Believing Church Singapore, Church Family Events, Christian Discipleship Singapore, Evangelistic Outreach Singapore, Christian Retreat Singapore"
         />
+
+        <!-- Analytics -->
         <script
             defer
-            src="./js/umami.js"
-            data-host-url="https://cloud.umami.is"
+            src="https://cloud.umami.is/script.js"
             data-website-id="f916a783-2183-4d2d-9bef-6bf46eb0476f"
         ></script>
 
+        <!-- Styles -->
         {{ vite src="resources/css/site.css|resources/js/site.js" }}
-        {{ if page contains="carousels" }}
-            <link
-                rel="stylesheet"
-                href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-            />
-            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        {{ /if }}
+        <link
+            rel="preload"
+            as="style"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+            media="print"
+            onload="this.media='all'"
+        />
+
+        <!-- Scripts -->
+
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+        ></script>
+
+        <!-- SEO and Site Tools -->
         {{ stack:head }}
         {{ partial:statamic-peak-seo::snippets/seo }}
         {{ partial:statamic-peak-browser-appearance::snippets/browser_appearance }}
