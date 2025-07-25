@@ -7,6 +7,14 @@
 {{ partial:page_builder/block }}
     <section
         class="span-content relative flex min-h-screen w-full flex-col overflow-hidden bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-violet-400 via-slate-900 to-lime-500"
+        style="
+            background-image: conic-gradient(
+                at top left,
+                violet,
+                slategray,
+                lime
+            );
+        "
     >
         <section class="timeline">
             {{ partial:typography/h2 class="text-5xl md:text-7xl text-white mb-10" :content="title" }}
