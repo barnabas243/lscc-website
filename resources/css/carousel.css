@@ -1,18 +1,35 @@
 .carousel-block {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: start; /* <- this is the key */
+    padding-top: 1.5rem; /* optional spacing */
     background-color: #000000;
     background-image: radial-gradient(circle, #101010 10%, #000000 100%);
 }
 
-/* Swiper core sizing */
+/* Default Swiper height: 80vh (for large screens) */
 .carousel-block .swiper {
     width: 100%;
     height: 80vh;
 }
 
+/* Adjust height for portrait (mobile) */
+@media screen and (max-aspect-ratio: 3/4) {
+    .carousel-block {
+        height: 60vh; /* Smaller height for tall screens */
+    }
+    .carousel-block .swiper {
+        height: 30vh; /* Smaller height for tall screens */
+    }
+}
+
+/* Adjust height for landscape (e.g. tablets, wide phones) */
+@media screen and (min-aspect-ratio: 4/3) {
+    .carousel-block .swiper {
+        height: 60vh; /* More room on wider screens */
+    }
+}
 .carousel-block .swiper-slide {
     position: relative;
     height: 100%;
@@ -52,7 +69,7 @@
 .carousel-block .swiper-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     user-select: none;
     filter: grayscale(1) blur(2px);
     transition: filter 0.5s;
@@ -90,6 +107,7 @@
     text-decoration: none;
     transition: background-color 0.3s;
 }
+
 .carousel-block .cta-btn:hover {
     background-color: #d97706;
 }
