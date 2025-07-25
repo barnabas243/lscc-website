@@ -22,16 +22,18 @@ fields:
             display: "Countdown Date"
             instructions: "Optional. If set, a countdown timer will be shown."
             localizable: false
+            width: 50
         - handle: cta_link
           field:
             type: link
             display: "Call-to-Action Link"
             instructions: "Optional. Set a button link for this event."
             localizable: false
-        - handle: cta_label
+        -
+          handle: cta_label
           field:
             type: text
             display: "Call-to-Action Label"
             instructions: 'Optional. Defaults to "Learn More" if left empty.'
-            width: 50
+            width: 25
             localizable: false
