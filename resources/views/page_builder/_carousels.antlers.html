@@ -5,63 +5,56 @@
 #}}
 
 {{ partial:page_builder/block }}
-    <section class="carousel-block">
-        <div class="swiper">
+    <section
+        class="carousel-block py-12"
+        role="region"
+        aria-label="Event Carousel"
+    >
+        <div class="swiper horizontal-swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="img-wrapper">
-                        <img
-                            src="https://picsum.photos/id/1011/800/400"
-                            alt="Sunday Celebration"
-                        />
-                        <div class="slide-overlay">
+                {{ slides }}
+                    <div class="swiper-slide">
+                        <div
+                            class="img-wrapper space-y-4 rounded-lg bg-white shadow-md"
+                        >
+                            <!-- Nested vertical swiper -->
                             <div
-                                class="slide-countdown"
-                                data-countdown="2025-08-15T09:00:00"
+                                class="nested-swiper swiper flex flex-col"
+                                role="group"
+                                aria-label="Poster Set"
                             >
-                                Event starts in:
-                                <span class="countdown-timer">Loading...</span>
-                            </div>
-                            <a href="#" class="cta-btn">Register Now</a>
-                        </div>
-                    </div>
-                </div>
+                                <div class="swiper-wrapper w-full">
+                                    {{ posters }}
+                                        <div class="swiper-slide">
+                                            <img
+                                                src="{{ url }}"
+                                                alt="Event poster image"
+                                                loading="lazy"
+                                                class="h-full w-full object-contain"
+                                            />
+                                        </div>
+                                    {{ /posters }}
+                                </div>
 
-                <div class="swiper-slide">
-                    <div class="img-wrapper">
-                        <img
-                            src="https://picsum.photos/id/1025/800/400"
-                            alt="Youth Fellowship"
-                        />
-                        <div class="slide-overlay">
-                            <a href="#" class="cta-btn">Join the Fellowship</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="img-wrapper">
-                        <img
-                            src="https://picsum.photos/id/1035/800/400"
-                            alt="Worship Night"
-                        />
-                        <div class="slide-overlay">
-                            <div
-                                class="slide-countdown"
-                                data-countdown="2025-09-10T19:30:00"
-                            >
-                                Starting in:
-                                <span class="countdown-timer">Loading...</span>
+                                <div
+                                    class="swiper-button-up"
+                                    aria-label="Previous poster"
+                                ></div>
+                                <div class="swiper-pagination-vertical"></div>
+                                <div
+                                    class="swiper-button-down"
+                                    aria-label="Next poster"
+                                ></div>
                             </div>
-                            <a href="#" class="cta-btn">Worship With Us</a>
                         </div>
                     </div>
-                </div>
+                {{ /slides }}
             </div>
 
-            <!-- Navigation -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <!-- Horizontal nav + pagination -->
+            <div class="swiper-button-prev" aria-label="Previous item"></div>
+            <div class="swiper-button-next" aria-label="Next item"></div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 {{ /partial:page_builder/block }}
