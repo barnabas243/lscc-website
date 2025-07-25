@@ -1,38 +1,38 @@
-title: Carousels
+title: Carousel Posters
 fields:
-  -
-    handle: group
+  - handle: slides
     field:
-      type: replicator
-      display: Group
-      localizable: false
-      sets:
-        new_set_group:
-          display: 'New Set Group'
-          sets:
-            images:
-              display: Images
-              fields:
-                -
-                  handle: images
-                  field:
-                    type: replicator
-                    display: Images
-                    localizable: false
-                    sets:
-                      new_set_group:
-                        display: 'New Set Group'
-                        sets:
-                          image:
-                            display: Image
-                            fields:
-                              -
-                                handle: image
-                                field:
-                                  max_files: 1
-                                  min_files: 1
-                                  container: images
-                                  folder: /
-                                  type: assets
-                                  display: image
-                                  localizable: false
+      type: grid
+      display: Slides
+      instructions: Each slide represents an event or campaign. You may add one or more posters per slide.
+      fields:
+        - handle: posters
+          field:
+            type: assets
+            container: assets
+            folder: posters
+            display: Posters
+            instructions: Upload one or more posters for this slide.
+            allow_uploads: true
+            mode: grid
+            listable: hidden
+            max_files: null # optional; remove or set to 5 if you want to limit
+        - handle: countdown_date
+          field:
+            type: date
+            display: Countdown Date
+            instructions: Optional. If set, a countdown timer will be shown.
+            listable: hidden
+            mode: single
+        - handle: cta_link
+          field:
+            type: link
+            display: Call-to-Action Link
+            instructions: Optional. Set a button link for this event.
+            listable: hidden
+        - handle: cta_label
+          field:
+            type: text
+            display: Call-to-Action Label
+            instructions: Optional. Defaults to "Learn More" if left empty.
+            width: 50
