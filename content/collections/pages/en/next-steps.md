@@ -28,7 +28,7 @@ page_builder:
         id: m6m8tfuz
         title: 'Ministry Involvement'
         type: card
-        enabled: true
+        enabled: false
         button:
           -
             id: m6m91ja1
@@ -46,13 +46,22 @@ page_builder:
     background_color: '#ffffff'
     align_content: middle
     type: cards
+    enabled: false
+  -
+    id: mdiuvahp
+    slides:
+      -
+        id: mdiuvc0z
+        posters:
+          - alpha_course_2.jpg
+    type: carousels
     enabled: true
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
-updated_by: 59d4e9b0-40db-41c4-ab0c-d926eea156d7
-updated_at: 1746695039
+updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
+updated_at: 1753450043
 seo_description: 'We believe everyone has something unique to offer. Explore our ministries and programs to grow in faith and discover new possibilities with us.'
 ---
