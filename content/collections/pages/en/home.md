@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1753425677
+updated_at: 1753426256
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -70,6 +70,19 @@ page_builder:
     enabled: true
     background_color: '#000000'
     align_content: left
+  -
+    id: mdigonjb
+    slides:
+      -
+        id: mdigopor
+        posters:
+          - youth_outing.jpg
+          - water_baptism_details.jpg
+          - alpha-course-gathering.jpg
+        countdown_date: '2025-07-26'
+        cta_label: 'Sign up'
+    type: carousels
+    enabled: true
   -
     id: T5ZZwBfn
     article:
