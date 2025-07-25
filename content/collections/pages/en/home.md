@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1753452976
+updated_at: 1753452988
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -59,7 +59,10 @@ page_builder:
       -
         id: m6afwnag
         title: 'Live a Life Abundant in Jesus'
-        content: "We’re a Bible-believing church in Singapore, passionate about worship, growing in faith, and living out God’s Word together. Whether you're new to Christianity or seeking deeper connection, we invite you to discover who we are and what God is doing in our community."
+        content: |-
+          We’re a Bible-believing church in Singapore, passionate about worship, growing in faith, and living out God’s Word together. 
+
+          Whether you're new to Christianity or seeking deeper connection, we invite you to discover who we are and what God is doing in our community.
         button:
           -
             id: m6afwuqx
