@@ -46,7 +46,7 @@ page_builder:
     background_color: '#ffffff'
     align_content: middle
     type: cards
-    enabled: false
+    enabled: true
   -
     id: mdiuvahp
     slides:
@@ -55,13 +55,13 @@ page_builder:
         posters:
           - alpha_course_2.jpg
     type: carousels
-    enabled: true
+    enabled: false
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1753450043
+updated_at: 1753450153
 seo_description: 'We believe everyone has something unique to offer. Explore our ministries and programs to grow in faith and discover new possibilities with us.'
 ---
