@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1753452745
+updated_at: 1753452896
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -61,8 +61,6 @@ page_builder:
         title: 'Live a Life Abundant in Jesus'
         content: |-
           At Living Streams Christian Church, we believe that true growth in faith comes from worshipping and learning together. Our church is dedicated to creating a space that encourages spiritual growth and connection.
-
-          We offer opportunities to engage with scripture, to learn about Jesus and to worship Him with others. Our church is open to people of all ages and backgrounds.
 
           Join us in growing in faith with people who love and obey Jesus.
         button:
