@@ -3,17 +3,36 @@ fields:
   -
     handle: group
     field:
-      type: group
+      type: replicator
       display: Group
       localizable: false
-      fields:
-        -
-          handle: image
-          field:
-            max_files: 1
-            min_files: 1
-            container: images
-            folder: /
-            type: assets
-            display: image
-            localizable: false
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            images:
+              display: Images
+              fields:
+                -
+                  handle: images
+                  field:
+                    type: replicator
+                    display: Images
+                    localizable: false
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          image:
+                            display: Image
+                            fields:
+                              -
+                                handle: image
+                                field:
+                                  max_files: 1
+                                  min_files: 1
+                                  container: images
+                                  folder: /
+                                  type: assets
+                                  display: image
+                                  localizable: false
