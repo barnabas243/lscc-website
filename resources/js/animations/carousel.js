@@ -19,16 +19,13 @@ document.addEventListener("DOMContentLoaded", async function () {
         breakpoints: {
             0: {
                 slidesPerView: 1.2,
-                centeredSlides: false,
                 spaceBetween: 16,
             },
             640: {
                 slidesPerView: 1.3,
-                centeredSlides: true,
             },
             1024: {
                 slidesPerView: 1.5,
-                centeredSlides: true,
             },
         },
     });
