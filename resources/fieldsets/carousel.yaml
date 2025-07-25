@@ -13,8 +13,7 @@ fields:
             container: images
             folder: /
             display: Posters
-            instructions: "Upload one or more posters for this slide."
-            mode: grid
+            instructions: 'Upload one or more posters for this slide.'
             localizable: false
         - handle: countdown_date
           field:
@@ -23,17 +22,18 @@ fields:
             instructions: "Optional. If set, a countdown timer will be shown."
             localizable: false
             width: 50
-        - handle: cta_link
+        -
+          handle: cta_link
           field:
             type: link
             display: "Call-to-Action Link"
             instructions: "Optional. Set a button link for this event."
             localizable: false
+            width: 50
         -
           handle: cta_label
           field:
             type: text
             display: "Call-to-Action Label"
             instructions: 'Optional. Defaults to "Learn More" if left empty.'
-            width: 25
             localizable: false
