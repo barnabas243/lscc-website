@@ -12,29 +12,26 @@ fields:
           handle: posters
           field:
             type: assets
-            container: assets
-            folder: posters
+            container: images
+            folder: /
             display: Posters
             instructions: 'Upload one or more posters for this slide.'
-            allow_uploads: true
             mode: grid
-            listable: hidden
-            max_files: null
+            localizable: false
         -
           handle: countdown_date
           field:
             type: date
             display: 'Countdown Date'
             instructions: 'Optional. If set, a countdown timer will be shown.'
-            listable: hidden
-            mode: single
+            localizable: false
         -
           handle: cta_link
           field:
             type: link
             display: 'Call-to-Action Link'
             instructions: 'Optional. Set a button link for this event.'
-            listable: hidden
+            localizable: false
         -
           handle: cta_label
           field:
@@ -42,3 +39,4 @@ fields:
             display: 'Call-to-Action Label'
             instructions: 'Optional. Defaults to "Learn More" if left empty.'
             width: 50
+            localizable: false
