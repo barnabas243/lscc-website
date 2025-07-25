@@ -19,37 +19,18 @@
             <div class="swiper-wrapper">
                 {{ slides }}
                     <div class="swiper-slide">
-                        <div
-                            class="img-wrapper space-y-4 rounded-lg bg-white shadow-md"
-                        >
-                            <!-- Nested vertical swiper -->
-                            <div
-                                class="nested-swiper swiper flex flex-col"
-                                role="group"
-                                aria-label="Poster Set"
-                            >
-                                <div class="swiper-wrapper w-full">
-                                    {{ posters }}
-                                        <div class="swiper-slide">
-                                            <img
-                                                src="{{ url }}"
-                                                alt="Event poster image"
-                                                loading="lazy"
-                                                class="h-full w-full object-contain"
-                                            />
-                                        </div>
-                                    {{ /posters }}
-                                </div>
-
-                                <div
-                                    class="swiper-button-up"
-                                    aria-label="Previous poster"
-                                ></div>
-                                <div class="swiper-pagination-vertical"></div>
-                                <div
-                                    class="swiper-button-down"
-                                    aria-label="Next poster"
-                                ></div>
+                        <div class="img-wrapper space-y-4 bg-transparent">
+                            <div class="swiper-wrapper w-full">
+                                {{ posters }}
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="{{ url }}"
+                                            alt="Event poster image"
+                                            loading="lazy"
+                                            class="h-full w-full"
+                                        />
+                                    </div>
+                                {{ /posters }}
                             </div>
                         </div>
                     </div>
