@@ -32,5 +32,9 @@ export default {
             // Safe dynamic text alignment, spacing, sizing, etc. (optional)
             pattern: /(text|p|m|gap|space|h|w|aspect)-\w+/,
         },
+        "bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))]",
+        "from-violet-400",
+        "via-slate-900",
+        "to-lime-500",
     ],
 };
