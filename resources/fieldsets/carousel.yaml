@@ -1,8 +1,19 @@
 title: Carousels
 fields:
   -
-    handle: name
+    handle: group
     field:
-      type: text
-      display: name
+      type: group
+      display: Group
       localizable: false
+      fields:
+        -
+          handle: image
+          field:
+            max_files: 1
+            min_files: 1
+            container: images
+            folder: /
+            type: assets
+            display: image
+            localizable: false
