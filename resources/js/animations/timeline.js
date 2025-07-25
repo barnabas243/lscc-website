@@ -206,6 +206,7 @@ async function loadEventsGroupedByDate(locale) {
 
     flattened.sort((a, b) => new Date(a.sortKey) - new Date(b.sortKey));
 
+    // Group and limit to 10 unique date labels
     // Limit to 10 total events, regardless of date group
     const grouped = {};
     let totalCount = 0;
@@ -220,6 +221,8 @@ async function loadEventsGroupedByDate(locale) {
         grouped[event.date].push(event);
         totalCount++;
     }
+    
+    return grouped;
 }
 
 function renderTimeline(grouped, container, locale) {
