@@ -1,38 +1,44 @@
 title: Carousels
 fields:
-  - handle: slides
+  -
+    handle: slides
     field:
       type: grid
       display: Slides
-      instructions: Each slide represents an event or campaign. You may add one or more posters per slide.
+      instructions: 'Each slide represents an event or campaign. You may add one or more posters per slide.'
+      localizable: false
       fields:
-        - handle: posters
+        -
+          handle: posters
           field:
             type: assets
             container: assets
             folder: posters
             display: Posters
-            instructions: Upload one or more posters for this slide.
+            instructions: 'Upload one or more posters for this slide.'
             allow_uploads: true
             mode: grid
             listable: hidden
-            max_files: null # optional; remove or set to 5 if you want to limit
-        - handle: countdown_date
+            max_files: null
+        -
+          handle: countdown_date
           field:
             type: date
-            display: Countdown Date
-            instructions: Optional. If set, a countdown timer will be shown.
+            display: 'Countdown Date'
+            instructions: 'Optional. If set, a countdown timer will be shown.'
             listable: hidden
             mode: single
-        - handle: cta_link
+        -
+          handle: cta_link
           field:
             type: link
-            display: Call-to-Action Link
-            instructions: Optional. Set a button link for this event.
+            display: 'Call-to-Action Link'
+            instructions: 'Optional. Set a button link for this event.'
             listable: hidden
-        - handle: cta_label
+        -
+          handle: cta_label
           field:
             type: text
-            display: Call-to-Action Label
-            instructions: Optional. Defaults to "Learn More" if left empty.
+            display: 'Call-to-Action Label'
+            instructions: 'Optional. Defaults to "Learn More" if left empty.'
             width: 50
