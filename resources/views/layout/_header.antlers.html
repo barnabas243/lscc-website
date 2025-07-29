@@ -3,8 +3,24 @@
     @desc The site's header rendered on each page.
 #}}
 <!-- /layout/_header.antlers.html -->
-<header class="absolute top-0 left-0 z-50 w-full bg-transparent px-3 lg:px-10">
-    <div class="span-content flex items-center justify-between pt-3 lg:pt-8">
+<header
+    x-data="{ scrolled: false, showHeader: true, lastScroll: 0 }"
+    x-init="
+        window.addEventListener('scroll', () => {
+            const current = window.scrollY;
+            scrolled = current > 80;
+            showHeader = current < lastScroll || current <= 0;
+            lastScroll = current;
+        });
+    "
+    :class="{
+        'bg-neutral-950/80 backdrop-blur shadow-md': scrolled,
+        'translate-y-0': showHeader,
+        '-translate-y-full': !showHeader
+    }"
+    class="fixed top-0 left-0 z-50 w-full px-3 transition-all duration-300 ease-in-out lg:px-10"
+>
+    <div class="span-content flex items-center justify-between py-3 lg:pt-6">
         {{ partial:components/logo class="w-16 lg:w-20" }}
         {{ partial:navigation/main }}
     </div>
