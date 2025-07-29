@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1753792773
+updated_at: 1753794398
 page_builder:
   -
     id: m6apnpjl
@@ -73,7 +73,7 @@ page_builder:
             text: "Check out what's happening using the calendar below."
     background_color: '#ffffff'
     type: article
-    enabled: true
+    enabled: false
     top_padding: 30
   -
     id: m6apuhiz
