@@ -4,17 +4,21 @@
 #}}
 <!-- /layout/_header.antlers.html -->
 <header
-    x-data="{ scrolled: false, showHeader: true, lastScroll: 0 }"
+    x-data="{ scrolled: false, showHeader: true, lastScroll: window.scrollY }"
     x-init="
-        window.addEventListener('scroll', () => {
-            const current = window.scrollY;
-            scrolled = current > 80;
-            showHeader = current < lastScroll || current <= 0;
-            lastScroll = current;
-        });
-    "
+    const threshold = $el.offsetHeight * 0.5;
+    const detect = () => {
+        const current = window.scrollY;
+        scrolled = current > threshold;
+        showHeader = current < lastScroll || current <= 0;
+        lastScroll = current;
+    };
+
+    detect();
+    window.addEventListener('scroll', detect);
+"
     :class="{
-        'bg-neutral-950/80 backdrop-blur shadow-md': scrolled,
+        'bg-neutral-950/60 backdrop-blur shadow-lg text-white': scrolled,
         'translate-y-0': showHeader,
         '-translate-y-full': !showHeader
     }"

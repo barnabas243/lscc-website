@@ -17,7 +17,7 @@
                     class="relative leading-none"
                 >
                     <a
-                        class="hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }} {{ if is_homepage }}text-white{{ /if }} flex items-center text-sm font-bold"
+                        class="hover:text-primary {{ if is_homepage }}text-white{{ /if }} flex items-center text-sm font-bold"
                         {{ if children }}
                             href="#"
                             @click.prevent="subnavOpen = !subnavOpen"
