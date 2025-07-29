@@ -135,6 +135,11 @@ fields:
               fields:
                 -
                   import: carousel
+            calendar:
+              display: Calendar
+              fields:
+                -
+                  import: calendar
         text:
           display: Text
           instructions: 'Text based blocks.'
