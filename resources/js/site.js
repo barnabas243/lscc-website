@@ -17,6 +17,9 @@ import "./animations/timeline";
 // Carousel swiper initialization
 import "./animations/carousel";
 
+// calendar initialization
+import "./calendar";
+
 // Initialize AlpineJS globally
 window.Alpine = Alpine;
 Alpine.plugin([collapse, focus, morph, persist, precognition]);
