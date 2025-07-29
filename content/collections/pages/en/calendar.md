@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1753794398
+updated_at: 1753794440
 page_builder:
   -
     id: m6apnpjl
@@ -33,47 +33,9 @@ page_builder:
           -
             type: text
             text: 'Explore The Calendar'
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
-        content:
-          -
-            type: text
-            text: 'Come and be a part of our '
-          -
-            type: text
-            marks:
-              -
-                type: bold
-              -
-                type: underline
-            text: 'weekly services'
-          -
-            type: text
-            text: ' and '
-          -
-            type: text
-            marks:
-              -
-                type: bold
-              -
-                type: underline
-            text: 'special events'
-          -
-            type: text
-            text: '. '
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
-        content:
-          -
-            type: text
-            text: "Check out what's happening using the calendar below."
     background_color: '#ffffff'
     type: article
-    enabled: false
+    enabled: true
     top_padding: 30
   -
     id: m6apuhiz
