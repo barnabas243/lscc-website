@@ -7,8 +7,8 @@ seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
-updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1753779930
+updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
+updated_at: 1753792716
 page_builder:
   -
     id: m6apnpjl
@@ -75,5 +75,15 @@ page_builder:
     type: article
     enabled: true
     top_padding: 30
+  -
+    id: m6apuhiz
+    recurrence: monthly
+    timezone: Asia/Singapore
+    all_day: false
+    start_date: '2025-01-04'
+    start_time: '14:30'
+    end_time: '16:00'
+    type: events
+    enabled: false
 seo_description: 'Stay updated with events and activities at Living Streams Christian Church. Check our calendar for upcoming services, programs, and special events.'
 ---
