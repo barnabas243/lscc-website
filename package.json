@@ -15,6 +15,7 @@
         "@alpinejs/morph": "^3.14.8",
         "@alpinejs/persist": "^3.14.8",
         "alpinejs": "^3.14.8",
+        "fullcalendar": "^6.1.18",
         "gsap": "^3.13.0",
         "laravel-precognition-alpine": "^0.6.0",
         "prettier-plugin-tailwindcss": "^0.6.11",
@@ -23,12 +24,12 @@
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.10",
+        "@tailwindcss/oxide": "4.1.11",
         "@tailwindcss/typography": "^0.5.16",
-        "@tailwindcss/vite": "^4.0.0",
+        "@tailwindcss/vite": "^4.1.11",
         "laravel-vite-plugin": "^1.2.0",
         "prettier-plugin-antlers": "^2.0.5",
-        "tailwindcss": "^4.0.0",
-        "@tailwindcss/oxide": "4.1.11",
+        "tailwindcss": "^4.1.11",
         "vite": "^6.0.11"
     },
     "optionalDependencies": {

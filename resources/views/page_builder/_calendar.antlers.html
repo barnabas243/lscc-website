@@ -1,0 +1,132 @@
+{{#
+    @name Calendar
+    @desc The Calendar page builder block.
+    @set page.page_builder.calendar
+#}}
+
+{{ partial:page_builder/block class="fluid-grid" }}
+    <div id="calendar" class="span-content h-screen gap-8 pt-30 pb-10"></div>
+
+    <!-- Modal -->
+    <div
+        x-data="{ open: false, event: {} }"
+        x-init="window.addEventListener('calendar-event', e => { event = e.detail; open = true })"
+        x-show="open"
+        x-cloak
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+    >
+        <div
+            @click.outside="open = false"
+            class="w-full max-w-md transform rounded-lg bg-white p-6 shadow-lg transition-all"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="scale-95 opacity-0"
+            x-transition:enter-end="scale-100 opacity-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="scale-100 opacity-100"
+            x-transition:leave-end="scale-95 opacity-0"
+        >
+            <!-- Header: Day and Date -->
+            <div class="mb-2 flex items-start justify-between">
+                <h2
+                    class="text-sm font-medium text-gray-600"
+                    x-text="formatDayDate(event.start)"
+                ></h2>
+                <button
+                    @click="open = false"
+                    class="text-2xl leading-none text-gray-400 hover:text-gray-800"
+                >
+                    &times;
+                </button>
+            </div>
+
+            <!-- Title -->
+            <h3
+                class="text-lg font-semibold text-red-600 uppercase"
+                x-text="event.title"
+            ></h3>
+
+            <hr class="my-3 border-gray-300" />
+
+            <!-- Time -->
+            <div class="flex items-center gap-2 text-sm text-gray-700">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 text-gray-500"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                >
+                    <path
+                        d="M12 8v5h4v-2h-2V8h-2Zm0-6a10 10 0 1 1 0 20 10 10 0 0 1 0-20Z"
+                    />
+                </svg>
+                <span
+                    x-text="event.extendedProps && event.extendedProps.start_time ? formatTime(event.extendedProps.start_time) + (event.extendedProps.end_time ? ' – ' + formatTime(event.extendedProps.end_time) : '') : ''"
+                ></span>
+            </div>
+
+            <!-- Extra Details -->
+            <div class="mt-4 space-y-2 text-sm text-gray-700">
+                <template x-if="event.extendedProps?.speaker">
+                    <p>
+                        <strong>Speaker:</strong>
+                        <span x-text="event.extendedProps.speaker"></span>
+                    </p>
+                </template>
+
+                <template x-if="event.extendedProps?.location">
+                    <p>
+                        <strong>Location:</strong>
+                        <template x-if="event.extendedProps.location_url">
+                            <a
+                                :href="event.extendedProps.location_url"
+                                class="text-blue-600 hover:underline"
+                                target="_blank"
+                                x-text="event.extendedProps.location"
+                            ></a>
+                        </template>
+                        <template x-if="!event.extendedProps.location_url">
+                            <span x-text="event.extendedProps.location"></span>
+                        </template>
+                    </p>
+                </template>
+            </div>
+        </div>
+
+        <!-- Format Helpers -->
+        <script>
+            function formatDayDate(dateStr) {
+                if (!dateStr) return "";
+                const date = new Date(dateStr);
+                return date.toLocaleDateString("en-SG", {
+                    weekday: "short",
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                });
+            }
+
+            function formatTime(timeStr) {
+                if (!timeStr || !timeStr.includes(":")) return "";
+                const [hour, minute] = timeStr.split(":").map(Number);
+                const date = new Date();
+                date.setHours(hour, minute);
+                return date.toLocaleTimeString("en-SG", {
+                    hour: "numeric",
+                    minute: "2-digit",
+                    hour12: true,
+                });
+            }
+
+            document.addEventListener("alpine:init", () => {
+                Alpine.magic("formatDayDate", () => formatDayDate);
+                Alpine.magic("formatTime", () => formatTime);
+            });
+        </script>
+    </div>
+{{ /partial:page_builder/block }}
