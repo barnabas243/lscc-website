@@ -57,7 +57,7 @@
             x-transition:leave="motion-safe:transition motion-safe:ease-in motion-safe:duration-200"
             x-transition:leave-start="motion-safe:opacity-100 motion-safe:translate-y-0"
             x-transition:leave-end="motion-safe:opacity-0 motion-safe:-translate-y-10"
-            class="fixed inset-0 z-20 flex flex-col bg-white/90 px-6 pt-24 pb-16 backdrop-blur-sm"
+            class="fixed inset-0 z-20 flex h-screen flex-col bg-white/90 px-6 pt-24 pb-16 backdrop-blur-sm"
             @keydown.escape.window="mobileNavOpen = false; $nextTick(() => $refs.hamburgerButton.focus())"
         >
             <ul
