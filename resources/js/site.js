@@ -7,7 +7,7 @@ import persist from "@alpinejs/persist";
 import precognition from "laravel-precognition-alpine";
 
 // Modular GSAP animation imports
-import "./animations/scrollSmootherConfig"; // ✅ MUST come before other GSAP triggers
+// import "./animations/scrollSmootherConfig"; // ✅ MUST come before other GSAP triggers
 import "./animations/hero";
 import "./animations/cards";
 import "./animations/buttons";
