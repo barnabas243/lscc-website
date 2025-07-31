@@ -38,7 +38,11 @@ page_builder:
     type: article
     enabled: true
     top_padding: 30
+  -
+    id: mdr5vmsf
+    type: calendar
+    enabled: true
 seo_description: 查看活水基督教会的活动和服务安排，了解即将举行的礼拜、事工和特别活动。
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739868004
+updated_at: 1753952243
 ---
