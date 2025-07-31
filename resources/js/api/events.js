@@ -46,16 +46,13 @@ export async function fetchEvents({
 
 const colorMap = new Map();
 const colorPalette = [
-    "#1b1b1b", // near-black
     "#005f73", // deep teal
     "#0a9396", // strong cyan
     "#3a0ca3", // deep violet
     "#9d0208", // crimson red
     "#7f0000", // dark red
     "#00509d", // navy blue
-    "#2b9348", // forest green
     "#ca6702", // burnt orange
-    "#6a4c93", // dark lavender
     "#003049", // charcoal blue
     "#780000", // maroon
     "#264653", // blue-grey
