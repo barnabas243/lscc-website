@@ -1,22 +1,40 @@
-{{# @name Logo @desc The logo component with a `width` attribute. #}}
+{{#
+    @name Logo
+    @desc Renders the Living Streams logo image using Glide.
+          Supports WebP format for modern browsers and falls back to PNG.
+#}}
+
 <!-- /components/_logo.antlers.html -->
+
 <a aria-label="Logo {{ config:app:name }}" href="{{ site:url }}">
-    {{ glide src="visuals/lscc_white.svg" format="webp" quality="85" }}
-        <img
-            src="{{ glide:url width='512' }}"
+    <picture>
+        <!-- Fallback for older browsers -->
+        <source
+            type="image/webp"
             srcset="
-                {{ glide:url width='128' }} 128w,
-                {{ glide:url width='256' }} 256w,
-                {{ glide:url width='512' }} 512w,
-                {{ glide:url width='768' }} 768w
+                {{ glide src='visuals/lscc_text.svg' format='webp' width='128' quality='90' }} 128w,
+                {{ glide src='visuals/lscc_text.svg' format='webp' width='256' quality='90' }} 256w,
+                {{ glide src='visuals/lscc_text.svg' format='webp' width='512' quality='90' }} 512w,
+                {{ glide src='visuals/lscc_text.svg' format='webp' width='768' quality='90' }} 768w
+            "
+            sizes="(max-width: 768px) 128px, (max-width: 1024px) 256px, 512px"
+        />
+
+        <!-- Fallback image if WebP is not supported -->
+        <img
+            src="{{ glide src='visuals/lscc_text.svg' format='png' width='512' quality='100' }}"
+            srcset="
+                {{ glide src='visuals/lscc_text.svg' format='png' width='128' quality='100' }} 128w,
+                {{ glide src='visuals/lscc_text.svg' format='png' width='256' quality='100' }} 256w,
+                {{ glide src='visuals/lscc_text.svg' format='png' width='512' quality='100' }} 512w,
+                {{ glide src='visuals/lscc_text.svg' format='png' width='768' quality='100' }} 768w
             "
             sizes="(max-width: 768px) 128px, (max-width: 1024px) 256px, 512px"
             alt="{{ config:app:name }}"
-            width="{{ width }}"
+            width="{{ width or '256' }}"
             loading="lazy"
             class="{{ class }} select-none"
         />
-    {{ /glide }}
+    </picture>
 </a>
-
 <!-- End: /components/_logo.antlers.html -->
