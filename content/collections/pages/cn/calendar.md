@@ -26,23 +26,15 @@ page_builder:
           -
             type: text
             text: 探索日历
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
-        content:
-          -
-            type: text
-            text: 来参与我们的每周礼拜、特别活动以及其他社区活动。通过下方的日历查看即将发生的事情。
     background_color: '#ffffff'
     type: article
-    enabled: true
+    enabled: false
     top_padding: 30
   -
-    id: mdr5vmsf
+    id: mdr15gpd
     type: calendar
     enabled: true
 seo_description: 查看活水基督教会的活动和服务安排，了解即将举行的礼拜、事工和特别活动。
-updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1753952243
----
+updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
+updated_at: 1753949421
+
