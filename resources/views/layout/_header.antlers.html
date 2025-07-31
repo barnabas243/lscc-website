@@ -15,29 +15,39 @@
 </div>
 
 <script>
-    function scrollingHeader() {
-        return {
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("scrollingHeader", () => ({
             top: 0,
             maxTop: 0,
-            lastScrollY: window.scrollY,
+            lastScrollY: 0,
+            headerEl: null,
+            spacerEl: null,
 
             init() {
-                const headerEl = this.$refs.header;
-                const spacerEl = this.$refs.spacer;
-                const headerHeight = headerEl.offsetHeight;
+                // Delay to wait for DOM rendering (e.g. Alpine partials)
+                this.$nextTick(() => {
+                    this.headerEl = this.$refs.header;
+                    this.spacerEl = this.$refs.spacer;
 
-                this.maxTop = -headerHeight;
-                spacerEl.style.height = `${headerHeight}px`;
+                    this.updateHeaderHeight();
+                    this.lastScrollY = window.scrollY;
 
-                window.addEventListener("scroll", () => {
-                    requestAnimationFrame(this.handleScroll.bind(this));
+                    window.addEventListener("scroll", () => {
+                        requestAnimationFrame(() => this.handleScroll());
+                    });
+
+                    window.addEventListener("resize", () => {
+                        this.updateHeaderHeight();
+                    });
                 });
+            },
 
-                window.addEventListener("resize", () => {
-                    const newHeight = headerEl.offsetHeight;
-                    this.maxTop = -newHeight;
-                    spacerEl.style.height = `${newHeight}px`;
-                });
+            updateHeaderHeight() {
+                const height = this.headerEl?.offsetHeight || 0;
+                this.maxTop = -height;
+                if (this.spacerEl) {
+                    this.spacerEl.style.height = `${height}px`;
+                }
             },
 
             handleScroll() {
@@ -47,13 +57,15 @@
                 if (current <= 0) {
                     this.top = 0;
                 } else if (delta > 0) {
+                    // scrolling down
                     this.top = Math.max(this.top - delta, this.maxTop);
                 } else if (delta < 0) {
+                    // scrolling up
                     this.top = Math.min(this.top - delta, 0);
                 }
 
                 this.lastScrollY = current;
             },
-        };
-    }
+        }));
+    });
 </script>
