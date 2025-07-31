@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             headerToolbar: {
                 left: "prev,next",
                 center: "title",
-                right: "dayGridMonth,listMonth,dayGridDay",
+                right: "dayGridMonth,listMonth",
             },
             events: calendarEvents,
 
