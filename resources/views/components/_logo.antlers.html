@@ -1,41 +1,22 @@
 {{# @name Logo @desc The logo component with a `width` attribute. #}}
 <!-- /components/_logo.antlers.html -->
 <a aria-label="Logo {{ config:app:name }}" href="{{ site:url }}">
-    {{ if is_footer }}
-        {{ glide src="visuals/lscc_white.svg" format="webp" quality="85" }}
-            <img
-                src="{{ glide:url width='512' }}"
-                srcset="
-                    {{ glide:url width='128' }} 128w,
-                    {{ glide:url width='256' }} 256w,
-                    {{ glide:url width='512' }} 512w,
-                    {{ glide:url width='768' }} 768w
-                "
-                sizes="(max-width: 768px) 128px, (max-width: 1024px) 256px, 512px"
-                alt="{{ config:app:name }}"
-                width="{{ width }}"
-                loading="lazy"
-                class="{{ class }} select-none"
-            />
-        {{ /glide }}
-    {{ else }}
-        {{ glide src="visuals/lscc.svg" format="webp" quality="85" }}
-            <img
-                src="{{ glide:url width='512' }}"
-                srcset="
-                    {{ glide:url width='128' }} 128w,
-                    {{ glide:url width='256' }} 256w,
-                    {{ glide:url width='512' }} 512w,
-                    {{ glide:url width='768' }} 768w
-                "
-                sizes="(max-width: 768px) 128px, (max-width: 1024px) 256px, 512px"
-                alt="{{ config:app:name }}"
-                width="{{ width }}"
-                loading="eager"
-                class="{{ class }} select-none"
-            />
-        {{ /glide }}
-    {{ /if }}
+    {{ glide src="visuals/lscc_white.svg" format="webp" quality="85" }}
+        <img
+            src="{{ glide:url width='512' }}"
+            srcset="
+                {{ glide:url width='128' }} 128w,
+                {{ glide:url width='256' }} 256w,
+                {{ glide:url width='512' }} 512w,
+                {{ glide:url width='768' }} 768w
+            "
+            sizes="(max-width: 768px) 128px, (max-width: 1024px) 256px, 512px"
+            alt="{{ config:app:name }}"
+            width="{{ width }}"
+            loading="lazy"
+            class="{{ class }} select-none"
+        />
+    {{ /glide }}
 </a>
 
 <!-- End: /components/_logo.antlers.html -->
