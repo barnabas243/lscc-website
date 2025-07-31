@@ -1,33 +1,59 @@
-{{#
-    @name Header
-    @desc The site's header rendered on each page.
-#}}
-<!-- /layout/_header.antlers.html -->
-<header
-    x-data="{ scrolled: false, showHeader: true, lastScroll: window.scrollY }"
-    x-init="
-    const threshold = $el.offsetHeight * 0.5;
-    const detect = () => {
-        const current = window.scrollY;
-        scrolled = current > threshold;
-        showHeader = current < lastScroll || current <= 0;
-        lastScroll = current;
-    };
+<div x-data="scrollingHeader()" x-init="init()" x-ref="wrapper">
+    <header
+        x-ref="header"
+        x-bind:style="`top: ${top}px`"
+        class="will-change-top fixed left-0 z-50 w-full bg-neutral-950 text-white transition-none"
+    >
+        <div class="span-content flex items-center justify-between px-6 py-3">
+            {{ partial:components/logo class="w-40 lg:w-50" }}
+            {{ partial:navigation/main }}
+        </div>
+    </header>
 
-    detect();
-    window.addEventListener('scroll', detect);
-"
-    :class="{
-        'bg-neutral-950/60 backdrop-blur shadow-lg text-white': scrolled,
-        'translate-y-0': showHeader,
-        '-translate-y-full': !showHeader
-    }"
-    class="fixed top-0 left-0 z-50 w-full px-3 transition-all duration-300 ease-in-out lg:px-10"
->
-    <div class="span-content flex items-center justify-between py-3 lg:pt-6">
-        {{ partial:components/logo class="w-40 lg:w-50" }}
-        {{ partial:navigation/main }}
-    </div>
-</header>
+    <!-- Spacer inside the same x-data scope -->
+    <div x-ref="spacer"></div>
+</div>
 
-<!-- End: /layout/_header.antlers.html -->
+<script>
+    function scrollingHeader() {
+        return {
+            top: 0,
+            maxTop: 0,
+            lastScrollY: window.scrollY,
+
+            init() {
+                const headerEl = this.$refs.header;
+                const spacerEl = this.$refs.spacer;
+                const headerHeight = headerEl.offsetHeight;
+
+                this.maxTop = -headerHeight;
+                spacerEl.style.height = `${headerHeight}px`;
+
+                window.addEventListener("scroll", () => {
+                    requestAnimationFrame(this.handleScroll.bind(this));
+                });
+
+                window.addEventListener("resize", () => {
+                    const newHeight = headerEl.offsetHeight;
+                    this.maxTop = -newHeight;
+                    spacerEl.style.height = `${newHeight}px`;
+                });
+            },
+
+            handleScroll() {
+                const current = window.scrollY;
+                const delta = current - this.lastScrollY;
+
+                if (current <= 0) {
+                    this.top = 0;
+                } else if (delta > 0) {
+                    this.top = Math.max(this.top - delta, this.maxTop);
+                } else if (delta < 0) {
+                    this.top = Math.min(this.top - delta, 0);
+                }
+
+                this.lastScrollY = current;
+            },
+        };
+    }
+</script>
