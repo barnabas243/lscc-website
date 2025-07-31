@@ -173,6 +173,25 @@ fields:
           field: 'events::event.all_day'
           config:
             width: 25
+        -
+          handle: location_name
+          field:
+            type: text
+            display: 'Location Name'
+            localizable: false
+        -
+          handle: location_url
+          field:
+            input_type: url
+            type: text
+            display: 'Location URL'
+            localizable: false
+        -
+          handle: speaker
+          field:
+            type: text
+            display: Speaker
+            localizable: false
   -
     handle: exclude_dates
     field:
