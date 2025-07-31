@@ -4,7 +4,7 @@ origin: a47ba737-b4a4-4d0a-bc62-269a6897e305
 title: 华语崇拜
 start_time: null
 end_time: null
-speaker: 圣餐联合崇拜
+speaker: 林淑婷传道
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1753956556
+updated_at: 1753956973
 ---
