@@ -1,47 +1,76 @@
 import { fetchEvents, mapEventsForCalendar } from "./api/events.js";
 import { Calendar } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import listPlugin from "@fullcalendar/list";
 
-document.addEventListener("DOMContentLoaded", async function () {
+let calendarInstance = null;
+
+document.addEventListener("DOMContentLoaded", async () => {
     const calendarEl = document.getElementById("calendar");
-
-    if (!calendarEl) return;
+    if (!calendarEl) {
+        console.warn("⚠️ Calendar element not found.");
+        return;
+    }
 
     try {
-        const rawEvents = await fetchEvents({ locale: "en", limit: 100 });
-        console.log("Fetched events:", rawEvents);
+        // get locale from navigator language
+        const lang = document.documentElement.lang || navigator.language;
 
+        const rawEvents = await fetchEvents({ locale: lang, limit: 100 });
         const calendarEvents = mapEventsForCalendar(rawEvents);
-        if (!Array.isArray(calendarEvents)) {
-            console.warn("No events to render.");
-            return;
+
+        console.log("📅 Fetched events:", calendarEvents);
+
+        if (!calendarEvents?.length) {
+            console.warn("⚠️ No events to render.");
         }
 
-        const calendar = new Calendar(calendarEl, {
-            plugins: [dayGridPlugin],
+        calendarInstance = new Calendar(calendarEl, {
+            plugins: [dayGridPlugin, listPlugin],
             initialView: "dayGridMonth",
+            timeZone: "local",
+            height: "auto",
+            displayEventTime: false,
             headerToolbar: {
                 left: "prev,next",
                 center: "title",
-                right: "dayGridMonth,dayGridWeek,dayGridDay",
+                right: "dayGridMonth,listMonth,dayGridDay",
             },
             events: calendarEvents,
-            eventClick: function (info) {
+
+            eventClick(info) {
+                const { title, start, end, extendedProps } = info.event;
                 window.dispatchEvent(
                     new CustomEvent("calendar-event", {
                         detail: {
-                            title: info.event.title,
-                            start: info.event.start,
-                            end: info.event.end,
-                            extendedProps: info.event.extendedProps ?? {},
+                            title: title || "Untitled Event",
+                            start,
+                            end,
+                            allDay: info.event.allDay,
+                            extendedProps: extendedProps || {},
                         },
                     }),
                 );
             },
+
+            eventDidMount(info) {
+                info.el.classList.add("cursor-pointer");
+
+                const tagColor =
+                    info.event.extendedProps?.tagColor || "#1f2937";
+                const titleEl = info.el.querySelector(".fc-event-title");
+
+                // ─── Title Styling ───────────────────────────────
+                if (titleEl && !titleEl.classList.contains("fc-sticky")) {
+                    Object.assign(titleEl.style, {
+                        color: tagColor,
+                    });
+                }
+            },
         });
 
-        calendar.render();
+        calendarInstance.render();
     } catch (error) {
-        console.error("Failed to load events:", error);
+        console.error("❌ Failed to load or render calendar:", error);
     }
 });

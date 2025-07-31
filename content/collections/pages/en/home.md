@@ -195,7 +195,7 @@ page_builder:
     id: magbqzo0
     title: 'Upcoming Events 2025'
     type: timeline
-    enabled: false
+    enabled: true
   -
     id: m6adz9gv
     cards:

@@ -3,9 +3,9 @@
  *
  * @param {Object} options - Configurable fetch options
  * @param {string} options.locale - Desired locale (e.g. 'en', 'zh')
- * @param {number} [options.limit=10] - Number of entries to retrieve
+ * @param {number} [options.limit=10] - Max number of entries
  * @param {string} [options.sort='-start_date'] - Sort field
- * @returns {Promise<Array>} - Array of event entries
+ * @returns {Promise<Array<Object>>} - Array of event entries
  */
 export async function fetchEvents({
     locale,
@@ -17,13 +17,11 @@ export async function fetchEvents({
             "/api/collections/events/entries",
             window.location.origin,
         );
-
         url.searchParams.set("locale", locale);
         url.searchParams.set("limit", limit.toString());
         url.searchParams.set("sort", sort);
 
         const res = await fetch(url);
-
         if (!res.ok) {
             throw new Error(
                 `Failed to fetch events: ${res.status} ${res.statusText}`,
@@ -31,7 +29,6 @@ export async function fetchEvents({
         }
 
         const { data } = await res.json();
-
         if (!Array.isArray(data)) {
             throw new Error("Invalid data format from events API");
         }
@@ -43,42 +40,79 @@ export async function fetchEvents({
     }
 }
 
-/**
- * Generates a consistent color for each event group based on entry ID.
- */
+/* ─────────────────────────────────────────── */
+/* 🧩 Internal Utilities                       */
+/* ─────────────────────────────────────────── */
+
 const colorMap = new Map();
 const colorPalette = [
-    "#1e3a8a",
-    "#047857",
-    "#7c3aed",
-    "#b91c1c",
-    "#be123c",
-    "#0f766e",
-    "#4338ca",
-    "#78350f",
-    "#b45309",
-    "#059669",
+    "#1b1b1b", // near-black
+    "#005f73", // deep teal
+    "#0a9396", // strong cyan
+    "#3a0ca3", // deep violet
+    "#9d0208", // crimson red
+    "#7f0000", // dark red
+    "#00509d", // navy blue
+    "#2b9348", // forest green
+    "#ca6702", // burnt orange
+    "#6a4c93", // dark lavender
+    "#003049", // charcoal blue
+    "#780000", // maroon
+    "#264653", // blue-grey
+    "#5f0f40", // rich purple
+    "#007f5f", // dark mint
 ];
 
 /**
- * Assigns a consistent color to each event group.
- *
- * @param {string} entryId - Unique identifier of the parent event
- * @returns {string} Hex color code
+ * Hashes a string into a consistent numeric value.
+ * @param {string} str
+ * @returns {number}
  */
-function getColorForEntry(entryId) {
-    if (!colorMap.has(entryId)) {
-        const color = colorPalette[colorMap.size % colorPalette.length];
-        colorMap.set(entryId, color);
+function hashString(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
     }
-    return colorMap.get(entryId);
+    return hash;
 }
 
 /**
- * Converts a raw event entry into FullCalendar-compatible event objects.
- *
- * @param {Object} entry - A single event entry from the API
- * @returns {Array<Object>} One or more FullCalendar event objects
+ * Returns a consistent color for the given entry ID or tag.
+ * @param {string} key
+ * @returns {string}
+ */
+function getColorForEntry(key) {
+    if (!colorMap.has(key)) {
+        const index = Math.abs(hashString(key)) % colorPalette.length;
+        colorMap.set(key, colorPalette[index]);
+    }
+    return colorMap.get(key);
+}
+
+/**
+ * Combines a date and time into a valid ISO string.
+ * @param {string} date - Date string (YYYY-MM-DD)
+ * @param {string} [time] - Optional time string (HH:mm)
+ * @returns {string|null} ISO date-time string
+ */
+function combineDateAndTime(date, time) {
+    if (!date) return null;
+    const dateTime = new Date(date);
+    if (time) {
+        const [hours, minutes] = time.split(":").map(Number);
+        dateTime.setHours(hours, minutes || 0, 0, 0);
+    }
+    return dateTime.toISOString();
+}
+
+/* ─────────────────────────────────────────── */
+/* 🔁 Mapping Logic                            */
+/* ─────────────────────────────────────────── */
+
+/**
+ * Converts a single entry into one or more FullCalendar events.
+ * @param {Object} entry - Event entry from API
+ * @returns {Array<Object>} Calendar event objects
  */
 function mapSingleEntry(entry) {
     const baseColor = getColorForEntry(entry.id);
@@ -99,7 +133,6 @@ function mapSingleEntry(entry) {
         },
     };
 
-    // Multi-day recurrence
     if (entry.recurrence?.key === "multi_day" && Array.isArray(entry.days)) {
         return entry.days.map((day) => ({
             ...baseProps,
@@ -115,11 +148,14 @@ function mapSingleEntry(entry) {
                 start_time: day.start_time || null,
                 end_time: day.end_time || null,
                 date: day.date,
+                tagColor: baseColor,
+                speaker: day.speaker || entry.speaker,
+                location: day.location_name || entry.location_name,
+                location_url: day.location_url || entry.location_url,
             },
         }));
     }
 
-    // Single day event
     return [
         {
             ...baseProps,
@@ -132,27 +168,17 @@ function mapSingleEntry(entry) {
             textColor: "#fff",
             extendedProps: {
                 ...baseProps.extendedProps,
-                start_time: entry.start_time || null,
-                end_time: entry.end_time || null,
                 date: entry.start_date,
+                tagColor: baseColor,
             },
         },
     ];
 }
-function combineDateAndTime(date, time) {
-    if (!date) return null;
-    const dateTime = new Date(date);
-    if (time) {
-        const [hours, minutes] = time.split(":").map(Number);
-        dateTime.setHours(hours, minutes, 0, 0);
-    }
-    return dateTime.toISOString();
-}
+
 /**
- * Convert raw Statamic event entries to FullCalendar-compatible format.
- *
- * @param {Array<Object>} entries - Raw entries from the API
- * @returns {Array<Object>} Array of formatted calendar events
+ * Maps Statamic entries to FullCalendar-compatible event objects.
+ * @param {Array<Object>} entries
+ * @returns {Array<Object>}
  */
 export function mapEventsForCalendar(entries = []) {
     return entries.flatMap(mapSingleEntry);
