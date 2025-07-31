@@ -149,6 +149,9 @@ function mapSingleEntry(entry) {
                 end_time: day.end_time || null,
                 date: day.date,
                 tagColor: baseColor,
+                speaker: day.speaker || entry.speaker,
+                location: day.location_name || entry.location_name,
+                location_url: day.location_url || entry.location_url,
             },
         }));
     }
