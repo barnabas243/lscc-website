@@ -28,7 +28,7 @@ page_builder:
             text: 探索日历
     background_color: '#ffffff'
     type: article
-    enabled: true
+    enabled: false
     top_padding: 30
   -
     id: mdr15gpd
@@ -36,5 +36,5 @@ page_builder:
     enabled: true
 seo_description: 查看活水基督教会的活动和服务安排，了解即将举行的礼拜、事工和特别活动。
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1753944305
+updated_at: 1753944326
 ---
