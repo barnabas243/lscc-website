@@ -5,6 +5,7 @@ published: false
 title: 华语崇拜
 start_time: null
 end_time: null
-updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1753952610
+speaker: 圣餐联合崇拜
+updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
+updated_at: 1753956549
 ---
