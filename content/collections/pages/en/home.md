@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1753959095
+updated_at: 1753959184
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -172,7 +172,7 @@ page_builder:
         button_type: button
     image_position: left
     image: group-of-people.jpg
-    title: 'CONNECT WITH US'
+    title: 'Connect with Us'
     text:
       -
         type: paragraph
