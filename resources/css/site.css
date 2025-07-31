@@ -42,12 +42,14 @@
 @layer base {
     html {
         color: var(--color-neutral);
-        /* Set sans, serif or mono stack with optional custom font as default. */
         font-family: var(--font-sans);
-        /* font-family: var(--font-serif); */
-        /* font-family: var(--font-mono); */
+    }
+
+    body {
+        background-color: oklch(95% 0.02 85); /* soft off-white beige */
     }
 }
+
 /* * {
     outline: 1px solid red;
 } */
