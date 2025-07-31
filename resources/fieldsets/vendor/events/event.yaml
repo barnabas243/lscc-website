@@ -138,28 +138,6 @@ fields:
         recurrence: 'equals multi_day'
       fields:
         -
-          handle: speaker
-          field:
-            type: text
-            display: Speaker
-            localizable: false
-            width: 25
-        -
-          handle: location_name
-          field:
-            type: text
-            display: 'Location Name'
-            localizable: false
-            width: 25
-        -
-          handle: location_url
-          field:
-            input_type: url
-            type: text
-            display: 'Location URL'
-            localizable: false
-            width: 50
-        -
           handle: date
           field:
             type: date
@@ -169,16 +147,6 @@ fields:
             input_format: M/D/YYYY
             width: 25
             display: Date
-            localizable: false
-        -
-          handle: start_time
-          field:
-            type: time
-            width: 25
-            display: 'Start Time'
-            instructions: 'Input in 24-hour format'
-            unless:
-              all_day: 'equals true'
             localizable: false
         -
           handle: end_time
@@ -191,10 +159,42 @@ fields:
               all_day: 'equals true'
             localizable: false
         -
+          handle: start_time
+          field:
+            type: time
+            width: 25
+            display: 'Start Time'
+            instructions: 'Input in 24-hour format'
+            unless:
+              all_day: 'equals true'
+            localizable: false
+        -
           handle: all_day
           field: 'events::event.all_day'
           config:
             width: 25
+        -
+          handle: speaker
+          field:
+            type: text
+            display: Speaker
+            localizable: false
+            width: 33
+        -
+          handle: location_name
+          field:
+            type: text
+            display: 'Location Name'
+            localizable: false
+            width: 33
+        -
+          handle: location_url
+          field:
+            input_type: url
+            type: text
+            display: 'Location URL'
+            localizable: false
+            width: 33
   -
     handle: exclude_dates
     field:
