@@ -1,8 +1,11 @@
 @import "tailwindcss";
 @import "./peak.css";
 @import "./typography.css";
+@import "./navigation.css";
+@import "./hero.css";
 @import "./carousel.css";
 @import "./timeline.css";
+@import "./calendar.css";
 
 @theme {
     --color-primary: oklch(53.24% 0.301 290.86);
@@ -55,114 +58,4 @@
 
 .card-image {
     @apply h-full w-full object-cover;
-}
-
-/* HERO
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.js-hero-title {
-    display: inline-block;
-    color: white; /* fallback color */
-    padding-bottom: 0.25em;
-    overflow-wrap: break-word;
-    text-shadow:
-        0 0 4px rgba(255, 255, 255, 0.3),
-        0 0 8px rgba(255, 215, 0, 0.2);
-}
-
-.hero-word {
-    display: inline-block;
-    white-space: pre;
-    will-change: transform, opacity;
-}
-
-.highlighted-word {
-    color: #facc15; /* Tailwind yellow-400 */
-    font-weight: 600;
-}
-
-/* Mobile Nav style
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.icon-line {
-    transition: all 0.3s ease-in-out;
-    transform-origin: center;
-}
-
-.nav-open .line-top {
-    transform: rotate(45deg) translateY(6px);
-}
-
-.nav-open .line-middle {
-    opacity: 0;
-}
-
-.nav-open .line-bottom {
-    transform: rotate(-45deg) translateY(-6px);
-}
-
-/* Responsive adjustments (example for mobile) */
-
-.fc .fc-event-title {
-    white-space: normal;
-    word-break: keep-all;
-    overflow-wrap: break-word;
-}
-
-/* Small screens (Mobile) */
-@media (max-width: 639px) {
-    .fc .fc-toolbar {
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    .fc .fc-toolbar-title {
-        font-size: 1rem;
-        font-weight: 600;
-    }
-
-    .fc .fc-button {
-        font-size: 0.75rem;
-    }
-
-    .fc .fc-event-title {
-        font-size: 0.5rem;
-        margin-left: 0.4rem; /* ✅ small gap between line and title */
-    }
-
-    .fc-daygrid-event-dot {
-        width: 0;
-        height: 100%;
-        border-radius: 2px;
-        border: 0.5px solid currentColor;
-        margin: 0;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-    }
-
-    .fc-daygrid-event-harness {
-        margin-bottom: 4px;
-    }
-
-    .fc-daygrid-day-number {
-        font-size: 0.625rem;
-        line-height: 1.2;
-        font-weight: 600;
-    }
-    .fc-col-header-cell {
-        font-size: 0.75rem;
-        line-height: 1.2;
-    }
-}
-
-/* Medium screens (Tablet) and below */
-@media (max-width: 1024px) {
-    .fc .fc-toolbar-title {
-        font-size: 1.2rem;
-    }
-
-    .fc .fc-button {
-        font-size: 0.8rem;
-    }
 }

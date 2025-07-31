@@ -1,0 +1,64 @@
+.fc .fc-event-title {
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Small screens (Mobile) */
+@media (max-width: 639px) {
+    .fc .fc-toolbar {
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .fc .fc-toolbar-title {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .fc .fc-button {
+        font-size: 0.75rem;
+    }
+
+    .fc .fc-event-title {
+        font-size: 0.5rem;
+        margin-left: 4px; /* ✅ small gap between line and title */
+    }
+
+    .fc-daygrid-event-dot {
+        width: 0;
+        height: 100%;
+        border-radius: 2px;
+        border: 0.5px solid currentColor;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .fc-daygrid-event-harness {
+        margin-bottom: 4px;
+    }
+
+    .fc-daygrid-day-number {
+        font-size: 0.625rem;
+        line-height: 1.2;
+        font-weight: 600;
+    }
+    .fc-col-header-cell {
+        font-size: 0.75rem;
+        line-height: 1.2;
+    }
+}
+
+/* Medium screens (Tablet) and below */
+@media (max-width: 1024px) {
+    .fc .fc-toolbar-title {
+        font-size: 1.2rem;
+    }
+
+    .fc .fc-button {
+        font-size: 0.8rem;
+    }
+}
