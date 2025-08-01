@@ -1,0 +1,78 @@
+{{#
+    @name Location Cards
+    @desc The Location Cards page builder block.
+    @set page.page_builder.location_cards
+#}}
+<!-- /page_builder/_location-cards.antlers.html -->
+{{ partial:page_builder/block }}
+    <section class="span-content mx-auto grid p-3 md:grid-cols-12 md:p-10">
+        <div
+            class="mx-auto grid max-w-5xl grid-cols-1 gap-6 px-4 md:grid-cols-2"
+        >
+            {{ block:cards }}
+                <article
+                    class="w-full rounded-2xl bg-white shadow-2xl ring-1 ring-neutral-900/10 md:p-5"
+                >
+                    <header
+                        class="flex flex-col items-start justify-between gap-4 md:flex-row"
+                    >
+                        <div>
+                            <div class="flex items-center gap-3">
+                                {{ if icon }}
+                                    {{ partial:icons/{icon} class="h-5 w-5 text-rose-500" }}
+                                {{ /if }}
+                                <h2 class="text-xl font-black text-neutral-800">
+                                    {{ title }}
+                                </h2>
+                            </div>
+                            {{ if address && link }}
+                                <address
+                                    class="text-md mt-4 leading-snug text-neutral-500 not-italic"
+                                >
+                                    <a
+                                        href="{{ link }}"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="rounded hover:underline focus:ring-2 focus:ring-rose-400 focus:outline-none"
+                                    >
+                                        {{ address }}
+                                    </a>
+                                </address>
+                            {{ /if }}
+                        </div>
+                        {{ if time }}
+                            <time
+                                class="mt-2 text-right text-sm text-neutral-500 md:mt-0"
+                                datetime="{{ time }}"
+                            >
+                                {{ time }}
+                            </time>
+                        {{ /if }}
+                    </header>
+                    {{ if image }}
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcset="
+                                    {{ glide:url width='480' format='webp' quality='75' }} 480w,
+                                    {{ glide:url width='640' format='webp' quality='80' }} 640w,
+                                    {{ glide:url width='768' format='webp' quality='85' }} 768w
+                                "
+                                sizes="(min-width: 768px) 640px, 100vw"
+                            />
+
+                            <img
+                                src="{{ glide:url width='768' format='webp' quality='80' }}"
+                                alt="{{ alt ?? title ?? 'Location' }} photo"
+                                class="h-full w-full rounded-md object-cover"
+                                loading="lazy"
+                                width="768"
+                                height="480"
+                            />
+                        </picture>
+                    {{ /if }}
+                </article>
+            {{ /block:cards }}
+        </div>
+    </section>
+{{ /partial:page_builder/block }}
