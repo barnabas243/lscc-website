@@ -36,6 +36,19 @@ fields:
       display: 'Note Body'
       localizable: false
       width: 66
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - image
+        - table
+        - underline
   -
     handle: cards
     field:
