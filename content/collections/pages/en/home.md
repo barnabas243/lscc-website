@@ -2,8 +2,8 @@
 id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
-updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1754075234
+updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
+updated_at: 1754078372
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -69,7 +69,37 @@ page_builder:
     type: location_card
     enabled: true
     heading: 'Weekly Services'
-    description: 'Join us every Sunday for worship, fellowship, and teaching at our different service locations.'
+    description:
+      -
+        type: paragraph
+        attrs:
+          textAlign: left
+        content:
+          -
+            type: text
+            text: 'Join us every Sunday for worship, fellowship, and teaching at our different service locations.'
+    note_body:
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: bold
+            text: 'Note: '
+          -
+            type: text
+            text: 'Combined Worship Service happens on '
+          -
+            type: text
+            marks:
+              -
+                type: underline
+            text: 'every 1st Sunday'
+          -
+            type: text
+            text: ' of the month.'
   -
     id: mdigonjb
     type: carousels
