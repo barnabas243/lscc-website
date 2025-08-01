@@ -1,20 +1,86 @@
-{{#
-    @name Location Cards
-    @desc The Location Cards page builder block.
-    @set page.page_builder.location_cards
-#}}
-<!-- /page_builder/_location-cards.antlers.html -->
 {{ partial:page_builder/block }}
-    <section class="span-content mx-auto grid p-3 py-12 md:p-10">
+    <section class="span-content mx-auto px-4 py-16 sm:px-6 md:px-12">
+        {{ if heading }}
+            <header class="mx-auto mb-10 max-w-5xl text-center">
+                <div class="flex items-center justify-center gap-3 md:gap-4">
+                    {{ if heading_icon }}
+                        <span
+                            class="inline-block h-6 w-6 text-indigo-500"
+                            aria-hidden="true"
+                        >
+                            {{ heading_icon }}
+                        </span>
+                    {{ else }}
+                        <svg
+                            class="h-8 w-8 shrink-0 text-indigo-500 md:h-10 md:w-10"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M3 9H21M12 18V12M15 15.001L9 15M7 3V5M17 3V5M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    {{ /if }}
+                    <h2
+                        class="text-2xl font-semibold tracking-tight text-neutral-800 md:text-4xl"
+                    >
+                        {{ heading }}
+                    </h2>
+                </div>
+                {{ if description }}
+                    <div class="mt-5">
+                        <span class="text-lg text-neutral-500">
+                            {{ description }}
+                        </span>
+                    </div>
+                {{ /if }}
+            </header>
+        {{ /if }}
+        {{ if note_body }}
+            <div
+                class="mx-auto mt-6 flex w-fit items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-100 to-purple-100 p-2 text-xs font-medium text-indigo-800 ring-1 ring-indigo-300/20 ring-inset md:text-sm"
+            >
+                {{ if note_icon }}
+                    <span
+                        class="h-5 w-5 shrink-0 text-indigo-500"
+                        aria-hidden="true"
+                    >
+                        {{ note_icon }}
+                    </span>
+                {{ else }}
+                    <svg
+                        class="h-5 w-5 shrink-0 text-indigo-500"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M12 20c4.418 0 8-1.79 8-4v-1a4.978 4.978 0 00-3-4.58V8a4 4 0 10-8 0v2.42A4.978 4.978 0 004 15v1c0 2.21 3.582 4 8 4z"
+                        />
+                    </svg>
+                {{ /if }}
+                <p>{{ note_body }}</p>
+            </div>
+        {{ /if }}
         <div
-            class="mx-auto grid max-w-5xl grid-cols-1 gap-6 px-4 md:grid-cols-2"
+            class="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-8 sm:px-6 md:grid-cols-2 md:px-8"
         >
             {{ block:cards }}
                 <article
-                    class="flex h-full flex-col justify-between rounded-2xl bg-white p-4 shadow-2xl ring-1 ring-neutral-400/10 md:p-5"
+                    class="flex h-full flex-col justify-between rounded-2xl bg-white p-5 shadow-2xl ring-1 ring-neutral-400/10 md:p-6"
                 >
                     <div class="flex flex-grow flex-col gap-4">
-                        <!-- Header: icon/title + time -->
                         <div class="flex items-start justify-between gap-4">
                             <div class="flex items-center gap-3">
                                 {{ if icon }}
@@ -25,29 +91,24 @@
                                         {{ icon }}
                                     </span>
                                 {{ /if }}
-                                <h2
-                                    class="text-lg text-neutral-800"
-                                    style="font-weight: 700"
+                                <h3
+                                    class="text-lg font-semibold text-neutral-800"
                                 >
                                     {{ title }}
-                                </h2>
+                                </h3>
                             </div>
                             {{ if time }}
                                 <time
-                                    class="mt-1 text-sm whitespace-nowrap text-neutral-400"
-                                    style="font-weight: 500"
+                                    class="mt-1 text-sm font-medium whitespace-nowrap text-neutral-400"
                                     datetime="{{ time }}"
                                 >
                                     {{ time format="h:i A" }}
                                 </time>
                             {{ /if }}
                         </div>
-
-                        <!-- Address: reserve space -->
                         {{ if address && link }}
                             <address
                                 class="text-md leading-snug font-medium text-neutral-500 not-italic"
-                                style="font-weight: 500"
                             >
                                 <a
                                     href="{{ link }}"
@@ -60,8 +121,6 @@
                             </address>
                         {{ /if }}
                     </div>
-
-                    <!-- Image -->
                     {{ if image }}
                         <div class="mt-4 overflow-hidden rounded-md">
                             <img
@@ -76,4 +135,6 @@
             {{ /block:cards }}
         </div>
     </section>
+
+    <hr class="mx-5 my-10 max-w-6xl border-t border-neutral-200 md:mx-auto" />
 {{ /partial:page_builder/block }}
