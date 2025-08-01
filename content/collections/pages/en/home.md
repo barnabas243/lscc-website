@@ -2,8 +2,8 @@
 id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
-updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1753973647
+updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
+updated_at: 1754068102
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -27,7 +27,7 @@ page_builder:
     buttons:
       -
         id: m6mcvh9r
-        label: 'Visit Us'
+        label: 'Plan A Visit'
         link_type: entry
         target_blank: false
         button_type: button
@@ -44,6 +44,31 @@ page_builder:
     overlay_to: to-black/50
     gradient_direction: b
   -
+    id: mdt2q5n4
+    cards:
+      -
+        id: mdt2q6j0
+        icon: folder-generic
+        title: 'Youth Service'
+        time: '10:30'
+        address: 'Living Streams Christian Church'
+        link: 'https://maps.app.goo.gl/3MWQDQ33mBTSqZbv8'
+        image: flower_bg.svg
+        type: card
+        enabled: true
+      -
+        id: mdt2trkd
+        icon: alert
+        title: 'Chinese Service'
+        time: '14:30'
+        address: 'Bethany Presbyterian Church - Level 1 Grace Auditorium'
+        link: 'https://maps.app.goo.gl/cSTDJ9E2NyK4SbcKA'
+        image: group-of-people.jpg
+        type: card
+        enabled: true
+    type: location_card
+    enabled: true
+  -
     id: mdigonjb
     type: carousels
     enabled: true
@@ -54,9 +79,7 @@ page_builder:
           - alpha_course_2.jpg
       -
         id: mdj08h5y
-        posters:
-          - mt_2025.png
-    header: 'Upcoming Events'
+    header: SpotLights
   -
     id: m6afwl9k
     cards:
@@ -172,7 +195,7 @@ page_builder:
         button_type: button
     image_position: left
     image: group-of-people.jpg
-    title: 'Connect with Us'
+    title: 'Plan Your Visit'
     text:
       -
         type: paragraph
@@ -195,7 +218,7 @@ page_builder:
     id: magbqzo0
     title: 'Upcoming Events 2025'
     type: timeline
-    enabled: false
+    enabled: true
   -
     id: m6adz9gv
     cards:
