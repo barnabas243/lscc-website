@@ -140,6 +140,11 @@ fields:
               fields:
                 -
                   import: calendar
+            location_card:
+              display: 'Location Card'
+              fields:
+                -
+                  import: location_cards
         text:
           display: Text
           instructions: 'Text based blocks.'
