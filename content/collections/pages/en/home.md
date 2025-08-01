@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1754078584
+updated_at: 1754078721
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -50,7 +50,7 @@ page_builder:
         id: mdt2q6j0
         title: 'Youth Service'
         time: '10:30'
-        address: 'Living Streams Christian Church'
+        address: '56 Boundary Road'
         link: 'https://maps.app.goo.gl/3MWQDQ33mBTSqZbv8'
         type: card
         enabled: true
