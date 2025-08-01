@@ -23,9 +23,16 @@
     --color-neutral-900: var(--color-slate-900);
     --color-neutral-950: var(--color-slate-950);
 
-    /* --font-sans: Gaultier, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
-    /* --font-serif: Lavigne, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; */
-    /* --font-mono: Anonymous, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; */
+    --font-sans: "proxima-nova", Inter, Manrope, Gaultier, ui-sans-serif,
+        system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol", "Noto Color Emoji";
+
+    --font-serif: Lavigne, "Source Serif 4", Merriweather, ui-serif, Georgia,
+        Cambria, "Times New Roman", Times, serif;
+
+    --font-mono: Anonymous, "JetBrains Mono", "Fira Code", ui-monospace,
+        SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
 
     --font-weight-*: initial;
     /* --font-weight-hairline: 100; */
