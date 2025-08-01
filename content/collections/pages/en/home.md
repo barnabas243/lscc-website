@@ -2,8 +2,8 @@
 id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
-updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1754070057
+updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
+updated_at: 1754070841
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -61,13 +61,13 @@ page_builder:
         icon: alert
         title: 'Chinese Service'
         time: '14:30'
-        address: 'Bethany Presbyterian Church Level 1 Grace Auditorium'
+        address: 'Bethany Presbyterian Church - Level 1 Grace Auditorium'
         link: 'https://maps.app.goo.gl/cSTDJ9E2NyK4SbcKA'
         image: group-of-people.jpg
         type: card
         enabled: true
     type: location_card
-    enabled: false
+    enabled: true
   -
     id: mdigonjb
     type: carousels
