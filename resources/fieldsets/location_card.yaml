@@ -1,6 +1,34 @@
 title: 'Location Card'
 fields:
   -
+    handle: heading
+    field:
+      type: text
+      display: Heading
+      localizable: false
+      width: 33
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+      localizable: false
+      width: 66
+  -
+    handle: note_icon
+    field:
+      type: icon
+      display: 'Note Icon'
+      localizable: false
+      width: 33
+  -
+    handle: note_body
+    field:
+      type: textarea
+      display: 'Note Body'
+      localizable: false
+      width: 66
+  -
     handle: cards
     field:
       type: replicator
