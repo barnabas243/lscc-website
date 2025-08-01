@@ -1,48 +1,55 @@
-title: "Location Card"
+title: 'Location Card'
 fields:
-  - handle: cards
+  -
+    handle: cards
     field:
       type: replicator
       display: cards
       localizable: false
       sets:
         new_set_group:
-          display: "New Set Group"
+          display: 'New Set Group'
           sets:
             card:
               display: card
               fields:
-                - handle: icon
+                -
+                  handle: icon
                   field:
                     type: icon
                     display: Icon
                     localizable: false
                     width: 25
-                - handle: title
+                -
+                  handle: title
                   field:
                     type: text
                     display: Title
                     localizable: false
                     width: 50
-                - handle: time
+                -
+                  handle: time
                   field:
                     type: time
                     display: Time
                     localizable: false
                     width: 25
-                - handle: address
+                -
+                  handle: address
                   field:
                     type: text
                     display: Address
                     localizable: false
                     width: 50
-                - handle: link
+                -
+                  handle: link
                   field:
                     type: link
                     display: Link
                     localizable: false
                     width: 50
-                - handle: image
+                -
+                  handle: image
                   field:
                     max_files: 1
                     container: images
