@@ -51,9 +51,10 @@
         color: var(--color-neutral);
         font-family: var(--font-sans);
     }
-
     body {
-        background-color: oklch(95% 0.02 85); /* soft off-white beige */
+        background-color: oklch(
+            99% 0.007 85
+        ); /* near-white with a subtle beige undertone */
     }
 }
 
