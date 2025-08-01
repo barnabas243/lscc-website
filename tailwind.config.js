@@ -7,7 +7,7 @@ export default {
     ],
     theme: {
         fontFamily: {
-            sans: ["BenchNine", "serif"],
+            sans: ["Proxima Nova", "BenchNine", "serif"],
             serif: ["Cormorant Garamond", "serif"],
         },
         extend: {},
@@ -31,6 +31,15 @@ export default {
         {
             // Safe dynamic text alignment, spacing, sizing, etc. (optional)
             pattern: /(text|p|m|gap|space|h|w|aspect)-\w+/,
+        },
+        {
+            // Safe dynamic font sizes (text-sm, text-lg, etc.)
+            pattern: /text-(sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl)/,
+        },
+        {
+            // Safe dynamic font weights (font-light, font-bold, etc.)
+            pattern:
+                /font-(thin|extralight|light|normal|medium|semibold|bold|extrabold|black)/,
         },
         "bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))]",
         "from-violet-400",
