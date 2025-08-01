@@ -1,6 +1,13 @@
 title: 'Location Card'
 fields:
   -
+    handle: heading_icon
+    field:
+      type: icon
+      display: 'Heading Icon'
+      localizable: false
+      width: 33
+  -
     handle: heading
     field:
       type: text
@@ -10,10 +17,10 @@ fields:
   -
     handle: description
     field:
-      type: textarea
+      remove_empty_nodes: false
+      type: bard
       display: Description
       localizable: false
-      width: 66
   -
     handle: note_icon
     field:
@@ -24,7 +31,8 @@ fields:
   -
     handle: note_body
     field:
-      type: textarea
+      remove_empty_nodes: false
+      type: bard
       display: 'Note Body'
       localizable: false
       width: 66
