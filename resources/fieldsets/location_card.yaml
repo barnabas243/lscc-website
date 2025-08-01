@@ -30,7 +30,8 @@ fields:
                 -
                   handle: time
                   field:
-                    type: time
+                    input_type: time
+                    type: text
                     display: Time
                     localizable: false
                     width: 25
