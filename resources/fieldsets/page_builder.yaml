@@ -144,7 +144,7 @@ fields:
               display: 'Location Card'
               fields:
                 -
-                  import: location_cards
+                  import: location_card
         text:
           display: Text
           instructions: 'Text based blocks.'
