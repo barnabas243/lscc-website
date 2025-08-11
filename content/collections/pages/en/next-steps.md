@@ -52,8 +52,6 @@ page_builder:
     slides:
       -
         id: mdiuvc0z
-        posters:
-          - alpha_course_2.jpg
     type: carousels
     enabled: false
 seo_noindex: false

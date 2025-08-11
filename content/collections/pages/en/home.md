@@ -97,8 +97,6 @@ page_builder:
     slides:
       -
         id: mdiwg60p
-        posters:
-          - alpha_course_2.jpg
       -
         id: mdj08h5y
         posters:
