@@ -162,3 +162,15 @@ fields:
               fields:
                 -
                   import: image_and_text
+        errors:
+          display: Errors
+          sets:
+            error_404:
+              display: 'Error 404'
+              fields:
+                -
+                  handle: error_message
+                  field:
+                    type: textarea
+                    display: 'Error Message'
+                    localizable: false
