@@ -99,7 +99,9 @@ page_builder:
     top_padding: 30
   -
     id: mecpdg2x
-    error_message: 'You’ve reached a quiet bend. Choose a section from the menu to continue.'
+    error_message: |-
+      You’ve reached a quiet bend. 
+      Choose a section from the menu to continue.
     type: error_404
     enabled: true
 seo_noindex: true
