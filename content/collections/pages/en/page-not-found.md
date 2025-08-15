@@ -1,5 +1,6 @@
 ---
 id: 059d4d8d-fc60-49f8-8823-7da10549e84e
+published: false
 blueprint: page
 title: 'Page not found'
 page_builder:
@@ -103,6 +104,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739510123
+updated_at: 1755249809
 seo_description: 'Oops! The page you’re looking for cannot be found. Please check the URL or go back to the homepage.'
 ---
