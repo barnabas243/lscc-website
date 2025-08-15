@@ -99,7 +99,7 @@ page_builder:
     top_padding: 30
   -
     id: mecpdg2x
-    error_message: '🌊 Looks like this stream doesn’t flow here...'
+    error_message: 'You’ve reached a quiet bend. Choose a section from the menu to continue.'
     type: error_404
     enabled: true
 seo_noindex: true
@@ -107,7 +107,7 @@ seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
-updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1755254786
+updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
+updated_at: 1755255746
 seo_description: 'Oops! The page you’re looking for cannot be found. Please check the URL or go back to the homepage.'
 ---
