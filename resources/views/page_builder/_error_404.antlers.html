@@ -1,0 +1,582 @@
+{{#
+    @name Calendar
+    @desc Calendar page builder block (custom 404 presentation).
+    @set page.page_builder.calendar
+#}}
+
+{{ partial:page_builder/block }}
+    <section class="mx-auto w-full max-w-4xl text-center">
+        <h1 class="sr-only">404 – Page not found</h1>
+
+        <svg
+            viewBox="0 0 900 360"
+            class="block w-full leading-none"
+            role="img"
+            aria-labelledby="t d"
+        >
+            <title id="t">Page not found</title>
+            <desc id="d">
+                Animated water inside a “404” with small fish and bubbles.
+            </desc>
+
+            <defs>
+                <!-- Swim paths (inside the digits) -->
+                <path
+                    id="swim-right"
+                    d="M -60 135 C 120 148, 680 148, 860 155"
+                    fill="none"
+                />
+                <path
+                    id="swim-left"
+                    d="M 860 138 C 680 162, 120 162, -60 158"
+                    fill="none"
+                />
+
+                <!-- Soft wake blur -->
+                <filter
+                    id="fx-wake"
+                    x="-20%"
+                    y="-20%"
+                    width="140%"
+                    height="140%"
+                >
+                    <feGaussianBlur stdDeviation="1.1" />
+                </filter>
+
+                <!-- Fish sprite -->
+                <symbol
+                    id="fish-icon"
+                    viewBox="0 0 64 32"
+                    preserveAspectRatio="xMidYMid meet"
+                >
+                    <image href="/visuals/fish.svg" width="64" height="32" />
+                </symbol>
+
+                <!-- Water gradient -->
+                <linearGradient id="grad-water" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#34d399" />
+                    <stop offset="100%" stop-color="#10b981" />
+                </linearGradient>
+
+                <!-- Wave tile (low amplitude, deep fill) -->
+                <path
+                    id="wave"
+                    d="M0,0 C40,-15 80,15 120,0 S200,-15 240,0 S320,15 360,0 S440,-15 480,0 S560,15 600,0 S680,-15 720,0 S760,15 800,0 V260 H0 Z"
+                />
+
+                <!-- “404” outline / clip source -->
+                <text
+                    id="shape-404"
+                    x="50%"
+                    y="56%"
+                    text-anchor="middle"
+                    font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+                    font-size="200"
+                    font-weight="800"
+                    letter-spacing="6"
+                >
+                    404
+                </text>
+
+                <clipPath id="clip-404" clipPathUnits="userSpaceOnUse">
+                    <use href="#shape-404" />
+                </clipPath>
+
+                <!-- Glyph shadow -->
+                <filter
+                    id="soft-shadow"
+                    x="-20%"
+                    y="-20%"
+                    width="140%"
+                    height="140%"
+                >
+                    <feDropShadow
+                        dx="0"
+                        dy="2"
+                        stdDeviation="5"
+                        flood-color="#064e3b"
+                        flood-opacity="0.18"
+                    />
+                </filter>
+
+                <!-- Message ink + shadow -->
+                <linearGradient id="text-ink" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#065f46" />
+                    <stop offset="100%" stop-color="#0f766e" />
+                </linearGradient>
+                <filter
+                    id="text-shadow"
+                    x="-20%"
+                    y="-20%"
+                    width="140%"
+                    height="140%"
+                >
+                    <feDropShadow
+                        dx="0"
+                        dy="1"
+                        stdDeviation="0.7"
+                        flood-color="#065f46"
+                        flood-opacity="0.22"
+                    />
+                </filter>
+            </defs>
+
+            <!-- 404 outline (outside the clip so it always shows) -->
+            <use
+                href="#shape-404"
+                fill="none"
+                stroke="#065f46"
+                stroke-opacity=".25"
+                stroke-width="5"
+                filter="url(#soft-shadow)"
+            />
+
+            <!-- Message (outside the clip) -->
+            <text
+                x="50%"
+                y="332"
+                text-anchor="middle"
+                font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial"
+                font-size="18"
+                font-weight="800"
+                letter-spacing=".05em"
+                fill="url(#text-ink)"
+                filter="url(#text-shadow)"
+                style="
+                    paint-order: stroke fill;
+                    stroke: #ffffff;
+                    stroke-opacity: 0.35;
+                    stroke-width: 0.6;
+                "
+            >
+                {{ error_message }}
+            </text>
+
+            <!-- All water + creatures are clipped to the “404” -->
+            <g clip-path="url(#clip-404)">
+                <!-- Water tint -->
+                <rect
+                    width="100%"
+                    height="100%"
+                    fill="url(#grad-water)"
+                    opacity="0.18"
+                />
+
+                <!-- Waves (Y set via CSS var; animation handles X) -->
+                <g class="wave motion" style="--y: 110px">
+                    <use href="#wave" fill="#10b981" opacity="0.65" />
+                    <use href="#wave" x="800" fill="#10b981" opacity="0.65" />
+                </g>
+                <g class="wave wave-front motion" style="--y: 110px">
+                    <use href="#wave" fill="#059669" opacity="0.9" />
+                    <use href="#wave" x="800" fill="#059669" opacity="0.9" />
+                </g>
+
+                <!-- Rightward fish (flipped to face →); grouped so SMIL motion stacks cleanly -->
+                <g class="smil">
+                    <animateMotion
+                        dur="10s"
+                        repeatCount="indefinite"
+                        rotate="auto"
+                    >
+                        <mpath href="#swim-right" />
+                    </animateMotion>
+                    <animateTransform
+                        attributeName="transform"
+                        additive="sum"
+                        type="translate"
+                        values="0 0; 0 -1.6; 0 0; 0 1; 0 0"
+                        dur="2.2s"
+                        repeatCount="indefinite"
+                    />
+                    <animateTransform
+                        attributeName="transform"
+                        additive="sum"
+                        type="rotate"
+                        values="-4 0 0; 4 0 0; -4 0 0"
+                        dur="1.6s"
+                        repeatCount="indefinite"
+                    />
+                    <animateTransform
+                        attributeName="transform"
+                        additive="sum"
+                        type="scale"
+                        values="1 1; 0.985 1.012; 1 1; 0.985 1.012; 1 1"
+                        dur="0.9s"
+                        repeatCount="indefinite"
+                    />
+
+                    <!-- faint wakes -->
+                    <g opacity="0.14" filter="url(#fx-wake)">
+                        <animateMotion
+                            dur="10s"
+                            repeatCount="indefinite"
+                            rotate="auto"
+                            keyPoints="0;0.96;1"
+                            keyTimes="0;0.96;1"
+                        >
+                            <mpath href="#swim-right" />
+                        </animateMotion>
+                        <use href="#fish-icon" width="48" height="24" />
+                    </g>
+                    <g opacity="0.08" filter="url(#fx-wake)">
+                        <animateMotion
+                            dur="10s"
+                            repeatCount="indefinite"
+                            rotate="auto"
+                            keyPoints="0;0.92;1"
+                            keyTimes="0;0.92;1"
+                        >
+                            <mpath href="#swim-right" />
+                        </animateMotion>
+                        <use href="#fish-icon" width="48" height="24" />
+                    </g>
+
+                    <!-- live fish (translate before scale so the horizontal flip stays on-path) -->
+                    <use
+                        href="#fish-icon"
+                        width="48"
+                        height="24"
+                        transform="translate(48,0) scale(-1,1)"
+                    />
+
+                    <!-- bubble trail (approximate mouth origin for 48×24 instance) -->
+                    <g opacity="0.95">
+                        <circle r="2.4" fill="white">
+                            <animateMotion
+                                dur="10s"
+                                repeatCount="indefinite"
+                                rotate="auto"
+                            >
+                                <mpath href="#swim-right" />
+                            </animateMotion>
+                            <animateTransform
+                                attributeName="transform"
+                                additive="sum"
+                                type="translate"
+                                values="31 12; 24 0"
+                                dur="1.7s"
+                                repeatCount="indefinite"
+                            />
+                            <animate
+                                attributeName="opacity"
+                                values="1;0"
+                                dur="1.7s"
+                                repeatCount="indefinite"
+                            />
+                        </circle>
+                        <circle r="2" fill="white" opacity=".9">
+                            <animateMotion
+                                dur="10s"
+                                repeatCount="indefinite"
+                                rotate="auto"
+                                begin=".32s"
+                            >
+                                <mpath href="#swim-right" />
+                            </animateMotion>
+                            <animateTransform
+                                attributeName="transform"
+                                additive="sum"
+                                type="translate"
+                                values="31 12; 24 -1"
+                                dur="1.8s"
+                                repeatCount="indefinite"
+                                begin=".32s"
+                            />
+                            <animate
+                                attributeName="opacity"
+                                values="1;0"
+                                dur="1.8s"
+                                repeatCount="indefinite"
+                                begin=".32s"
+                            />
+                        </circle>
+                        <circle r="1.7" fill="white" opacity=".85">
+                            <animateMotion
+                                dur="10s"
+                                repeatCount="indefinite"
+                                rotate="auto"
+                                begin=".64s"
+                            >
+                                <mpath href="#swim-right" />
+                            </animateMotion>
+                            <animateTransform
+                                attributeName="transform"
+                                additive="sum"
+                                type="translate"
+                                values="31 12; 25 1"
+                                dur="1.9s"
+                                repeatCount="indefinite"
+                                begin=".64s"
+                            />
+                            <animate
+                                attributeName="opacity"
+                                values="1;0"
+                                dur="1.9s"
+                                repeatCount="indefinite"
+                                begin=".64s"
+                            />
+                        </circle>
+                    </g>
+                </g>
+
+                <!-- Leftward fish (uses auto-reverse so it faces → of travel) -->
+                <g class="smil">
+                    <animateMotion
+                        dur="12s"
+                        repeatCount="indefinite"
+                        rotate="auto-reverse"
+                        begin="1.2s"
+                    >
+                        <mpath href="#swim-left" />
+                    </animateMotion>
+                    <animateTransform
+                        attributeName="transform"
+                        additive="sum"
+                        type="translate"
+                        values="0 0; 0 1.4; 0 0; 0 -0.8; 0 0"
+                        dur="2.6s"
+                        repeatCount="indefinite"
+                    />
+                    <animateTransform
+                        attributeName="transform"
+                        additive="sum"
+                        type="rotate"
+                        values="3 0 0; -3 0 0; 3 0 0"
+                        dur="1.8s"
+                        repeatCount="indefinite"
+                    />
+                    <animateTransform
+                        attributeName="transform"
+                        additive="sum"
+                        type="scale"
+                        values="1 1; 0.986 1.012; 1 1; 0.986 1.012; 1 1"
+                        dur="0.95s"
+                        repeatCount="indefinite"
+                    />
+
+                    <g opacity="0.14" filter="url(#fx-wake)">
+                        <animateMotion
+                            dur="12s"
+                            repeatCount="indefinite"
+                            rotate="auto-reverse"
+                            keyPoints="0;0.96;1"
+                            keyTimes="0;0.96;1"
+                            begin="1.2s"
+                        >
+                            <mpath href="#swim-left" />
+                        </animateMotion>
+                        <use href="#fish-icon" width="40" height="20" />
+                    </g>
+                    <g opacity="0.08" filter="url(#fx-wake)">
+                        <animateMotion
+                            dur="12s"
+                            repeatCount="indefinite"
+                            rotate="auto-reverse"
+                            keyPoints="0;0.92;1"
+                            keyTimes="0;0.92;1"
+                            begin="1.2s"
+                        >
+                            <mpath href="#swim-left" />
+                        </animateMotion>
+                        <use href="#fish-icon" width="40" height="20" />
+                    </g>
+
+                    <use
+                        href="#fish-icon"
+                        width="40"
+                        height="20"
+                        opacity="0.94"
+                    />
+
+                    <!-- mirrored bubble trail (approx mouth for 40×20 instance) -->
+                    <g opacity="0.95">
+                        <circle r="2.2" fill="white">
+                            <animateMotion
+                                dur="12s"
+                                repeatCount="indefinite"
+                                rotate="auto-reverse"
+                                begin="1.1s"
+                            >
+                                <mpath href="#swim-left" />
+                            </animateMotion>
+                            <animateTransform
+                                attributeName="transform"
+                                additive="sum"
+                                type="translate"
+                                values="15 10; 22 -2"
+                                dur="1.8s"
+                                repeatCount="indefinite"
+                                begin="1.1s"
+                            />
+                            <animate
+                                attributeName="opacity"
+                                values="1;0"
+                                dur="1.8s"
+                                repeatCount="indefinite"
+                                begin="1.1s"
+                            />
+                        </circle>
+                        <circle r="1.9" fill="white" opacity=".9">
+                            <animateMotion
+                                dur="12s"
+                                repeatCount="indefinite"
+                                rotate="auto-reverse"
+                                begin="1.42s"
+                            >
+                                <mpath href="#swim-left" />
+                            </animateMotion>
+                            <animateTransform
+                                attributeName="transform"
+                                additive="sum"
+                                type="translate"
+                                values="15 10; 22 -3"
+                                dur="1.9s"
+                                repeatCount="indefinite"
+                                begin="1.42s"
+                            />
+                            <animate
+                                attributeName="opacity"
+                                values="1;0"
+                                dur="1.9s"
+                                repeatCount="indefinite"
+                                begin="1.42s"
+                            />
+                        </circle>
+                        <circle r="1.6" fill="white" opacity=".85">
+                            <animateMotion
+                                dur="12s"
+                                repeatCount="indefinite"
+                                rotate="auto-reverse"
+                                begin="1.74s"
+                            >
+                                <mpath href="#swim-left" />
+                            </animateMotion>
+                            <animateTransform
+                                attributeName="transform"
+                                additive="sum"
+                                type="translate"
+                                values="15 10; 23 -1"
+                                dur="2.0s"
+                                repeatCount="indefinite"
+                                begin="1.74s"
+                            />
+                            <animate
+                                attributeName="opacity"
+                                values="1;0"
+                                dur="2.0s"
+                                repeatCount="indefinite"
+                                begin="1.74s"
+                            />
+                        </circle>
+                    </g>
+                </g>
+
+                <!-- Ambient bubbles near the “0” -->
+                <g class="smil" opacity="0.9">
+                    <g>
+                        <circle r="3.5" fill="white" opacity="0.9">
+                            <animate
+                                attributeName="cy"
+                                values="210;155"
+                                dur="4.8s"
+                                repeatCount="indefinite"
+                            />
+                            <animate
+                                attributeName="cx"
+                                values="398;402"
+                                dur="4.8s"
+                                repeatCount="indefinite"
+                            />
+                            <animate
+                                attributeName="opacity"
+                                values="1;0"
+                                dur="4.8s"
+                                repeatCount="indefinite"
+                            />
+                        </circle>
+                    </g>
+                    <g>
+                        <circle r="3" fill="white" opacity="0.85">
+                            <animate
+                                attributeName="cy"
+                                values="220;160"
+                                dur="5.2s"
+                                repeatCount="indefinite"
+                                begin="0.9s"
+                            />
+                            <animate
+                                attributeName="cx"
+                                values="410;406"
+                                dur="5.2s"
+                                repeatCount="indefinite"
+                                begin="0.9s"
+                            />
+                            <animate
+                                attributeName="opacity"
+                                values="1;0"
+                                dur="5.2s"
+                                repeatCount="indefinite"
+                                begin="0.9s"
+                            />
+                        </circle>
+                    </g>
+                    <g>
+                        <circle r="2.6" fill="white" opacity="0.85">
+                            <animate
+                                attributeName="cy"
+                                values="215;158"
+                                dur="5.6s"
+                                repeatCount="indefinite"
+                                begin="1.8s"
+                            />
+                            <animate
+                                attributeName="cx"
+                                values="388;392"
+                                dur="5.6s"
+                                repeatCount="indefinite"
+                                begin="1.8s"
+                            />
+                            <animate
+                                attributeName="opacity"
+                                values="1;0"
+                                dur="5.6s"
+                                repeatCount="indefinite"
+                                begin="1.8s"
+                            />
+                        </circle>
+                    </g>
+                </g>
+            </g>
+
+            <style>
+                /* Wave scroll (uses per-element --y) */
+                .wave {
+                    animation: waveSlide 14s linear infinite;
+                }
+                .wave-front {
+                    animation-duration: 8s;
+                }
+                @keyframes waveSlide {
+                    0% {
+                        transform: translateX(0) translateY(var(--y, 140px));
+                    }
+                    100% {
+                        transform: translateX(-800px)
+                            translateY(var(--y, 140px));
+                    }
+                }
+
+                /* Respect user motion preferences (pause waves, hide SMIL-heavy bits) */
+                @media (prefers-reduced-motion: reduce) {
+                    .wave {
+                        animation: none !important;
+                    }
+                    .smil {
+                        display: none !important;
+                    }
+                }
+            </style>
+        </svg>
+    </section>
+{{ /partial:page_builder/block }}
