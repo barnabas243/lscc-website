@@ -191,8 +191,8 @@ page_builder:
     type: cards
     enabled: true
     align_content: left
-seo_title: null
+seo_title: '生命里遇见神 起来传扬福音'
 seo_description: 新加坡活盛基督教会是一个充满关怀的属灵家，欢迎各年龄层一同敬拜神、在真理中成长，并将祂的爱传递出去。
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755283395
+updated_at: 1755283476
 ---
