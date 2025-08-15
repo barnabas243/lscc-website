@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755257089
+updated_at: 1755283331
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -386,6 +386,6 @@ page_builder:
     type: article
     enabled: true
     top_padding: 20
-seo_description: 'Combined Service (1st Sunday) & Chinese Service (other Sundays) at 2:30 PM, 364A Upper Paya Lebar Rd. Youth at 56 Boundary Rd, 10:30 AM. Contact us at 84077262.'
+seo_description: 'Living Streams Christian Church in Singapore is a close-knit, Spirit-led family where all generations worship, grow in God’s Word and share His love.'
 seo_title: 'Living Streams Christian Church — Encounter God, Share His Love'
 ---
