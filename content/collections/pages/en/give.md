@@ -15,52 +15,29 @@ page_builder:
     overlay_from: from-black/100
     overlay_to: to-transparent
   -
-    id: m6rk17ol
-    article:
+    id: meiehoc4
+    lead_text: 'Want to chip in?'
+    title: 'Be Part of the Story'
+    text:
       -
-        type: heading
-        attrs:
-          textAlign: center
-          level: 2
+        type: paragraph
         content:
           -
             type: text
-            text: 'Why Give?'
+            text: 'Your giving makes a difference. Scan the QR code to support and help us make church a place that feels like home for everyone.'
+    buttons:
       -
-        type: paragraph
-        attrs:
-          textAlign: center
-        content:
-          -
-            type: text
-            text: 'We see giving as another way we can our worship God, by generously and joyfully giving toward the ministry and mission he has called us to together.'
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
-      -
-        type: set
-        attrs:
-          id: m6rpnc7c
-          enabled: false
-          values:
-            type: image
-            image: offering.jpg
-            size: xl
-    background_color: '#ffffff'
-    type: article
-    enabled: false
-    top_padding: 10
-  -
-    id: meicsqe7
-    heading: 'Partner With Us'
-    cards:
-      -
-        id: meicvlub
-        type: card
-        enabled: true
-    type: location_card
-    enabled: false
+        id: meieln2m
+        link_type: asset
+        target_blank: false
+        asset: lscc_paynow_qr.png
+        button_type: button
+    image: offering.jpg
+    image_position: right
+    image_col_span: 6
+    text_col_span: 6
+    type: image_and_text
+    enabled: true
   -
     id: m6rsyjqp
     cards:
@@ -89,6 +66,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755599263
+updated_at: 1755599509
 seo_description: 'Support Living Streams Christian Church’s ministry and mission with your generous giving. Discover ways to contribute and make a greater impact today.'
 ---
