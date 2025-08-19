@@ -86,7 +86,7 @@ page_builder:
             button_type: button
         type: card
         enabled: true
-        background_color: '#f0f0f0'
+        background_color: '#F4EBE3'
     align_content: left
     type: cards
     enabled: true
@@ -97,6 +97,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755599960
+updated_at: 1755599976
 seo_description: 'Support Living Streams Christian Church’s ministry and mission with your generous giving. Discover ways to contribute and make a greater impact today.'
 ---
