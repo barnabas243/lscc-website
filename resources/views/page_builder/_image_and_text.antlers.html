@@ -9,52 +9,47 @@
     >
         {{ if image }}
             <figure
-                class="{{ image_position == 'left' ? 'order-first' : 'md:order-last' }} md:col-span-{{ image_col_span }} relative"
+                class="{{ image_position == 'left' ? 'order-first' : 'md:order-last' }} md:col-span-{{ image_col_span }}"
             >
-                {{ image }}
-                    <picture>
-                        <!-- AVIF first -->
-                        <source
-                            srcset="
-                                {{ glide:url width='480' format='avif' quality='70' }}  480w,
-                                {{ glide:url width='768' format='avif' quality='70' }}  768w,
-                                {{ glide:url width='1024' format='avif' quality='70' }} 1024w,
-                                {{ glide:url width='1600' format='avif' quality='70' }} 1600w
-                            "
-                            type="image/avif"
-                        />
-                        <!-- WebP -->
-                        <source
-                            srcset="
-                                {{ glide:url width='480' format='webp' quality='80' }}  480w,
-                                {{ glide:url width='768' format='webp' quality='80' }}  768w,
-                                {{ glide:url width='1024' format='webp' quality='80' }} 1024w,
-                                {{ glide:url width='1600' format='webp' quality='80' }} 1600w
-                            "
-                            type="image/webp"
-                        />
-                        <!-- JPEG fallback -->
-                        <img
-                            src="{{ glide:url width='1024' quality='82' format='jpg' }}"
-                            srcset="
-                                {{ glide:url width='480' quality='82' format='jpg' }}  480w,
-                                {{ glide:url width='768' quality='82' format='jpg' }}  768w,
-                                {{ glide:url width='1024' quality='82' format='jpg' }} 1024w,
-                                {{ glide:url width='1600' quality='82' format='jpg' }} 1600w
-                            "
-                            sizes="(max-width: 767px) 100vw,
-                   (max-width: 1023px) 50vw,
-                   calc(({{ image_col_span }} / 12) * 100vw)"
-                            alt="{{ alt ?? title ?? 'Image' }}"
-                            class="aspect-[16/9] w-full rounded-lg object-cover shadow-md md:aspect-[4/3] lg:aspect-[3/2]"
-                            loading="{{ loop_first ? 'eager' : 'lazy' }}"
-                            fetchpriority="{{ loop_first ? 'high' : 'auto' }}"
-                            decoding="async"
-                            width="1600"
-                            height="1067"
-                        />
-                    </picture>
-                {{ /image }}
+                <div
+                    class="rounded-lgmd:aspect-[3/2] relative aspect-[4/3] w-full overflow-hidden lg:aspect-[16/9]"
+                >
+                    {{ image }}
+                        <picture>
+                            <source
+                                srcset="
+                                    {{ glide:url width='1600' format='avif' quality='70' }}
+                                "
+                                type="image/avif"
+                            />
+                            <source
+                                srcset="
+                                    {{ glide:url width='1600' format='webp' quality='80' }}
+                                "
+                                type="image/webp"
+                            />
+                            <img
+                                src="{{ glide:url width='1024' quality='82' format='jpg' }}"
+                                srcset="
+                                    {{ glide:url width='480' quality='82' format='jpg' }}   480w,
+                                    {{ glide:url width='768' quality='82' format='jpg' }}   768w,
+                                    {{ glide:url width='1024' quality='82' format='jpg' }} 1024w,
+                                    {{ glide:url width='1600' quality='82' format='jpg' }} 1600w
+                                "
+                                sizes="(max-width: 767px) 100vw,
+                 (max-width: 1023px) calc(({{ image_col_span }} / 12) * 100vw),
+                 calc(({{ image_col_span }} / 12) * 100vw)"
+                                alt="{{ alt ?? title ?? 'Image' }}"
+                                class="absolute inset-0 h-full w-full object-contain"
+                                loading="{{ loop_first ? 'eager' : 'lazy' }}"
+                                fetchpriority="{{ loop_first ? 'high' : 'auto' }}"
+                                decoding="async"
+                                width="1600"
+                                height="1067"
+                            />
+                        </picture>
+                    {{ /image }}
+                </div>
                 {{ if caption }}
                     <figcaption class="mt-2 text-sm text-neutral-500">
                         {{ caption }}
