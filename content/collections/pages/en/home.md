@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755596239
+updated_at: 1755596297
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -134,80 +134,6 @@ page_builder:
     align_content: left
     background_color: '#fefbf7'
   -
-    id: T5ZZwBfn
-    article:
-      -
-        type: heading
-        attrs:
-          textAlign: center
-          level: 2
-        content:
-          -
-            type: text
-            marks:
-              -
-                type: textColor
-                attrs:
-                  color: inherit
-            text: 'Live a Life Abundant in Jesus'
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
-        content:
-          -
-            type: text
-            marks:
-              -
-                type: textColor
-                attrs:
-                  color: inherit
-            text: 'At Life Abundant Church, we believe that true growth in faith comes from worshipping and learning together. Our church is dedicated to creating a space that encourages spiritual growth and connection.'
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
-        content:
-          -
-            type: text
-            marks:
-              -
-                type: textColor
-                attrs:
-                  color: inherit
-            text: 'We offer opportunities to engage with scripture, to learn about Jesus and to worship Him with others. Our church is open to people of all ages and backgrounds.'
-      -
-        type: paragraph
-        attrs:
-          textAlign: center
-        content:
-          -
-            type: text
-            marks:
-              -
-                type: textColor
-                attrs:
-                  color: inherit
-            text: 'Join us in growing in faith with people who love and obey Jesus.'
-      -
-        type: set
-        attrs:
-          id: m6ac956x
-          values:
-            type: buttons
-            buttons:
-              -
-                id: m6ac95s2
-                label: 'About Us'
-                link_type: entry
-                target_blank: false
-                entry: a11ba4cb-b361-4199-b466-aa4faf506bfd
-                button_type: button
-    type: article
-    enabled: false
-    top_padding: 30
-    background_color: '#ffffff'
-  -
     id: m6acdjnb
     type: image_and_text
     enabled: true
@@ -289,7 +215,7 @@ page_builder:
     type: cards
     enabled: true
     align_content: left
-    background_color: '#ffffff'
+    background_color: FEFBF7
   -
     id: m6ae5dps
     image: alpha-course-gathering.jpg
