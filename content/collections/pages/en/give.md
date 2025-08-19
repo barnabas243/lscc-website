@@ -49,12 +49,12 @@ page_builder:
         content:
           -
             type: text
-            text: 'We’re inviting our church family to partner in securing a new home for LSCC.'
+            text: 'We invite our church family to partner in securing a new home for LSCC.'
           -
             type: hardBreak
           -
             type: text
-            text: 'Through pledges, one-time contributions, or even interest-free loans, every step of support helps us move closer to a space where worship and community can grow.'
+            text: 'Pledges, contributions, and interest-free loans all bring us closer to a place for worship and community.'
     buttons:
       -
         id: meieu602
@@ -97,6 +97,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755599976
+updated_at: 1755600034
 seo_description: 'Support Living Streams Christian Church’s ministry and mission with your generous giving. Discover ways to contribute and make a greater impact today.'
 ---
