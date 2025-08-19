@@ -28,6 +28,7 @@ page_builder:
     buttons:
       -
         id: meieln2m
+        label: 'Copy QR Code'
         link_type: asset
         target_blank: false
         asset: lscc_paynow_qr.png
@@ -66,6 +67,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755599509
+updated_at: 1755599529
 seo_description: 'Support Living Streams Christian Church’s ministry and mission with your generous giving. Discover ways to contribute and make a greater impact today.'
 ---
