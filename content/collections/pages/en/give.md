@@ -106,12 +106,24 @@ page_builder:
     type: cards
     enabled: true
     background_color: '#ffffff'
+  -
+    id: meicsqe7
+    heading_icon: arrow-right
+    heading: 'Partner With Us'
+    cards:
+      -
+        id: meicvlub
+        image: new_sanctuary_fund.jpg
+        type: card
+        enabled: true
+    type: location_card
+    enabled: true
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
-updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739510736
+updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
+updated_at: 1755596597
 seo_description: 'Support Living Streams Christian Church’s ministry and mission with your generous giving. Discover ways to contribute and make a greater impact today.'
 ---
