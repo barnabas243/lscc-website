@@ -52,38 +52,15 @@ page_builder:
     enabled: false
     top_padding: 10
   -
-    id: m6rt3qjt
-    image: offering.jpg
-    image_position: right
-    type: image_and_text
-    enabled: true
-    image_col_span: 8
-    text_col_span: 4
-    buttons:
+    id: meicsqe7
+    heading: 'Partner With Us'
+    cards:
       -
-        id: m6rtqnuk
-        label: 'Copy QR Code'
-        link_type: asset
-        target_blank: false
-        asset: lscc_paynow_qr.png
-        button_type: button
-    text:
-      -
-        type: paragraph
-        content:
-          -
-            type: text
-            text: 'Your generosity fuels our mission. Scan or '
-          -
-            type: text
-            marks:
-              -
-                type: bold
-            text: 'copy the QR code'
-          -
-            type: text
-            text: ' below to give via PayNow. Thank you for your support!'
-    title: 'Give with a cheerful heart!'
+        id: meicvlub
+        type: card
+        enabled: true
+    type: location_card
+    enabled: false
   -
     id: m6rsyjqp
     cards:
@@ -106,23 +83,12 @@ page_builder:
     type: cards
     enabled: true
     background_color: '#ffffff'
-  -
-    id: meicsqe7
-    heading: 'Partner With Us'
-    cards:
-      -
-        id: meicvlub
-        image: new_sanctuary_fund.jpg
-        type: card
-        enabled: true
-    type: location_card
-    enabled: false
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755596655
+updated_at: 1755599263
 seo_description: 'Support Living Streams Christian Church’s ministry and mission with your generous giving. Discover ways to contribute and make a greater impact today.'
 ---
