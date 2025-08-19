@@ -15,31 +15,6 @@ page_builder:
     overlay_from: from-black/100
     overlay_to: to-transparent
   -
-    id: meiehoc4
-    lead_text: '🌱 Weekly Offering'
-    title: 'Be Part of the Story'
-    text:
-      -
-        type: paragraph
-        content:
-          -
-            type: text
-            text: 'Your giving makes a difference. Scan the QR code to support and help us make church a place that feels like home for everyone.'
-    buttons:
-      -
-        id: meieln2m
-        label: 'Copy QR Code'
-        link_type: asset
-        target_blank: false
-        asset: lscc_paynow_qr.png
-        button_type: button
-    image: offering.jpg
-    image_position: right
-    image_col_span: 6
-    text_col_span: 6
-    type: image_and_text
-    enabled: true
-  -
     id: meiensrr
     lead_text: '🏡 New Sanctuary Fund'
     title: 'For our future home'
@@ -70,6 +45,31 @@ page_builder:
     type: image_and_text
     enabled: true
   -
+    id: meiehoc4
+    lead_text: '🌱 Weekly Offering'
+    title: 'Be Part of the Story'
+    text:
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Your giving makes a difference. Scan the QR code to support and help us make church a place that feels like home for everyone.'
+    buttons:
+      -
+        id: meieln2m
+        label: 'Copy QR Code'
+        link_type: asset
+        target_blank: false
+        asset: lscc_paynow_qr.png
+        button_type: button
+    image: offering.jpg
+    image_position: right
+    image_col_span: 6
+    text_col_span: 6
+    type: image_and_text
+    enabled: true
+  -
     id: m6rsyjqp
     cards:
       -
@@ -89,7 +89,7 @@ page_builder:
         background_color: '#F4EBE3'
     align_content: left
     type: cards
-    enabled: true
+    enabled: false
     background_color: '#fefbf7'
 seo_noindex: false
 seo_nofollow: false
@@ -97,6 +97,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755600034
+updated_at: 1755600075
 seo_description: 'Support Living Streams Christian Church’s ministry and mission with your generous giving. Discover ways to contribute and make a greater impact today.'
 ---
