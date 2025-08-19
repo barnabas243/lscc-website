@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755595974
+updated_at: 1755596002
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -130,7 +130,6 @@ page_builder:
         enabled: true
     type: cards
     enabled: true
-    background_color: '#000000'
     align_content: left
   -
     id: T5ZZwBfn
@@ -205,6 +204,7 @@ page_builder:
     type: article
     enabled: false
     top_padding: 30
+    background_color: '#ffffff'
   -
     id: m6acdjnb
     type: image_and_text
@@ -287,6 +287,7 @@ page_builder:
     type: cards
     enabled: true
     align_content: left
+    background_color: '#ffffff'
   -
     id: m6ae5dps
     image: alpha-course-gathering.jpg
