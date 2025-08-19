@@ -16,7 +16,7 @@ page_builder:
     overlay_to: to-transparent
   -
     id: meiehoc4
-    lead_text: 'Want to chip in?'
+    lead_text: '🌱 Weekly Offering'
     title: 'Be Part of the Story'
     text:
       -
@@ -34,6 +34,36 @@ page_builder:
         asset: lscc_paynow_qr.png
         button_type: button
     image: offering.jpg
+    image_position: right
+    image_col_span: 6
+    text_col_span: 6
+    type: image_and_text
+    enabled: true
+  -
+    id: meiensrr
+    lead_text: '🏡 New Sanctuary Fund'
+    title: 'For our future home'
+    text:
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'We’re inviting our church family to partner in securing a new home for LSCC.'
+          -
+            type: hardBreak
+          -
+            type: text
+            text: 'Through pledges, one-time contributions, or even interest-free loans, every step of support helps us move closer to a space where worship and community can grow.'
+    buttons:
+      -
+        id: meieu602
+        label: 'Contact Us'
+        link_type: entry
+        target_blank: false
+        entry: 999a4b13-877d-4f53-9c3e-488d45c68ecd
+        button_type: button
+    image: new_sanctuary_fund.jpg
     image_position: right
     image_col_span: 6
     text_col_span: 6
@@ -67,6 +97,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755599529
+updated_at: 1755599900
 seo_description: 'Support Living Streams Christian Church’s ministry and mission with your generous giving. Discover ways to contribute and make a greater impact today.'
 ---
