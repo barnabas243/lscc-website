@@ -1,4 +1,6 @@
-data: {  }
+data:
+  alt: 'living streams christian church logo with the cross as the root'
+  exempt_from_alt: false
 size: 253702
 last_modified: 1755593828
 width: 1080
