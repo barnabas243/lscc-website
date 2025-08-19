@@ -40,8 +40,8 @@ page_builder:
         button_type: button
     image: new_sanctuary_fund.jpg
     image_position: left
-    image_col_span: 6
-    text_col_span: 6
+    image_col_span: 8
+    text_col_span: 4
     type: image_and_text
     enabled: true
   -
@@ -97,6 +97,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755600075
+updated_at: 1755601741
 seo_description: 'Support Living Streams Christian Church’s ministry and mission with your generous giving. Discover ways to contribute and make a greater impact today.'
 ---
