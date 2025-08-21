@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755596347
+updated_at: 1755754624
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -179,7 +179,7 @@ page_builder:
         id: m6adzaen
         image: church_staff.jpg
         lead_text: 'MEET OUR TEAM'
-        title: 'Staff & Leaders'
+        title: 'Church Leaders & Staff'
         content: 'Our dedicated team of pastors and staff are here to provide spiritual guidance and support - as well as resources to help you on your faith journey.'
         button:
           -
