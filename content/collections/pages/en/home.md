@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755760448
+updated_at: 1755762234
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -50,7 +50,7 @@ page_builder:
         id: mdt2q6j0
         title: 'Youth Service'
         time: '10:30'
-        address: '56 Boundary Road'
+        address: '📍 56 Boundary Road'
         link: 'https://maps.app.goo.gl/3MWQDQ33mBTSqZbv8'
         type: card
         enabled: true
@@ -59,7 +59,7 @@ page_builder:
         id: mdt2trkd
         title: 'Chinese Service'
         time: '14:30'
-        address: 'Bethany Presbyterian Church Level 1 Grace Auditorium'
+        address: '📍 Bethany Presbyterian Church Level 1 Grace Auditorium'
         link: 'https://maps.app.goo.gl/cSTDJ9E2NyK4SbcKA'
         type: card
         enabled: true
