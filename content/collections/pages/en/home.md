@@ -2,8 +2,8 @@
 id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
-updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1755775075
+updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
+updated_at: 1755775600
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -98,7 +98,10 @@ page_builder:
             type: text
             text: ' of the month.'
     overlap_previous: true
-    overlap_amount: md
+    overlap_amount: lg
+    overlap_guards:
+      - short_height
+      - landscape
   -
     id: mdigonjb
     type: carousels
@@ -106,8 +109,6 @@ page_builder:
     slides:
       -
         id: mdiwg60p
-        posters:
-          - alpha_course_2.jpg
       -
         id: mdj08h5y
     header: 'Upcoming Events'
