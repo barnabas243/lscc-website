@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755775600
+updated_at: 1755776686
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -54,6 +54,7 @@ page_builder:
         link: 'https://maps.app.goo.gl/3MWQDQ33mBTSqZbv8'
         type: card
         enabled: true
+        image: youth_outing.jpg
       -
         id: mdt2trkd
         title: 'Chinese Service'
@@ -109,23 +110,31 @@ page_builder:
     slides:
       -
         id: mdiwg60p
-      -
-        id: mdj08h5y
+        posters:
+          - alpha_course.png
     header: 'Upcoming Events'
   -
     id: m6afwl9k
     cards:
       -
         id: m6afwnag
-        title: 'Live a Life Abundant in Jesus'
+        title: 'A Place to Belong. A'
         content: |-
-          We’re a Bible-believing church in Singapore, passionate about worship, growing in faith, and living out God’s Word together. 
+          We’re a small church family in Singapore that loves Jesus and cares for one another.
 
-          Whether you're new to Christianity or seeking deeper connection, we invite you to discover who we are and what God is doing in our community.
+          Here, friendships are real.
+          We open God’s Word together.
+          And we walk alongside each other through everyday life.
+
+          If you’re curious about faith
+          or just looking for people to journey with—
+
+          👉 You’re welcome to come join us.
+          👉 There’s always room for you here.
         button:
           -
             id: m6afwuqx
-            label: 'Learn More About Us'
+            label: 'About Us'
             link_type: entry
             target_blank: false
             entry: a11ba4cb-b361-4199-b466-aa4faf506bfd
@@ -135,7 +144,6 @@ page_builder:
         background_color: '#ffffff'
     type: cards
     enabled: true
-    background_color: '#000000'
     align_content: left
   -
     id: T5ZZwBfn
