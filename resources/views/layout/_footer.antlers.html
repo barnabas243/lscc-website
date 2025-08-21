@@ -3,49 +3,113 @@
     @desc The site's footer rendered on each page.
 #}}
 <!-- /layout/_footer.antlers.html -->
-<footer class="mt-auto w-full border-t border-white/8 bg-black text-white">
-    <div class="span-content grid grid-cols-12">
-        <!-- Column 1: Logo and Contact Info -->
-        <div
-            class="col-span-12 px-12 py-10 md:col-span-6 md:py-20 md:py-40 md:pe-20"
-        >
-            <!-- Logo and Site Name -->
-            {{ partial:components/logo class="w-50" is_footer="true" }}
-            <!-- UEN -->
-            {{ partial:typography/p class="pt-4" content="{{ trans:strings.uen }}" color="#FFFFFF" }}
-            <!-- Meeting Information -->
-            {{ partial:typography/p class="pt-6 font-mono" content="{{ trans:strings.meeting_first_sunday }}" color="#FFFFFF" }}
-            {{ partial:typography/p class="pt-1 font-mono" content="{{ trans:strings.meeting_other_sundays }}" color="#FFFFFF" }}
-            <!-- Contact Info -->
-            <div class="mt-8">
-                {{ partial:typography/p class="mb-8 text-lg" content="{{ trans:strings.contact_message }}" color="#FFFFFF" }}
-                {{ partial:typography/p content="<a href='mailto:info@lscc.org.sg' class='text-white underline hover:text-gray-400'>info@lscc.org.sg</a>" color="#FFFFFF" }}
-                {{ partial:typography/p content="<a href='tel:+6584077262' class='text-white underline hover:text-gray-400'>+65 84077262</a>" color="#FFFFFF" }}
-                {{ partial:typography/p content="<a href='https://maps.app.goo.gl/UP3zKkkXrDyR6mFu8' target='_blank' class='text-white underline hover:text-gray-400'>56/56A Boundary Road Singapore 549977</a>" color="#FFFFFF" }}
-                <!-- Office Hours -->
-                <div class="mt-8">
-                    {{ partial:typography/p class="font-semibold" content="{{ trans:strings.office_hours }}" color="#FFFFFF" }}
-                    {{ partial:typography/p class="font-mono " content="{{ trans:strings.office_hours_weekdays }}" color="#FFFFFF" }}
-                    {{ partial:typography/p class="font-mono last:mb-6" content="{{ trans:strings.office_hours_saturday }}" color="#FFFFFF" }}
-                </div>
 
-                <!-- Follow Us On -->
-                <div class="flex items-center gap-x-3 pt-8 md:order-none">
-                    {{ partial:typography/p class="first:mb-0 text-lg font-semibold" content="{{ trans:strings.follow_us_on }}" color="#FFFFFF" }}
-                    {{ if social_media:social_media }}
-                        {{ social_media:social_media }}
-                            <a
-                                href="{{ prefix }}{{ handle }}"
-                                rel="noopener{{ type == 'mastodon' ?= ' me' }}"
-                                aria-label="{{ config:app:name }} {{ trans:strings.on }} {{ type | title }}"
-                                target="_blank"
-                                class="flex h-6 w-6 items-center justify-center transition-colors duration-300 hover:text-gray-400 md:h-8 md:w-8"
-                            >
-                                {{ svg :src="type" class="w-8 h-8 md:w-6 md:h-6 overflow-visible fill-current" alt="" aria-hidden="true" }}
-                            </a>
-                        {{ /social_media:social_media }}
-                    {{ /if }}
+<footer
+    class="mt-auto w-full border-t border-white/10 bg-[linear-gradient(to_bottom,theme(colors.slate.950)_0%,theme(colors.slate.950)_60%,theme(colors.slate.900)_100%)] text-slate-100"
+    itemscope
+    itemtype="https://schema.org/Church"
+>
+    <div class="span-content grid grid-cols-12 gap-y-10">
+        <!-- Column 1: Logo + Essentials -->
+        <div class="col-span-12 px-8 py-10 md:col-span-6 md:py-16 md:pe-16">
+            {{ partial:components/logo class="w-48 md:w-56" is_footer="true" }}
+            <!-- UEN -->
+            <p class="mt-4 text-sm/6 text-slate-300">
+                {{ trans:strings.uen }}
+            </p>
+
+            <!-- Meeting info -->
+            <div class="mt-6 space-y-1">
+                <p class="font-mono text-slate-200">
+                    {{ trans:strings.meeting_first_sunday }}
+                </p>
+                <p class="font-mono text-slate-200">
+                    {{ trans:strings.meeting_other_sundays }}
+                </p>
+            </div>
+
+            <!-- Contact / Address -->
+            <address
+                class="mt-8 text-slate-300 not-italic"
+                itemprop="address"
+                itemscope
+                itemtype="https://schema.org/PostalAddress"
+            >
+                <p class="mb-4 text-lg text-slate-100">
+                    {{ trans:strings.contact_message }}
+                </p>
+
+                <p class="mt-2">
+                    <a
+                        href="mailto:info@lscc.org.sg"
+                        class="hover:decoration-primary-400 focus:ring-primary-400 rounded underline decoration-white/30 underline-offset-2 focus:ring-2 focus:outline-none"
+                    >
+                        info@lscc.org.sg
+                    </a>
+                </p>
+                <p class="mt-2">
+                    <a
+                        href="tel:+6584077262"
+                        class="hover:decoration-primary-400 focus:ring-primary-400 rounded underline decoration-white/30 underline-offset-2 focus:ring-2 focus:outline-none"
+                    >
+                        +65 84077262
+                    </a>
+                </p>
+                <p class="mt-2">
+                    <a
+                        href="https://maps.app.goo.gl/UP3zKkkXrDyR6mFu8"
+                        target="_blank"
+                        rel="noopener"
+                        class="hover:decoration-primary-400 focus:ring-primary-400 inline-flex items-baseline gap-2 rounded underline decoration-white/30 underline-offset-2 focus:ring-2 focus:outline-none"
+                        aria-label="Open map for 56/56A Boundary Road Singapore 549977"
+                    >
+                        <span aria-hidden>📍</span>
+                        <span itemprop="streetAddress">
+                            56/56A Boundary Road
+                        </span>
+                        <span class="sr-only">,</span>
+                        <span itemprop="addressLocality">Singapore</span>
+                        <span class="sr-only"></span>
+                        <span itemprop="postalCode">549977</span>
+                    </a>
+                </p>
+
+                <!-- Office Hours -->
+                <div class="mt-6">
+                    <p class="font-semibold text-slate-200">
+                        {{ trans:strings.office_hours }}
+                    </p>
+                    <p class="font-mono text-slate-300">
+                        {{ trans:strings.office_hours_weekdays }}
+                    </p>
+                    <p class="font-mono text-slate-300">
+                        {{ trans:strings.office_hours_saturday }}
+                    </p>
                 </div>
+            </address>
+
+            <!-- Social -->
+            <div class="mt-8 flex items-center gap-3">
+                <p class="m-0 text-base font-semibold text-slate-200">
+                    {{ trans:strings.follow_us_on }}
+                </p>
+                {{ if social_media:social_media }}
+                    <ul class="ms-1 flex items-center gap-3">
+                        {{ social_media:social_media }}
+                            <li>
+                                <a
+                                    href="{{ prefix }}{{ handle }}"
+                                    rel="noopener{{ type == 'mastodon' ?= ' me' }}"
+                                    target="_blank"
+                                    aria-label="{{ config:app:name }} {{ trans:strings.on }} {{ type | title }}"
+                                    class="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10 transition hover:bg-white/10 hover:ring-white/20"
+                                >
+                                    {{ svg :src="type" class="h-5 w-5 overflow-visible fill-current text-slate-100" alt="" aria-hidden="true" }}
+                                </a>
+                            </li>
+                        {{ /social_media:social_media }}
+                    </ul>
+                {{ /if }}
             </div>
         </div>
 
@@ -54,7 +118,7 @@
 
         <!-- Column 2: Navigation -->
         <div
-            class="col-span-12 flex flex-col py-10 font-bold md:col-span-5 md:flex-row md:py-20 md:py-40"
+            class="col-span-12 flex flex-col py-10 font-bold md:col-span-5 md:flex-row md:py-20"
         >
             <div
                 class="grid grid-cols-1 gap-8 px-12 md:justify-center lg:grid-cols-2 lg:text-center"
@@ -84,6 +148,33 @@
                         {{ /if }}
                     {{ /unless }}
                 {{ /nav:main }}
+            </div>
+        </div>
+    </div>
+    <!-- Sub-footer -->
+    <div class="mt-8 border-t border-white/10">
+        <div
+            class="span-content flex flex-col items-center justify-between gap-4 px-8 py-6 md:flex-row"
+        >
+            <p class="text-xs text-slate-400">
+                © {{ now format="Y" }} {{ config:app:name }}.
+                {{ trans:strings.all_rights_reserved ?? 'All rights reserved.' }}
+            </p>
+            <div class="flex items-center gap-4">
+                {{#
+                    <a
+                        href="/privacy"
+                        class="hover:decoration-primary-400 focus:ring-primary-400 rounded text-xs text-slate-300 underline decoration-white/20 underline-offset-2 hover:text-white focus:ring-2 focus:outline-none"
+                    >
+                        {{ trans:strings.privacy_policy ?? 'Privacy' }}
+                    </a>
+                #}}
+                <a
+                    href="#top"
+                    class="hover:decoration-primary-400 focus:ring-primary-400 rounded text-xs text-slate-300 underline decoration-white/20 underline-offset-2 hover:text-white focus:ring-2 focus:outline-none"
+                >
+                    ↑ {{ trans:strings.back_to_top ?? 'Back to top' }}
+                </a>
             </div>
         </div>
     </div>
