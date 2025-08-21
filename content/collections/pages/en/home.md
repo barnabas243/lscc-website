@@ -177,7 +177,7 @@ page_builder:
     cards:
       -
         id: m6adzaen
-        image: church_staff.jpg
+        image: img-20250821-wa0001.jpg
         lead_text: 'MEET OUR TEAM'
         title: 'Church Leaders & Staff'
         content: 'Our dedicated team of pastors and staff are here to provide spiritual guidance and support - as well as resources to help you on your faith journey.'
