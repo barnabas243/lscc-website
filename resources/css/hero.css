@@ -51,21 +51,24 @@
 .overlap-card.has-plate::before {
     content: "";
     position: absolute;
-    z-index: -1; /* sit behind the content */
-    inset: 0; /* match padding box */
-    border-radius: 1rem; /* rounded only when plate exists */
+    inset: 0;
+    z-index: 0;
+    border-radius: 1rem;
     background: linear-gradient(
         to top,
-        rgba(255, 255, 255, 0.85),
+        rgba(255, 255, 255, 0.88),
         rgba(255, 255, 255, 0.78)
     );
-    /* soft depth without a visible border */
+    backdrop-filter: saturate(120%) blur(8px);
+    -webkit-backdrop-filter: saturate(120%) blur(8px);
     box-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.06),
-        0 18px 48px rgba(0, 0, 0, 0.12);
-    backdrop-filter: saturate(115%) blur(6px);
-    -webkit-backdrop-filter: saturate(115%) blur(6px);
-    pointer-events: none; /* never block links inside */
+        0 2px 6px rgba(0, 0, 0, 0.08),
+        0 22px 60px rgba(0, 0, 0, 0.16);
+    pointer-events: none;
+}
+.overlap-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* Slightly stronger plate on bright/busy photos (landscape/short viewports) */
