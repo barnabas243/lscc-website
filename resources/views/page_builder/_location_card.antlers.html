@@ -1,9 +1,7 @@
 {{ partial:page_builder/block }}
-{{ overlap_marker = '' }}
 {{ overlap_classes = '' }}
 {{ if overlap_previous }}
     {{ size = (overlap_amount ?? 'md') }}
-    {{ overlap_marker = 'overlap overlap-'~size }}
     {{ if size == 'lg' }}
         {{ overlap_classes = "
       -mt-[clamp(1.25rem,7vw,2.75rem)]
@@ -35,7 +33,7 @@
 {{ /if }}
 {{ partial:page_builder/block }}
     <section
-        class="span-content {{ overlap_marker }} {{ overlap_classes }} relative mx-auto px-4 sm:px-6 md:px-8"
+        class="span-content {{ overlap_classes }} relative mx-auto px-4 sm:px-6 md:px-8"
         role="region"
         aria-labelledby="service-times-heading"
     >
