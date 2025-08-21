@@ -104,7 +104,7 @@ page_builder:
     cards:
       -
         id: m6adzaen
-        image: img-20250821-wa0001.jpg
+        image: church_staff.jpg
         lead_text: 认识我们的团队
         title: 工作人员与领导层
         content: 我们的牧师和同工致力于提供灵性指导和支持，同时提供帮助您在信仰旅程中成长的资源。
@@ -191,8 +191,8 @@ page_builder:
     type: cards
     enabled: true
     align_content: left
-seo_title: '生命里遇见神 起来传扬福音'
-seo_description: 新加坡活盛基督教会是一个充满关怀的属灵家，欢迎各年龄层一同敬拜神、在真理中成长，并将祂的爱传递出去。
-updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755283476
+seo_title: null
+seo_description: '欢迎参加联合崇拜（每月第一周日）和华语崇拜（其他周日），时间为下午2:30，地址：364A Upper Paya Lebar Rd。青少年崇拜在56 Boundary Rd，上午10:30。联系我们：84077262。'
+updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
+updated_at: 1739795773
 ---

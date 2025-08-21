@@ -2,8 +2,8 @@
 id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
-updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755774814
+updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
+updated_at: 1755774935
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -50,23 +50,31 @@ page_builder:
         id: mdt2q6j0
         title: 'Youth Service'
         time: '10:30'
-        address: '📍 56 Boundary Road'
+        address: 'Living Streams Christian Church'
         link: 'https://maps.app.goo.gl/3MWQDQ33mBTSqZbv8'
         type: card
         enabled: true
-        image: img-20250406-wa0072.jpg
       -
         id: mdt2trkd
         title: 'Chinese Service'
         time: '14:30'
-        address: '📍 Bethany Presbyterian Church Level 1 Grace Auditorium'
+        address: 'Bethany Presbyterian Church Level 1 Grace Auditorium'
         link: 'https://maps.app.goo.gl/cSTDJ9E2NyK4SbcKA'
         type: card
         enabled: true
-        image: img-20250816-wa0001.jpg
     type: location_card
     enabled: true
-    heading: 'Service Times'
+    heading: 'Weekly Services'
+    description:
+      -
+        type: paragraph
+        attrs:
+          textAlign: left
+        content:
+          -
+            type: text
+            text: 'Join us every Sunday for worship, fellowship, and teaching at our different service locations.'
+    note_icon: alert
     note_body:
       -
         type: paragraph
@@ -89,8 +97,11 @@ page_builder:
           -
             type: text
             text: ' of the month.'
-    note_icon: info-circle
-    overlap_previous: false
+    overlap_previous: true
+    overlap_amount: md
+    overlap_guards:
+      - short_height
+      - landscape
   -
     id: mdigonjb
     type: carousels
@@ -99,40 +110,109 @@ page_builder:
       -
         id: mdiwg60p
         posters:
-          - alpha_course.png
+          - alpha_course_2.jpg
+      -
+        id: mdj08h5y
     header: 'Upcoming Events'
   -
     id: m6afwl9k
     cards:
       -
         id: m6afwnag
-        title: 'A Place to Belong. A People to Grow With.'
+        title: 'Live a Life Abundant in Jesus'
         content: |-
-          We’re a small church family in Singapore that loves Jesus and cares for one another.
+          We’re a Bible-believing church in Singapore, passionate about worship, growing in faith, and living out God’s Word together. 
 
-          Here, friendships are real.
-          We open God’s Word together.
-          And we walk alongside each other through everyday life.
-
-          If you’re curious about faith or just looking for people to journey with
-
-          👉 You’re welcome to come join us.
-          👉 There’s always room for you here.
+          Whether you're new to Christianity or seeking deeper connection, we invite you to discover who we are and what God is doing in our community.
         button:
           -
             id: m6afwuqx
-            label: 'Get to Know Us'
+            label: 'Learn More About Us'
             link_type: entry
             target_blank: false
             entry: a11ba4cb-b361-4199-b466-aa4faf506bfd
             button_type: button
         type: card
         enabled: true
-        background_color: '#F9F3EC'
+        background_color: '#ffffff'
     type: cards
     enabled: true
+    background_color: '#000000'
     align_content: left
-    background_color: '#fefbf7'
+  -
+    id: T5ZZwBfn
+    article:
+      -
+        type: heading
+        attrs:
+          textAlign: center
+          level: 2
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: textColor
+                attrs:
+                  color: inherit
+            text: 'Live a Life Abundant in Jesus'
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: textColor
+                attrs:
+                  color: inherit
+            text: 'At Life Abundant Church, we believe that true growth in faith comes from worshipping and learning together. Our church is dedicated to creating a space that encourages spiritual growth and connection.'
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: textColor
+                attrs:
+                  color: inherit
+            text: 'We offer opportunities to engage with scripture, to learn about Jesus and to worship Him with others. Our church is open to people of all ages and backgrounds.'
+      -
+        type: paragraph
+        attrs:
+          textAlign: center
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: textColor
+                attrs:
+                  color: inherit
+            text: 'Join us in growing in faith with people who love and obey Jesus.'
+      -
+        type: set
+        attrs:
+          id: m6ac956x
+          values:
+            type: buttons
+            buttons:
+              -
+                id: m6ac95s2
+                label: 'About Us'
+                link_type: entry
+                target_blank: false
+                entry: a11ba4cb-b361-4199-b466-aa4faf506bfd
+                button_type: button
+    type: article
+    enabled: false
+    background_color: '#ffffff'
+    top_padding: 30
   -
     id: m6acdjnb
     type: image_and_text
@@ -149,7 +229,7 @@ page_builder:
         button_type: button
     image_position: left
     image: group-of-people.jpg
-    title: 'Connect with Us'
+    title: 'Plan Your Visit'
     text:
       -
         type: paragraph
@@ -172,15 +252,15 @@ page_builder:
     id: magbqzo0
     title: 'Upcoming Events 2025'
     type: timeline
-    enabled: false
+    enabled: true
   -
     id: m6adz9gv
     cards:
       -
         id: m6adzaen
-        image: img-20250821-wa0001.jpg
+        image: church_staff.jpg
         lead_text: 'MEET OUR TEAM'
-        title: 'Church Leaders & Staff'
+        title: 'Staff & Leaders'
         content: 'Our dedicated team of pastors and staff are here to provide spiritual guidance and support - as well as resources to help you on your faith journey.'
         button:
           -
@@ -214,8 +294,8 @@ page_builder:
         image: youth_outing.jpg
     type: cards
     enabled: true
+    background_color: '#ffffff'
     align_content: left
-    background_color: FEFBF7
   -
     id: m6ae5dps
     image: alpha-course-gathering.jpg
@@ -320,6 +400,6 @@ page_builder:
     type: article
     enabled: true
     top_padding: 20
-seo_description: 'Living Streams Christian Church in Singapore is a close-knit, Spirit-led family where all generations worship, grow in God’s Word and share His love.'
+seo_description: 'Combined Service (1st Sunday) & Chinese Service (other Sundays) at 2:30 PM, 364A Upper Paya Lebar Rd. Youth at 56 Boundary Rd, 10:30 AM. Contact us at 84077262.'
 seo_title: 'Living Streams Christian Church — Encounter God, Share His Love'
 ---
