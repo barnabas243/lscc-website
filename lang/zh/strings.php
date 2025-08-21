@@ -54,6 +54,8 @@ return [
     'office_hours_saturday' => '周六: 9:00am - 1:00pm',
     'on' => '于',
     'follow_us_on' => '关注我们',
+    'all_rights_reserved' => '版权所有',
+    'privacy_policy' => '隐私政策',
 
     // Navigation
     'close' => '关闭',
@@ -64,6 +66,7 @@ return [
     'subnav_close' => '关闭子导航',
     'subnav_open' => '打开子导航',
     'skip_to_content' => '跳转到内容',
+    'back_to_top' => '返回顶部',
 
     // Other
     'collection_mounted' => '您的条目 :title 已挂载到集合, 无法删除。',

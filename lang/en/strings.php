@@ -54,6 +54,8 @@ return [
     'office_hours_saturday' => 'Sat: 9:00am - 1:00pm',
     'follow_us_on' => 'Follow us on',
     'on' => 'on',
+    'all_rights_reserved' => 'All rights reserved',
+    'privacy_policy' => 'Privacy Policy',
 
     // Navigation
     'close' => 'Close',
@@ -64,6 +66,7 @@ return [
     'subnav_close' => 'Close sub navigation',
     'subnav_open' => 'Open sub navigation',
     'skip_to_content' => 'Skip to content',
+    'back_to_top' => 'Back to top',
 
     // Other
     'collection_mounted' => 'Your entry :title has a collection mounted and can\'t be deleted.',
