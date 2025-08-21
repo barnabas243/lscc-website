@@ -1,15 +1,17 @@
 {{ partial:page_builder/block }}
+{{ overlap_marker = '' }}
+{{ overlap_classes = '' }}
 {{ if overlap_previous }}
-    {{ overlap_marker = 'overlap overlap-'
- (~overlap_amount ?? 'md') }}
-    {{ if overlap_amount == 'lg' }}
+    {{ size = (overlap_amount ?? 'md') }}
+    {{ overlap_marker = 'overlap overlap-'~size }}
+    {{ if size == 'lg' }}
         {{ overlap_classes = "
       -mt-[clamp(1.25rem,7vw,2.75rem)]
       md:-mt-[clamp(2.25rem,6vw,5rem)]
       lg:-mt-[clamp(3rem,5.5vw,7rem)]
       xl:-mt-[clamp(3.5rem,5vw,8rem)]
     " }}
-    {{ elseif overlap_amount == 'sm' }}
+    {{ elseif size == 'sm' }}
         {{ overlap_classes = "
       -mt-[clamp(0.75rem,5vw,1.75rem)]
       md:-mt-[clamp(1.25rem,4vw,2.75rem)]
@@ -17,7 +19,6 @@
       xl:-mt-[clamp(2rem,3vw,4.5rem)]
     " }}
     {{ else }}
-        {{# default = md #}}
         {{ overlap_classes = "
       -mt-[clamp(1rem,6vw,2.25rem)]
       md:-mt-[clamp(1.75rem,5vw,4rem)]
@@ -25,20 +26,21 @@
       xl:-mt-[clamp(2.75rem,4vw,6.5rem)]
     " }}
     {{ /if }}
-    {{ !Guard:ifviewportisextremelyshort, canceloverlap }}
-    {{ overlap_classes = overlap_classes~ " max-[height:480px]:!mt-0" }}
-{{ else }}
-    {{ overlap_marker = "" }}
-  {{ overlap_classes = "" }}
+    {{ if overlap_guards | contains:short_height }}
+        {{ overlap_classes = overlap_classes~ ' max-[height:480px]:!mt-0' }}
+    {{ /if }}
+    {{ if overlap_guards | contains:landscape }}
+        {{ overlap_classes = overlap_classes~ ' min-[aspect-ratio:13/9]:!mt-0' }}
+    {{ /if }}
 {{ /if }}
 {{ partial:page_builder/block }}
     <section
-        class="span-content {{ overlap_classes ?? '' }} relative mx-auto px-4 sm:px-6 md:px-8"
+        class="span-content {{ overlap_marker }} {{ overlap_classes }} relative mx-auto px-4 sm:px-6 md:px-8"
         role="region"
         aria-labelledby="service-times-heading"
     >
         <div
-            class="overlap-card {{ overlay_card ? 'has-plate' : '' }} z-10 p-5 sm:p-6 md:p-8"
+            class="overlap-card {{ overlap_previous ? 'has-plate' : '' }} z-10 p-5 sm:p-6 md:p-8"
         >
             {{ if heading }}
                 <header class="mx-auto mb-6 max-w-5xl text-center">
