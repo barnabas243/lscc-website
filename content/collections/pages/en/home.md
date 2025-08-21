@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755778512
+updated_at: 1755778536
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -63,6 +63,7 @@ page_builder:
         link: 'https://maps.app.goo.gl/cSTDJ9E2NyK4SbcKA'
         type: card
         enabled: true
+        image: img-20250801-wa0003.jpg
     type: location_card
     enabled: true
     heading: 'Service Timings'
