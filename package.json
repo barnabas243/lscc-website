@@ -7,7 +7,7 @@
         "production": "vite build"
     },
     "type": "module",
-    "author": "Studio 1902",
+    "author": "Living Streams Christian Church",
     "license": "MIT",
     "dependencies": {
         "@alpinejs/collapse": "^3.14.8",
