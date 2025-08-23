@@ -22,7 +22,7 @@ page_builder:
         content:
           -
             type: text
-            text: 'Whether you’re exploring faith or looking for a church family, we’d love to journey with you. Join us for one of our Sunday services!'
+            text: '  We’d love to welcome you this Sunday. Pick a service, get directions, and tell us you’re coming!'
       -
         type: paragraph
         attrs:
@@ -33,12 +33,11 @@ page_builder:
             marks:
               -
                 type: italic
-            text: 'There’s a place for you at Living Streams Christian Church. '
+            text: 'we’ll save you a seat.'
       -
         type: set
         attrs:
           id: m6p48ji9
-          enabled: false
           values:
             type: buttons
             buttons:
@@ -173,6 +172,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755973165
+updated_at: 1755973419
 seo_description: 'Plan your visit to Living Streams Christian Church. Join us for our Sunday services and experience a welcoming community of faith.'
 ---
