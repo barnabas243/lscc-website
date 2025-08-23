@@ -1,18 +1,9 @@
-/* ===== Layout ===== */
-.carousel-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    padding-top: 1.5rem;
-}
-
 .carousel-block .swiper {
     width: 100%;
     aspect-ratio: 16 / 9;
     max-height: 80vh;
     height: auto;
-    touch-action: pan-x pinch-zoom;
+    touch-action: auto;
 }
 
 @media (max-width: 768px) {
@@ -22,107 +13,45 @@
     }
 }
 
-/* ===== Slides ===== */
+/* Slides */
 .carousel-block .swiper-slide {
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    transition:
-        transform 0.35s ease,
-        opacity 0.35s ease;
-    will-change: transform, opacity;
+    transition: opacity 0.35s ease;
 }
 
+/* Scale only the wrapper */
 .carousel-block .img-wrapper {
     width: 100%;
     position: relative;
     transform: scale(0.94);
     transition: transform 0.35s ease;
-    will-change: transform;
 }
 
-/* Active slide snaps to 1.0 (no scale-up past natural size) */
 .carousel-block .swiper-slide-active .img-wrapper {
     transform: scale(1);
 }
 
-/* Images: avoid heavy filters; keep crisp + contain */
+/* Images */
 .carousel-block .swiper-slide img {
     width: 100%;
     height: auto;
     object-fit: contain;
     user-select: none;
     display: block;
+    pointer-events: none;
 }
 
-/* De-emphasize non-active with subtle opacity + desat */
 .carousel-block .swiper-slide:not(.swiper-slide-active) {
-    opacity: 0.75;
+    opacity: 0.8;
 }
 
-/* light desaturation without blur (cheaper) */
 .carousel-block .swiper-slide:not(.swiper-slide-active) img {
     filter: saturate(0.7) contrast(0.95);
 }
 
-/* Remove the blur/grayscale on active for maximum clarity */
 .carousel-block .swiper-slide-active img {
     filter: none;
-}
-
-/* ===== CTA / text ===== */
-.carousel-block .slide-countdown {
-    font-size: 1rem;
-    color: #fff;
-    display: inline-block;
-    padding: 0.4rem 0.8rem;
-    margin-bottom: 0.5rem;
-}
-
-.carousel-block .slide-action {
-    text-align: center;
-    margin-top: 1.5rem;
-}
-
-.carousel-block .cta-btn {
-    display: inline-block;
-    margin-top: 0.75rem;
-    padding: 0.5rem 1.25rem;
-    background-color: #f59e0b;
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-}
-
-.carousel-block .cta-btn:hover {
-    background-color: #d97706;
-}
-
-/* ===== Navigation ===== */
-.carousel-block .swiper-button-prev,
-.carousel-block .swiper-button-next {
-    color: #f59e0b;
-    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
-}
-
-.carousel-block .swiper-button-prev::after,
-.carousel-block .swiper-button-next::after {
-    font-size: 1.5rem;
-}
-
-/* ===== Motion safety ===== */
-@media (prefers-reduced-motion: reduce) {
-    .carousel-block .swiper-slide,
-    .carousel-block .img-wrapper,
-    .carousel-block .cta-btn {
-        transition: none !important;
-    }
-    .carousel-block .img-wrapper {
-        transform: none !important;
-    }
-    .carousel-block .swiper-slide {
-        opacity: 1 !important;
-    }
 }
