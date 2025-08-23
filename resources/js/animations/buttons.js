@@ -1,3 +1,5 @@
+import gsap from "gsap";
+
 // Tunables (fast but tasteful)
 const DUR = {
     enter: 0.12,

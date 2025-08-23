@@ -13,28 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const prevEl = outerEl.querySelector(".swiper-button-prev");
         const paginationEl = outerEl.querySelector(".swiper-pagination");
 
-        // Init INNER vertical swipers first (one per slide)
-        const innerEls = block.querySelectorAll(".vertical-swiper");
-        innerEls.forEach((inner) => {
-            new Swiper(inner, {
-                direction: "vertical",
-                nested: true, // IMPORTANT for nested swipers
-                slidesPerView: 1,
-                spaceBetween: 8,
-                speed: prefersReduced ? 0 : 400,
-                allowTouchMove: true,
-                simulateTouch: true,
-
-                // Let native pinch-zoom work:
-                touchStartPreventDefault: false,
-                touchMoveStopPropagation: false,
-
-                // If you want click-to-advance posters:
-                slideToClickedSlide: true,
-                watchOverflow: true,
-            });
-        });
-
         // Init OUTER horizontal swiper
         new Swiper(outerEl, {
             centeredSlides: true,
@@ -51,11 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             shortSwipes: true,
             threshold: 6,
             watchOverflow: true,
-
-            // Respect reduced motion for parallax/animations
             parallax: !prefersReduced,
-
-            // Crucial: don’t block native gestures (pinch)
             touchStartPreventDefault: false,
             touchMoveStopPropagation: false,
 

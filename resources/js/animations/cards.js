@@ -1,3 +1,7 @@
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 const PREFERS_REDUCED =
     window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
 

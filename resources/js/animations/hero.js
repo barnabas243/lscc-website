@@ -1,3 +1,5 @@
+import gsap from "gsap";
+
 document.addEventListener("DOMContentLoaded", () => {
     const heroImage = document.querySelector(".js-hero-image");
     const heroTitle = document.querySelector(".js-hero-title");
