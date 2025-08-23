@@ -24,41 +24,42 @@ document.addEventListener("DOMContentLoaded", () => {
 function animateHeroImage(image, prefersReduced) {
     if (!(image instanceof HTMLElement)) return;
 
-    // Initial state: light scale + fade (faster than filter: blur)
-    gsap.set(image, {
-        autoAlpha: 0,
-        scale: 1.03,
-        willChange: "transform, opacity",
-    });
+    // Prevent re-running if something re-initializes JS
+    if (image.dataset.animated === "true") return;
 
-    if (prefersReduced) {
-        gsap.set(image, { autoAlpha: 1, scale: 1, clearProps: "willChange" });
-        return;
+    const run = () => {
+        gsap.set(image, {
+            autoAlpha: 0,
+            scale: 1.2,
+            willChange: "transform, opacity",
+        });
+
+        if (prefersReduced) {
+            gsap.set(image, {
+                autoAlpha: 1,
+                scale: 1,
+                clearProps: "willChange",
+            });
+        } else {
+            gsap.to(image, {
+                autoAlpha: 1,
+                scale: 1,
+                duration: 0.8,
+                ease: "power2.out",
+                onComplete: () => gsap.set(image, { clearProps: "willChange" }),
+            });
+        }
+
+        // Mark as done so it won't animate again
+        image.dataset.animated = "true";
+    };
+
+    // Run after the image is actually loaded (handles cached vs fresh)
+    if (image.complete) {
+        run();
+    } else {
+        image.addEventListener("load", run, { once: true });
     }
-
-    // Quick reveal
-    gsap.to(image, {
-        autoAlpha: 1,
-        scale: 1,
-        duration: 0.8,
-        ease: "power2.out",
-        onComplete: () => gsap.set(image, { clearProps: "willChange" }),
-    });
-
-    // Subtle float (paused when tab hidden)
-    const floatTl = gsap.to(image, {
-        y: 10, // was 0↔0; add tiny drift
-        duration: 6, // was 10
-        yoyo: true,
-        repeat: -1,
-        ease: "sine.inOut",
-        paused: false,
-    });
-
-    document.addEventListener("visibilitychange", () => {
-        if (document.hidden) floatTl.pause();
-        else floatTl.resume();
-    });
 }
 
 /**
