@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
         breakpoints: {
             0: { slidesPerView: 1.15, spaceBetween: 12 },
             640: { slidesPerView: 1.25, spaceBetween: 16 },
-            1024: { slidesPerView: 1.5, spaceBetween: 28 },
-            1440: { slidesPerView: 1.6, spaceBetween: 36 },
+            1024: { slidesPerView: 1.3, spaceBetween: 28 },
+            1440: { slidesPerView: 1.4, spaceBetween: 36 },
         },
     });
 });

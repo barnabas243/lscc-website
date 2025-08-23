@@ -4,9 +4,9 @@
     @set page.page_builder.carousels
 #}}
 
-{{ partial:page_builder/block }}
+{{ partial:page_builder/block class="block md:grid fluid-grid" }}
     <section
-        class="carousel-block py-12"
+        class="span-content carousel-block py-12"
         role="region"
         aria-label="Event Carousel"
         x-data="{ lightboxOpen: false, lightboxSrc: '' }"

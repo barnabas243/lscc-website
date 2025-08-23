@@ -1,3 +1,13 @@
+/* ===== Carousel layout ===== */
+.carousel-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 1.5rem;
+}
+
+/* Stage */
 .carousel-block .swiper {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -13,7 +23,7 @@
     }
 }
 
-/* Slides */
+/* ===== Slides ===== */
 .carousel-block .swiper-slide {
     display: flex;
     align-items: center;
@@ -22,36 +32,105 @@
     transition: opacity 0.35s ease;
 }
 
-/* Scale only the wrapper */
+/* inner wrapper does the scaling (GPU-friendly) */
 .carousel-block .img-wrapper {
     width: 100%;
     position: relative;
-    transform: scale(0.94);
+    transform: scale(0.94); /* non-active = downscaled */
     transition: transform 0.35s ease;
 }
 
+/* active slide snaps to 1.0 (no zoom-up past natural size) */
 .carousel-block .swiper-slide-active .img-wrapper {
     transform: scale(1);
 }
 
-/* Images */
+/* ===== Images (clickable for Alpine) ===== */
 .carousel-block .swiper-slide img {
     width: 100%;
     height: auto;
     object-fit: contain;
     user-select: none;
+    -webkit-user-drag: none;
     display: block;
+    pointer-events: auto; /* <-- allow clicks */
+    /* optional: show intent to zoom */
+    cursor: zoom-in;
+}
+
+.carousel-block .swiper-slide img {
     pointer-events: none;
 }
+.carousel-block .swiper-slide-active img {
+    pointer-events: auto;
+    cursor: zoom-in;
+}
 
+/* de-emphasize non-active slides */
 .carousel-block .swiper-slide:not(.swiper-slide-active) {
-    opacity: 0.8;
+    opacity: 0.85;
 }
-
 .carousel-block .swiper-slide:not(.swiper-slide-active) img {
-    filter: saturate(0.7) contrast(0.95);
+    filter: saturate(0.8) contrast(0.95);
 }
-
 .carousel-block .swiper-slide-active img {
     filter: none;
+}
+
+.carousel-block .swiper-button-prev,
+.carousel-block .swiper-button-next {
+    color: var(
+        --color-primary,
+        #6d28d9
+    ); /* fallback purple; set CSS var if you have one */
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
+}
+.carousel-block .swiper-button-prev::after,
+.carousel-block .swiper-button-next::after {
+    font-size: 1.5rem;
+}
+
+.no-swipe {
+    touch-action: pinch-zoom;
+}
+
+/* ===== Motion safety ===== */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-block .swiper-slide,
+    .carousel-block .img-wrapper {
+        transition: none !important;
+    }
+}
+
+.lb-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+}
+.lb-overlay[aria-hidden="true"] {
+    display: none;
+}
+
+.lb-image {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.lb-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.75rem;
+    color: #fff;
+    background: none;
+    border: 0;
+    line-height: 1;
+    cursor: pointer;
 }
