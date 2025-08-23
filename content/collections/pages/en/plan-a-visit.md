@@ -163,7 +163,7 @@ page_builder:
         type: card
         enabled: true
         text_color: '#ffffff'
-    background_color: '#000000'
+    background_color: '#020618'
     align_content: middle
     type: cards
     enabled: true
@@ -173,6 +173,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1753983030
+updated_at: 1755973165
 seo_description: 'Plan your visit to Living Streams Christian Church. Join us for our Sunday services and experience a welcoming community of faith.'
 ---
