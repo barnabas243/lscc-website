@@ -1,77 +1,150 @@
-import gsap from "gsap";
+// Tunables (fast but tasteful)
+const DUR = {
+    enter: 0.12,
+    leave: 0.12,
+    press: 0.08,
+    release: 0.18,
+    reset: 0.12,
+};
+const EASE = {
+    out: "power2.out",
+    inOut: "power2.inOut",
+};
+
+// Respect reduced motion
+const PREFERS_REDUCED =
+    typeof window !== "undefined" &&
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /**
- * Animate a single button with interactive GSAP effects
+ * Animate a single button with fast, transform-only GSAP effects
  * @param {HTMLElement} btn
  */
 function setupAnimatedButton(btn) {
-    const clearAnimations = () => gsap.killTweensOf(btn);
+    // Hint the browser (only while animating)
+    const setWillChange = (on) =>
+        btn.style.setProperty("will-change", on ? "transform, filter" : "auto");
 
-    const animate = (options) => {
-        clearAnimations();
-        gsap.to(btn, options);
+    // If you’d rather keep box-shadow, flip this to true
+    const USE_DROP_SHADOW = true;
+
+    // Start from a clean baseline
+    gsap.set(btn, { transformOrigin: "50% 50%" });
+    if (USE_DROP_SHADOW)
+        gsap.set(btn, { filter: "drop-shadow(0 0 0 rgba(0,0,0,0))" });
+
+    const kill = () => gsap.killTweensOf(btn);
+
+    const animate = (vars, d = DUR.enter, ease = EASE.out) => {
+        if (PREFERS_REDUCED) {
+            // Just snap to the end state (no animation)
+            gsap.set(btn, vars);
+            return;
+        }
+        setWillChange(true);
+        return gsap.to(btn, {
+            ...vars,
+            duration: d,
+            ease,
+            onComplete: () => setWillChange(false),
+        });
     };
 
     const enter = () =>
-        animate({
-            scale: 1.06,
-            y: -2,
-            boxShadow: "0 8px 24px rgba(0, 0, 0, 0.12)",
-            duration: 0.2,
-            ease: "power3.out",
-        });
+        animate(
+            USE_DROP_SHADOW
+                ? {
+                      scale: 1.05,
+                      y: -2,
+                      filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.12))",
+                  }
+                : { scale: 1.05, y: -2 },
+            DUR.enter,
+        );
 
     const leave = () =>
-        animate({
-            scale: 1,
-            y: 0,
-            boxShadow: "0 0 0 rgba(0, 0, 0, 0)",
-            duration: 0.15,
-            ease: "power2.out",
-        });
+        animate(
+            USE_DROP_SHADOW
+                ? { scale: 1, y: 0, filter: "drop-shadow(0 0 0 rgba(0,0,0,0))" }
+                : { scale: 1, y: 0 },
+            DUR.leave,
+        );
 
-    const press = () =>
-        animate({
-            scale: 0.95,
-            y: 0,
-            duration: 0.1,
-            ease: "power2.inOut",
-        });
+    const press = () => animate({ scale: 0.96, y: 0 }, DUR.press, EASE.inOut);
 
     const release = () =>
-        animate({
-            scale: 1,
-            y: -2,
-            duration: 0.3,
-            ease: "elastic.out(1, 0.5)",
-        });
+        animate(
+            USE_DROP_SHADOW
+                ? {
+                      scale: 1.02,
+                      y: -1,
+                      filter: "drop-shadow(0 6px 12px rgba(0,0,0,0.10))",
+                  }
+                : { scale: 1.02, y: -1 },
+            DUR.release,
+            EASE.out,
+        );
 
     const reset = () =>
-        animate({
-            scale: 1,
-            y: 0,
-            boxShadow: "none",
-            duration: 0.15,
-            ease: "power2.out",
-        });
+        animate(
+            USE_DROP_SHADOW
+                ? { scale: 1, y: 0, filter: "drop-shadow(0 0 0 rgba(0,0,0,0))" }
+                : { scale: 1, y: 0 },
+            DUR.reset,
+        );
 
-    btn.addEventListener("mouseenter", enter);
-    btn.addEventListener("mouseleave", leave);
-    btn.addEventListener("pointerdown", press);
-    btn.addEventListener("pointerup", release);
-    btn.addEventListener("pointerleave", reset);
+    // Mouse / pointer
+    btn.addEventListener("mouseenter", () => {
+        kill();
+        enter();
+    });
+    btn.addEventListener("mouseleave", () => {
+        kill();
+        leave();
+    });
+    btn.addEventListener("pointerdown", (e) => {
+        // ignore right-click / long-press context
+        if (e.button && e.button !== 0) return;
+        kill();
+        press();
+    });
+    btn.addEventListener("pointerup", () => {
+        kill();
+        release();
+    });
+    btn.addEventListener("pointercancel", () => {
+        kill();
+        reset();
+    });
+    btn.addEventListener("pointerleave", () => {
+        kill();
+        reset();
+    });
+
+    // Focus/keyboard accessibility
+    btn.addEventListener("focus", enter);
+    btn.addEventListener("blur", reset);
+    btn.addEventListener("keydown", (e) => {
+        if (e.code === "Space" || e.code === "Enter") {
+            kill();
+            press();
+        }
+    });
+    btn.addEventListener("keyup", (e) => {
+        if (e.code === "Space" || e.code === "Enter") {
+            kill();
+            release();
+        }
+    });
 }
 
 function initAnimatedButtons() {
     const buttons = document.querySelectorAll(".js-animated-button");
-
     if (!buttons.length) return;
-
-    buttons.forEach((btn) => {
-        if (btn instanceof HTMLElement) {
-            setupAnimatedButton(btn);
-        }
-    });
+    buttons.forEach(
+        (btn) => btn instanceof HTMLElement && setupAnimatedButton(btn),
+    );
 }
 
 document.addEventListener("DOMContentLoaded", initAnimatedButtons);

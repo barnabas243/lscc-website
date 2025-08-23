@@ -1,26 +1,15 @@
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 document.addEventListener("DOMContentLoaded", () => {
     const blocks = document.querySelectorAll(".js-image-text-block");
-
     blocks.forEach((block) => {
         if (!(block instanceof HTMLElement)) return;
-
         animateImageTextBlock(block);
     });
 });
 
-/**
- * Animate an image-text content block with scroll-triggered animations.
- * @param {HTMLElement} block
- */
 function animateImageTextBlock(block) {
     const imageFigure = block.querySelector("figure");
     const image = imageFigure?.querySelector("img");
-    const text = block.querySelector("article");
+    const text = block.querySelector("article"); // keep your selector
 
     const lead = text?.querySelector("p.font-mono");
     const heading = text?.querySelector("h2");
@@ -29,24 +18,26 @@ function animateImageTextBlock(block) {
 
     const isImageLeft = imageFigure?.classList.contains("order-first");
 
+    // Smaller offsets so it resolves quicker
     if (image) {
         gsap.set(image, {
             opacity: 0,
-            scale: 1.1,
-            x: isImageLeft ? -100 : 100,
+            scale: 1.04,
+            x: isImageLeft ? -40 : 40,
         });
     }
 
     const textEls = [lead, heading, prose, button].filter(Boolean);
     if (textEls.length > 0) {
-        gsap.set(textEls, { opacity: 0, y: 50 });
+        gsap.set(textEls, { opacity: 0, y: 24 });
     }
 
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: block,
             start: "top 80%",
-            toggleActions: "play none none none",
+            toggleActions: "play none none none", // compatible everywhere
+            // once: true, // uncomment only if your GSAP supports it and you want one-shot
         },
     });
 
@@ -55,50 +46,33 @@ function animateImageTextBlock(block) {
             opacity: 1,
             scale: 1,
             x: 0,
-            duration: 1.4,
-            ease: "power3.out",
+            duration: 0.6, // was 1.4
+            ease: "power2.out",
         });
     }
 
-    addFadeUp(tl, lead, 0.5, "-=1");
-    addFadeUp(tl, heading, 0.4, "-=0.4");
-    addFadeUp(tl, prose, 0.3, "-=0.4");
-    addFadeUp(tl, button, 0.2, "-=0.3", "back.out(1.7)");
+    // Overlap and shorten the text reveals
+    addFadeUp(tl, lead, 0.3, image ? "-=0.30" : "0");
+    addFadeUp(tl, heading, 0.26, "-=0.20");
+    addFadeUp(tl, prose, 0.22, "-=0.18");
+    addFadeUp(tl, button, 0.2, "-=0.16", "back.out(1.4)");
 
-    // 🌀 Parallax image scroll
+    // Subtle, quicker parallax (optional)
     if (image) {
         gsap.to(image, {
-            y: -40,
+            y: -24, // was -40
             ease: "none",
             scrollTrigger: {
                 trigger: block,
                 start: "top bottom",
                 end: "bottom top",
-                scrub: true,
+                scrub: 0.2, // quicker response than true
             },
         });
     }
 }
 
-/**
- * Fade-up animation helper for timeline items
- * @param {gsap.core.Timeline} tl
- * @param {Element | null} el
- * @param {number} duration
- * @param {string} position
- * @param {string} [ease="power2.out"]
- */
 function addFadeUp(tl, el, duration, position, ease = "power2.out") {
     if (!(el instanceof HTMLElement)) return;
-
-    tl.to(
-        el,
-        {
-            opacity: 1,
-            y: 0,
-            duration,
-            ease,
-        },
-        position,
-    );
+    tl.to(el, { opacity: 1, y: 0, duration, ease }, position);
 }

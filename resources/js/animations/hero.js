@@ -1,8 +1,3 @@
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 document.addEventListener("DOMContentLoaded", () => {
     const heroImage = document.querySelector(".js-hero-image");
     const heroTitle = document.querySelector(".js-hero-title");
@@ -11,121 +6,210 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!(heroTitle instanceof HTMLElement)) return;
 
-    animateHeroImage(heroImage);
-    animateHeroText(heroTitle, heroDescription, heroButtons);
+    const prefersReduced =
+        window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ??
+        false;
+
+    animateHeroImage(heroImage, prefersReduced);
+    animateHeroText(heroTitle, heroDescription, heroButtons, prefersReduced);
 });
 
 /**
  * Animate background hero image
- * @param {Element | null} image
+ * @param {Element|null} image
+ * @param {boolean} prefersReduced
  */
-function animateHeroImage(image) {
+function animateHeroImage(image, prefersReduced) {
     if (!(image instanceof HTMLElement)) return;
 
-    gsap.fromTo(
-        image,
-        {
-            scale: 1.08,
-            opacity: 0,
-            filter: "blur(8px)",
-        },
-        {
-            scale: 1,
-            opacity: 1,
-            filter: "blur(0px)",
-            duration: 2,
-            ease: "power2.out",
-        },
-    );
+    // Initial state: light scale + fade (faster than filter: blur)
+    gsap.set(image, {
+        autoAlpha: 0,
+        scale: 1.03,
+        willChange: "transform, opacity",
+    });
 
+    if (prefersReduced) {
+        gsap.set(image, { autoAlpha: 1, scale: 1, clearProps: "willChange" });
+        return;
+    }
+
+    // Quick reveal
     gsap.to(image, {
-        y: 0,
-        repeat: -1,
+        autoAlpha: 1,
+        scale: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        onComplete: () => gsap.set(image, { clearProps: "willChange" }),
+    });
+
+    // Subtle float (paused when tab hidden)
+    const floatTl = gsap.to(image, {
+        y: 10, // was 0↔0; add tiny drift
+        duration: 6, // was 10
         yoyo: true,
-        duration: 10,
+        repeat: -1,
         ease: "sine.inOut",
+        paused: false,
+    });
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) floatTl.pause();
+        else floatTl.resume();
     });
 }
 
 /**
  * Animate hero title, description, and buttons
  * @param {HTMLElement} titleEl
- * @param {Element | null} descriptionEl
- * @param {Element | null} buttonsWrapper
+ * @param {Element|null} descriptionEl
+ * @param {Element|null} buttonsWrapper
+ * @param {boolean} prefersReduced
  */
-function animateHeroText(titleEl, descriptionEl, buttonsWrapper) {
-    const highlightWords = ["God", "Gospel", "Arise"];
-    const rawWords = titleEl.textContent?.trim().split(/\s+/) || [];
+function animateHeroText(
+    titleEl,
+    descriptionEl,
+    buttonsWrapper,
+    prefersReduced,
+) {
+    const highlightWords = ["god", "gospel", "arise"];
+    const original = titleEl.textContent ?? "";
+    const parts = original.trim().split(/\s+/);
 
-    titleEl.innerHTML = rawWords
+    // Rebuild innerHTML with span wrappers; keep punctuation attached
+    titleEl.innerHTML = parts
         .map((word) => {
-            const plain = word.replace(/[^\w]/g, "");
-            const isHighlight = highlightWords.includes(plain);
-            return `<span class="hero-word${isHighlight ? " highlighted-word" : ""}">${word}</span>`;
+            const core = word.replace(/[^\p{L}\p{N}]+/gu, ""); // letters/numbers; keeps CJK
+            const isHighlight = highlightWords.includes(core.toLowerCase());
+            const cls = `hero-word${isHighlight ? " highlighted-word" : ""}`;
+            return `<span class="${cls}">${escapeHtml(word)}</span>`;
         })
         .join(" ");
 
     const heroWords = titleEl.querySelectorAll(".hero-word");
-
     if (!heroWords.length) return;
 
-    const tl = gsap.timeline({ delay: 0.2 });
+    if (prefersReduced) {
+        gsap.set([heroWords, descriptionEl, buttonsWrapper].filter(Boolean), {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+        });
+        return;
+    }
 
-    gsap.set(heroWords, { opacity: 0, y: 50 });
+    const tl = gsap.timeline({ delay: 0.1 });
+
+    gsap.set(heroWords, {
+        autoAlpha: 0,
+        y: 28,
+        willChange: "transform, opacity",
+    });
     tl.to(heroWords, {
+        autoAlpha: 1,
         y: 0,
-        opacity: 1,
-        ease: "back.out(1.7)",
-        stagger: 0.1,
+        ease: "back.out(1.4)",
+        duration: 0.6,
+        stagger: 0.08, // quicker
+        onComplete: () => gsap.set(heroWords, { clearProps: "willChange" }),
     });
 
     if (
         descriptionEl instanceof HTMLElement &&
         descriptionEl.textContent.trim()
     ) {
-        gsap.set(descriptionEl, { opacity: 0, y: 20 });
+        gsap.set(descriptionEl, {
+            autoAlpha: 0,
+            y: 16,
+            willChange: "transform, opacity",
+        });
         tl.to(
             descriptionEl,
             {
-                opacity: 1,
+                autoAlpha: 1,
                 y: 0,
-                duration: 0.8,
+                duration: 0.5,
                 ease: "power2.out",
+                onComplete: () =>
+                    gsap.set(descriptionEl, { clearProps: "willChange" }),
             },
-            "-=1.0",
+            "-=0.35",
         );
     }
 
     if (buttonsWrapper instanceof HTMLElement) {
-        tl.fromTo(
+        gsap.set(buttonsWrapper, {
+            autoAlpha: 0,
+            y: 16,
+            scale: 0.985,
+            willChange: "transform, opacity",
+        });
+        tl.to(
             buttonsWrapper,
-            { opacity: 0, scale: 0.95, y: 20 },
             {
-                opacity: 1,
-                scale: 1,
+                autoAlpha: 1,
                 y: 0,
-                duration: 0.6,
-                ease: "back.out(1.5)",
+                scale: 1,
+                duration: 0.45,
+                ease: "power2.out",
+                onComplete: () =>
+                    gsap.set(buttonsWrapper, { clearProps: "willChange" }),
             },
-            "-=0.8",
+            "-=0.30",
         );
 
-        const buttons = buttonsWrapper.querySelectorAll("a");
-        buttons.forEach((btn) => {
-            btn.addEventListener("mouseenter", () =>
-                gsap.to(btn, {
-                    scale: 1.05,
-                    duration: 0.3,
-                    ease: "power2.out",
-                }),
-            );
-            btn.addEventListener("mouseleave", () =>
-                gsap.to(btn, {
-                    scale: 1,
-                    duration: 0.3,
-                    ease: "power2.out",
-                }),
-            );
-        });
+        // Hover effects only on devices with a fine pointer (avoid on touch)
+        const finePointer =
+            window.matchMedia?.("(pointer: fine)").matches ?? true;
+        if (finePointer) {
+            const buttons = buttonsWrapper.querySelectorAll("a, button");
+            buttons.forEach((btn) => {
+                btn.addEventListener("mouseenter", () =>
+                    gsap.to(btn, {
+                        scale: 1.04,
+                        duration: 0.18,
+                        ease: "power2.out",
+                    }),
+                );
+                btn.addEventListener("mouseleave", () =>
+                    gsap.to(btn, {
+                        scale: 1,
+                        duration: 0.18,
+                        ease: "power2.out",
+                    }),
+                );
+                btn.addEventListener("pointerdown", () =>
+                    gsap.to(btn, {
+                        scale: 0.97,
+                        duration: 0.08,
+                        ease: "power2.inOut",
+                    }),
+                );
+                btn.addEventListener("pointerup", () =>
+                    gsap.to(btn, {
+                        scale: 1.02,
+                        duration: 0.16,
+                        ease: "power2.out",
+                    }),
+                );
+                btn.addEventListener("blur", () =>
+                    gsap.to(btn, {
+                        scale: 1,
+                        duration: 0.12,
+                        ease: "power2.out",
+                    }),
+                );
+            });
+        }
     }
+}
+
+// Simple HTML escaper since we rebuild innerHTML from textContent
+function escapeHtml(str) {
+    return str
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
 }

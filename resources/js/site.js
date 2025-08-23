@@ -15,7 +15,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-// Make the shared gsap available to modules 
+// Make the shared gsap available to modules
 export { gsap, ScrollTrigger };
 
 // Import all animation modules
@@ -24,7 +24,7 @@ import "./animations/cards";
 import "./animations/buttons";
 import "./animations/imageText";
 import "./animations/timeline";
-import "./animations/carousel"; 
+import "./animations/carousel";
 import "./calendar";
 
 // Alpine init
