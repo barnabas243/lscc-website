@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755972361
+updated_at: 1755972833
 page_builder:
   -
     id: m69hfxa9
@@ -45,7 +45,7 @@ page_builder:
       -
         id: m6ry09yg
         title: 'Our Mission'
-        content: 'Our mission is to encounter God in every aspect of life, to experience His transformative power, and to arise as a community of believers, empowered by the Holy Spirit, to boldly share the gospel with those around us and beyond.'
+        content: 'Our mission is to encounter God in every aspect of life, to experience His transformative power.'
         background_color: '#cf554a'
         text_color: '#F8F8F8'
         type: card
@@ -53,7 +53,7 @@ page_builder:
       -
         id: m6mc1n5h
         title: 'Our Values'
-        content: "We are dedicated to embodying the values of the Gospel of Jesus Christ in all areas of life. Our mission is to love God wholeheartedly, love others selflessly, and share the life-transforming message of Jesus with the world. Through these actions, we strive to reflect God's love and bring His hope to those around us."
+        content: 'We are dedicated to embodying the values of the Gospel of Jesus Christ in all areas of life.'
         type: card
         enabled: true
         background_color: '#006D6D'
@@ -65,10 +65,7 @@ page_builder:
         enabled: true
         background_color: '#920286'
         text_color: '#F8F8F8'
-        content: |-
-          We believe in one eternal God, who exists as the Father, Son (Jesus Christ), and Holy Spirit. Jesus Christ is the Son of God, who lived, died for our sins, and rose again to offer salvation and eternal life. The Bible is the inspired Word of God and is our guide for faith and living.
-
-          We believe salvation is a gift from God, received through faith in Jesus. The Church is the body of believers called to worship, serve, and spread the Gospel. We also believe in the second coming of Christ, where He will return to judge and establish His eternal Kingdom.
+        content: 'We believe in one eternal God, who exists as the Father, Son (Jesus Christ), and Holy Spirit.'
     background_color: '#020618'
     align_content: left
     type: cards
