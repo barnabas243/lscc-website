@@ -8,7 +8,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755972833
+updated_at: 1755972959
 page_builder:
   -
     id: m69hfxa9
@@ -45,7 +45,7 @@ page_builder:
       -
         id: m6ry09yg
         title: 'Our Mission'
-        content: 'Our mission is to encounter God in every aspect of life, to experience His transformative power.'
+        content: 'Encounter God. Grow together. Share the Gospel.'
         background_color: '#cf554a'
         text_color: '#F8F8F8'
         type: card
@@ -53,7 +53,15 @@ page_builder:
       -
         id: m6mc1n5h
         title: 'Our Values'
-        content: 'We are dedicated to embodying the values of the Gospel of Jesus Christ in all areas of life.'
+        content: |-
+          • Jesus-Centered 
+          • Bible-Shaped
+          • Prayer-Dependent 
+          • Community 
+          • Discipleship 
+          • Mission 
+          • Generosity 
+          • Unity
         type: card
         enabled: true
         background_color: '#006D6D'
