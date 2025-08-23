@@ -3,7 +3,7 @@
     @desc A single button component. Faux is used when a button is displayed inside a link (for example in link blocks).
     @param* label The caption label.
     @param as The wrapping element. Defaults to `a`.
-    @param button_type `Inline` if the button needs to be rendered as an inline button.
+    @param button_type One of: `inline`, `button` (primary), `secondary`.
     @param faux Boolean. For faux button wrapped in an actual button/anchor.
     @param inverted Boolean. When the button needs inverted styles.
 #}}
@@ -14,13 +14,13 @@
         class="js-animated-button {{ switch(
     (button_type === 'inline') => 'underline decoration-2 motion-safe:transition',
     (button_type === 'button') => 'max-w-full p-4 rounded-lg leading-none no-underline select-none whitespace-nowrap',
-    ) }} {{ switch(
+    (button_type === 'secondary') => 'max-w-full p-4 rounded-lg leading-none no-underline select-none whitespace-nowrap border-2') }} {{ switch(
     (button_type === 'inline' && !inverted) => 'text-neutral decoration-primary focus:outline-primary',
     (button_type === 'button' && !inverted) => 'bg-primary text-white focus:outline-primary',
-    ) }} {{ switch(
+    (button_type === 'secondary' && !inverted) => 'border-primary text-primary hover:bg-primary/10 focus:outline-primary') }} {{ switch(
     (button_type === 'inline' && inverted) => 'text-white decoration-white focus:outline-white',
     (button_type === 'button' && inverted) => 'bg-white text-primary focus:outline-white',
-    ) }} {{ class }} inline-flex items-center justify-center gap-0.5 px-12 font-bold motion-safe:transition"
+    (button_type === 'secondary' && inverted) => 'border-white text-white hover:bg-white/10 focus:outline-white') }} {{ class }} inline-flex items-center justify-center gap-0.5 px-12 font-bold motion-safe:transition"
         {{ slot:attributes }}
         {{ !faux ?= { partial:statamic-peak-tools::snippets/button_attributes } }}
     >

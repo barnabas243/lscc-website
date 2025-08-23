@@ -1,7 +1,6 @@
 title: Button
 fields:
-  -
-    handle: label
+  - handle: label
     field:
       input_type: text
       type: text
@@ -12,18 +11,16 @@ fields:
       replicator_preview: false
       instructions_position: above
       antlers: false
-  -
-    handle: show_controls
+  - handle: show_controls
     field:
       mode: toggle
-      display: 'Show controls'
+      display: "Show controls"
       type: revealer
       icon: revealer
       width: 33
       listable: hidden
       instructions_position: above
-  -
-    handle: link_type
+  - handle: link_type
     field:
       options:
         entry: Entry
@@ -36,27 +33,25 @@ fields:
       localizable: true
       default: entry
       listable: false
-      display: 'Link type'
+      display: "Link type"
       replicator_preview: false
       width: 66
       if:
-        show_controls: 'equals true'
+        show_controls: "equals true"
       instructions_position: above
       visibility: visible
       always_save: false
-  -
-    handle: target_blank
+  - handle: target_blank
     field:
       type: toggle
       localizable: true
       width: 33
       listable: false
-      display: 'Open in new window'
+      display: "Open in new window"
       replicator_preview: false
       if:
-        show_controls: 'equals true'
-  -
-    handle: entry
+        show_controls: "equals true"
+  - handle: entry
     field:
       max_items: 1
       mode: default
@@ -67,14 +62,13 @@ fields:
       display: Entry
       replicator_preview: false
       validate:
-        - 'required_if:{this}.link_type,entry'
+        - "required_if:{this}.link_type,entry"
       if:
         link_type: entry
-        show_controls: 'equals true'
-  -
-    handle: url
+        show_controls: "equals true"
+  - handle: url
     field:
-      placeholder: 'https://site.com'
+      placeholder: "https://site.com"
       input_type: url
       type: text
       localizable: true
@@ -82,12 +76,11 @@ fields:
       display: URL
       width: 50
       validate:
-        - 'required_if:{this}.link_type,url'
+        - "required_if:{this}.link_type,url"
       if:
         link_type: url
-        show_controls: 'equals true'
-  -
-    handle: email
+        show_controls: "equals true"
+  - handle: email
     field:
       placeholder: info@site.com
       input_type: email
@@ -98,14 +91,13 @@ fields:
       width: 50
       replicator_preview: false
       validate:
-        - 'required_if:{this}.link_type,email'
+        - "required_if:{this}.link_type,email"
       if:
         link_type: email
-        show_controls: 'equals true'
-  -
-    handle: tel
+        show_controls: "equals true"
+  - handle: tel
     field:
-      placeholder: '+0 (0)12 345678'
+      placeholder: "+0 (0)12 345678"
       input_type: tel
       type: text
       localizable: true
@@ -114,14 +106,13 @@ fields:
       width: 50
       replicator_preview: false
       validate:
-        - 'required_if:{this}.link_type,tel'
+        - "required_if:{this}.link_type,tel"
       if:
         link_type: tel
-        show_controls: 'equals true'
-  -
-    handle: sms
+        show_controls: "equals true"
+  - handle: sms
     field:
-      placeholder: '+0 (0)12 345678'
+      placeholder: "+0 (0)12 345678"
       input_type: tel
       type: text
       localizable: true
@@ -130,12 +121,11 @@ fields:
       width: 50
       replicator_preview: false
       validate:
-        - 'required_if:{this}.link_type,sms'
+        - "required_if:{this}.link_type,sms"
       if:
         link_type: sms
-        show_controls: 'equals true'
-  -
-    handle: asset
+        show_controls: "equals true"
+  - handle: asset
     field: common.image
     config:
       localizable: true
@@ -143,28 +133,27 @@ fields:
       container: files
       width: 50
       validate:
-        - 'required_if:{this}.link_type,asset'
+        - "required_if:{this}.link_type,asset"
       if:
         link_type: asset
-        show_controls: 'equals true'
-  -
-    handle: button_type
+        show_controls: "equals true"
+  - handle: button_type
     field:
       options:
-        button: Button
+        button: Primary
+        secondary: Secondary
         inline: Inline
       type: button_group
       localizable: true
       default: button
       listable: false
-      display: 'Button type'
+      display: "Button type"
       replicator_preview: false
       if:
-        show_controls: 'equals true'
-  -
-    handle: attr_title
+        show_controls: "equals true"
+  - handle: attr_title
     field:
-      placeholder: 'Learn more'
+      placeholder: "Learn more"
       input_type: text
       type: text
       localizable: true
@@ -173,29 +162,27 @@ fields:
       width: 50
       replicator_preview: false
       if:
-        show_controls: 'equals true'
-  -
-    handle: attr_aria
+        show_controls: "equals true"
+  - handle: attr_aria
     field:
-      placeholder: 'Download the PDF'
+      placeholder: "Download the PDF"
       input_type: text
       type: text
       localizable: true
       listable: false
-      display: 'Aria label'
+      display: "Aria label"
       width: 50
       replicator_preview: false
       if:
-        show_controls: 'equals true'
-  -
-    handle: tracker_event
+        show_controls: "equals true"
+  - handle: tracker_event
     field:
       input_type: text
       type: text
       localizable: true
       listable: false
       placeholder: my-custom-event
-      display: 'Tracker event'
+      display: "Tracker event"
       instructions: "Add the name of the event you want to be fired on click. These events only fire on a production environment. Allowed: `A-Z`, `a-z`, `0-9`, `-`, `_`."
       validate:
         - 'regex:/[A-Za-z0-9_\-]+$/'
@@ -206,5 +193,5 @@ fields:
       antlers: false
       hide_display: false
       if:
-        show_controls: 'equals true'
-        label: 'custom tracker_events'
+        show_controls: "equals true"
+        label: "custom tracker_events"
