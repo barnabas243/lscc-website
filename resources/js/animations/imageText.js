@@ -1,3 +1,5 @@
+import gsap from "gsap";
+
 document.addEventListener("DOMContentLoaded", () => {
     const blocks = document.querySelectorAll(".js-image-text-block");
     blocks.forEach((block) => {
