@@ -1,37 +1,36 @@
-{{ partial:page_builder/block }}
-{{ overlap_classes = '' }}
-{{ if overlap_previous }}
-    {{ size = (overlap_amount ?? 'md') }}
-    {{ if size == 'lg' }}
-        {{ overlap_classes = "
-      -mt-[clamp(2rem,8vw,6rem)]
-      md:-mt-[clamp(3.5rem,7.5vw,9rem)]
-      lg:-mt-[clamp(5rem,7vw,12rem)]
-      xl:-mt-[clamp(6rem,6.5vw,14rem)]
-    " }}
-    {{ elseif size == 'sm' }}
-        {{ overlap_classes = "
-      -mt-[clamp(1.25rem,6.5vw,3.5rem)]
-      md:-mt-[clamp(2rem,6vw,5rem)]
-      lg:-mt-[clamp(3rem,5.5vw,6.5rem)]
-      xl:-mt-[clamp(3.5rem,5vw,8rem)]
-    " }}
-    {{ else }}
-        {{ overlap_classes = "
-      -mt-[clamp(1.5rem,7vw,4.5rem)]
-      md:-mt-[clamp(2.75rem,6.5vw,7rem)]
-      lg:-mt-[clamp(4rem,6vw,9.5rem)]
-      xl:-mt-[clamp(5rem,5.5vw,11rem)]
-    " }}
+{{ partial:page_builder/block class="fluid-grid" }}
+    {{ overlap_classes = '' }}
+    {{ if overlap_previous }}
+        {{ size = (overlap_amount ?? 'md') }}
+        {{ if size == 'lg' }}
+            {{ overlap_classes = "
+              -mt-[clamp(2rem,8vw,6rem)]
+              md:-mt-[clamp(3.5rem,7.5vw,9rem)]
+              lg:-mt-[clamp(5rem,7vw,12rem)]
+              xl:-mt-[clamp(6rem,6.5vw,14rem)]
+            " }}
+        {{ elseif size == 'sm' }}
+            {{ overlap_classes = "
+              -mt-[clamp(1.25rem,6.5vw,3.5rem)]
+              md:-mt-[clamp(2rem,6vw,5rem)]
+              lg:-mt-[clamp(3rem,5.5vw,6.5rem)]
+              xl:-mt-[clamp(3.5rem,5vw,8rem)]
+            " }}
+        {{ else }}
+            {{ overlap_classes = "
+              -mt-[clamp(1.5rem,7vw,4.5rem)]
+              md:-mt-[clamp(2.75rem,6.5vw,7rem)]
+              lg:-mt-[clamp(4rem,6vw,9.5rem)]
+              xl:-mt-[clamp(5rem,5.5vw,11rem)]
+            " }}
+        {{ /if }}
+        {{ if overlap_guards | contains:short_height }}
+            {{ overlap_classes = overlap_classes~ ' max-[height:480px]:!mt-0' }}
+        {{ /if }}
+        {{ if overlap_guards | contains:landscape }}
+            {{ overlap_classes = overlap_classes~ ' min-[aspect-ratio:13/9]:!mt-0' }}
+        {{ /if }}
     {{ /if }}
-    {{ if overlap_guards | contains:short_height }}
-        {{ overlap_classes = overlap_classes~ ' max-[height:480px]:!mt-0' }}
-    {{ /if }}
-    {{ if overlap_guards | contains:landscape }}
-        {{ overlap_classes = overlap_classes~ ' min-[aspect-ratio:13/9]:!mt-0' }}
-    {{ /if }}
-{{ /if }}
-{{ partial:page_builder/block }}
     <section
         class="span-content {{ overlap_classes }} relative mx-auto mb-10 px-4 sm:px-6 md:px-8"
         role="region"
