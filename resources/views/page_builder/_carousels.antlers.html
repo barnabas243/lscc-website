@@ -22,20 +22,17 @@
                 {{ slides }}
                     <div class="swiper-slide">
                         <div class="img-wrapper space-y-4 bg-transparent">
-                            <!-- INNER VERTICAL (proper container + wrapper + slides) -->
-                            <div class="swiper vertical-swiper">
-                                <div class="swiper-wrapper w-full">
-                                    {{ posters }}
-                                        <div class="swiper-slide">
-                                            <img
-                                                src="{{ url }}"
-                                                alt="Event poster image"
-                                                loading="lazy"
-                                                class="h-full w-full"
-                                            />
-                                        </div>
-                                    {{ /posters }}
-                                </div>
+                            <div class="swiper-wrapper w-full">
+                                {{ posters }}
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="{{ url }}"
+                                            alt="Event poster image"
+                                            loading="lazy"
+                                            class="h-full w-full"
+                                        />
+                                    </div>
+                                {{ /posters }}
                             </div>
                         </div>
                     </div>
