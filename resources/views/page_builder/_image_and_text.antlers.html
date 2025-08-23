@@ -1,71 +1,43 @@
 {{#
     @name Image and Text
-    @desc Flexible image+text block with responsive images and better CLS/semantics.
+    @desc A flexible image and text layout block with options for alternating image placement using Tailwind CSS.
 #}}
 
 {{ partial:page_builder/block }}
     <div
-        class="span-content js-image-text-block mx-auto grid max-w-full gap-y-8 overflow-hidden md:grid-cols-12"
+        class="span-content js-image-text-block mx-auto grid h-auto max-w-full gap-y-8 overflow-hidden md:grid-cols-12"
     >
-        {{ if image }}
-            <figure
-                class="{{ image_position == 'left' ? 'order-first' : 'md:order-last' }} md:col-span-{{ image_col_span }}"
-            >
-                <div
-                    class="rounded-lgmd:aspect-[3/2] relative aspect-[4/3] w-full overflow-hidden lg:aspect-[16/9]"
-                >
-                    {{ image }}
-                        <picture>
-                            <source
-                                srcset="
-                                    {{ glide:url width='1600' format='avif' quality='70' }}
-                                "
-                                type="image/avif"
-                            />
-                            <source
-                                srcset="
-                                    {{ glide:url width='1600' format='webp' quality='80' }}
-                                "
-                                type="image/webp"
-                            />
-                            <img
-                                src="{{ glide:url width='1024' quality='82' format='jpg' }}"
-                                srcset="
-                                    {{ glide:url width='480' quality='82' format='jpg' }}   480w,
-                                    {{ glide:url width='768' quality='82' format='jpg' }}   768w,
-                                    {{ glide:url width='1024' quality='82' format='jpg' }} 1024w,
-                                    {{ glide:url width='1600' quality='82' format='jpg' }} 1600w
-                                "
-                                sizes="(max-width: 767px) 100vw,
-                 (max-width: 1023px) calc(({{ image_col_span }} / 12) * 100vw),
-                 calc(({{ image_col_span }} / 12) * 100vw)"
-                                alt="{{ alt ?? title ?? 'Image' }}"
-                                class="absolute inset-0 h-full w-full object-contain"
-                                loading="{{ loop_first ? 'eager' : 'lazy' }}"
-                                fetchpriority="{{ loop_first ? 'high' : 'auto' }}"
-                                decoding="async"
-                                width="1600"
-                                height="1067"
-                            />
-                        </picture>
-                    {{ /image }}
-                </div>
-                {{ if caption }}
-                    <figcaption class="mt-2 text-sm text-neutral-500">
-                        {{ caption }}
-                    </figcaption>
-                {{ /if }}
-            </figure>
-        {{ /if }}
+        <!-- Image -->
+        <figure
+            class="{{ image_position == 'left' ? 'order-first' : 'md:order-last' }} md:col-span-{{ image_col_span }} relative max-w-full"
+        >
+            {{ image }}
+                <img
+                    src="{{ glide:url width='1600' quality='85' format='webp' }}"
+                    srcset="
+                        {{ glide:url width='480' quality='85' format='webp' }}   480w,
+                        {{ glide:url width='768' quality='85' format='webp' }}   768w,
+                        {{ glide:url width='1024' quality='85' format='webp' }} 1024w,
+                        {{ glide:url width='1600' quality='85' format='webp' }} 1600w
+                    "
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 800px"
+                    alt="{{ alt }}"
+                    class="max-h-[480px] w-full rounded-lg object-cover shadow-md md:max-h-[600px] lg:max-h-[700px]"
+                    loading="lazy"
+                />
+            {{ /image }}
+        </figure>
+
+        <!-- Text -->
         <article
-            class="{{ image_position == 'left' ? 'order-last' : 'md:order-first' }} md:col-span-{{ text_col_span }} flex"
+            class="{{ image_position == 'left' ? 'order-last' : 'md:order-first' }} md:col-span-{{ text_col_span }} flex items-center align-middle"
         >
             <div
-                class="mb-4 flex w-full flex-col justify-center px-6 py-10 text-center leading-relaxed md:items-start md:text-left lg:px-20"
+                class="mb-4 flex h-full w-full flex-col items-center justify-center px-6 py-10 text-center leading-relaxed md:items-start md:text-left lg:px-20"
             >
-                {{ block:lead_text ?= { partial:typography/p :content="block:lead_text" class="font-mono text-base text-purple-700 mb-2 max-w-prose italic" } }}
-                {{ block:title ?= { partial:typography/h2 :content="block:title" class="text-3xl md:text-4xl font-bold mb-4 max-w-prose" } }}
-                {{ partial:typography/prose class="text-lg md:text-xl mt-2 text-neutral-800 max-w-prose" }}
+                {{ block:lead_text ?= { partial:typography/p :content="block:lead_text" class="font-mono text-lg text-purple-700 mb-2 max-w-prose" } }}
+                {{ block:title ?= { partial:typography/h2 :content="block:title" class="text-4xl font-bold mb-4 max-w-prose" } }}
+                {{ partial:typography/prose class="text-xl mt-2 text-neutral-800 max-w-prose" }}
                     {{ block:text }}
                 {{ /partial:typography/prose }}
                 {{ partial:components/buttons class="mt-8" }}
