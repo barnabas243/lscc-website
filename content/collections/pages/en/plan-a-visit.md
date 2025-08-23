@@ -147,7 +147,7 @@ page_builder:
             link_type: entry
             target_blank: false
             entry: 72196d4e-88d2-4a6e-a466-39df9fd27c31
-            button_type: button
+            button_type: secondary
         type: card
         enabled: true
         text_color: '#ffffff'
@@ -161,6 +161,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755973444
+updated_at: 1755973723
 seo_description: 'Plan your visit to Living Streams Christian Church. Join us for our Sunday services and experience a welcoming community of faith.'
 ---
