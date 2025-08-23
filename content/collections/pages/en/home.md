@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755964407
+updated_at: 1755964454
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -246,7 +246,7 @@ page_builder:
         label: 'Plan A Visit'
         link_type: entry
         target_blank: false
-        button_type: button
+        button_type: secondary
         entry: 6508ee95-c3b3-4635-9125-2c985271df30
     lead_text: 'New here?'
     image_col_span: 6
@@ -272,7 +272,7 @@ page_builder:
             link_type: entry
             target_blank: false
             entry: eed0f05c-0ae1-4085-ad80-a2f01fb5f2a5
-            button_type: button
+            button_type: secondary
         type: card
         enabled: true
         background_color: '#000000'
@@ -289,7 +289,7 @@ page_builder:
             link_type: entry
             target_blank: false
             entry: 72196d4e-88d2-4a6e-a466-39df9fd27c31
-            button_type: button
+            button_type: secondary
         type: card
         enabled: true
         background_color: '#000000'
@@ -297,7 +297,7 @@ page_builder:
         image: youth_outing.jpg
     type: cards
     enabled: true
-    background_color: '#ffffff'
+    background_color: '#FEFBF7'
     align_content: left
   -
     id: m6ae5dps
@@ -331,7 +331,7 @@ page_builder:
         link_type: entry
         target_blank: false
         entry: 1bad468d-a97d-498d-aa3c-747b0251e740
-        button_type: button
+        button_type: secondary
     image_col_span: 6
     text_col_span: 6
   -
