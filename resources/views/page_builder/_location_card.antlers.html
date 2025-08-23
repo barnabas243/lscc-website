@@ -4,24 +4,24 @@
     {{ size = (overlap_amount ?? 'md') }}
     {{ if size == 'lg' }}
         {{ overlap_classes = "
-      -mt-[clamp(1.25rem,7vw,2.75rem)]
-      md:-mt-[clamp(2.25rem,6vw,5rem)]
-      lg:-mt-[clamp(3rem,5.5vw,7rem)]
-      xl:-mt-[clamp(3.5rem,5vw,8rem)]
+      -mt-[clamp(2rem,8vw,6rem)]
+      md:-mt-[clamp(3.5rem,7.5vw,9rem)]
+      lg:-mt-[clamp(5rem,7vw,12rem)]
+      xl:-mt-[clamp(6rem,6.5vw,14rem)]
     " }}
     {{ elseif size == 'sm' }}
         {{ overlap_classes = "
-      -mt-[clamp(0.75rem,5vw,1.75rem)]
-      md:-mt-[clamp(1.25rem,4vw,2.75rem)]
-      lg:-mt-[clamp(1.75rem,3.5vw,3.75rem)]
-      xl:-mt-[clamp(2rem,3vw,4.5rem)]
+      -mt-[clamp(1.25rem,6.5vw,3.5rem)]
+      md:-mt-[clamp(2rem,6vw,5rem)]
+      lg:-mt-[clamp(3rem,5.5vw,6.5rem)]
+      xl:-mt-[clamp(3.5rem,5vw,8rem)]
     " }}
     {{ else }}
         {{ overlap_classes = "
-      -mt-[clamp(1rem,6vw,2.25rem)]
-      md:-mt-[clamp(1.75rem,5vw,4rem)]
-      lg:-mt-[clamp(2.25rem,4.5vw,5.5rem)]
-      xl:-mt-[clamp(2.75rem,4vw,6.5rem)]
+      -mt-[clamp(1.5rem,7vw,4.5rem)]
+      md:-mt-[clamp(2.75rem,6.5vw,7rem)]
+      lg:-mt-[clamp(4rem,6vw,9.5rem)]
+      xl:-mt-[clamp(5rem,5.5vw,11rem)]
     " }}
     {{ /if }}
     {{ if overlap_guards | contains:short_height }}
@@ -33,7 +33,7 @@
 {{ /if }}
 {{ partial:page_builder/block }}
     <section
-        class="span-content {{ overlap_classes }} relative mx-auto px-4 sm:px-6 md:px-8"
+        class="span-content {{ overlap_classes }} relative mx-auto mb-10 px-4 sm:px-6 md:px-8"
         role="region"
         aria-labelledby="service-times-heading"
     >
@@ -175,7 +175,4 @@
             </div>
         </div>
     </section>
-
-    <!-- Optional divider (kept from your original) -->
-    <hr class="mx-5 my-10 max-w-6xl border-t border-neutral-200 md:mx-auto" />
 {{ /partial:page_builder/block }}
