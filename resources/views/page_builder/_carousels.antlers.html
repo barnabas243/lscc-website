@@ -9,6 +9,8 @@
         class="carousel-block py-12"
         role="region"
         aria-label="Event Carousel"
+        x-data="{ lightboxOpen: false, lightboxSrc: '' }"
+        x-trap="lightboxOpen"
     >
         <div class="mb-3 w-full text-center">
             <h2 class="inline-block text-3xl font-bold italic">
@@ -29,7 +31,8 @@
                                             src="{{ url }}"
                                             alt="Event poster image"
                                             loading="lazy"
-                                            class="h-full w-full"
+                                            class="h-full w-full cursor-zoom-in"
+                                            @click="lightboxSrc='{{ url }}'; lightboxOpen=true"
                                         />
                                     </div>
                                 {{ /posters }}
@@ -43,6 +46,28 @@
             <div class="swiper-button-prev" aria-label="Previous item"></div>
             <div class="swiper-button-next" aria-label="Next item"></div>
             <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Alpine Lightbox -->
+        <div
+            x-show="lightboxOpen"
+            x-transition.opacity
+            class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+            @click.self="lightboxOpen=false"
+            @keydown.escape.window="lightboxOpen=false"
+        >
+            <img
+                :src="lightboxSrc"
+                alt="Expanded poster"
+                class="max-h-[90vh] max-w-[90vw] rounded shadow-lg"
+            />
+            <button
+                @click="lightboxOpen=false"
+                class="absolute top-4 right-4 text-2xl text-white"
+                aria-label="Close"
+            >
+                ✕
+            </button>
         </div>
     </section>
 {{ /partial:page_builder/block }}

@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const swiperContainer = document.querySelector(".carousel-block .swiper");
     if (!(swiperContainer instanceof HTMLElement)) return;
 
-    const isDesktop = window.matchMedia("(pointer:fine)").matches;
-
     const swiper = new Swiper(swiperContainer, {
         centeredSlides: true,
         centeredSlidesBounds: true,
@@ -12,13 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
         speed: 500,
         watchOverflow: true,
 
-        simulateTouch: !isDesktop,
-        grabCursor: !isDesktop,
-
-        threshold: 8,
-        shortSwipes: true,
-        longSwipesRatio: 0.2,
-        resistanceRatio: 0.6,
+        allowTouchMove: true,
+        simulateTouch: true,
 
         touchStartPreventDefault: false,
         touchMoveStopPropagation: false,
