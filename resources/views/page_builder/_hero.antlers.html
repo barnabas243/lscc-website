@@ -1,29 +1,52 @@
 {{#
-    @name Hero @desc The hero page builder block with Tailwind CSS. @set
-    page.page_builder.hero
+    @name Hero
+    @desc Simple hero with optional video background (no device branching).
 #}}
 
-<!-- /page_builder/_hero.antlers.html -->
 {{ partial:page_builder/block }}
     <section
-        class="span-content relative flex h-screen w-full items-center justify-center overflow-hidden"
         id="hero-section"
+        class="span-content relative flex h-screen w-full items-center justify-center overflow-hidden"
+        role="region"
+        aria-label="Hero"
     >
-        {{ hero_image }}
-            <img
-                src="{{ glide:url width='1920' quality='85' format='webp' }}"
-                srcset="
-                    {{ glide:url width='768' quality='85' format='webp' }}   768w,
-                    {{ glide:url width='1024' quality='85' format='webp' }} 1024w,
-                    {{ glide:url width='1440' quality='85' format='webp' }} 1440w,
-                    {{ glide:url width='1920' quality='85' format='webp' }} 1920w
-                "
-                sizes="100vw"
-                alt="Hero Image"
-                loading="eager"
-                class="js-hero-image image-with-shadow absolute top-0 left-0 h-full w-full object-cover"
-            />
-        {{ /hero_image }}
+        {{ if hero_video }}
+            <video
+                class="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-hidden="true"
+            >
+                <source
+                    src="{{ hero_video:url }}"
+                    type="{{ hero_video:mime_type }}"
+                />
+            </video>
+        {{ else }}
+            {{ hero_image }}
+                <img
+                    src="{{ glide:url width='1920' quality='85' format='webp' }}"
+                    srcset="
+                        {{ glide:url width='768' quality='85' format='webp' }}   768w,
+                        {{ glide:url width='1024' quality='85' format='webp' }} 1024w,
+                        {{ glide:url width='1440' quality='85' format='webp' }} 1440w,
+                        {{ glide:url width='1920' quality='85' format='webp' }} 1920w
+                    "
+                    sizes="100vw"
+                    alt="Hero Image"
+                    loading="eager"
+                    class="js-hero-image image-with-shadow absolute inset-0 h-full w-full object-cover"
+                />
+            {{ /hero_image }}
+        {{ /if }}
+        {{ if block:overlay }}
+            <div
+                class="js-hero-overlay {{ if block:overlay_from }}{{ block:overlay_from }}{{ /if }} {{ if block:overlay_via  }}{{ block:overlay_via  }}{{ /if }} {{ if block:overlay_to   }}{{ block:overlay_to   }}{{ /if }} absolute inset-0 bg-gradient-to-t"
+            ></div>
+        {{ /if }}
         <div
             class="relative z-10 flex max-w-3xl flex-col gap-10 px-4 text-center md:flex-row"
         >
@@ -41,11 +64,5 @@
                 {{ /if }}
             </div>
         </div>
-        {{ if block:overlay }}
-            <div
-                class="js-hero-overlay {{ if block:overlay_from }}{{ block:overlay_from }}{{ /if }} {{ if block:overlay_via }}{{ block:overlay_via }}{{ /if }} {{ if block:overlay_to }}{{ block:overlay_to }}{{ /if }} absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-t"
-            ></div>
-        {{ /if }}
     </section>
 {{ /partial:page_builder/block }}
-<!-- End: /page_builder/_hero.antlers.html -->
