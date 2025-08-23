@@ -34,10 +34,10 @@ page_builder:
       -
         id: meieu602
         label: 'Contact Us'
-        link_type: entry
+        link_type: asset
         target_blank: false
-        entry: 999a4b13-877d-4f53-9c3e-488d45c68ecd
         button_type: button
+        asset: lscc_paynow_qr.png
     image: new_sanctuary_fund.jpg
     image_position: left
     image_col_span: 8
@@ -97,6 +97,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755601741
+updated_at: 1755947373
 seo_description: 'Support Living Streams Christian Church’s ministry and mission with your generous giving. Discover ways to contribute and make a greater impact today.'
 ---
