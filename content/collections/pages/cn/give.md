@@ -9,11 +9,12 @@ page_builder:
     type: hero
     enabled: true
     overlay_true: false
-    title: '歌 林 多 後 書 9:7'
+    title: '哥 林 多 後 書 9:7'
     description: '各 人 要 随 本 心 所 酌 定 的 ， 不 要 作 难 ， 不 要 勉 强 ， 因 为 捐 得 乐 意 的 人 是 神 所 喜 爱 的 。'
     overlay: true
     overlay_from: from-black/100
     overlay_to: to-transparent
+    media_type: image
   -
     id: m6rk17ol
     article:
@@ -103,6 +104,6 @@ page_builder:
     enabled: true
     background_color: '#ffffff'
 seo_description: 通过慷慨奉献支持活盛基督教会的事工和使命。探索奉献方式，今天就开始产生更大的影响。
-updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739510767
+updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
+updated_at: 1756175619
 ---
