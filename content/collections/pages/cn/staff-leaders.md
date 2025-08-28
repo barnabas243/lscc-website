@@ -1,7 +1,7 @@
 ---
 id: 75cedfc6-82ea-4e50-bfa0-94d981db755a
 origin: eed0f05c-0ae1-4085-ad80-a2f01fb5f2a5
-title: 领导团队
+title: 同工团队
 page_builder:
   -
     id: m6b693tx
@@ -36,6 +36,6 @@ page_builder:
     enabled: true
     top_padding: 30
 seo_description: 认识活盛基督教会的敬业团队和事工领导，他们将为您的灵性旅程提供指导与支持。
-updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739454174
+updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
+updated_at: 1756395232
 ---
