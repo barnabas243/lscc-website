@@ -231,8 +231,8 @@ page_builder:
     cards:
       -
         id: m6b731ei
-        title: 加入我们的使命
-        content: 成为我们旅程的一部分，一起服务并传播希望。
+        title: 同赴使命之旅
+        content: 与我们携手服侍，传播希望，共同经历这段蒙福的旅程。
         type: card
         enabled: true
         text_color: '#ffffff'
@@ -243,5 +243,5 @@ page_builder:
 seo_title: null
 seo_description: '欢迎参加联合崇拜（每月第一周日）和华语崇拜（其他周日），时间为下午2:30，地址：364A Upper Paya Lebar Rd。青少年崇拜在56 Boundary Rd，上午10:30。联系我们：84077262。'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1756394906
+updated_at: 1756394957
 ---
