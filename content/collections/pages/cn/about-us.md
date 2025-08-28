@@ -1,7 +1,7 @@
 ---
 id: 17815fbf-330a-44b6-b523-4b7482f4b360
 origin: a11ba4cb-b361-4199-b466-aa4faf506bfd
-title: 认识我们
+title: 教会简介
 page_builder:
   -
     id: m69hfxa9
@@ -65,6 +65,6 @@ page_builder:
     type: cards
     enabled: true
 seo_description: '探索活水基督教会的核心价值与精神。了解我们的使命、信仰、社区与奉献，携手同行，在信仰中成长。 欢迎加入我们的家庭。'
-updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1739452903
+updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
+updated_at: 1756395185
 ---
