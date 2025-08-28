@@ -153,18 +153,18 @@ page_builder:
     cards:
       -
         id: m6adzaen
-        image: church_staff.jpg
-        lead_text: 认识我们的团队
-        title: 工作人员与领导层
-        content: 我们的牧师和同工致力于提供灵性指导和支持，同时提供帮助您在信仰旅程中成长的资源。
+        image: church_committee_2025.jpg
+        lead_text: 认识我们的同工
+        title: 教会领袖与事工团队
+        content: 我们忠心的同工团队致力于提供属灵指引和支持，并为您准备信仰成长所需的各种资源。
         button:
           -
             id: m6adzp5s
-            label: 工作人员与领导层
+            label: 教会领袖与事工
             link_type: entry
             target_blank: false
             entry: home
-            button_type: button
+            button_type: secondary
         type: card
         enabled: true
         background_color: '#000000'
@@ -243,5 +243,5 @@ page_builder:
 seo_title: null
 seo_description: '欢迎参加联合崇拜（每月第一周日）和华语崇拜（其他周日），时间为下午2:30，地址：364A Upper Paya Lebar Rd。青少年崇拜在56 Boundary Rd，上午10:30。联系我们：84077262。'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1756391631
+updated_at: 1756392749
 ---
