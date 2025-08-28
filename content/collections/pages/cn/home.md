@@ -173,8 +173,8 @@ page_builder:
         id: m6ae09ax
         image: church_worship.jpg
         lead_text: 我们的日程
-        title: 查看最新活动
-        content: 查看本月的活动，了解正在发生的事情以及您如何参与其中。探索即将到来的事工和崇拜服务的完整列表。
+        title: 活动预告
+        content: 查看本月活动安排，了解最新动态并参与其中。探索即将开展的各项事工与崇拜的完整日程。
         button:
           -
             id: m6ae3lh2
@@ -243,5 +243,5 @@ page_builder:
 seo_title: null
 seo_description: '欢迎参加联合崇拜（每月第一周日）和华语崇拜（其他周日），时间为下午2:30，地址：364A Upper Paya Lebar Rd。青少年崇拜在56 Boundary Rd，上午10:30。联系我们：84077262。'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1756394760
+updated_at: 1756394799
 ---
