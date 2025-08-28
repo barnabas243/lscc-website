@@ -194,7 +194,7 @@ page_builder:
   -
     id: m6ae5dps
     image: alpha-course-gathering.jpg
-    lead_text: 参与其中
+    lead_text: 加入我们
     header: 'Next Steps'
     content: 'Explore the life of our church including our vibrant ministries, upcoming events, and service opportunities.'
     button:
@@ -208,14 +208,14 @@ page_builder:
     image_position: right
     type: image_and_text
     enabled: true
-    title: 下一步
+    title: 下一步规划
     text:
       -
         type: paragraph
         content:
           -
             type: text
-            text: 探索我们教会的生活，包括我们充满活力的事工、即将到来的活动和服务机会。
+            text: 深入了解教会生活：体验活力十足的各样事工，了解最新活动安排，探索参与服侍的机会。
     buttons:
       -
         id: m6lumhh7
@@ -243,5 +243,5 @@ page_builder:
 seo_title: null
 seo_description: '欢迎参加联合崇拜（每月第一周日）和华语崇拜（其他周日），时间为下午2:30，地址：364A Upper Paya Lebar Rd。青少年崇拜在56 Boundary Rd，上午10:30。联系我们：84077262。'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1756394839
+updated_at: 1756394901
 ---
