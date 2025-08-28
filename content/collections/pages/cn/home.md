@@ -39,6 +39,24 @@ page_builder:
   -
     id: mevgzm7o
     heading: 礼拜时间
+    cards:
+      -
+        id: mevh3ifz
+        title: 青年崇拜
+        time: '10:30'
+        address: '56 Boundary Road, 549977'
+        link: 'https://maps.app.goo.gl/3MWQDQ33mBTSqZbv8'
+        image: img-20250629-wa0015.jpg
+        type: card
+        enabled: true
+      -
+        id: mevh4ksk
+        title: 中文崇拜
+        time: '14:30'
+        address: 'Bethany Presbyterian Church Level 1 Grace Auditorium'
+        link: 'https://maps.app.goo.gl/cSTDJ9E2NyK4SbcKA'
+        type: card
+        enabled: true
     overlap_previous: false
     type: location_card
     enabled: true
@@ -201,5 +219,5 @@ page_builder:
 seo_title: null
 seo_description: '欢迎参加联合崇拜（每月第一周日）和华语崇拜（其他周日），时间为下午2:30，地址：364A Upper Paya Lebar Rd。青少年崇拜在56 Boundary Rd，上午10:30。联系我们：84077262。'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1756389690
+updated_at: 1756389889
 ---
