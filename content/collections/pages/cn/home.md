@@ -117,9 +117,7 @@ page_builder:
     id: m6acdjnb
     type: image_and_text
     enabled: true
-    lead_text: |-
-      每月第一个主日：联合崇拜 2.30pm
-      其他主日：青少年崇拜 10:30am | 中文崇拜 2:30pm
+    lead_text: 新朋友？
     header: 'Plan Your Visit'
     content: 'Join us in person! We’d love to host you. Find service times, directions, and everything else you need to know when visiting us for the first time by clicking the button below.'
     button:
@@ -132,14 +130,14 @@ page_builder:
         button_type: button
     image_position: left
     image: group-of-people.jpg
-    title: 规划访问
+    title: 预约来访
     text:
       -
         type: paragraph
         content:
           -
             type: text
-            text: 亲自加入我们！我们很乐意接待您。点击下面的按钮，您可以查看我们的崇拜时间、路线及其他首次访问时所需了解的信息。
+            text: 无论您是初次到访还是再次归来，我们都诚挚欢迎。这里会有友善的笑脸、贴心的指引，让您感受归家般的温暖。
     buttons:
       -
         id: m6lullkb
@@ -245,5 +243,5 @@ page_builder:
 seo_title: null
 seo_description: '欢迎参加联合崇拜（每月第一周日）和华语崇拜（其他周日），时间为下午2:30，地址：364A Upper Paya Lebar Rd。青少年崇拜在56 Boundary Rd，上午10:30。联系我们：84077262。'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1756390738
+updated_at: 1756391027
 ---
