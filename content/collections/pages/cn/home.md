@@ -10,7 +10,7 @@ page_builder:
       本周加入我们
 
       我们的教会致力于创造一个鼓励灵性成长和联系的空间。
-    hero_image: a-peak.jpg
+    hero_image: img-20250824-wa0029.jpg
     primary_button_text: 规划访问
     primary_button_url: /
     secondary_button_text: 参与其中
@@ -243,5 +243,5 @@ page_builder:
 seo_title: null
 seo_description: '欢迎参加联合崇拜（每月第一周日）和华语崇拜（其他周日），时间为下午2:30，地址：364A Upper Paya Lebar Rd。青少年崇拜在56 Boundary Rd，上午10:30。联系我们：84077262。'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1756394957
+updated_at: 1756461534
 ---
