@@ -75,8 +75,6 @@ page_builder:
     slides:
       -
         id: mevhcg6n
-        posters:
-          - img-20250823-wa0012.jpg
       -
         id: mevhc9y3
         posters:
