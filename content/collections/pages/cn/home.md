@@ -169,7 +169,6 @@ page_builder:
         text_color: '#ffffff'
       -
         id: m6ae09ax
-        image: church_worship.jpg
         lead_text: 我们的日程
         title: 活动预告
         content: 查看本月活动安排，了解最新动态并参与其中。探索即将开展的各项事工与崇拜的完整日程。

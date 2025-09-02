@@ -42,7 +42,6 @@ page_builder:
           填写下方表格开始注册!
         background_color: '#000000'
         text_color: '#ffffff'
-        image: church_worship.jpg
       -
         id: m6m8u1ez
         title: 洗礼
