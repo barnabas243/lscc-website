@@ -62,7 +62,6 @@ page_builder:
         link: 'https://maps.app.goo.gl/cSTDJ9E2NyK4SbcKA'
         type: card
         enabled: true
-        image: img-20250829-wa0001.jpg
     type: location_card
     enabled: true
     heading: 'Service Timings'
