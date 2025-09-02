@@ -37,7 +37,6 @@ page_builder:
         target_blank: false
         button_type: button
         entry: 999a4b13-877d-4f53-9c3e-488d45c68ecd
-    image: img-20250823-wa0014(1).jpg
     image_position: left
     image_col_span: 8
     text_col_span: 4

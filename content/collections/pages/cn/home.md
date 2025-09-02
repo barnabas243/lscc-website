@@ -77,8 +77,6 @@ page_builder:
         id: mevhcg6n
       -
         id: mevhc9y3
-        posters:
-          - img-20250823-wa0014(1).jpg
     header: 新闻与活动
     type: carousels
     enabled: true

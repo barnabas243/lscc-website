@@ -101,8 +101,6 @@ page_builder:
     slides:
       -
         id: meoeutw0
-        posters:
-          - img-20250823-wa0014(1).jpg
     header: 'News & Events'
   -
     id: m6afwl9k
