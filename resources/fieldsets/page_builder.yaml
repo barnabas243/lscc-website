@@ -1,106 +1,106 @@
-title: "Page builder"
+title: 'Page builder'
 fields:
-  - handle: page_builder
+  -
+    handle: page_builder
     field:
       type: replicator
       localizable: true
       hide_display: true
       collapse: true
       listable: false
-      display: "Page builder"
-      button_label: "Add block"
+      display: 'Page builder'
+      button_label: 'Add block'
       sets:
         interactive:
           display: Interactive
-          instructions: "Interactive blocks."
+          instructions: 'Interactive blocks.'
           icon: programming-script-code
           sets:
             form:
               display: Form
-              instructions: "Select and render a form."
+              instructions: 'Select and render a form.'
               icon: mail-chat-bubble-text
               fields:
-                - import: form
+                -
+                  import: form
             cards:
               display: Cards
-              instructions: "Show linkable cards with text."
+              instructions: 'Show linkable cards with text.'
               icon: link
               fields:
-                - import: cards
+                -
+                  import: cards
             hero:
               display: Hero
               icon: media-image-picture-gallery
               fields:
-                - handle: title
+                -
+                  handle: title
                   field:
                     type: text
                     display: Title
                     localizable: false
-
-                - handle: description
+                -
+                  handle: description
                   field:
                     type: textarea
                     display: Description
                     localizable: false
-
-                # choose Image or Video
-                - handle: media_type
+                -
+                  handle: media_type
                   field:
                     type: button_group
-                    display: Hero media
+                    display: 'Hero media'
                     options:
                       image: Image
                       video: Video
                     default: image
                     localizable: false
                     width: 33
-
-                # Image field (shown only if Image selected)
-                - handle: hero_image
+                -
+                  handle: hero_image
                   field:
                     type: assets
-                    display: Hero Image
+                    display: 'Hero Image'
                     max_files: 1
                     container: images
                     localizable: false
                     if:
-                      media_type: equals image
-
-                # Video field (shown only if Video selected)
-                - handle: hero_video
+                      media_type: 'equals image'
+                -
+                  handle: hero_video
                   field:
                     type: assets
-                    display: Hero Video
+                    display: 'Hero Video'
                     container: files
                     max_files: 1
                     allow_uploads: true
-                    instructions: "Upload WebM/MP4 ≤ 20 MB"
+                    instructions: 'Upload WebM/MP4 ≤ 20 MB'
                     validate:
-                      - "mimetypes:video/mp4,video/webm"
-                      - "max:20480" # 20 MB (in kilobytes)
-
-                # Optional poster image for the video (falls back to Hero Image if empty)
-                - handle: hero_poster
+                      - 'mimetypes:video/mp4,video/webm'
+                      - 'max:20480'
+                -
+                  handle: hero_poster
                   field:
                     type: assets
-                    display: Video Poster (optional)
+                    display: 'Video Poster (optional)'
                     max_files: 1
                     container: images
                     localizable: false
-                    instructions: "Shown while the video loads; if empty, the Hero Image is used."
+                    instructions: 'Shown while the video loads; if empty, the Hero Image is used.'
                     if:
-                      media_type: equals video
-
-                - import: buttons
-
-                - handle: overlay
+                      media_type: 'equals video'
+                -
+                  import: buttons
+                -
+                  handle: overlay
                   field:
                     default: true
                     type: toggle
                     display: overlay
                     localizable: false
-
-                - handle: overlay_from
+                -
+                  handle: overlay_from
                   field:
                     default: from-black/100
                     type: text
@@ -108,16 +108,16 @@ fields:
                     localizable: false
                     width: 33
                     prepend: from-
-
-                - handle: overlay_via
+                -
+                  handle: overlay_via
                   field:
                     type: text
                     display: overlay_via
                     localizable: false
                     width: 33
                     prepend: via-
-
-                - handle: overlay_to
+                -
+                  handle: overlay_to
                   field:
                     default: to-black/50
                     type: text
@@ -125,77 +125,88 @@ fields:
                     localizable: false
                     width: 33
                     prepend: to-
-
             video:
               display: Video
               icon: media-webcam-video
               fields:
-                - import: video
-                - handle: header
+                -
+                  import: video
+                -
+                  handle: header
                   field:
                     type: text
                     display: Header
                     localizable: false
-                - handle: description
+                -
+                  handle: description
                   field:
                     type: textarea
                     display: description
                     localizable: false
-                - handle: background_color
+                -
+                  handle: background_color
                   field:
                     swatches:
-                      - "#ffffff"
-                      - "#000000"
+                      - '#ffffff'
+                      - '#000000'
                     type: color
-                    display: "Background Color"
+                    display: 'Background Color'
                     localizable: false
-                - handle: text_color
+                -
+                  handle: text_color
                   field:
                     swatches:
-                      - "#ffffff"
-                      - "#000000"
+                      - '#ffffff'
+                      - '#000000'
                     type: color
-                    display: "text color"
+                    display: 'text color'
                     localizable: false
             timeline:
               display: Timeline
               fields:
-                - import: timeline
+                -
+                  import: timeline
             carousels:
               display: Carousels
               fields:
-                - import: carousel
+                -
+                  import: carousel
             calendar:
               display: Calendar
               fields:
-                - import: calendar
+                -
+                  import: calendar
             location_card:
-              display: "Location Card"
+              display: 'Location Card'
               fields:
-                - import: location_card
+                -
+                  import: location_card
         text:
           display: Text
-          instructions: "Text based blocks."
+          instructions: 'Text based blocks.'
           icon: text-formatting-initial-letter
           sets:
             article:
               display: Article
-              instructions: "Long form content, can be expanded with media like figures, video, quotes or tables."
+              instructions: 'Long form content, can be expanded with media like figures, video, quotes or tables.'
               icon: text-formatting-image-bottom
               fields:
-                - import: article
+                -
+                  import: article
             image_and_text:
-              display: "Image & Text"
+              display: 'Image & Text'
               fields:
-                - import: image_and_text
+                -
+                  import: image_and_text
         errors:
           display: Errors
           sets:
             error_404:
-              display: "Error 404"
+              display: 'Error 404'
               fields:
-                - handle: error_message
+                -
+                  handle: error_message
                   field:
                     type: textarea
-                    display: "Error Message"
+                    display: 'Error Message'
                     localizable: false
