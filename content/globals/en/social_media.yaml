@@ -1,7 +1,7 @@
 social_media:
   -
     id: m6mb3nlv
-    handle: livingstreams.christianchurch.9
+    handle: people/Living-Streams-Christian-Church/61556523677879/
     prefix: 'https://www.facebook.com/'
     type: facebook
     enabled: true
