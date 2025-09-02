@@ -15,6 +15,7 @@
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
         "league/flysystem-aws-s3-v3": "3.0",
+        "sentry/sentry-laravel": "^4.15",
         "spatie/browsershot": "^5.0",
         "spatie/image": "^3.8",
         "statamic/cms": "^5.0",
