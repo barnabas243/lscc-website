@@ -4,7 +4,9 @@ fields:
     handle: image
     field: common.image
     config:
+      container: resources
       width: 50
+      folder: images
   -
     handle: size
     field: common.size
@@ -13,8 +15,6 @@ fields:
   -
     handle: caption
     field:
-      input_type: text
       type: text
       localizable: true
-      listable: hidden
       display: Caption
