@@ -107,23 +107,25 @@ fields:
                     type: assets
                     display: Image
                     localizable: false
-  - handle: layout_section
+  -
+    handle: layout_section
     field:
       type: section
       display: Layout
-
-  - handle: overlap_previous
+      localizable: false
+  -
+    handle: overlap_previous
     field:
       type: toggle
-      display: Overlap previous section
+      display: 'Overlap previous section'
       instructions: 'Visually overlap the section above (layered card).'
-      default: false
       width: 33
-
-  - handle: overlap_amount
+      localizable: false
+  -
+    handle: overlap_amount
     field:
       type: select
-      display: Overlap amount
+      display: 'Overlap amount'
       options:
         sm: Small
         md: Medium
@@ -131,18 +133,20 @@ fields:
       default: md
       width: 33
       if:
-        overlap_previous: equals true
-
-  - handle: overlap_guards
+        overlap_previous: 'equals true'
+      localizable: false
+  -
+    handle: overlap_guards
     field:
       type: checkboxes
-      display: Prevent overlap on
+      display: 'Prevent overlap on'
       options:
-        short_height: Short-height screens
-        landscape: Wide/landscape viewports
+        short_height: 'Short-height screens'
+        landscape: 'Wide/landscape viewports'
       default:
         - short_height
         - landscape
       width: 66
       if:
-        overlap_previous: equals true
+        overlap_previous: 'equals true'
+      localizable: false
