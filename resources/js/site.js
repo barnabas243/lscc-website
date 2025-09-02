@@ -2,6 +2,9 @@
     Main JavaScript entry point for the site
 */
 
+// apply sentry conf first
+import "./sentryConf";
+
 // Alpine.js setup
 import Alpine from "alpinejs";
 import collapse from "@alpinejs/collapse";
@@ -11,7 +14,6 @@ import persist from "@alpinejs/persist";
 import precognition from "laravel-precognition-alpine";
 
 import scrollingHeader from "./scrollingHeader";
-import "./sentryConf";
 
 // GSAP plugin registration
 import gsap from "gsap";
