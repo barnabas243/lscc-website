@@ -9,7 +9,10 @@ export default defineConfig(({ command, mode }) => {
             rollupOptions: {
                 output: {
                     manualChunks: (id) => {
-                        if (id.includes("node_modules"))
+                        if (
+                            id.includes("node_modules") &&
+                            !id.includes("sentry")
+                        )
                             return id
                                 .toString()
                                 .split("node_modules/")[1]
