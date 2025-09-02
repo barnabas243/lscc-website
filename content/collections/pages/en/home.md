@@ -298,7 +298,6 @@ page_builder:
     align_content: left
   -
     id: m6ae5dps
-    image: alpha-course-gathering.jpg
     lead_text: 'Get Involved'
     header: 'Next Steps'
     content: 'Explore the life of our church including our vibrant ministries, upcoming events, and service opportunities.'

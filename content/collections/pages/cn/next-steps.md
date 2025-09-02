@@ -5,7 +5,6 @@ title: 下一步
 page_builder:
   -
     id: m6b5e4su
-    image: alpha-course-gathering.jpg
     header: 'Take Your Next Step.'
     content: 'We believe that everyone has something unique to offer. We offer a variety of ministries and programs designed to help you grow in your faith and explore new possibilities.'
     image_position: left
