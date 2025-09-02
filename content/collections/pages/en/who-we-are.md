@@ -20,7 +20,6 @@ page_builder:
     image_position: false
     type: image_and_text
     enabled: true
-    image: boy-smiling.webp
     title: 'Who We Are'
     text:
       -
