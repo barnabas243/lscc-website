@@ -52,7 +52,7 @@
                 <h2
                     id="event-date"
                     class="text-sm font-medium text-gray-600"
-                    x-text="formatDayDate(event.start)"
+                    x-text="$formatDayDate(event.start)"
                 ></h2>
                 <button
                     @click="open = false"
@@ -87,13 +87,10 @@
                 </svg>
                 <span
                     x-text="event.allDay
-                ? 'All Day'
-                : (event.extendedProps?.start_time
-                    ? formatTime(event.extendedProps.start_time) +
-                        (event.extendedProps.end_time
-                            ? ' – ' + formatTime(event.extendedProps.end_time)
-                            : '')
-                    : '')"
+        ? 'All Day'
+        : (event.extendedProps?.start_time
+            ? $formatTime(event.extendedProps.start_time) + (event.extendedProps.end_time ? ' – ' + $formatTime(event.extendedProps.end_time) : '')
+            : '')"
                 ></span>
             </div>
 
@@ -148,36 +145,5 @@
                 </template>
             </div>
         </article>
-
-        <!-- Format Helpers -->
-        <script>
-            function formatDayDate(dateStr) {
-                if (!dateStr) return "";
-                const date = new Date(dateStr);
-                return date.toLocaleDateString("en-SG", {
-                    weekday: "short",
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric",
-                });
-            }
-
-            function formatTime(timeStr) {
-                if (!timeStr || !timeStr.includes(":")) return "";
-                const [hour, minute] = timeStr.split(":").map(Number);
-                const date = new Date();
-                date.setHours(hour, minute);
-                return date.toLocaleTimeString("en-SG", {
-                    hour: "numeric",
-                    minute: "2-digit",
-                    hour12: true,
-                });
-            }
-
-            document.addEventListener("alpine:init", () => {
-                Alpine.magic("formatDayDate", () => formatDayDate);
-                Alpine.magic("formatTime", () => formatTime);
-            });
-        </script>
     </div>
 {{ /partial:page_builder/block }}
