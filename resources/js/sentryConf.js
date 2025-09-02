@@ -5,6 +5,4 @@ Sentry.init({
     integrations: [Sentry.browserTracingIntegration()],
     tracesSampleRate: import.meta.env.PROD ? 0.1 : 1.0, // lower in prod
     tracePropagationTargets: ["lscc.org.sg", /^https:\/\/lscc\.org\.sg\/api/],
-    environment: import.meta.env.PROD ? "production" : "development",
-    release: "lscc-website@" + (import.meta.env.VITE_APP_VERSION ?? "dev"),
 });
