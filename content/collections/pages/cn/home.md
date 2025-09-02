@@ -152,7 +152,6 @@ page_builder:
     cards:
       -
         id: m6adzaen
-        image: church_committee_2025.jpg
         lead_text: 认识我们的同工
         title: 教会领袖
         content: 我们忠心的同工团队致力于提供属灵指引和支持，并为您准备信仰成长所需的各种资源。

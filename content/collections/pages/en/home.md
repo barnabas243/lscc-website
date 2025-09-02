@@ -258,7 +258,6 @@ page_builder:
     cards:
       -
         id: m6adzaen
-        image: church_committee_2025.jpg
         lead_text: 'MEET OUR TEAM'
         title: 'Church Leaders & Staff'
         content: 'Our dedicated team are here to provide spiritual guidance and support - as well as resources to help you on your faith journey.'
