@@ -61,7 +61,6 @@ page_builder:
         target_blank: false
         asset: lscc_paynow_qr.png
         button_type: button
-    image: img-20250823-wa0018(1).jpg
     image_position: right
     image_col_span: 6
     text_col_span: 6

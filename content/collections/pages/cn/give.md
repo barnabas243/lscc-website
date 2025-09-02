@@ -41,7 +41,6 @@ page_builder:
           enabled: false
           values:
             type: image
-            image: img-20250823-wa0018(1).jpg
             size: md
     background_color: '#ffffff'
     type: article
@@ -49,7 +48,6 @@ page_builder:
     top_padding: 10
   -
     id: m6rt3qjt
-    image: img-20250823-wa0018(1).jpg
     image_position: right
     type: image_and_text
     enabled: true
