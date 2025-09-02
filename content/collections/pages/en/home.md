@@ -228,7 +228,6 @@ page_builder:
         entry: home
         button_type: button
     image_position: left
-    image: group-of-people.jpg
     title: 'Plan Your Visit'
     text:
       -

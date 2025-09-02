@@ -128,7 +128,6 @@ page_builder:
         entry: home
         button_type: button
     image_position: left
-    image: group-of-people.jpg
     title: 预约来访
     text:
       -
