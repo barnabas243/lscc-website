@@ -32,7 +32,6 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
             media="print"
-            onload="this.media='all'"
         />
 
         <!-- Scripts -->
@@ -41,31 +40,6 @@
             defer
             src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
         ></script>
-
-        <script>
-            (function () {
-                try {
-                    const lang = navigator.language?.toLowerCase() || "";
-
-                    console.log("Detected Language:", lang);
-                    const path = window.location.pathname;
-                    const isChinese = lang.startsWith("zh");
-                    const isInCN = path === "/cn" || path.startsWith("/cn/");
-                    const hasRedirected =
-                        sessionStorage.getItem("langRedirected");
-
-                    if (isChinese && !isInCN && !hasRedirected) {
-                        sessionStorage.setItem("langRedirected", "true");
-                        const query = window.location.search || "";
-                        const hash = window.location.hash || "";
-
-                        window.location.replace("/cn" + query + hash);
-                    }
-                } catch (e) {
-                    console.error("Language redirect failed:", e);
-                }
-            })();
-        </script>
 
         <!-- SEO and Site Tools -->
         {{ stack:head }}
