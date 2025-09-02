@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1756807582
+updated_at: 1756829153
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -43,6 +43,7 @@ page_builder:
     overlay_to: to-black/50
     gradient_direction: b
     media_type: image
+    hero_image: images/hero.webp
   -
     id: mdt2q5n4
     cards:
@@ -54,6 +55,7 @@ page_builder:
         link: 'https://maps.app.goo.gl/3MWQDQ33mBTSqZbv8'
         type: card
         enabled: true
+        image: images/impact_cg.jpg
       -
         id: mdt2trkd
         title: 'Chinese Service'
@@ -242,6 +244,7 @@ page_builder:
     lead_text: 'New here?'
     image_col_span: 6
     text_col_span: 6
+    image: images/group-of-people.jpg
   -
     id: magbqzo0
     title: 'Upcoming Events 2025'
@@ -267,6 +270,7 @@ page_builder:
         enabled: true
         background_color: '#F4EBE3'
         text_color: '#000000'
+        image: images/church_committee_2025.jpg
       -
         id: m6ae09ax
         lead_text: 'OUR CALENDAR'
@@ -284,7 +288,7 @@ page_builder:
         enabled: true
         background_color: '#F4EBE3'
         text_color: '#000000'
-        image: youth_outing.jpg
+        image: images/youth_outing.jpg
     type: cards
     enabled: true
     background_color: '#FEFBF7'
@@ -323,6 +327,7 @@ page_builder:
         button_type: secondary
     image_col_span: 6
     text_col_span: 6
+    image: images/alpha-course-gathering.jpg
   -
     id: m6b72y1e
     cards:
