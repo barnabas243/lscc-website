@@ -2,6 +2,9 @@
     Main JavaScript entry point for the site
 */
 
+// apply sentry conf first
+import "./sentryConf";
+
 // Alpine.js setup
 import Alpine from "alpinejs";
 import collapse from "@alpinejs/collapse";
