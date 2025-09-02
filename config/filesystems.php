@@ -39,7 +39,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -78,6 +78,17 @@ return [
             'root' => public_path('social_images'),
             'url' => '/social_images',
             'visibility' => 'public',
+        ],
+
+        's3_resources' => [
+            'driver' => 's3',
+            'key'    => env('AWS_ACCESS_KEY_ID'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            'region' => env('AWS_DEFAULT_REGION', 'ap-southeast-1'),
+            'bucket' => env('AWS_BUCKET_RESOURCES', 'lscc-resources-dev'), // <— MUST resolve to a string
+            'url'    => env('AWS_CLOUDFRONT_RESOURCES_URL', 'https://resources.lscc.org.sg'),
+            'visibility' => 'private',
+            'throw'  => false,
         ],
     ],
 
