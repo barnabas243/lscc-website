@@ -11,6 +11,7 @@ import persist from "@alpinejs/persist";
 import precognition from "laravel-precognition-alpine";
 
 import scrollingHeader from "./scrollingHeader";
+import "./sentryConf";
 
 // GSAP plugin registration
 import gsap from "gsap";
