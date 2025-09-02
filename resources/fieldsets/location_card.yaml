@@ -102,8 +102,8 @@ fields:
                   handle: image
                   field:
                     max_files: 1
-                    container: images
-                    folder: /
+                    container: resources
+                    folder: images
                     type: assets
                     display: Image
                     localizable: false
