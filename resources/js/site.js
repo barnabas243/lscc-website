@@ -30,10 +30,11 @@ import "./animations/buttons";
 import "./animations/imageText";
 import "./animations/timeline";
 import "./animations/carousel";
-import "./calendar";
+import { registerCalendarMagics } from "./calendar";
 
 // Alpine init
 Alpine.data("scrollingHeader", scrollingHeader);
+registerCalendarMagics(Alpine);
 
 window.Alpine = Alpine;
 Alpine.plugin([collapse, focus, morph, persist, precognition]);
