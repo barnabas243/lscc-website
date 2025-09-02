@@ -2,8 +2,8 @@
     Main JavaScript entry point for the site
 */
 
-// Alpine.js setup
-import Alpine from "alpinejs";
+// Alpine.js setup [https://alpinejs.dev/advanced/csp]
+import Alpine from "@alpinejs/csp";
 import collapse from "@alpinejs/collapse";
 import focus from "@alpinejs/focus";
 import morph from "@alpinejs/morph";
