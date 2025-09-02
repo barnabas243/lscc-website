@@ -63,22 +63,24 @@ fields:
                     type: assets
                     display: 'Hero Image'
                     max_files: 1
-                    container: images
+                    container: resources
                     localizable: false
                     if:
                       media_type: 'equals image'
+                    folder: images
                 -
                   handle: hero_video
                   field:
                     type: assets
                     display: 'Hero Video'
-                    container: files
+                    container: resources
                     max_files: 1
-                    allow_uploads: true
                     instructions: 'Upload WebM/MP4 ≤ 20 MB'
                     validate:
                       - 'mimetypes:video/mp4,video/webm'
                       - 'max:20480'
+                    localizable: false
+                    folder: /
                 -
                   handle: hero_poster
                   field:
