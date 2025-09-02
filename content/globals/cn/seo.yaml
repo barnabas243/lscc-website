@@ -6,7 +6,6 @@ site_name: 活盛基督教会
 hreflang_auto: true
 json_ld_type: organization
 organization_name: 活盛基督教会
-organization_logo: lscc_logo.png
 breadcrumbs: true
 use_social_image_generation: false
 use_sitemap: true

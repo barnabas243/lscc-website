@@ -6,7 +6,6 @@ site_name: 'Living Streams Christian Church'
 hreflang_auto: true
 json_ld_type: organization
 organization_name: 'Living Streams Christian Church'
-organization_logo: lscc_logo.png
 breadcrumbs: true
 use_social_image_generation: false
 og_image: lscc_logo.png
