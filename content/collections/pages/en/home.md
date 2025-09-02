@@ -54,7 +54,6 @@ page_builder:
         link: 'https://maps.app.goo.gl/3MWQDQ33mBTSqZbv8'
         type: card
         enabled: true
-        image: img-20250629-wa0015.jpg
       -
         id: mdt2trkd
         title: 'Chinese Service'

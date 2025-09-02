@@ -46,7 +46,6 @@ page_builder:
         time: '10:30'
         address: '56 Boundary Road, 549977'
         link: 'https://maps.app.goo.gl/3MWQDQ33mBTSqZbv8'
-        image: img-20250629-wa0015.jpg
         type: card
         enabled: true
       -
