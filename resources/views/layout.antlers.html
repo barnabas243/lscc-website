@@ -23,24 +23,6 @@
 
         <!-- Styles -->
         {{ vite src="resources/css/site.css|resources/js/site.js" }}
-        <link
-            rel="preload"
-            as="style"
-            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-            media="print"
-        />
-
-        <!-- Scripts -->
-
-        <script
-            defer
-            src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-        ></script>
-
         <!-- SEO and Site Tools -->
         {{ stack:head }}
         {{ partial:statamic-peak-seo::snippets/seo }}
