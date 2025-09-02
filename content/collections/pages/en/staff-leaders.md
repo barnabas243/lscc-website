@@ -47,7 +47,6 @@ page_builder:
           id: m6p4ppz4
           values:
             type: image
-            image: church_leadership.jpg
             size: xl
     background_color: '#ffffff'
     type: article
