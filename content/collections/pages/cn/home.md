@@ -10,7 +10,6 @@ page_builder:
       本周加入我们
 
       我们的教会致力于创造一个鼓励灵性成长和联系的空间。
-    hero_image: img-20250824-wa0029.jpg
     primary_button_text: 规划访问
     primary_button_url: /
     secondary_button_text: 参与其中
