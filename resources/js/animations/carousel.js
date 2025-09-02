@@ -1,3 +1,8 @@
+import Swiper from "swiper/bundle";
+
+// import styles bundle
+import "swiper/css/bundle";
+
 document.addEventListener("DOMContentLoaded", () => {
     const swiperContainer = document.querySelector(".carousel-block .swiper");
     if (!(swiperContainer instanceof HTMLElement)) return;
