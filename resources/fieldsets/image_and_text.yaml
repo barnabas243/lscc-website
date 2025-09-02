@@ -35,9 +35,11 @@ fields:
     handle: image
     field: common.image
     config:
+      container: resources
       width: 50
       validate:
         - required
+      folder: images
   -
     handle: image_position
     field:
