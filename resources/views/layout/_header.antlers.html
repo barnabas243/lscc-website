@@ -1,4 +1,4 @@
-<div x-data="scrollingHeader()" x-init="init()" x-ref="wrapper">
+<div x-data="scrollingHeader" x-ref="wrapper">
     <header
         x-ref="header"
         x-bind:style="`top: ${top}px`"
@@ -10,62 +10,5 @@
         </div>
     </header>
 
-    <!-- Spacer inside the same x-data scope -->
     <div x-ref="spacer"></div>
 </div>
-
-<script>
-    document.addEventListener("alpine:init", () => {
-        Alpine.data("scrollingHeader", () => ({
-            top: 0,
-            maxTop: 0,
-            lastScrollY: 0,
-            headerEl: null,
-            spacerEl: null,
-
-            init() {
-                // Delay to wait for DOM rendering (e.g. Alpine partials)
-                this.$nextTick(() => {
-                    this.headerEl = this.$refs.header;
-                    this.spacerEl = this.$refs.spacer;
-
-                    this.updateHeaderHeight();
-                    this.lastScrollY = window.scrollY;
-
-                    window.addEventListener("scroll", () => {
-                        requestAnimationFrame(() => this.handleScroll());
-                    });
-
-                    window.addEventListener("resize", () => {
-                        this.updateHeaderHeight();
-                    });
-                });
-            },
-
-            updateHeaderHeight() {
-                const height = this.headerEl?.offsetHeight || 0;
-                this.maxTop = -height;
-                if (this.spacerEl) {
-                    this.spacerEl.style.height = `${height}px`;
-                }
-            },
-
-            handleScroll() {
-                const current = window.scrollY;
-                const delta = current - this.lastScrollY;
-
-                if (current <= 0) {
-                    this.top = 0;
-                } else if (delta > 0) {
-                    // scrolling down
-                    this.top = Math.max(this.top - delta, this.maxTop);
-                } else if (delta < 0) {
-                    // scrolling up
-                    this.top = Math.min(this.top - delta, 0);
-                }
-
-                this.lastScrollY = current;
-            },
-        }));
-    });
-</script>

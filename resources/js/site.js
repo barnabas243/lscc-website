@@ -10,6 +10,8 @@ import morph from "@alpinejs/morph";
 import persist from "@alpinejs/persist";
 import precognition from "laravel-precognition-alpine";
 
+import scrollingHeader from "./scrollingHeader";
+
 // GSAP plugin registration
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -28,6 +30,8 @@ import "./animations/carousel";
 import "./calendar";
 
 // Alpine init
+Alpine.data("scrollingHeader", scrollingHeader);
+
 window.Alpine = Alpine;
 Alpine.plugin([collapse, focus, morph, persist, precognition]);
 Alpine.start();
