@@ -43,7 +43,6 @@ page_builder:
     overlay_to: to-black/50
     gradient_direction: b
     media_type: image
-    hero_image: hero.webp
   -
     id: mdt2q5n4
     cards:
