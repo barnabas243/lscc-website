@@ -74,3 +74,30 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.error("❌ Failed to load or render calendar:", error);
     }
 });
+
+export function formatDayDate(dateStr) {
+    if (!dateStr) return "";
+    const date = new Date(dateStr);
+    return date.toLocaleDateString("en-SG", {
+        weekday: "short",
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+    });
+}
+
+export function formatTime(timeStr) {
+    if (!timeStr || !timeStr.includes(":")) return "";
+    const [hour, minute] = timeStr.split(":").map(Number);
+    const d = new Date();
+    d.setHours(hour, minute);
+    return d.toLocaleTimeString("en-SG", {
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+    });
+}
+export function registerCalendarMagics(Alpine) {
+    Alpine.magic("formatDayDate", () => formatDayDate);
+    Alpine.magic("formatTime", () => formatTime);
+}
