@@ -5,7 +5,6 @@ title: 奉献
 page_builder:
   -
     id: m6rhk2kd
-    hero_image: flower_bg.svg
     type: hero
     enabled: true
     overlay_true: false
