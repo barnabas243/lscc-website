@@ -20,6 +20,7 @@ page_builder:
             text: 'We believe that everyone has something unique to offer. We offer a variety of ministries and programs designed to help you grow in your faith and explore new possibilities.'
     image_col_span: 6
     text_col_span: 6
+    image: images/church_worship.jpg
   -
     id: m6m8t3nf
     cards:
@@ -59,6 +60,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1753450153
+updated_at: 1756910182
 seo_description: 'We believe everyone has something unique to offer. Explore our ministries and programs to grow in faith and discover new possibilities with us.'
 ---
