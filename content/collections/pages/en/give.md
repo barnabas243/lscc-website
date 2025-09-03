@@ -65,8 +65,8 @@ page_builder:
         asset: lscc_paynow_qr.png
         button_type: secondary
     image_position: right
-    image_col_span: 7
-    text_col_span: 5
+    image_col_span: 6
+    text_col_span: 6
     type: image_and_text
     enabled: true
     image: images/img-20250823-wa0018(1).jpg
@@ -98,6 +98,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1756910391
+updated_at: 1756910401
 seo_description: 'Support Living Streams Christian Church’s ministry and mission with your generous giving. Discover ways to contribute and make a greater impact today.'
 ---
