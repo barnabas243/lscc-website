@@ -7,8 +7,8 @@ seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
-updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755972959
+updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
+updated_at: 1756909754
 page_builder:
   -
     id: m69hfxa9
@@ -38,6 +38,7 @@ page_builder:
             text: 'We are a welcoming and open church that encourages people to come and share in the love of Jesus. Come join our community and grow in your faith alongside others who have the same beliefs and values.'
     image_col_span: 6
     text_col_span: 6
+    image: images/boy-smiling.webp
   -
     id: m6mc1krh
     cards:
