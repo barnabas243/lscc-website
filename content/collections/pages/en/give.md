@@ -13,6 +13,8 @@ page_builder:
     overlay: true
     overlay_from: from-black/100
     overlay_to: to-transparent
+    media_type: image
+    hero_image: images/flower_bg.svg
   -
     id: meiensrr
     lead_text: '🏡 New Sanctuary Fund'
@@ -42,6 +44,7 @@ page_builder:
     text_col_span: 4
     type: image_and_text
     enabled: true
+    image: images/img-20250823-wa0014(1).jpg
   -
     id: meiehoc4
     lead_text: '🌱 Weekly Offering'
@@ -66,6 +69,7 @@ page_builder:
     text_col_span: 6
     type: image_and_text
     enabled: true
+    image: images/img-20250823-wa0018(1).jpg
   -
     id: m6rsyjqp
     cards:
@@ -94,6 +98,6 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1755961574
+updated_at: 1756910257
 seo_description: 'Support Living Streams Christian Church’s ministry and mission with your generous giving. Discover ways to contribute and make a greater impact today.'
 ---
