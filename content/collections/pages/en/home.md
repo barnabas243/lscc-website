@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 5b8d8495-b220-494d-84a8-0c533e96f3de
-updated_at: 1768198937
+updated_at: 1768200462
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -50,7 +50,7 @@ page_builder:
       -
         id: mdt2q6j0
         title: 'Youth English Service (YES)'
-        time: '11:00'
+        time: '11:30'
         address: '12 Arumugam Road LTC Building B #03-10/10A S(409958)'
         link: 'https://maps.app.goo.gl/HmX5U7jSbdA4MNAHA'
         type: card
