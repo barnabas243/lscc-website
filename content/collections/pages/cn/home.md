@@ -35,24 +35,25 @@ page_builder:
         entry: ebca0eb7-1292-4d59-8bfb-cb51dc211062
         button_type: secondary
     media_type: image
+    hero_image: images/hero.webp
   -
     id: mevgzm7o
     heading: 礼拜时间
     cards:
       -
         id: mevh3ifz
-        title: 青年崇拜
-        time: '10:30'
-        address: '56 Boundary Road, 549977'
-        link: 'https://maps.app.goo.gl/3MWQDQ33mBTSqZbv8'
+        title: 青年英语崇拜
+        time: '11:30'
+        address: '12 Arumugam Road LTC Building B #03-10/10A S(409958)'
+        link: 'https://maps.app.goo.gl/HmX5U7jSbdA4MNAHA'
         type: card
         enabled: true
       -
         id: mevh4ksk
         title: 中文崇拜
-        time: '14:30'
-        address: 'Bethany Presbyterian Church Level 1 Grace Auditorium'
-        link: 'https://maps.app.goo.gl/cSTDJ9E2NyK4SbcKA'
+        time: '09:30'
+        address: '12 Arumugam Road LTC Building B #03-10/10A S(409958)'
+        link: 'https://maps.app.goo.gl/HmX5U7jSbdA4MNAHA'
         type: card
         enabled: true
     overlap_previous: true
@@ -62,13 +63,6 @@ page_builder:
     overlap_guards:
       - short_height
       - landscape
-    note_body:
-      -
-        type: paragraph
-        content:
-          -
-            type: text
-            text: 注：每月第一个主日举行联合礼拜。
   -
     id: mevhc90p
     slides:
@@ -140,6 +134,7 @@ page_builder:
         button_type: secondary
     image_col_span: 6
     text_col_span: 6
+    image: images/group-of-people.jpg
   -
     id: m6adz9gv
     cards:
@@ -215,6 +210,7 @@ page_builder:
         button_type: secondary
     image_col_span: 6
     text_col_span: 6
+    image: images/youth_outing.jpg
   -
     id: m6b72y1e
     cards:
@@ -231,6 +227,6 @@ page_builder:
     align_content: left
 seo_title: null
 seo_description: '欢迎参加联合崇拜（每月第一周日）和华语崇拜（其他周日），时间为下午2:30，地址：364A Upper Paya Lebar Rd。青少年崇拜在56 Boundary Rd，上午10:30。联系我们：84077262。'
-updated_by: 074227f8-51f1-45d3-802e-77cf2a53c1e2
-updated_at: 1756461534
+updated_by: 5b8d8495-b220-494d-84a8-0c533e96f3de
+updated_at: 1768200364
 ---
