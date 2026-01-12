@@ -2,8 +2,8 @@
 id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
-updated_by: 2f5e11aa-82c6-4506-8d4f-5eb60ac030df
-updated_at: 1757096840
+updated_by: 5b8d8495-b220-494d-84a8-0c533e96f3de
+updated_at: 1768198937
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -49,47 +49,25 @@ page_builder:
     cards:
       -
         id: mdt2q6j0
-        title: 'Youth Service'
-        time: '10:30'
-        address: '56 Boundary Road, 549977'
-        link: 'https://maps.app.goo.gl/3MWQDQ33mBTSqZbv8'
+        title: 'Youth English Service (YES)'
+        time: '11:00'
+        address: '12 Arumugam Road LTC Building B #03-10/10A S(409958)'
+        link: 'https://maps.app.goo.gl/HmX5U7jSbdA4MNAHA'
         type: card
         enabled: true
         image: images/impact_cg.jpg
       -
         id: mdt2trkd
         title: 'Chinese Service'
-        time: '14:30'
-        address: 'Bethany Presbyterian Church Level 1 Grace Auditorium'
-        link: 'https://maps.app.goo.gl/cSTDJ9E2NyK4SbcKA'
+        time: '09:30'
+        address: '12 Arumugam Road LTC Building B #03-10/10A S(409958)'
+        link: 'https://maps.app.goo.gl/HmX5U7jSbdA4MNAHA'
         type: card
         enabled: true
     type: location_card
     enabled: true
     heading: 'Service Timings'
     note_icon: alert
-    note_body:
-      -
-        type: paragraph
-        content:
-          -
-            type: text
-            marks:
-              -
-                type: bold
-            text: 'Note: '
-          -
-            type: text
-            text: 'Combined Worship Service happens on '
-          -
-            type: text
-            marks:
-              -
-                type: underline
-            text: 'every 1st Sunday'
-          -
-            type: text
-            text: ' of the month.'
     overlap_previous: true
     overlap_amount: lg
     overlap_guards:
