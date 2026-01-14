@@ -46,8 +46,8 @@ return [
 
     // Footer
     'uen' => 'UEN: S90SS0084L',
-    'meeting_first_sunday' => '1st Sunday: Combined 2:30pm',
-    'meeting_other_sundays' => 'Other Sundays: Youth 10:30am | Chinese 2:30pm',
+    'meeting_first_sunday' => 'Chinese Service: 9:30am',
+    'meeting_other_sundays' => 'Youth Service: 11:30am',
     'contact_message' => 'No matter the situation, you can always feel free to reach out, even if it’s just to say hi 👋',
     'office_hours' => 'Office Hours',
     'office_hours_weekdays' => 'Tue to Fri: 9:00am - 5:00pm',
