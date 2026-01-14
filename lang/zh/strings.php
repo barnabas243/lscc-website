@@ -46,8 +46,8 @@ return [
 
     // Footer
     'uen' => '统一企业编号: S90SS0084L',
-    'meeting_first_sunday' => '每月第一主日: 联合崇拜 2:30pm',
-    'meeting_other_sundays' => '其他主日: 青少年 10:30am | 中文 2:30pm',
+    'meeting_first_sunday' => '中文崇拜: 9:30am',
+    'meeting_other_sundays' => '青少年崇拜: 11:30am',
     'contact_message' => '无论情况如何, 您都可以随时联系我们, 即使只是打个招呼 👋',
     'office_hours' => '办公时间',
     'office_hours_weekdays' => '周二至周五: 9:00am - 5:00pm',
