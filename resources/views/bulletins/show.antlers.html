@@ -27,7 +27,15 @@
                     {{ if pdf_file }}
                         <button
                             type="button"
-                            onclick="downloadAll()"
+                            data-download-all
+                            data-files='[
+                                {{ pdf_file }}
+                                    {
+                                        "url": "/resources/{{ path }}",
+                                        "name": {{ filename | to_json }}
+                                    }{{ unless last }},{{ /unless }}
+{{ /pdf_file }}
+                            ]'
                             class="inline-flex items-center gap-2 rounded-md bg-amber-500 px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-amber-400"
                         >
                             <svg
@@ -53,36 +61,6 @@
                             </svg>
                             Download all
                         </button>
-
-                        <script>
-                        function downloadFile(url, name) {
-                            const a = document.createElement('a');
-                            a.href = url;
-                            a.download = name || '';
-                            a.rel = 'noopener';
-                            a.style.display = 'none';
-                            document.body.appendChild(a);
-                            a.click();
-                            a.remove();
-                        }
-
-                        function downloadAll() {
-                            const files = [
-                                {{ pdf_file }}
-                                    {
-                                        url: "/resources/{{ path }}",
-                                        name: "{{ filename }}"
-                                    }{{ unless last }},{{ /unless }}
-                                {{ /pdf_file }}
-                            ];
-
-                            files.forEach((file, i) => {
-                                setTimeout(() => {
-                                    downloadFile(file.url, file.name);
-                                }, i * 1200);
-                            });
-                        }
-                    </script>
                     {{ /if }}
                     <a
                         href="#viewer"
