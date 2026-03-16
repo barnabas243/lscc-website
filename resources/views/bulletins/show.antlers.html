@@ -59,7 +59,7 @@
                                 const files = [
                                     {{ pdf_file }}
                                         {
-                                            url: "/{{ path }}",
+                                            url: "{{ permalink }}",
                                             name: '{{ filename }}'
                                         },
                                     {{ /pdf_file }}
@@ -103,7 +103,7 @@
                 >
                     {{ pdf_file }}
                         <a
-                            href="/{{ path }}"
+                            href="{{ permalink }}"
                             download
                             class="js-animated-button flex items-center gap-3 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2.5 transition-colors hover:border-neutral-300"
                         >
