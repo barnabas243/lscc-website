@@ -1,5 +1,16 @@
 title: Bulletins
-route: /bulletins/{slug}
-sort_field: date
-sort_direction: desc
-dated: true
+sites:
+  - en
+  - cn
+propagate: true
+template: default
+layout: layout
+revisions: false
+route: '/bulletins/{slug}'
+date: true
+sort_dir: asc
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
