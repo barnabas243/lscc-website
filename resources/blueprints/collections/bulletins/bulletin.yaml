@@ -25,13 +25,14 @@ tabs:
           - handle: pdf_file
             field:
               type: assets
-              display: "PDF File"
+              display: Bulletin Files
               container: resources
               accepted_mimetypes:
                 - application/pdf
-              max_files: 1
-              instructions: "Upload the bulletin PDF here."
-              localizable: false
+                - image/jpeg
+                - image/png
+                - image/webp
+              instructions: Upload PDFs or images for this bulletin. Multiple files allowed.
           - handle: content
             field:
               type: bard
