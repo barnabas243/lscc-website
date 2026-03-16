@@ -3,14 +3,13 @@ sites:
   - en
   - cn
 propagate: true
-template: default
+template: bulletins/show
 layout: layout
 revisions: false
-route: '/bulletins/{slug}'
+route: "/bulletins/{slug}"
 date: true
 sort_dir: asc
 preview_targets:
-  -
-    label: Entry
-    url: '{permalink}'
+  - label: Entry
+    url: "{permalink}"
     refresh: true

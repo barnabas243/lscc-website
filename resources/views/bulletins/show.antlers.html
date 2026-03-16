@@ -1,0 +1,69 @@
+<!-- /bulletins/show.antlers.html -->
+<main id="content">
+    <article class="mx-auto max-w-3xl px-4 py-12 md:px-8 md:py-16">
+        <a
+            href="/bulletins"
+            class="mb-10 inline-flex items-center gap-1 text-xs font-medium tracking-widest text-neutral-400 uppercase transition-colors hover:text-neutral-600"
+        >
+            ← Back to bulletins
+        </a>
+
+        <header class="mb-8 border-b border-neutral-200 pb-8">
+            <p
+                class="mb-3 text-xs font-medium tracking-widest text-neutral-400 uppercase"
+            >
+                {{ date format="d F Y" }}
+            </p>
+            <h1
+                class="font-serif text-3xl leading-snug font-normal md:text-4xl"
+            >
+                {{ title }}
+            </h1>
+        </header>
+        {{ if pdf_file }}
+            <div class="mb-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                    href="{{ pdf_file }}"
+                    target="_blank"
+                    rel="noopener"
+                    class="inline-flex items-center gap-2 text-sm font-medium text-amber-500 transition-colors hover:text-amber-300"
+                >
+                    <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none">
+                        <rect
+                            x="2"
+                            y="1"
+                            width="10"
+                            height="13"
+                            rx="1.5"
+                            stroke="currentColor"
+                            stroke-width="1.2"
+                        />
+                        <path
+                            d="M5 5h6M5 8h6M5 11h3"
+                            stroke="currentColor"
+                            stroke-width="1.2"
+                            stroke-linecap="round"
+                        />
+                    </svg>
+                    Download PDF
+                </a>
+            </div>
+
+            <div
+                class="mb-8 overflow-hidden rounded-lg border border-neutral-200"
+            >
+                <iframe
+                    src="{{ pdf_file }}"
+                    class="w-full"
+                    style="height: 70vh; min-height: 500px"
+                    title="{{ title }}"
+                ></iframe>
+            </div>
+        {{ /if }}
+        {{ if content }}
+            <div class="prose prose-neutral max-w-none">
+                {{ content }}
+            </div>
+        {{ /if }}
+    </article>
+</main>

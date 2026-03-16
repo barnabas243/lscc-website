@@ -16,3 +16,8 @@ fields:
       display: Embed PDF on listing?
       default: false
       instructions: If on, embeds the PDF inline instead of just a download link.
+  - handle: show_all_link
+    field:
+      type: toggle
+      display: Show "older bulletins" link?
+      default: true

@@ -1,0 +1,23 @@
+{{# @name Event Gallery @desc Displays a grid of event photo galleries. #}}
+<!-- /page_builder/event_gallery.antlers.html -->
+{{ partial:page_builder/block }}
+    <section class="event-galleries">
+        {{ if block_title }}
+            <h2>{{ block_title }}</h2>
+        {{ /if }}
+        <div class="gallery-grid">
+            {{ if block.display_mode == 'pick' }}
+                {{# Staff hand-picked specific events #}}
+                {{ block.selected_events }}
+                    {{ partial:page_builder/partials/gallery_card }}
+                {{ /block.selected_events }}
+            {{ else }}
+                {{# Show N most recent events #}}
+                {{ collection:event_galleries sort="date:desc" :limit="block.count" }}
+                    {{ partial:page_builder/partials/gallery_card }}
+                {{ /collection:event_galleries }}
+            {{ /if }}
+        </div>
+    </section>
+{{ /partial:page_builder/block }}
+<!-- End: /page_builder/event_gallery.antlers.html -->
