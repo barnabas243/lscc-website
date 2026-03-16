@@ -3,45 +3,40 @@ tabs:
   main:
     display: Main
     sections:
-      -
-        fields:
-          -
-            handle: title
+      - fields:
+          - handle: title
             field:
               type: text
               required: true
               display: Title
-              instructions: 'e.g. Sunday Bulletin – 16 March 2026'
+              instructions: "e.g. Sunday Bulletin – 16 March 2026"
               localizable: false
               validate:
                 - required
-          -
-            handle: date
+          - handle: date
             field:
               type: date
               required: true
               default: now
-              display: 'Bulletin Date'
+              display: "Bulletin Date"
               localizable: false
               validate:
                 - required
-          -
-            handle: pdf_file
+          - handle: pdf_file
             field:
               type: assets
-              display: 'PDF File'
-              container: assets
+              display: "PDF File"
+              container: resources
               accepted_mimetypes:
                 - application/pdf
               max_files: 1
-              instructions: 'Upload the bulletin PDF here.'
+              instructions: "Upload the bulletin PDF here."
               localizable: false
-          -
-            handle: content
+          - handle: content
             field:
               type: bard
               display: Content
-              instructions: 'Optionally add announcements or text content directly.'
+              instructions: "Optionally add announcements or text content directly."
               buttons:
                 - bold
                 - italic
@@ -53,11 +48,9 @@ tabs:
   sidebar:
     display: Sidebar
     sections:
-      -
-        fields:
-          -
-            handle: slug
+      - fields:
+          - handle: slug
             field:
               type: slug
               localizable: true
-              validate: 'max:200'
+              validate: "max:200"
