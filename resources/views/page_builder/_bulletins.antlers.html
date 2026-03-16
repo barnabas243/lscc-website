@@ -36,10 +36,17 @@
 
                     <div class="flex shrink-0 items-center gap-3">
                         {{ if pdf_file }}
-                            <a
-                                href="{{ pdf_file }}"
-                                target="_blank"
-                                rel="noopener"
+                            <button
+                                type="button"
+                                data-download-all
+                                data-files='[
+                                    {{ pdf_file }}
+                                        {
+                                            "url": "/resources/{{ path }}",
+                                            "name": {{ filename | to_json }}
+                                        }{{ unless last }},{{ /unless }}
+{{ /pdf_file }}
+                                ]'
                                 class="inline-flex items-center gap-1 text-xs font-medium text-amber-500 transition-colors hover:text-amber-300"
                             >
                                 <svg
@@ -63,8 +70,13 @@
                                         stroke-linecap="round"
                                     />
                                 </svg>
-                                PDF
-                            </a>
+                                {{ if pdf_file | count > 1 }}
+                                    {{ pdf_file | count }}
+                                    files
+                                {{ else }}
+                                    PDF
+                                {{ /if }}
+                            </button>
                         {{ /if }}
                         {{ if content }}
                             <a

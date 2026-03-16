@@ -2,9 +2,7 @@
 <main id="content">
     <div class="mx-auto max-w-4xl px-4 py-12 md:px-8 md:py-16">
         <header class="mb-12 text-center">
-            <h1 class="font-serif text-3xl font-normal md:text-4xl">
-                {{ title }}
-            </h1>
+            {{ partial:typography/h1 :content="title" class="text-center" }}
         </header>
 
         <div class="divide-y divide-neutral-200">
@@ -27,11 +25,18 @@
 
                     <div class="flex shrink-0 items-center gap-3">
                         {{ if pdf_file }}
-                            <a
-                                href="{{ pdf_file }}"
-                                target="_blank"
-                                rel="noopener"
-                                class="inline-flex items-center gap-1 text-xs font-medium text-amber-500 transition-colors hover:text-amber-300"
+                            <button
+                                type="button"
+                                data-download-all
+                                data-files='[
+                                    {{ pdf_file }}
+                                        {
+                                            "url": "/resources/{{ path }}",
+                                            "name": {{ filename | to_json }}
+                                        }{{ unless last }},{{ /unless }}
+{{ /pdf_file }}
+                                ]'
+                                class="inline-flex items-center gap-1.5 text-xs font-medium text-amber-500 transition-colors hover:text-amber-300"
                             >
                                 <svg
                                     class="h-3 w-3"
@@ -54,8 +59,13 @@
                                         stroke-linecap="round"
                                     />
                                 </svg>
-                                PDF
-                            </a>
+                                {{ if pdf_file | count > 1 }}
+                                    {{ pdf_file | count }}
+                                    files
+                                {{ else }}
+                                    PDF
+                                {{ /if }}
+                            </button>
                         {{ /if }}
                         {{ if content }}
                             <a
