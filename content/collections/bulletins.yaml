@@ -1,0 +1,5 @@
+title: Bulletins
+route: /bulletins/{slug}
+sort_field: date
+sort_direction: desc
+dated: true
