@@ -55,26 +55,32 @@
                         </button>
 
                         <script>
-                            function downloadAll() {
+                            async function downloadFile(url, filename) {
+                                try {
+                                    const response = await fetch(url, { mode: 'cors' });
+                                    const blob = await response.blob();
+                                    const blobUrl = URL.createObjectURL(blob);
+                                    const a = document.createElement('a');
+                                    a.href = blobUrl;
+                                    a.download = filename;
+                                    document.body.appendChild(a);
+                                    a.click();
+                                    document.body.removeChild(a);
+                                    URL.revokeObjectURL(blobUrl);
+                                } catch (e) {
+                                    window.open(url, '_blank');
+                                }
+                            }
+
+                            async function downloadAll() {
                                 const files = [
                                     {{ pdf_file }}
-                                        {
-                                            url: "{{ permalink }}",
-                                            name: '{{ filename }}'
-                                        },
+                                        { url: '{{ permalink }}', name: '{{ filename }}' },
                                     {{ /pdf_file }}
                                 ];
-
-                                files.forEach((file, i) => {
-                                    setTimeout(() => {
-                                        const a = document.createElement('a');
-                                        a.href = file.url;
-                                        a.setAttribute('download', file.name);
-                                        document.body.appendChild(a);
-                                        a.click();
-                                        document.body.removeChild(a);
-                                    }, i * 500);
-                                });
+                                for (let i = 0; i < files.length; i++) {
+                                    await downloadFile(files[i].url, files[i].name);
+                                }
                             }
                         </script>
                     {{ /if }}
@@ -97,15 +103,14 @@
                 >
                     Attached files
                 </p>
-
                 <div
                     class="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3"
                 >
                     {{ pdf_file }}
-                        <a
-                            href="{{ permalink }}"
-                            download
-                            class="js-animated-button flex items-center gap-3 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2.5 transition-colors hover:border-neutral-300"
+                        <button
+                            type="button"
+                            onclick="downloadFile('{{ permalink }}', '{{ filename }}')"
+                            class="flex w-full items-center gap-3 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2.5 text-left transition-colors hover:border-neutral-300"
                         >
                             {{ if extension == 'pdf' }}
                                 <div
@@ -128,7 +133,6 @@
                                     {{ extension }}
                                 </p>
                             </div>
-
                             <svg
                                 class="h-3.5 w-3.5 shrink-0 text-neutral-300"
                                 viewBox="0 0 16 16"
@@ -142,7 +146,7 @@
                                     stroke-linejoin="round"
                                 />
                             </svg>
-                        </a>
+                        </button>
                     {{ /pdf_file }}
                 </div>
 
@@ -156,16 +160,14 @@
                                 <span class="truncate text-xs text-neutral-400">
                                     {{ filename }}
                                 </span>
-
                                 <div class="flex items-center gap-3">
-                                    <a
-                                        href="{{ permalink }}"
-                                        download=""
+                                    <button
+                                        type="button"
+                                        onclick="downloadFile('{{ permalink }}', '{{ filename }}')"
                                         class="shrink-0 text-xs text-amber-500 transition-colors hover:text-amber-300"
                                     >
                                         Download
-                                    </a>
-
+                                    </button>
                                     <a
                                         href="{{ permalink }}"
                                         target="_blank"
@@ -237,9 +239,9 @@
                     {{ /collection:bulletins }}
                 </div>
 
-                {{ collection:bulletins sort="date:asc" limit="1" :date:is_after="date" id:not="{id}" }}
-                    {{ unless no_results }}
-                        <div class="min-w-0 text-right">
+                <div class="min-w-0 text-right">
+                    {{ collection:bulletins sort="date:asc" limit="1" :date:is_after="date" id:not="{id}" }}
+                        {{ unless no_results }}
                             <a
                                 href="{{ url }}"
                                 class="group flex flex-col gap-0.5"
@@ -255,9 +257,9 @@
                                     {{ title }}
                                 </span>
                             </a>
-                        </div>
-                    {{ /unless }}
-                {{ /collection:bulletins }}
+                        {{ /unless }}
+                    {{ /collection:bulletins }}
+                </div>
             </div>
         </div>
     </article>
