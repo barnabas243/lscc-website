@@ -1,6 +1,6 @@
 title: Bulletins
 fields:
-  - handle: block_title
+  - handle: title
     field:
       type: text
       display: Section Title
