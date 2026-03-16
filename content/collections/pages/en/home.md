@@ -2,8 +2,8 @@
 id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
-updated_by: 5b8d8495-b220-494d-84a8-0c533e96f3de
-updated_at: 1768200462
+updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
+updated_at: 1773674445
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -375,6 +375,13 @@ page_builder:
     type: article
     enabled: true
     top_padding: 20
+  -
+    id: mmtbyndm
+    block_title: 'Weekly Bulletins'
+    count: 10
+    show_pdf_embed: false
+    type: bulletins
+    enabled: true
 seo_description: 'Living Streams Christian Church in Singapore is a welcoming community for all ages, gathering to worship God, grow in faith, and serve others.'
 seo_title: 'Living Streams Christian Church — Encounter God, Share His Love'
 ---
