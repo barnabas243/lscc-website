@@ -1,0 +1,73 @@
+<!-- /bulletins/index.antlers.html -->
+<main id="content">
+    <div class="mx-auto max-w-4xl px-4 py-12 md:px-8 md:py-16">
+        <header class="mb-12 text-center">
+            <h1 class="font-serif text-3xl font-normal md:text-4xl">
+                {{ title }}
+            </h1>
+        </header>
+
+        <div class="divide-y divide-neutral-200">
+            {{ collection:bulletins sort="date:desc" }}
+                <div class="flex items-center gap-4 py-2.5">
+                    <span
+                        class="w-24 shrink-0 text-xs font-medium tracking-widest text-neutral-400 uppercase"
+                    >
+                        {{ date format="d M Y" }}
+                    </span>
+
+                    <span class="flex-1 truncate text-sm">
+                        <a
+                            href="{{ url }}"
+                            class="transition-colors hover:text-amber-400"
+                        >
+                            {{ title }}
+                        </a>
+                    </span>
+
+                    <div class="flex shrink-0 items-center gap-3">
+                        {{ if pdf_file }}
+                            <a
+                                href="{{ pdf_file }}"
+                                target="_blank"
+                                rel="noopener"
+                                class="inline-flex items-center gap-1 text-xs font-medium text-amber-500 transition-colors hover:text-amber-300"
+                            >
+                                <svg
+                                    class="h-3 w-3"
+                                    viewBox="0 0 16 16"
+                                    fill="none"
+                                >
+                                    <rect
+                                        x="2"
+                                        y="1"
+                                        width="10"
+                                        height="13"
+                                        rx="1.5"
+                                        stroke="currentColor"
+                                        stroke-width="1.2"
+                                    />
+                                    <path
+                                        d="M5 5h6M5 8h6M5 11h3"
+                                        stroke="currentColor"
+                                        stroke-width="1.2"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                                PDF
+                            </a>
+                        {{ /if }}
+                        {{ if content }}
+                            <a
+                                href="{{ url }}"
+                                class="text-xs text-neutral-400 transition-colors hover:text-neutral-600"
+                            >
+                                Read →
+                            </a>
+                        {{ /if }}
+                    </div>
+                </div>
+            {{ /collection:bulletins }}
+        </div>
+    </div>
+</main>
