@@ -1,2 +1,18 @@
 title: Bulletins
-fields: {  }
+fields:
+  - handle: block_title
+    field:
+      type: text
+      display: Section Title
+      default: "Weekly Bulletins"
+  - handle: count
+    field:
+      type: integer
+      display: Number of Bulletins to Show
+      default: 5
+  - handle: show_pdf_embed
+    field:
+      type: toggle
+      display: Embed PDF on listing?
+      default: false
+      instructions: If on, embeds the PDF inline instead of just a download link.

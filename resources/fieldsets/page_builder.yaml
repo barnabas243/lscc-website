@@ -183,6 +183,20 @@ fields:
               fields:
                 -
                   import: location_card
+            bulletins:
+              display: Bulletins
+              instructions: 'Show a listing of recent weekly bulletins.'
+              icon: file-content-list
+              fields:
+                -
+                  import: bulletins
+            event_gallery:
+              display: 'Event Gallery'
+              instructions: 'Display a grid of event photo galleries.'
+              icon: media-image-camera
+              fields:
+                -
+                  import: event_gallery
         text:
           display: Text
           instructions: 'Text based blocks.'
