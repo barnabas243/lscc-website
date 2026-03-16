@@ -1,38 +1,61 @@
 title: Bulletin
-fields:
-  -
-    handle: title
-    field:
-      type: text
-      display: Title
-      instructions: "e.g. Sunday Bulletin – 16 March 2026"
-      required: true
-  -
-    handle: date
-    field:
-      type: date
-      display: Bulletin Date
-      required: true
-  -
-    handle: pdf_file
-    field:
-      type: assets
-      display: PDF File
-      container: assets
-      accepted_mimetypes:
-        - application/pdf
-      max_files: 1
-      instructions: Upload the bulletin PDF here.
-  -
-    handle: content
-    field:
-      type: bard
-      display: Content
-      instructions: Optionally add announcements or text content directly.
-      buttons:
-        - bold
-        - italic
-        - unorderedlist
-        - orderedlist
-        - heading
-        - link
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              display: Title
+              instructions: 'e.g. Sunday Bulletin – 16 March 2026'
+              localizable: false
+              validate:
+                - required
+          -
+            handle: date
+            field:
+              type: date
+              display: 'Bulletin Date'
+              localizable: false
+              validate:
+                - required
+          -
+            handle: pdf_file
+            field:
+              type: assets
+              display: 'PDF File'
+              container: assets
+              accepted_mimetypes:
+                - application/pdf
+              max_files: 1
+              instructions: 'Upload the bulletin PDF here.'
+              localizable: false
+          -
+            handle: content
+            field:
+              type: bard
+              display: Content
+              instructions: 'Optionally add announcements or text content directly.'
+              buttons:
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - heading
+                - link
+              localizable: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
