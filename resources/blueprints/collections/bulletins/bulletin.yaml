@@ -19,6 +19,8 @@ tabs:
             handle: date
             field:
               type: date
+              required: true
+              default: now
               display: 'Bulletin Date'
               localizable: false
               validate:
