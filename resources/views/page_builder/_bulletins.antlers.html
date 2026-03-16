@@ -5,13 +5,11 @@
 #}}
 <!-- /page_builder/bulletins.antlers.html -->
 
-{{ partial:page_builder/block class="block md:grid fluid-grid" }}
-    <section
-        class="span-content mx-auto grid px-3 pt-0 pb-3 md:grid-cols-12 md:px-10 md:pt-4 md:pb-10"
+{{ partial:page_builder/block }}
+    <div
+        class="span-content mx-auto grid gap-y-8 py-8 md:grid-cols-12 md:py-16"
     >
-        {{ if block_title }}
-            {{ partial:typography/h2 :content="block_title" class="text-3xl md:col-start-3 md:col-span-8 text-center pb-10" }}
-        {{ /if }}
+        {{ block:title ?= { partial:typography/h2 :content="block:title" class="md:col-start-3 md:col-span-8 text-center" } }}
         <div
             class="divide-y divide-neutral-200 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3"
         >
@@ -42,7 +40,7 @@
                                 href="{{ pdf_file }}"
                                 target="_blank"
                                 rel="noopener"
-                                class="flex items-center gap-1 text-xs font-medium text-amber-500 transition-colors hover:text-amber-300"
+                                class="inline-flex items-center gap-1 text-xs font-medium text-amber-500 transition-colors hover:text-amber-300"
                             >
                                 <svg
                                     class="h-3 w-3"
@@ -90,6 +88,6 @@
                 </div>
             {{ /if }}
         </div>
-    </section>
+    </div>
 {{ /partial:page_builder/block }}
 <!-- End: /page_builder/bulletins.antlers.html -->
