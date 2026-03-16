@@ -7,7 +7,7 @@
 
 {{ partial:page_builder/block }}
     <div
-        class="span-content mx-auto grid gap-y-8 py-8 md:grid-cols-12 md:py-16"
+        class="span-content mx-auto min-w-0 gap-y-8 px-4 py-8 md:grid md:grid-cols-12 md:px-0 md:py-16"
     >
         {{ block:title ?= { partial:typography/h2 :content="block:title" class="md:col-start-3 md:col-span-8 text-center" } }}
         <div
