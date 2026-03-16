@@ -55,28 +55,34 @@
                         </button>
 
                         <script>
-                            function downloadAll() {
-                                const files = [
-                                    {{ pdf_file }}
-                                        {
-                                            url: "/resources/{{ path }}",
-                                            name: '{{ filename }}'
-                                        },
-                                    {{ /pdf_file }}
-                                ];
+                        function downloadFile(url, name) {
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = name || '';
+                            a.rel = 'noopener';
+                            a.style.display = 'none';
+                            document.body.appendChild(a);
+                            a.click();
+                            a.remove();
+                        }
 
-                                files.forEach((file, i) => {
-                                    setTimeout(() => {
-                                        const a = document.createElement('a');
-                                        a.href = file.url;
-                                        a.setAttribute('download', file.name);
-                                        document.body.appendChild(a);
-                                        a.click();
-                                        document.body.removeChild(a);
-                                    }, i * 500);
-                                });
-                            }
-                        </script>
+                        function downloadAll() {
+                            const files = [
+                                {{ pdf_file }}
+                                    {
+                                        url: "/resources/{{ path }}",
+                                        name: "{{ filename }}"
+                                    }{{ unless last }},{{ /unless }}
+                                {{ /pdf_file }}
+                            ];
+
+                            files.forEach((file, i) => {
+                                setTimeout(() => {
+                                    downloadFile(file.url, file.name);
+                                }, i * 1200);
+                            });
+                        }
+                    </script>
                     {{ /if }}
                     <a
                         href="#viewer"
