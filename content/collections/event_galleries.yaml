@@ -1,8 +1,18 @@
 title: 'Event Galleries'
 sites:
   - en
-propagate: false
+  - cn
+propagate: true
+template: event_galleries/show
+layout: layout
 revisions: false
+date: true
+sort_dir: asc
 date_behavior:
   past: public
   future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
