@@ -4,6 +4,7 @@ blueprint: page
 title: Gallery
 seo_noindex: false
 seo_nofollow: false
+template: event_galleries/index
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
