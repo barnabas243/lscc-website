@@ -10,21 +10,26 @@ fields:
       type: date
       display: Date
       required: true
-  - handle: day_number
+  - handle: week_number
     field:
       type: integer
-      display: Day Number
+      display: Week Number
       instructions: e.g. 1, 2, 3
   - handle: scripture_reference
     field:
       type: text
       display: Scripture Reference
       instructions: e.g. 1 John 1:5–7
+  - handle: preview_text
+    field:
+      type: textarea
+      display: Preview Text
+      instructions: Short teaser shown on the home page block. 1-2 sentences max.
   - handle: audio_en
     field:
       type: assets
       display: Audio (English)
-      container: resources
+      container: assets
       accepted_mimetypes:
         - audio/mpeg
         - audio/mp4
@@ -34,25 +39,54 @@ fields:
     field:
       type: assets
       display: Audio (Chinese)
-      container: resources
+      container: assets
       accepted_mimetypes:
         - audio/mpeg
         - audio/mp4
         - audio/wav
       max_files: 1
-  - handle: transcript_en
+  - handle: content_en
     field:
       type: bard
-      display: Script (English)
-      instructions: Paste the English script here. Each paragraph will become a sentence block.
+      display: Devotional Content (English)
+      instructions: Main devotional body text.
       buttons:
         - bold
         - italic
-  - handle: transcript_cn
+        - heading
+        - orderedlist
+        - unorderedlist
+  - handle: prayer_en
+    field:
+      type: textarea
+      display: Prayer (English)
+      instructions: The closing prayer.
+  - handle: discussion_en
     field:
       type: bard
-      display: Script (Chinese)
-      instructions: Paste the Chinese script here.
+      display: Discussion Questions (English)
+      instructions: Numbered discussion questions.
+      buttons:
+        - bold
+        - orderedlist
+  - handle: content_cn
+    field:
+      type: bard
+      display: Devotional Content (Chinese)
       buttons:
         - bold
         - italic
+        - heading
+        - orderedlist
+        - unorderedlist
+  - handle: prayer_cn
+    field:
+      type: textarea
+      display: Prayer (Chinese)
+  - handle: discussion_cn
+    field:
+      type: bard
+      display: Discussion Questions (Chinese)
+      buttons:
+        - bold
+        - orderedlist
