@@ -19,7 +19,7 @@ fields:
     field:
       type: assets
       display: Cover Image
-      container: assets
+      container: resources
       accepted_mimetypes:
         - image/jpeg
         - image/png
@@ -30,7 +30,7 @@ fields:
     field:
       type: assets
       display: Photos
-      container: assets
+      container: resources
       accepted_mimetypes:
         - image/jpeg
         - image/png

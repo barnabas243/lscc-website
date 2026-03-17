@@ -190,6 +190,13 @@ fields:
               fields:
                 -
                   import: bulletins
+            event_gallery:
+              display: 'Event Gallery'
+              instructions: 'Display a grid of event photo galleries with cover images.'
+              icon: media-image-camera
+              fields:
+                -
+                  import: event_gallery
         text:
           display: Text
           instructions: 'Text based blocks.'
