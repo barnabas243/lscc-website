@@ -1,0 +1,6 @@
+title: Trio Walk
+route: /trio-walk/{slug}
+template: trio_walks/show
+sort_field: date
+sort_direction: desc
+dated: true
