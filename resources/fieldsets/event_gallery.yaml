@@ -9,7 +9,8 @@ fields:
     field:
       type: integer
       display: Number of Events to Show
-      default: 6
+      default: 3
+      instructions: First event appears as the large featured card. Remaining fill the smaller slots.
   - handle: show_all_link
     field:
       type: toggle
