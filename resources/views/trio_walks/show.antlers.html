@@ -1,0 +1,377 @@
+<!-- /trio_walks/show.antlers.html -->
+<main id="content">
+    <article>
+        {{# ── Hero ── #}}
+        <div
+            class="relative overflow-hidden bg-[#1a1f2e] px-6 py-12 md:px-16 md:py-16"
+        >
+            <div
+                class="pointer-events-none absolute inset-0"
+                style="
+                    background: radial-gradient(
+                        ellipse at 80% 50%,
+                        rgba(212, 160, 72, 0.08) 0%,
+                        transparent 60%
+                    );
+                "
+            ></div>
+
+            <div class="relative mx-auto max-w-3xl">
+                <a
+                    href="/trio-walk"
+                    class="mb-6 inline-flex items-center gap-1 text-xs font-medium tracking-widest uppercase transition-colors hover:opacity-80"
+                    style="
+                        color: rgba(255, 255, 255, 0.45);
+                        font-family: sans-serif;
+                    "
+                >
+                    ← Back to Trio Walk
+                </a>
+
+                <div class="mb-3 flex flex-wrap items-center gap-3">
+                    {{ if week_number }}
+                        <span
+                            class="rounded-sm px-2.5 py-1 text-xs font-medium tracking-widest uppercase"
+                            style="
+                                background: rgba(212, 160, 72, 0.18);
+                                color: #f0c060;
+                                font-family: sans-serif;
+                            "
+                        >
+                            Week {{ week_number }}
+                        </span>
+                    {{ /if }}
+                    <span
+                        class="text-xs"
+                        style="
+                            color: rgba(255, 255, 255, 0.45);
+                            font-family: sans-serif;
+                        "
+                    >
+                        {{ date format="d F Y" }}
+                    </span>
+                </div>
+
+                {{ partial:typography/h1 :content="title" class="mb-2 text-white" }}
+                {{ if scripture_reference }}
+                    <p
+                        class="text-sm italic"
+                        style="color: #d4a060; font-family: sans-serif"
+                    >
+                        {{ scripture_reference }}
+                    </p>
+                {{ /if }}
+            </div>
+        </div>
+
+        {{# ── Body ── #}}
+        <div class="mx-auto max-w-3xl px-4 py-10 md:px-8 md:py-14">
+            {{# Language toggle — show if either Chinese audio or Chinese content exists #}}
+            {{ if audio_cn || content_cn || prayer_cn || discussion_cn }}
+                <div class="mb-6 flex gap-2">
+                    <button
+                        type="button"
+                        data-lang-btn="en"
+                        class="rounded-md px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all"
+                        style="
+                            background: #2a1f14;
+                            color: #faf6f0;
+                            font-family: sans-serif;
+                        "
+                    >
+                        English
+                    </button>
+                    <button
+                        type="button"
+                        data-lang-btn="cn"
+                        class="rounded-md px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all"
+                        style="
+                            background: #f5ede0;
+                            color: #6b5a3e;
+                            font-family: sans-serif;
+                        "
+                    >
+                        中文
+                    </button>
+                </div>
+            {{ /if }}
+            {{# Audio player #}}
+            {{ if audio_en }}
+                <div
+                    class="mb-6 overflow-hidden rounded-2xl border"
+                    style="border-color: #ede6da; background: white"
+                >
+                    <div class="p-6">
+                        <div class="mb-5 flex items-center gap-4">
+                            <button
+                                type="button"
+                                id="play-pause-btn"
+                                class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full transition-opacity hover:opacity-80"
+                                style="background: #2a1f14"
+                                aria-label="Play"
+                            >
+                                <svg
+                                    id="play-icon"
+                                    class="ml-0.5 h-5 w-5"
+                                    viewBox="0 0 16 16"
+                                    fill="none"
+                                >
+                                    <path d="M4 3l9 5-9 5V3z" fill="#faf6f0" />
+                                </svg>
+
+                                <svg
+                                    id="pause-icon"
+                                    class="hidden h-5 w-5"
+                                    viewBox="0 0 16 16"
+                                    fill="none"
+                                >
+                                    <rect
+                                        x="3"
+                                        y="3"
+                                        width="3.5"
+                                        height="10"
+                                        rx="1"
+                                        fill="#faf6f0"
+                                    />
+                                    <rect
+                                        x="9.5"
+                                        y="3"
+                                        width="3.5"
+                                        height="10"
+                                        rx="1"
+                                        fill="#faf6f0"
+                                    />
+                                </svg>
+                            </button>
+
+                            <div class="min-w-0 flex-1">
+                                <p
+                                    class="truncate text-sm font-medium"
+                                    style="
+                                        color: #1a1208;
+                                        font-family: sans-serif;
+                                    "
+                                >
+                                    {{ title }}
+                                </p>
+                                <p
+                                    id="player-sublabel"
+                                    class="text-xs"
+                                    style="
+                                        color: #6b5a3e;
+                                        font-family: sans-serif;
+                                    "
+                                >
+                                    English
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            id="progress-track"
+                            class="relative mb-3 h-1.5 cursor-pointer rounded-full"
+                            style="background: #ede6da"
+                            role="slider"
+                            aria-label="Audio progress"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="0"
+                        >
+                            <div
+                                id="progress-fill"
+                                class="h-full rounded-full"
+                                style="background: #b87c40; width: 0%"
+                            ></div>
+                            <div
+                                id="progress-thumb"
+                                class="absolute top-1/2 h-3.5 w-3.5 -translate-y-1/2 rounded-full shadow"
+                                style="
+                                    background: #2a1f14;
+                                    left: 0%;
+                                    margin-left: -7px;
+                                "
+                            ></div>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span
+                                id="time-current"
+                                class="text-xs tabular-nums"
+                                style="color: #6b5a3e; font-family: sans-serif"
+                            >
+                                0:00
+                            </span>
+                            <span
+                                id="time-total"
+                                class="text-xs tabular-nums"
+                                style="color: #6b5a3e; font-family: sans-serif"
+                            >
+                                0:00
+                            </span>
+                        </div>
+                    </div>
+
+                    <audio
+                        id="audio-player"
+                        preload="metadata"
+                        data-audio-en="{{ audio_en:url }}"
+                        data-audio-cn="{{ if audio_cn }}{{ audio_cn:url }}{{ /if }}"
+                    >
+                        <source src="{{ audio_en:url }}" type="audio/mpeg" />
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            {{ /if }}
+            {{# Transcript container #}}
+            <!-- <div
+                id="transcript-container"
+                class="mb-6 overflow-hidden rounded-2xl border"
+                style="border-color: #ede6da; background: #fffdf9"
+                data-transcript-en="{{ content_en | strip_tags | entities }}"
+                data-transcript-cn="{{ content_cn | strip_tags | entities }}"
+            >
+                <div class="border-b px-6 py-4" style="border-color: #ede6da">
+                    <span
+                        class="text-xs font-semibold tracking-widest uppercase"
+                        style="color: #6b5a3e; font-family: sans-serif"
+                    >
+                        Transcript
+                    </span>
+                </div>
+
+                <div
+                    id="transcript-body"
+                    class="px-6 py-6 text-sm leading-8"
+                    style="color: #3a2a1a; font-family: sans-serif"
+                ></div>
+            </div>
+            -->
+
+            {{# Devotional content #}}
+            <div
+                id="devotional-card"
+                class="mb-6 overflow-hidden rounded-2xl border"
+                style="border-color: #ede6da; background: white"
+                data-content-en="{{ content_en | entities }}"
+                data-content-cn="{{ content_cn | entities }}"
+            >
+                <div class="border-b px-6 py-4" style="border-color: #ede6da">
+                    <span
+                        class="text-xs font-semibold tracking-widest uppercase"
+                        style="color: #6b5a3e; font-family: sans-serif"
+                    >
+                        Devotional
+                    </span>
+                </div>
+
+                <div
+                    id="devotional-body"
+                    class="prose prose-neutral max-w-none px-6 py-6"
+                >
+                    {{ content_en }}
+                </div>
+            </div>
+
+            {{# Prayer #}}
+            <div
+                id="prayer-card"
+                class="mb-6 overflow-hidden rounded-2xl border"
+                style="border-color: #ede6da; background: #fdf8f0"
+                data-prayer-en="{{ prayer_en | entities }}"
+                data-prayer-cn="{{ prayer_cn | entities }}"
+            >
+                <div class="border-b px-6 py-4" style="border-color: #ede6da">
+                    <span
+                        class="text-xs font-semibold tracking-widest uppercase"
+                        style="color: #6b5a3e; font-family: sans-serif"
+                    >
+                        Prayer
+                    </span>
+                </div>
+
+                <div
+                    id="prayer-body"
+                    class="px-6 py-6 text-sm leading-relaxed italic"
+                    style="color: #4a3a2a; font-family: sans-serif"
+                >
+                    {{ prayer_en }}
+                </div>
+            </div>
+
+            {{# Discussion questions #}}
+            <div
+                id="discussion-card"
+                class="mb-6 overflow-hidden rounded-2xl border"
+                style="border-color: #ede6da; background: white"
+                data-discussion-en="{{ discussion_en | entities }}"
+                data-discussion-cn="{{ discussion_cn | entities }}"
+            >
+                <div class="border-b px-6 py-4" style="border-color: #ede6da">
+                    <span
+                        class="text-xs font-semibold tracking-widest uppercase"
+                        style="color: #6b5a3e; font-family: sans-serif"
+                    >
+                        Discussion Questions
+                    </span>
+                </div>
+
+                <div
+                    id="discussion-body"
+                    class="prose prose-neutral max-w-none px-6 py-6"
+                >
+                    {{ discussion_en }}
+                </div>
+            </div>
+
+            {{# Prev / Next navigation #}}
+            <div
+                class="mt-12 flex items-center justify-between gap-4 border-t pt-8"
+                style="border-color: #ede6da"
+            >
+                <div class="min-w-0">
+                    {{ collection:trio_walks sort="date:desc" limit="1" :date:is_before="date" id:not="{id}" }}
+                        <a
+                            href="{{ url }}"
+                            class="group flex flex-col gap-0.5"
+                        >
+                            <span
+                                class="text-xs font-medium tracking-widest uppercase"
+                                style="color: #9a8a7a; font-family: sans-serif"
+                            >
+                                ← Previous
+                            </span>
+                            <span
+                                class="truncate text-sm"
+                                style="color: #2a1f14"
+                            >
+                                {{ title }}
+                            </span>
+                        </a>
+                    {{ /collection:trio_walks }}
+                </div>
+
+                <div class="min-w-0 text-right">
+                    {{ collection:trio_walks sort="date:asc" limit="1" :date:is_after="date" id:not="{id}" }}
+                        <a
+                            href="{{ url }}"
+                            class="group flex flex-col gap-0.5"
+                        >
+                            <span
+                                class="text-xs font-medium tracking-widest uppercase"
+                                style="color: #9a8a7a; font-family: sans-serif"
+                            >
+                                Next →
+                            </span>
+                            <span
+                                class="truncate text-sm"
+                                style="color: #2a1f14"
+                            >
+                                {{ title }}
+                            </span>
+                        </a>
+                    {{ /collection:trio_walks }}
+                </div>
+            </div>
+        </div>
+    </article>
+</main>

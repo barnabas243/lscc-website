@@ -1,0 +1,156 @@
+{{#
+    @name Trio Walk
+    @desc Featured latest Trio Walk devotional with transcript preview.
+    @set page.page_builder.trio_walk
+#}}
+<!-- /page_builder/trio_walk.antlers.html -->
+
+{{ partial:page_builder/block }}
+    <div
+        class="span-content mx-auto grid gap-y-8 py-12 md:grid-cols-12 md:py-20"
+    >
+        {{ block:title ?= { partial:typography/h2 :content="block:title" class="md:col-start-3 md:col-span-8 text-center" } }}
+        <div
+            class="md:col-span-10 md:col-start-2 lg:col-span-10 lg:col-start-2"
+        >
+            {{ collection:trio_walks sort="date:desc" limit="1" }}
+                <div
+                    class="overflow-hidden rounded-2xl"
+                    style="background: #2a1f14"
+                >
+                    <div class="grid md:grid-cols-2">
+                        {{# Left — entry info + listen button #}}
+                        <div
+                            class="flex flex-col justify-between gap-8 p-8 md:p-10"
+                        >
+                            <div>
+                                <div
+                                    class="mb-4 flex flex-wrap items-center gap-3"
+                                >
+                                    {{ if week_number }}
+                                        <span
+                                            class="rounded-sm px-2.5 py-1 text-xs font-medium tracking-widest uppercase"
+                                            style="
+                                                background: rgba(
+                                                    212,
+                                                    160,
+                                                    72,
+                                                    0.18
+                                                );
+                                                color: #f0c060;
+                                                font-family: sans-serif;
+                                            "
+                                        >
+                                            Week {{ week_number }}
+                                        </span>
+                                    {{ /if }}
+                                    <span
+                                        class="text-xs"
+                                        style="
+                                            color: rgba(255, 255, 255, 0.45);
+                                            font-family: sans-serif;
+                                        "
+                                    >
+                                        {{ date format="d M Y" }}
+                                    </span>
+                                </div>
+
+                                <h3
+                                    class="mb-3 text-xl leading-snug font-normal md:text-2xl"
+                                    style="color: #faf6f0"
+                                >
+                                    {{ title }}
+                                </h3>
+                                {{ if scripture_reference }}
+                                    <p
+                                        class="text-sm italic"
+                                        style="
+                                            color: #d4a060;
+                                            font-family: sans-serif;
+                                        "
+                                    >
+                                        {{ scripture_reference }}
+                                    </p>
+                                {{ /if }}
+                            </div>
+
+                            <div>
+                                <a
+                                    href="{{ url }}"
+                                    class="inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-90"
+                                    style="
+                                        background: #d4a060;
+                                        color: #1a1208;
+                                        font-family: sans-serif;
+                                    "
+                                >
+                                    <svg
+                                        class="h-3.5 w-3.5 shrink-0"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                    >
+                                        <path
+                                            d="M4 3l9 5-9 5V3z"
+                                            fill="#1a1208"
+                                        />
+                                    </svg>
+                                    Listen now
+                                </a>
+                            </div>
+                        </div>
+
+                        {{# Right — first paragraph preview only #}}
+                        <div
+                            class="border-t p-8 md:border-t-0 md:border-l md:p-10"
+                            style="
+                                background: rgba(255, 255, 255, 0.04);
+                                border-color: rgba(255, 255, 255, 0.08);
+                            "
+                        >
+                            <p
+                                class="mb-4 text-xs font-medium tracking-widest uppercase"
+                                style="
+                                    color: rgba(255, 255, 255, 0.35);
+                                    font-family: sans-serif;
+                                "
+                            >
+                                This week's reading
+                            </p>
+                            {{ if content_en }}
+                                <div
+                                    class="prose-preview text-sm leading-relaxed"
+                                    style="color: rgba(255, 255, 255, 0.6)"
+                                >
+                                    {{ content_en | truncate:280 }}
+                                </div>
+                                <a
+                                    href="{{ url }}"
+                                    class="mt-4 inline-block text-xs font-medium"
+                                    style="
+                                        color: #d4a060;
+                                        font-family: sans-serif;
+                                    "
+                                >
+                                    Read more →
+                                </a>
+                            {{ /if }}
+                        </div>
+                    </div>
+                </div>
+            {{ /collection:trio_walks }}
+            {{ if block.show_all_link }}
+                <div class="mt-6 flex items-center gap-4">
+                    <div class="h-px flex-1 bg-neutral-200"></div>
+                    <a
+                        href="/trio-walk"
+                        class="text-xs font-medium tracking-wide transition-colors"
+                        style="color: #7a5228; font-family: sans-serif"
+                    >
+                        Browse all devotionals →
+                    </a>
+                </div>
+            {{ /if }}
+        </div>
+    </div>
+{{ /partial:page_builder/block }}
+<!-- End: /page_builder/trio_walk.antlers.html -->
