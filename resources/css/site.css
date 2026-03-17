@@ -69,3 +69,10 @@
 .card-image {
     @apply h-full w-full object-cover;
 }
+
+.prose-preview p {
+    margin-bottom: 0.75rem;
+}
+.prose-preview p:last-child {
+    margin-bottom: 0;
+}

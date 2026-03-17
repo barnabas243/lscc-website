@@ -1,4 +1,4 @@
-title: 'Trio Walk'
+title: 'Trio Walks'
 sites:
   - en
   - cn
@@ -6,6 +6,7 @@ propagate: true
 template: trio_walks/show
 layout: layout
 revisions: false
+route: '/trio-walk/{slug}'
 date: true
 sort_dir: asc
 date_behavior:
