@@ -32,6 +32,7 @@ import "./animations/timeline";
 import "./animations/carousel";
 import { registerCalendarMagics } from "./calendar";
 import "./bulletins-download";
+import "./lightbox";
 
 // Alpine init
 Alpine.data("scrollingHeader", scrollingHeader);
