@@ -1,0 +1,6 @@
+title: Event Galleries
+route: /gallery/{slug}
+template: event_galleries/show
+sort_field: date
+sort_direction: desc
+dated: true
