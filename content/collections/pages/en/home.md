@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1773757352
+updated_at: 1773762254
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -98,6 +98,12 @@ page_builder:
     enabled: true
     title: 'Weekly Bulletins'
     show_all_link: true
+  -
+    id: mmus8w2l
+    title: 'Trio Walk'
+    show_all_link: true
+    type: trio_walk
+    enabled: true
   -
     id: m6afwl9k
     cards:
