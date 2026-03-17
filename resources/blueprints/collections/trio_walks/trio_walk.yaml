@@ -10,10 +10,16 @@ fields:
       type: date
       display: Date
       required: true
-  - handle: description
+  - handle: day_number
     field:
-      type: textarea
-      display: Description
+      type: integer
+      display: Day Number
+      instructions: e.g. 1, 2, 3
+  - handle: scripture_reference
+    field:
+      type: text
+      display: Scripture Reference
+      instructions: e.g. 1 John 1:5–7
   - handle: audio_en
     field:
       type: assets
@@ -24,7 +30,6 @@ fields:
         - audio/mp4
         - audio/wav
       max_files: 1
-      instructions: Upload the English MP3 here.
   - handle: audio_cn
     field:
       type: assets
@@ -35,24 +40,19 @@ fields:
         - audio/mp4
         - audio/wav
       max_files: 1
-      instructions: Upload the Chinese MP3 here.
   - handle: transcript_en
     field:
-      type: textarea
-      display: Transcript EN (JSON)
-      instructions: Auto-populated by transcription job. Do not edit manually.
+      type: bard
+      display: Script (English)
+      instructions: Paste the English script here. Each paragraph will become a sentence block.
+      buttons:
+        - bold
+        - italic
   - handle: transcript_cn
     field:
-      type: textarea
-      display: Transcript CN (JSON)
-      instructions: Auto-populated by transcription job. Do not edit manually.
-  - handle: transcription_status_en
-    field:
-      type: text
-      display: Transcription Status (EN)
-      instructions: Auto-updated by system.
-  - handle: transcription_status_cn
-    field:
-      type: text
-      display: Transcription Status (CN)
-      instructions: Auto-updated by system.
+      type: bard
+      display: Script (Chinese)
+      instructions: Paste the Chinese script here.
+      buttons:
+        - bold
+        - italic

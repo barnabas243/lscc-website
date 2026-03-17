@@ -1,0 +1,12 @@
+title: Trio Walk
+fields:
+  - handle: title
+    field:
+      type: text
+      display: Section Title
+      default: "Trio Walk"
+  - handle: show_all_link
+    field:
+      type: toggle
+      display: Show "Browse all devotionals" link?
+      default: true
