@@ -24,7 +24,7 @@ fields:
     field:
       type: assets
       display: Audio (English)
-      container: assets
+      container: resources
       accepted_mimetypes:
         - audio/mpeg
         - audio/mp4
@@ -34,7 +34,7 @@ fields:
     field:
       type: assets
       display: Audio (Chinese)
-      container: assets
+      container: resources
       accepted_mimetypes:
         - audio/mpeg
         - audio/mp4
