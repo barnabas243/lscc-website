@@ -1,23 +1,242 @@
-{{# @name Event Gallery @desc Displays a grid of event photo galleries. #}}
+{{#
+    @name Event Gallery
+    @desc Grid of event photo galleries with cover images.
+    @set page.page_builder.event_gallery
+#}}
 <!-- /page_builder/event_gallery.antlers.html -->
+
 {{ partial:page_builder/block }}
-    <section class="event-galleries">
-        {{ if block_title }}
-            <h2>{{ block_title }}</h2>
-        {{ /if }}
-        <div class="gallery-grid">
-            {{ if block.display_mode == 'pick' }}
-                {{# Staff hand-picked specific events #}}
-                {{ block.selected_events }}
-                    {{ partial:page_builder/partials/gallery_card }}
-                {{ /block.selected_events }}
-            {{ else }}
-                {{# Show N most recent events #}}
-                {{ collection:event_galleries sort="date:desc" :limit="block.count" }}
-                    {{ partial:page_builder/partials/gallery_card }}
-                {{ /collection:event_galleries }}
+    <div
+        class="span-content mx-auto min-w-0 gap-y-8 px-4 py-8 md:grid md:grid-cols-12 md:px-0 md:py-16"
+    >
+        {{ block:title ?= { partial:typography/h2 :content="block:title" class="md:col-start-3 md:col-span-8 text-center" } }}
+        <div
+            class="md:col-span-10 md:col-start-2 lg:col-span-10 lg:col-start-2"
+        >
+            {{ collection:event_galleries sort="date:desc" :limit="block.count" as="events" }}
+                {{# ── Desktop: asymmetric grid ── #}}
+                <div class="hidden grid-cols-3 gap-3 sm:grid">
+                    {{ events limit="1" }}
+                        <a
+                            href="{{ url }}"
+                            class="group relative col-span-1 row-span-2 block overflow-hidden rounded-lg"
+                            style="height: 360px"
+                        >
+                            {{ if cover_image }}
+                                <img
+                                    src="{{ glide:cover_image width='800' height='720' fit='crop' format='webp' quality='80' }}"
+                                    alt="{{ title }}"
+                                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    loading="eager"
+                                />
+                            {{ else }}
+                                <div class="h-full w-full bg-neutral-200"></div>
+                            {{ /if }}
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"
+                            ></div>
+                            {{ if photos }}
+                                <div
+                                    class="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-black/40 px-2.5 py-1 text-xs text-white/75 backdrop-blur-sm"
+                                >
+                                    <svg
+                                        class="h-3 w-3"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                    >
+                                        <rect
+                                            x="1"
+                                            y="1"
+                                            width="14"
+                                            height="14"
+                                            rx="2"
+                                            stroke="currentColor"
+                                            stroke-width="1.2"
+                                        />
+                                        <path
+                                            d="M4 11l3-4 2 2.5 2-3L13 11H4z"
+                                            stroke="currentColor"
+                                            stroke-width="1"
+                                            fill="none"
+                                        />
+                                        <circle
+                                            cx="5.5"
+                                            cy="5.5"
+                                            r="1"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
+                                    {{ photos | count }}
+                                </div>
+                            {{ /if }}
+                            <div class="absolute right-0 bottom-0 left-0 p-5">
+                                <p
+                                    class="mb-1.5 text-xs font-medium tracking-widest text-white/50 uppercase"
+                                >
+                                    {{ date format="M Y" }}
+                                </p>
+                                <h3
+                                    class="text-lg leading-snug font-normal text-white"
+                                >
+                                    {{ title }}
+                                </h3>
+                            </div>
+                        </a>
+                    {{ /events }}
+                    {{ events offset="1" }}
+                        <a
+                            href="{{ url }}"
+                            class="group relative col-span-1 block overflow-hidden rounded-lg"
+                            style="height: 170px"
+                        >
+                            {{ if cover_image }}
+                                <img
+                                    src="{{ glide:cover_image width='500' height='340' fit='crop' format='webp' quality='80' }}"
+                                    alt="{{ title }}"
+                                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    loading="lazy"
+                                />
+                            {{ else }}
+                                <div class="h-full w-full bg-neutral-200"></div>
+                            {{ /if }}
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent"
+                            ></div>
+                            {{ if photos }}
+                                <div
+                                    class="absolute top-2 right-2 flex items-center gap-1 rounded-full bg-black/40 px-2 py-0.5 text-xs text-white/70 backdrop-blur-sm"
+                                >
+                                    <svg
+                                        class="h-2.5 w-2.5"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                    >
+                                        <rect
+                                            x="1"
+                                            y="1"
+                                            width="14"
+                                            height="14"
+                                            rx="2"
+                                            stroke="currentColor"
+                                            stroke-width="1.2"
+                                        />
+                                        <path
+                                            d="M4 11l3-4 2 2.5 2-3L13 11H4z"
+                                            stroke="currentColor"
+                                            stroke-width="1"
+                                            fill="none"
+                                        />
+                                        <circle
+                                            cx="5.5"
+                                            cy="5.5"
+                                            r="1"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
+                                    {{ photos | count }}
+                                </div>
+                            {{ /if }}
+                            <div class="absolute right-0 bottom-0 left-0 p-4">
+                                <p
+                                    class="mb-1 text-xs font-medium tracking-widest text-white/50 uppercase"
+                                >
+                                    {{ date format="M Y" }}
+                                </p>
+                                <h3
+                                    class="text-sm leading-snug font-normal text-white"
+                                >
+                                    {{ title }}
+                                </h3>
+                            </div>
+                        </a>
+                    {{ /events }}
+                </div>
+
+                {{# ── Mobile: thumbnail list ── #}}
+                <div
+                    class="flex flex-col divide-y divide-neutral-200 sm:hidden"
+                >
+                    {{ events }}
+                        <a
+                            href="{{ url }}"
+                            class="flex items-center gap-3 py-3"
+                        >
+                            {{ if cover_image }}
+                                <img
+                                    src="{{ glide:cover_image width='160' height='112' fit='crop' format='webp' quality='75' }}"
+                                    alt="{{ title }}"
+                                    class="h-14 w-20 shrink-0 rounded-lg object-cover"
+                                    loading="lazy"
+                                />
+                            {{ else }}
+                                <div
+                                    class="flex h-14 w-20 shrink-0 items-center justify-center rounded-lg bg-neutral-100"
+                                >
+                                    <svg
+                                        class="h-5 w-5 text-neutral-300"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                    >
+                                        <rect
+                                            x="1"
+                                            y="1"
+                                            width="14"
+                                            height="14"
+                                            rx="2"
+                                            stroke="currentColor"
+                                            stroke-width="1.2"
+                                        />
+                                        <path
+                                            d="M4 11l3-4 2 2.5 2-3L13 11H4z"
+                                            stroke="currentColor"
+                                            stroke-width="1"
+                                            fill="none"
+                                        />
+                                    </svg>
+                                </div>
+                            {{ /if }}
+                            <div class="flex-1 overflow-hidden">
+                                <p
+                                    class="truncate text-sm font-medium text-neutral-800"
+                                >
+                                    {{ title }}
+                                </p>
+                                <p class="text-xs text-neutral-400">
+                                    {{ date format="d M Y" }}
+                                    {{ if photos }}
+                                        · {{ photos | count }} photos
+                                    {{ /if }}
+                                </p>
+                            </div>
+                            <svg
+                                class="h-4 w-4 shrink-0 text-neutral-300"
+                                viewBox="0 0 16 16"
+                                fill="none"
+                            >
+                                <path
+                                    d="M6 4l4 4-4 4"
+                                    stroke="currentColor"
+                                    stroke-width="1.2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </a>
+                    {{ /events }}
+                </div>
+            {{ /collection:event_galleries }}
+            {{ if block.show_all_link }}
+                <div class="mt-6 flex items-center gap-4">
+                    <div class="h-px flex-1 bg-neutral-200"></div>
+                    <a
+                        href="/gallery"
+                        class="text-xs font-medium tracking-wide text-amber-500 transition-colors hover:text-amber-400"
+                    >
+                        See all events →
+                    </a>
+                </div>
             {{ /if }}
         </div>
-    </section>
+    </div>
 {{ /partial:page_builder/block }}
 <!-- End: /page_builder/event_gallery.antlers.html -->

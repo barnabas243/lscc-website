@@ -1,0 +1,194 @@
+<!-- /event_galleries/show.antlers.html -->
+<main id="content">
+    <article>
+        {{# ── Dark hero ── #}}
+        <div
+            class="bg-[#1a1f2e] px-6 py-12 md:px-16 md:py-16"
+            style="position: relative; overflow: hidden"
+        >
+            <div
+                style="
+                    position: absolute;
+                    top: -60px;
+                    right: -60px;
+                    width: 240px;
+                    height: 240px;
+                    border-radius: 50%;
+                    border: 1px solid rgba(255, 255, 255, 0.06);
+                    pointer-events: none;
+                "
+            ></div>
+            <div
+                style="
+                    position: absolute;
+                    top: -30px;
+                    right: -30px;
+                    width: 140px;
+                    height: 140px;
+                    border-radius: 50%;
+                    border: 1px solid rgba(255, 255, 255, 0.03);
+                    pointer-events: none;
+                "
+            ></div>
+
+            <div class="mx-auto max-w-5xl">
+                <a
+                    href="/gallery"
+                    class="mb-6 inline-flex items-center gap-1 text-xs font-medium tracking-widest text-white/30 uppercase transition-colors hover:text-white/60"
+                >
+                    ← Back to gallery
+                </a>
+
+                <div class="mb-3 flex items-center gap-3">
+                    <span
+                        class="rounded-sm bg-amber-500/20 px-2.5 py-1 text-xs font-medium tracking-widest text-amber-400 uppercase"
+                    >
+                        Event Gallery
+                    </span>
+                    <span class="text-xs text-white/35">
+                        {{ date format="d F Y" }}
+                    </span>
+                </div>
+
+                <h1
+                    class="mb-4 leading-tight font-normal text-white"
+                    style="font-size: clamp(1.75rem, 4vw, 3rem)"
+                >
+                    {{ title }}
+                </h1>
+                {{ if description }}
+                    <p class="max-w-xl text-sm leading-relaxed text-white/45">
+                        {{ description }}
+                    </p>
+                {{ /if }}
+            </div>
+        </div>
+
+        {{# ── Photo grid ── #}}
+        <div class="mx-auto max-w-5xl px-4 py-10 md:px-8 md:py-14">
+            {{ if photos }}
+                <p
+                    class="mb-5 text-xs font-medium tracking-widest text-neutral-400 uppercase"
+                >
+                    {{ photos | count }}
+                    photos · click to enlarge
+                </p>
+
+                <div
+                    id="photo-grid"
+                    class="grid grid-cols-2 gap-1.5 sm:grid-cols-3 md:grid-cols-4 md:gap-2"
+                    data-photos='[{{ photos }}
+{"src":"{{ permalink }}","thumb":"{{ glide:url width="120" height="80" fit="crop" format="webp" quality="70" }}","alt":"{{ title ?? filename }}"}{{ unless last }},{{ /unless }}
+{{ /photos }}
+]'
+                >
+                    {{ photos }}
+                        <button
+                            type="button"
+                            data-lightbox-index="{{ index }}"
+                            class="group {{ if index == 0 }}col-span-2 row-span-2{{ /if }} relative block overflow-hidden rounded-md focus:ring-2 focus:ring-amber-400 focus:ring-offset-1 focus:outline-none"
+                            style="{{ if index == 0 }}min-height:240px;{{ else }}min-height:120px;{{ /if }}"
+                        >
+                            <img
+                                src="{{ glide:url width='600' height='480' fit='crop' format='webp' quality='80' }}"
+                                alt="{{ title ?? filename }}"
+                                class="{{ if index == 0 }}min-h-[240px]{{ else }}min-h-[120px]{{ /if }} h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                loading="{{ if index < 6 }}eager{{ else }}lazy{{ /if }}"
+                            />
+                            <div
+                                class="absolute inset-0 bg-black/0 transition-colors duration-200 group-hover:bg-black/10"
+                            ></div>
+                        </button>
+                    {{ /photos }}
+                </div>
+            {{ /if }}
+            {{# Prev / Next navigation #}}
+            <div
+                class="mt-12 flex items-center justify-between gap-4 border-t border-neutral-200 pt-8"
+            >
+                <div class="min-w-0">
+                    {{ collection:event_galleries sort="date:desc" limit="1" :date:is_before="date" id:not="{id}" }}
+                        <a
+                            href="{{ url }}"
+                            class="group flex flex-col gap-0.5"
+                        >
+                            <span
+                                class="text-xs font-medium tracking-widest text-neutral-400 uppercase transition-colors group-hover:text-neutral-600"
+                            >
+                                ← Previous
+                            </span>
+                            <span
+                                class="truncate text-sm text-neutral-600 transition-colors group-hover:text-neutral-900"
+                            >
+                                {{ title }}
+                            </span>
+                        </a>
+                    {{ /collection:event_galleries }}
+                </div>
+                <div class="min-w-0 text-right">
+                    {{ collection:event_galleries sort="date:asc" limit="1" :date:is_after="date" id:not="{id}" }}
+                        <a
+                            href="{{ url }}"
+                            class="group flex flex-col gap-0.5"
+                        >
+                            <span
+                                class="text-xs font-medium tracking-widest text-neutral-400 uppercase transition-colors group-hover:text-neutral-600"
+                            >
+                                Next →
+                            </span>
+                            <span
+                                class="truncate text-sm text-neutral-600 transition-colors group-hover:text-neutral-900"
+                            >
+                                {{ title }}
+                            </span>
+                        </a>
+                    {{ /collection:event_galleries }}
+                </div>
+            </div>
+        </div>
+    </article>
+</main>
+
+{{# ── Lightbox ── #}}
+<div
+    id="lightbox"
+    class="fixed inset-0 z-50 hidden flex-col items-center justify-center bg-black/94 px-4 py-6"
+    role="dialog"
+    aria-modal="true"
+>
+    <button
+        data-lightbox-close
+        class="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full border border-white/15 text-white/50 transition-colors hover:text-white"
+    >
+        ✕
+    </button>
+
+    <div
+        class="relative flex w-full max-w-4xl flex-1 items-center justify-center"
+    >
+        <button
+            data-lightbox-prev
+            class="absolute left-0 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/50 transition-colors hover:text-white"
+        >
+            ‹
+        </button>
+        <img
+            id="lightbox-img"
+            src=""
+            alt=""
+            class="max-h-[72vh] max-w-full rounded-lg object-contain shadow-2xl"
+        />
+        <button
+            data-lightbox-next
+            class="absolute right-0 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/50 transition-colors hover:text-white"
+        >
+            ›
+        </button>
+    </div>
+
+    <div id="lightbox-counter" class="mt-3 text-xs text-white/35"></div>
+    <div
+        id="lightbox-strip"
+        class="mt-3 flex gap-1.5 overflow-x-auto pb-1"
+    ></div>
+</div>
