@@ -1,4 +1,4 @@
-title: 'Event Galleries'
+title: "Event Galleries"
 sites:
   - en
   - cn
@@ -7,12 +7,12 @@ template: event_galleries/show
 layout: layout
 revisions: false
 date: true
-sort_dir: asc
+sort_dir: desc
 date_behavior:
   past: public
   future: private
+route: /gallery/{slug}
 preview_targets:
-  -
-    label: Entry
-    url: '{permalink}'
+  - label: Entry
+    url: "{permalink}"
     refresh: true
