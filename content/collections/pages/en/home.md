@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: 'Encountering God in Life and Arise to share the Gospel'
 updated_by: 1406a60f-461f-4b70-9b39-ed819e9c25a0
-updated_at: 1773753435
+updated_at: 1773755415
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -76,7 +76,7 @@ page_builder:
   -
     id: mmumzr5e
     title: 'Event Gallery'
-    count: 3
+    count: 5
     show_all_link: true
     type: event_gallery
     enabled: true
@@ -88,6 +88,15 @@ page_builder:
       -
         id: meoeutw0
     header: 'News & Events'
+  -
+    id: mmtbyndm
+    block_title: 'Weekly Bulletins'
+    count: 10
+    show_pdf_embed: false
+    type: bulletins
+    enabled: true
+    title: 'Weekly Bulletins'
+    show_all_link: true
   -
     id: m6afwl9k
     cards:
@@ -235,15 +244,6 @@ page_builder:
     title: 'Upcoming Events 2025'
     type: timeline
     enabled: false
-  -
-    id: mmtbyndm
-    block_title: 'Weekly Bulletins'
-    count: 10
-    show_pdf_embed: false
-    type: bulletins
-    enabled: true
-    title: 'Weekly Bulletins'
-    show_all_link: true
   -
     id: m6adz9gv
     cards:
