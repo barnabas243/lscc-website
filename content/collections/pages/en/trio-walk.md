@@ -4,6 +4,7 @@ blueprint: page
 title: 'Trio Walk'
 seo_noindex: false
 seo_nofollow: false
+template: trio_walks/index
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
