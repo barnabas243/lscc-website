@@ -1,0 +1,38 @@
+title: Event Gallery
+fields:
+  - handle: title
+    field:
+      type: text
+      display: Event Name
+      required: true
+  - handle: date
+    field:
+      type: date
+      display: Event Date
+      required: true
+  - handle: description
+    field:
+      type: textarea
+      display: Description
+      instructions: Brief description shown on the show page.
+  - handle: cover_image
+    field:
+      type: assets
+      display: Cover Image
+      container: assets
+      accepted_mimetypes:
+        - image/jpeg
+        - image/png
+        - image/webp
+      max_files: 1
+      instructions: Thumbnail shown in listings and the page builder block.
+  - handle: photos
+    field:
+      type: assets
+      display: Photos
+      container: assets
+      accepted_mimetypes:
+        - image/jpeg
+        - image/png
+        - image/webp
+      instructions: Upload all event photos here.

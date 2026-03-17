@@ -1,31 +1,17 @@
 title: Event Gallery
 fields:
-  - handle: block_title
+  - handle: title
     field:
       type: text
       display: Section Title
       default: "Event Gallery"
-  - handle: display_mode
-    field:
-      type: select
-      display: Display Mode
-      options:
-        latest: Show Latest Events
-        pick: Pick Specific Events
-      default: latest
   - handle: count
     field:
       type: integer
       display: Number of Events to Show
       default: 6
-      if:
-        display_mode: equals latest
-  - handle: selected_events
+  - handle: show_all_link
     field:
-      type: entries
-      display: Select Events
-      collections:
-        - event_galleries
-      instructions: Pick the specific event galleries to feature.
-      if:
-        display_mode: equals pick
+      type: toggle
+      display: Show "See all events" link?
+      default: true
