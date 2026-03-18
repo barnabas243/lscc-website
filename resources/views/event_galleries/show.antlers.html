@@ -78,6 +78,9 @@
                     id="photo-grid"
                     class="grid grid-cols-2 gap-1.5 sm:grid-cols-3 md:grid-cols-4 md:gap-2"
                     data-photos='[{{ photos }}
+
+
+
 {"src":"{{ permalink }}","thumb":"{{ glide:url width="120" height="80" fit="crop" format="webp" quality="70" }}","alt":"{{ title ?? filename }}"}{{ unless last }},{{ /unless }}
 {{ /photos }}
 ]'
@@ -103,47 +106,53 @@
                 </div>
             {{ /if }}
             {{# Prev / Next navigation #}}
+            {{# Prev / Next navigation #}}
             <div
                 class="mt-12 flex items-center justify-between gap-4 border-t border-neutral-200 pt-8"
             >
                 <div class="min-w-0">
                     {{ collection:event_galleries sort="date:desc" limit="1" :date:is_before="date" id:not="{id}" }}
-                        <a
-                            href="{{ url }}"
-                            class="group flex flex-col gap-0.5"
-                        >
-                            <span
-                                class="text-xs font-medium tracking-widest text-neutral-400 uppercase transition-colors group-hover:text-neutral-600"
+                        {{ unless no_results }}
+                            <a
+                                href="{{ url }}"
+                                class="group flex flex-col gap-0.5"
                             >
-                                ← Previous
-                            </span>
-                            <span
-                                class="truncate text-sm text-neutral-600 transition-colors group-hover:text-neutral-900"
-                            >
-                                {{ title }}
-                            </span>
-                        </a>
+                                <span
+                                    class="text-xs font-medium tracking-widest text-neutral-400 uppercase transition-colors group-hover:text-neutral-600"
+                                >
+                                    ← Previous
+                                </span>
+                                <span
+                                    class="truncate text-sm text-neutral-600 transition-colors group-hover:text-neutral-900"
+                                >
+                                    {{ title }}
+                                </span>
+                            </a>
+                        {{ /unless }}
                     {{ /collection:event_galleries }}
                 </div>
-                <div class="min-w-0 text-right">
-                    {{ collection:event_galleries sort="date:asc" limit="1" :date:is_after="date" id:not="{id}" }}
-                        <a
-                            href="{{ url }}"
-                            class="group flex flex-col gap-0.5"
-                        >
-                            <span
-                                class="text-xs font-medium tracking-widest text-neutral-400 uppercase transition-colors group-hover:text-neutral-600"
+
+                {{ collection:event_galleries sort="date:asc" limit="1" :date:is_after="date" id:not="{id}" }}
+                    {{ unless no_results }}
+                        <div class="min-w-0 text-right">
+                            <a
+                                href="{{ url }}"
+                                class="group flex flex-col gap-0.5"
                             >
-                                Next →
-                            </span>
-                            <span
-                                class="truncate text-sm text-neutral-600 transition-colors group-hover:text-neutral-900"
-                            >
-                                {{ title }}
-                            </span>
-                        </a>
-                    {{ /collection:event_galleries }}
-                </div>
+                                <span
+                                    class="text-xs font-medium tracking-widest text-neutral-400 uppercase transition-colors group-hover:text-neutral-600"
+                                >
+                                    Next →
+                                </span>
+                                <span
+                                    class="truncate text-sm text-neutral-600 transition-colors group-hover:text-neutral-900"
+                                >
+                                    {{ title }}
+                                </span>
+                            </a>
+                        </div>
+                    {{ /unless }}
+                {{ /collection:event_galleries }}
             </div>
         </div>
     </article>
