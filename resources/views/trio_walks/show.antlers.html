@@ -260,30 +260,32 @@
                 </div>
             {{ /if }}
             {{# Devotional content #}}
-            <div
-                id="devotional-card"
-                class="mb-6 overflow-hidden rounded-2xl border"
-                style="border-color: #ede6da; background: white"
-                data-content-en="{{ content_en | entities }}"
-                data-content-cn="{{ content_cn | entities }}"
-            >
-                <div class="border-b px-6 py-4" style="border-color: #ede6da">
-                    <span
-                        class="text-xs font-semibold tracking-widest uppercase"
-                        style="color: #6b5a3e; font-family: sans-serif"
-                    >
-                        Devotional
-                    </span>
-                </div>
-                <div
-                    id="devotional-body"
-                    class="prose prose-neutral max-w-none px-6 py-6"
-                >
-                    {{ content_en }}
-                </div>
-            </div>
-
-            {{# Prayer #}}
+            {{#
+                 <div
+                                id="devotional-card"
+                                class="mb-6 overflow-hidden rounded-2xl border"
+                                style="border-color: #ede6da; background: white"
+                                data-content-en="{{ content_en | entities }}"
+                                data-content-cn="{{ content_cn | entities }}"
+                            >
+                                <div class="border-b px-6 py-4" style="border-color: #ede6da">
+                                    <span
+                                        class="text-xs font-semibold tracking-widest uppercase"
+                                        style="color: #6b5a3e; font-family: sans-serif"
+                                    >
+                                        Devotional
+                                    </span>
+                                </div>
+                                <div
+                                    id="devotional-body"
+                                    class="prose prose-neutral max-w-none px-6 py-6"
+                                >
+                                    {{ content_en }}
+                                </div>
+                            </div>
+                
+                             {{# Prayer
+            #}}
             <div
                 id="prayer-card"
                 class="mb-6 overflow-hidden rounded-2xl border"
@@ -331,7 +333,7 @@
                     {{ discussion_en }}
                 </div>
             </div>
-
+            #}}
             {{# Prev / Next navigation #}}
             <div
                 class="mt-12 flex items-center justify-between gap-4 border-t pt-8"
