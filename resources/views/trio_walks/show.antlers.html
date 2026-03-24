@@ -261,78 +261,68 @@
             {{ /if }}
             {{# Devotional content #}}
             {{#
-                 <div
-                                id="devotional-card"
-                                class="mb-6 overflow-hidden rounded-2xl border"
-                                style="border-color: #ede6da; background: white"
-                                data-content-en="{{ content_en | entities }}"
-                                data-content-cn="{{ content_cn | entities }}"
-                            >
-                                <div class="border-b px-6 py-4" style="border-color: #ede6da">
-                                    <span
-                                        class="text-xs font-semibold tracking-widest uppercase"
-                                        style="color: #6b5a3e; font-family: sans-serif"
-                                    >
-                                        Devotional
-                                    </span>
-                                </div>
-                                <div
-                                    id="devotional-body"
-                                    class="prose prose-neutral max-w-none px-6 py-6"
-                                >
-                                    {{ content_en }}
-                                </div>
-                            </div>
+                <div
+                    id="devotional-card"
+                    class="mb-6 overflow-hidden rounded-2xl border"
+                    style="border-color: #ede6da; background: white"
+                    data-content-en="{{ content_en | entities }}"
+                    data-content-cn="{{ content_cn | entities }}"
+                >
+                    <div class="border-b px-6 py-4" style="border-color: #ede6da">
+                        <span
+                            class="text-xs font-semibold tracking-widest uppercase"
+                            style="color: #6b5a3e; font-family: sans-serif"
+                        >
+                            Devotional
+                        </span>
+                    </div>
+                    <div id="devotional-body" class="prose prose-neutral max-w-none px-6 py-6">
+                        {{ content_en }}
+                    </div>
+                </div>
+                <div
+                    id="prayer-card"
+                    class="mb-6 overflow-hidden rounded-2xl border"
+                    style="border-color: #ede6da; background: #fdf8f0"
+                    data-prayer-en="{{ prayer_en | entities }}"
+                    data-prayer-cn="{{ prayer_cn | entities }}"
+                >
+                    <div class="border-b px-6 py-4" style="border-color: #ede6da">
+                        <span
+                            class="text-xs font-semibold tracking-widest uppercase"
+                            style="color: #6b5a3e; font-family: sans-serif"
+                        >
+                            Prayer
+                        </span>
+                    </div>
+                    <div
+                        id="prayer-body"
+                        class="px-6 py-6 text-sm leading-relaxed italic"
+                        style="color: #4a3a2a; font-family: sans-serif"
+                    >
+                        {{ prayer_en }}
+                    </div>
+                </div>
                 
-                             {{# Prayer
-            #}}
-            <div
-                id="prayer-card"
-                class="mb-6 overflow-hidden rounded-2xl border"
-                style="border-color: #ede6da; background: #fdf8f0"
-                data-prayer-en="{{ prayer_en | entities }}"
-                data-prayer-cn="{{ prayer_cn | entities }}"
-            >
-                <div class="border-b px-6 py-4" style="border-color: #ede6da">
-                    <span
-                        class="text-xs font-semibold tracking-widest uppercase"
-                        style="color: #6b5a3e; font-family: sans-serif"
-                    >
-                        Prayer
-                    </span>
-                </div>
                 <div
-                    id="prayer-body"
-                    class="px-6 py-6 text-sm leading-relaxed italic"
-                    style="color: #4a3a2a; font-family: sans-serif"
+                    id="discussion-card"
+                    class="mb-6 overflow-hidden rounded-2xl border"
+                    style="border-color: #ede6da; background: white"
+                    data-discussion-en="{{ discussion_en | entities }}"
+                    data-discussion-cn="{{ discussion_cn | entities }}"
                 >
-                    {{ prayer_en }}
+                    <div class="border-b px-6 py-4" style="border-color: #ede6da">
+                        <span
+                            class="text-xs font-semibold tracking-widest uppercase"
+                            style="color: #6b5a3e; font-family: sans-serif"
+                        >
+                            Discussion Questions
+                        </span>
+                    </div>
+                    <div id="discussion-body" class="prose prose-neutral max-w-none px-6 py-6">
+                        {{ discussion_en }}
+                    </div>
                 </div>
-            </div>
-
-            {{# Discussion questions #}}
-            <div
-                id="discussion-card"
-                class="mb-6 overflow-hidden rounded-2xl border"
-                style="border-color: #ede6da; background: white"
-                data-discussion-en="{{ discussion_en | entities }}"
-                data-discussion-cn="{{ discussion_cn | entities }}"
-            >
-                <div class="border-b px-6 py-4" style="border-color: #ede6da">
-                    <span
-                        class="text-xs font-semibold tracking-widest uppercase"
-                        style="color: #6b5a3e; font-family: sans-serif"
-                    >
-                        Discussion Questions
-                    </span>
-                </div>
-                <div
-                    id="discussion-body"
-                    class="prose prose-neutral max-w-none px-6 py-6"
-                >
-                    {{ discussion_en }}
-                </div>
-            </div>
             #}}
             {{# Prev / Next navigation #}}
             <div
