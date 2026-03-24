@@ -90,3 +90,20 @@ fields:
       buttons:
         - bold
         - orderedlist
+  - handle: transcript_en
+    field:
+      type: assets
+      display: Transcript (English VTT)
+      container: resources
+      accepted_mimetypes:
+        - text/vtt
+      max_files: 1
+
+  - handle: transcript_cn
+    field:
+      type: assets
+      display: Transcript (Chinese VTT)
+      container: resources
+      accepted_mimetypes:
+        - text/vtt
+      max_files: 1
