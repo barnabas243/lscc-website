@@ -51,54 +51,76 @@
 
         async function fetchAndParseVTT(url) {
             if (!url) return [];
-            try {
-                const response = await fetch(url);
-                if (!response.ok) throw new Error("VTT fetch failed");
-                const text = await response.text();
 
-                const cues = [];
+            try {
+                const res = await fetch(url);
+                const text = await res.text();
+
                 const lines = text.split("\n");
+                const cues = [];
+
                 let i = 0;
 
-                // Skip WEBVTT header
-                while (i < lines.length && !lines[i].includes("-->")) i++;
+                function parseTime(t) {
+                    const parts = t.split(":");
+                    const s = parts.pop();
+                    const m = parts.pop() || 0;
+                    const h = parts.pop() || 0;
+
+                    return (
+                        parseFloat(s) + parseInt(m) * 60 + parseInt(h) * 3600
+                    );
+                }
 
                 while (i < lines.length) {
-                    const line = lines[i].trim();
+                    let line = lines[i].trim();
+
+                    if (!line || line === "WEBVTT") {
+                        i++;
+                        continue;
+                    }
+
+                    if (/^\d+$/.test(line)) {
+                        i++;
+                        continue;
+                    }
 
                     if (line.includes("-->")) {
-                        const [startStr, endStr] = line
-                            .split("-->")
-                            .map((s) => s.trim());
-                        const start = parseVTTTime(startStr);
-                        const end = parseVTTTime(endStr);
+                        const [startRaw, endRaw] = line.split("-->");
 
-                        // Collect cue text lines
+                        const startStr = startRaw.trim().split(/\s+/)[0];
+                        const endStr = endRaw.trim().split(/\s+/)[0];
+
+                        const start = parseTime(startStr);
+                        const end = parseTime(endStr);
+
                         i++;
+
                         const textLines = [];
+
                         while (i < lines.length && lines[i].trim() !== "") {
-                            // Strip VTT tags like <c.highlight>, <b>, etc.
                             textLines.push(
                                 lines[i].replace(/<[^>]+>/g, "").trim(),
                             );
                             i++;
                         }
 
-                        const text = textLines.join(" ").trim();
-                        if (text) {
-                            cues.push({ text, start, end });
+                        const textBlock = textLines.join(" ").trim();
+
+                        if (textBlock) {
+                            cues.push({ text: textBlock, start, end });
                         }
                     }
+
                     i++;
                 }
 
                 return cues;
-            } catch (e) {
-                console.error("VTT parse error:", e);
+            } catch (err) {
+                console.error("VTT parse error:", err);
                 return [];
             }
         }
-
         // ── Render transcript sentences ───────────────────
         function renderTranscript(cues) {
             if (!hasTranscript) return;
