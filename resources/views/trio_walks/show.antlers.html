@@ -208,8 +208,8 @@
                         preload="metadata"
                         data-audio-en="{{ audio_en:url }}"
                         data-audio-cn="{{ if audio_cn }}{{ audio_cn:url }}{{ /if }}"
-                        data-vtt-en="{{ if transcript_en }}{{ "resources/" ~ transcript_en:path }}{{ /if }}"
-                        data-vtt-cn="{{ if transcript_cn }}{{ "resources/" ~ transcript_cn:path }}{{ /if }}"
+                        data-vtt-en="{{ if transcript_en }}{{ "/resources/{{ transcript_en:path }}" }}{{ /if }}"
+                        data-vtt-cn="{{ if transcript_cn }}{{ "/resources/{{ transcript_cn:path }}" }}{{ /if }}"
                     >
                         <source src="{{ audio_en:url }}" type="audio/mpeg" />
                         Your browser does not support the audio element.
