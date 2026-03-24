@@ -50,11 +50,25 @@
         }
 
         async function fetchAndParseVTT(url) {
-            if (!url) return [];
+            if (!url) {
+                console.warn("No VTT URL provided");
+                return [];
+            }
 
             try {
-                const res = await fetch(url);
-                const text = await res.text();
+                console.log("Fetching VTT:", url);
+
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    console.error("VTT fetch failed:", response.status, url);
+                    return [];
+                }
+
+                const text = await response.text();
+
+                // Debug: show first 200 chars
+                console.log("VTT content preview:", text.slice(0, 200));
 
                 const lines = text.split("\n");
                 const cues = [];
@@ -75,11 +89,13 @@
                 while (i < lines.length) {
                     let line = lines[i].trim();
 
+                    // Skip empty or WEBVTT
                     if (!line || line === "WEBVTT") {
                         i++;
                         continue;
                     }
 
+                    // Skip numeric cue index
                     if (/^\d+$/.test(line)) {
                         i++;
                         continue;
@@ -88,6 +104,7 @@
                     if (line.includes("-->")) {
                         const [startRaw, endRaw] = line.split("-->");
 
+                        // 🔥 FIX: strip cue settings
                         const startStr = startRaw.trim().split(/\s+/)[0];
                         const endStr = endRaw.trim().split(/\s+/)[0];
 
@@ -115,12 +132,15 @@
                     i++;
                 }
 
+                console.log("Parsed cues:", cues.length);
+
                 return cues;
             } catch (err) {
                 console.error("VTT parse error:", err);
                 return [];
             }
         }
+
         // ── Render transcript sentences ───────────────────
         function renderTranscript(cues) {
             if (!hasTranscript) return;
@@ -198,6 +218,9 @@
             const vttUrl =
                 lang === "en" ? audio.dataset.vttEn : audio.dataset.vttCn;
 
+            console.log(
+                vttUrl ? `Loading VTT from ${vttUrl}` : "No VTT URL provided",
+            );
             sentences = await fetchAndParseVTT(vttUrl);
             renderTranscript(sentences);
         }
