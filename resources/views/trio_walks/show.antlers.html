@@ -15,7 +15,6 @@
                     );
                 "
             ></div>
-
             <div class="relative mx-auto max-w-3xl">
                 <a
                     href="/trio-walk"
@@ -27,7 +26,6 @@
                 >
                     ← Back to Trio Walk
                 </a>
-
                 <div class="mb-3 flex flex-wrap items-center gap-3">
                     {{ if week_number }}
                         <span
@@ -51,7 +49,6 @@
                         {{ date format="d F Y" }}
                     </span>
                 </div>
-
                 {{ partial:typography/h1 :content="title" class="mb-2 text-white" }}
                 {{ if scripture_reference }}
                     <p
@@ -66,7 +63,7 @@
 
         {{# ── Body ── #}}
         <div class="mx-auto max-w-3xl px-4 py-10 md:px-8 md:py-14">
-            {{# Language toggle — show if either Chinese audio or Chinese content exists #}}
+            {{# Language toggle #}}
             {{ if audio_cn || content_cn || prayer_cn || discussion_cn }}
                 <div class="mb-6 flex gap-2">
                     <button
@@ -118,7 +115,6 @@
                                 >
                                     <path d="M4 3l9 5-9 5V3z" fill="#faf6f0" />
                                 </svg>
-
                                 <svg
                                     id="pause-icon"
                                     class="hidden h-5 w-5"
@@ -143,7 +139,6 @@
                                     />
                                 </svg>
                             </button>
-
                             <div class="min-w-0 flex-1">
                                 <p
                                     class="truncate text-sm font-medium"
@@ -166,7 +161,6 @@
                                 </p>
                             </div>
                         </div>
-
                         <div
                             id="progress-track"
                             class="relative mb-3 h-1.5 cursor-pointer rounded-full"
@@ -192,7 +186,6 @@
                                 "
                             ></div>
                         </div>
-
                         <div class="flex justify-between">
                             <span
                                 id="time-current"
@@ -210,43 +203,62 @@
                             </span>
                         </div>
                     </div>
-
                     <audio
                         id="audio-player"
                         preload="metadata"
                         data-audio-en="{{ audio_en:url }}"
                         data-audio-cn="{{ if audio_cn }}{{ audio_cn:url }}{{ /if }}"
+                        data-vtt-en="{{ if transcript_en }}{{ transcript_en:url }}{{ /if }}"
+                        data-vtt-cn="{{ if transcript_cn }}{{ transcript_cn:url }}{{ /if }}"
                     >
                         <source src="{{ audio_en:url }}" type="audio/mpeg" />
                         Your browser does not support the audio element.
                     </audio>
                 </div>
             {{ /if }}
-            {{# Transcript container #}}
-            <!-- <div
-                id="transcript-container"
-                class="mb-6 overflow-hidden rounded-2xl border"
-                style="border-color: #ede6da; background: #fffdf9"
-                data-transcript-en="{{ content_en | strip_tags | entities }}"
-                data-transcript-cn="{{ content_cn | strip_tags | entities }}"
-            >
-                <div class="border-b px-6 py-4" style="border-color: #ede6da">
-                    <span
-                        class="text-xs font-semibold tracking-widest uppercase"
-                        style="color: #6b5a3e; font-family: sans-serif"
-                    >
-                        Transcript
-                    </span>
-                </div>
-
+            {{# Transcript — shown when VTT is available #}}
+            {{ if transcript_en || transcript_cn }}
                 <div
-                    id="transcript-body"
-                    class="px-6 py-6 text-sm leading-8"
-                    style="color: #3a2a1a; font-family: sans-serif"
-                ></div>
-            </div>
-            -->
-
+                    id="transcript-container"
+                    class="mb-6 overflow-hidden rounded-2xl border"
+                    style="border-color: #ede6da; background: #fffdf9"
+                >
+                    <div
+                        class="border-b px-6 py-4"
+                        style="border-color: #ede6da"
+                    >
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="text-xs font-semibold tracking-widest uppercase"
+                                style="color: #6b5a3e; font-family: sans-serif"
+                            >
+                                Transcript
+                            </span>
+                            <span
+                                class="text-xs"
+                                style="color: #9a8a7a; font-family: sans-serif"
+                            >
+                                Click any sentence to jump
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        id="transcript-body"
+                        class="px-6 py-6 text-sm leading-8"
+                        style="color: #3a2a1a; font-family: sans-serif"
+                    >
+                        <p
+                            style="
+                                color: #9a8a7a;
+                                font-family: sans-serif;
+                                font-size: 14px;
+                            "
+                        >
+                            Loading transcript...
+                        </p>
+                    </div>
+                </div>
+            {{ /if }}
             {{# Devotional content #}}
             <div
                 id="devotional-card"
@@ -263,7 +275,6 @@
                         Devotional
                     </span>
                 </div>
-
                 <div
                     id="devotional-body"
                     class="prose prose-neutral max-w-none px-6 py-6"
@@ -288,7 +299,6 @@
                         Prayer
                     </span>
                 </div>
-
                 <div
                     id="prayer-body"
                     class="px-6 py-6 text-sm leading-relaxed italic"
@@ -314,7 +324,6 @@
                         Discussion Questions
                     </span>
                 </div>
-
                 <div
                     id="discussion-body"
                     class="prose prose-neutral max-w-none px-6 py-6"
@@ -329,7 +338,7 @@
                 style="border-color: #ede6da"
             >
                 <div class="min-w-0">
-                                       {{ collection:trio_walks sort="date:desc" limit="1" :date:is_before="date" id:not="{id}" }}
+                    {{ collection:trio_walks sort="date:desc" limit="1" :date:is_before="date" id:not="{id}" }}
                         {{ unless no_results }}
                             <a
                                 href="{{ url }}"
@@ -349,7 +358,6 @@
                         {{ /unless }}
                     {{ /collection:trio_walks }}
                 </div>
-
                 {{ collection:trio_walks sort="date:asc" limit="1" :date:is_after="date" id:not="{id}" }}
                     {{ unless no_results }}
                         <div class="min-w-0 text-right">
@@ -371,7 +379,6 @@
                         </div>
                     {{ /unless }}
                 {{ /collection:trio_walks }}
-                </div>
             </div>
         </div>
     </article>
